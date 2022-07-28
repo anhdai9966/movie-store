@@ -1,0 +1,28 @@
+{
+  "name": "movie-store",
+  "version": "1.0.0",
+  "description": "Project 1 - at Techmaster - Course Web Frontend 25",
+  "main": "index.js",
+  "scripts": {
+    "start": "live-server src --verbose",
+    "css": "sass src/scss/index.scss src/css/index.css -w",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anhdai9966/movie-store.git"
+  },
+  "keywords": [],
+  "author": "cd share",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anhdai9966/movie-store/issues"
+  },
+  "homepage": "https://github.com/anhdai9966/movie-store#readme",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  },
+  "dependencies": {
+    "sass": "^1.54.0"
+  }
+}

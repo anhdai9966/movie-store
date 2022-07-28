@@ -2,3 +2,24 @@
 *.css.map
 *.sass.map
 *.scss.map
+
+# my
+note.md
+document.md
+test.http
+.prettierrc
+node_modules/
+.vscode/
+doc/
+api/
+assets/
+components/
+html/
+js/
+pages/
+recycle/
+sass/
+screens/
+services/
+shared/
+utils/

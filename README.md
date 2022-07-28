@@ -1,2 +1,3 @@
 # movie-store
-project 1 - at techmaster - course web frontend 25
+
+Project 1 - at Techmaster - Course Web Frontend 25
