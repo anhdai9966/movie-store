@@ -1,0 +1,47 @@
+.pending-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  background-color: $pending-bg;
+  background-image: linear-gradient(
+    -60deg, transparent, transparent 40%,
+    #ffffff44 40%, #ffffff44 60%,
+    transparent 60%, transparent 100%
+  );
+  background-size: 200% 100%;
+  background-repeat: no-repeat;
+  background-position-x: 180%;
+  animation: across 2s infinite $pending-delay;
+  @include border-radius(.3rem);
+}
+@keyframes across {
+  0% {
+    background-position-x: 160%;
+  }
+  50%,
+  100% {
+    background-position-x: -100%;
+  }
+}
+// $pending-text-height: --pending-text-height;
+.pending-text-header {
+  @extend .pending-bg;
+  height: var(--pending-text-height, $pending-text-header);
+}
+.pending-text-paragraph {
+  @extend .pending-bg;
+  height: var(--pending-text-height, $pending-text-paragraph);
+}
+@for $i from 2 through 5 {
+  .pending-text-header-#{$i}lines {
+    @extend .pending-text-header;
+    --pending-text-height: calc(#{$pending-text-header} * #{$i});
+  }
+  .pending-text-paragraph-#{$i}lines {
+    @extend .pending-text-paragraph;
+    --pending-text-height: calc(#{$pending-text-paragraph} * #{$i});
+  }
+}

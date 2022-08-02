@@ -1,0 +1,160 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  font-size: var(--html-font-size);
+}
+body {
+  margin: 0; // 1
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size);
+  font-weight: var(--body-font-weight);
+  line-height: var(--body-line-height);
+  font-style: var(--body-font-style);
+  color: var(--body-color);
+  background-color: var(--body-bg); // 2
+  -webkit-text-size-adjust: 100%; // 3
+  -webkit-tap-highlight-color: rgba(#000, 0); // 4
+}
+p, li, h1, h2, h3, h4 {
+  overflow-wrap: break-word;
+  /* Optional, not supported for all languages */
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+%head-placehorder {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: 500;
+  line-height: 1.2;
+}
+$fs: 2.5em;
+$vw: 1.5vw;
+$fs2: 1.375em;
+@for $h from 1 through 6 {
+  h#{$h}, .h#{$h} {
+    @extend %head-placehorder;
+  }
+  @if ($h < 5) {
+    h#{$h}, .h#{$h} {
+      font-size: calc(#{$fs2} + #{$vw});
+      @media (min-width: 75em) {
+        font-size: #{$fs};
+      }
+    }
+    @if ($h == 1) {
+      $fs: $fs - 0.25em !global;
+      $vw: $vw - 0.3vw !global;
+      $fs2: $fs2 - 0.025em !global;
+    }
+  } @else {
+    h#{$h}, .h#{$h} {
+      font-size: #{$fs};
+    }
+  }
+  $fs: $fs - 0.25em !global;
+  $vw: $vw - 0.3vw !global;
+  $fs2: $fs2 - 0.025em !global;
+}
+p {
+  margin: 0;
+}
+ol,
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+ol,
+ul,
+dl {
+  margin-top: 0;
+}
+ol ol,
+ul ul,
+ol ul,
+ul ol {
+  margin-bottom: 0;
+}
+b,
+strong {
+  font-weight: bolder;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover {
+  color: inherit;
+}
+a:not([href]):not([class]), a:not([href]):not([class]):hover {
+  color: inherit;
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+}
+svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+use{
+  width: 100%;
+  height: 100%;
+}
+img {
+  vertical-align: middle;
+}
+label {
+  display: inline-block;
+}
+button:focus:not(:focus-visible) {
+  outline: 0;
+}
+input,
+button,
+select,
+optgroup,
+textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  outline: none;
+  border: 0;
+  color: inherit;
+}
+button,
+select {
+  text-transform: none;
+}
+[role=button] {
+  cursor: pointer;
+}
+select {
+  word-wrap: normal;
+}
+select:disabled {
+  opacity: 1;
+}
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+  -webkit-appearance: button;
+  border-radius: 0;
+}
+button:not(:disabled),
+[type=button]:not(:disabled),
+[type=reset]:not(:disabled),
+[type=submit]:not(:disabled) {
+  cursor: pointer;
+}
+::-moz-focus-inner {
+  padding: 0;
+  border-style: none;
+}

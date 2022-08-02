@@ -1,0 +1,140 @@
+%absolute-full {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+};
+.card-home-item {
+  width: $card-home-width;
+  @include transition(width, $card-home-time-duration, ease-in-out);
+  @include margin-div(top, 1.6rem);
+  position: relative;
+  @media (min-width: 48em) {
+    &:hover {
+      width: $card-home-width-hover;
+      max-width: $card-home-width-hover;
+      .thumbnail {
+        .content-hover {
+          @include opacity(1);
+        }
+        .btn-icon-save-list-hover {
+          @include opacity(1);
+        }
+        .card-overlay-hover {
+          @include opacity(1);
+        }
+      }
+    }
+  }
+  @media (max-width: 48em) {
+    .card-overlay-anchor {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      z-index: 1;
+    }
+  }
+  .thumbnail {
+    @include border-radius($card-round);
+    background-color: $card-bg-sub;
+    width: 100%;
+    height: $card-home-height;
+    overflow: hidden;
+    position: relative;
+    .btn-icon-save-list-hover {
+      width: 4rem;
+      height: 4rem;
+      color: $body-color;
+      position: absolute;
+      top: $card-home-content-hover-padding;
+      right: $card-home-content-hover-padding;
+      z-index: $z-index-card-home-hover;
+      @include transition(opacity, $card-home-time-duration);
+      @include opacity(0);
+    }
+    .card-overlay-hover {
+      background: rgb(0,0,0);
+      background: $card-overlay-hover;
+      @extend %absolute-full;
+      @include transition(opacity, $card-home-time-duration);
+      @include opacity(0);
+    }
+    .content-hover {
+      width: calc(100% - $card-home-content-hover-padding * 2);
+      position: absolute;
+      left: $card-home-content-hover-padding;
+      bottom: $card-home-content-hover-padding;
+      z-index: $z-index-card-home-hover;
+      @include opacity(0);
+      @include transition(opacity, $card-home-time-duration);
+      @include margin-div(top, .8rem);
+      .title-hover {
+        width: 100%;
+      }
+      .info-hover {
+        width: 100%;
+      }
+      .btn-trailer-hover {
+        max-width: fit-content;
+        min-height: $pending-text-paragraph * 1.5;
+        padding: $btn-padding-y $btn-padding-x;
+        color: #fff;
+        font-weight: bold;
+        background-color: $btn-bg-trailer;
+        @include border-radius(2.2rem);
+      }
+    }
+  }
+  .content {
+    width: 100%;
+    max-width: $card-home-width;
+    @include margin-div(top, .8rem);
+    .title {
+      width: 100%;
+    }
+    .info {
+      width: 70%;
+      min-width: fit-content;
+      display: flex;
+      align-items: center;
+      .icon-rate {
+        margin-top: -4px;
+        height: $card-icon-width-start;
+        width: $card-icon-width-start;
+        color: #FFCC00;
+      }
+      .price {
+        margin-left: .8rem;;
+      }
+    }
+  }
+}
+
+
+// .show-trailer {
+//   display: none;
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   bottom: 0;
+//   right: 0;
+//   .btn-dismiss {
+//     display: block;
+//     width: 5rem;
+//     height: 5rem;
+//     background-color: #007AFF;
+//   }
+//   .iframe {
+//     display: block;
+//     width: 800px;
+//     height: 500px;
+//     position: fixed;
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+//   }
+// }

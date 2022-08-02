@@ -14,12 +14,10 @@ doc/
 api/
 assets/
 components/
-html/
-js/
 pages/
 recycle/
-sass/
 screens/
 services/
 shared/
 utils/
+libs/

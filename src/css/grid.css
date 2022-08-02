@@ -1,0 +1,480 @@
+.grid-container, .grid-container-fluid, .grid-container-xxl, .grid-container-xl, .grid-container-lg, .grid-container-md, .grid-container-sm {
+  width: 100%;
+  padding: 0 var(--bs-gutter-x, 0.75em);
+  margin: 0 auto;
+}
+@media (min-width: 36em) {
+  .grid-container-sm, .grid-container {
+    max-width: 33.75em;
+  }
+}
+@media (min-width: 48em) {
+  .grid-container-md, .grid-container-sm, .grid-container {
+    max-width: 45em;
+  }
+}
+@media (min-width: 62em) {
+  .grid-container-lg, .grid-container-md, .grid-container-sm, .grid-container {
+    max-width: 60em;
+  }
+}
+@media (min-width: 75em) {
+  .grid-container-xl, .grid-container-lg, .grid-container-md, .grid-container-sm, .grid-container {
+    max-width: 71.25em;
+  }
+}
+@media (min-width: 87.5em) {
+  .grid-container-xxl, .grid-container-xl, .grid-container-lg, .grid-container-md, .grid-container-sm, .grid-container {
+    max-width: 82.5em;
+  }
+}
+.grid {
+  display: grid;
+  gap: var(--bs-gutter-y, 0.75em) var(--bs-gutter-x, 0.75em);
+}
+.grid > * {
+  width: 100%;
+  max-width: 100%;
+}
+.grid-1col {
+  grid-template-columns: 1fr;
+}
+.grid-2col {
+  grid-template-columns: repeat(2, 1fr);
+}
+.grid-3col {
+  grid-template-columns: repeat(3, 1fr);
+}
+.grid-4col {
+  grid-template-columns: repeat(4, 1fr);
+}
+.grid-5col {
+  grid-template-columns: repeat(5, 1fr);
+}
+.grid-6col {
+  grid-template-columns: repeat(6, 1fr);
+}
+.grid-7col {
+  grid-template-columns: repeat(7, 1fr);
+}
+.grid-8col {
+  grid-template-columns: repeat(8, 1fr);
+}
+.grid-9col {
+  grid-template-columns: repeat(9, 1fr);
+}
+.grid-10col {
+  grid-template-columns: repeat(10, 1fr);
+}
+.grid-11col {
+  grid-template-columns: repeat(11, 1fr);
+}
+.grid-12col {
+  grid-template-columns: repeat(12, 1fr);
+}
+.grid-g-0, .grid-gx-0 {
+  --bs-gutter-x: 0;
+}
+.grid-g-0, .grid-gy-0 {
+  --bs-gutter-y: 0;
+}
+.grid-g-1, .grid-gx-1 {
+  --bs-gutter-x: 0.25em;
+}
+.grid-g-1, .grid-gy-1 {
+  --bs-gutter-y: 0.25em;
+}
+.grid-g-2, .grid-gx-2 {
+  --bs-gutter-x: 0.5em;
+}
+.grid-g-2, .grid-gy-2 {
+  --bs-gutter-y: 0.5em;
+}
+.grid-g-3, .grid-gx-3 {
+  --bs-gutter-x: 1em;
+}
+.grid-g-3, .grid-gy-3 {
+  --bs-gutter-y: 1em;
+}
+.grid-g-4, .grid-gx-4 {
+  --bs-gutter-x: 1.5em;
+}
+.grid-g-4, .grid-gy-4 {
+  --bs-gutter-y: 1.5em;
+}
+.grid-g-5, .grid-gx-5 {
+  --bs-gutter-x: 3em;
+}
+.grid-g-5, .grid-gy-5 {
+  --bs-gutter-y: 3em;
+}
+@media (min-width: 36em) {
+  .grid-1col-sm {
+    grid-template-columns: 1fr;
+  }
+  .grid-2col-sm {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-3col-sm {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .grid-4col-sm {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .grid-5col-sm {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .grid-6col-sm {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .grid-7col-sm {
+    grid-template-columns: repeat(7, 1fr);
+  }
+  .grid-8col-sm {
+    grid-template-columns: repeat(8, 1fr);
+  }
+  .grid-9col-sm {
+    grid-template-columns: repeat(9, 1fr);
+  }
+  .grid-10col-sm {
+    grid-template-columns: repeat(10, 1fr);
+  }
+  .grid-11col-sm {
+    grid-template-columns: repeat(11, 1fr);
+  }
+  .grid-12col-sm {
+    grid-template-columns: repeat(12, 1fr);
+  }
+  .grid-g-sm-0, .grid-gx-sm-0 {
+    --bs-gutter-x: 0;
+  }
+  .grid-g-sm-0, .grid-gy-sm-0 {
+    --bs-gutter-y: 0;
+  }
+  .grid-g-sm-1, .grid-gx-sm-1 {
+    --bs-gutter-x: 0.25em;
+  }
+  .grid-g-sm-1, .grid-gy-sm-1 {
+    --bs-gutter-y: 0.25em;
+  }
+  .grid-g-sm-2, .grid-gx-sm-2 {
+    --bs-gutter-x: 0.5em;
+  }
+  .grid-g-sm-2, .grid-gy-sm-2 {
+    --bs-gutter-y: 0.5em;
+  }
+  .grid-g-sm-3, .grid-gx-sm-3 {
+    --bs-gutter-x: 1em;
+  }
+  .grid-g-sm-3, .grid-gy-sm-3 {
+    --bs-gutter-y: 1em;
+  }
+  .grid-g-sm-4, .grid-gx-sm-4 {
+    --bs-gutter-x: 1.5em;
+  }
+  .grid-g-sm-4, .grid-gy-sm-4 {
+    --bs-gutter-y: 1.5em;
+  }
+  .grid-g-sm-5, .grid-gx-sm-5 {
+    --bs-gutter-x: 3em;
+  }
+  .grid-g-sm-5, .grid-gy-sm-5 {
+    --bs-gutter-y: 3em;
+  }
+}
+@media (min-width: 48em) {
+  .grid-1col-md {
+    grid-template-columns: 1fr;
+  }
+  .grid-2col-md {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-3col-md {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .grid-4col-md {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .grid-5col-md {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .grid-6col-md {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .grid-7col-md {
+    grid-template-columns: repeat(7, 1fr);
+  }
+  .grid-8col-md {
+    grid-template-columns: repeat(8, 1fr);
+  }
+  .grid-9col-md {
+    grid-template-columns: repeat(9, 1fr);
+  }
+  .grid-10col-md {
+    grid-template-columns: repeat(10, 1fr);
+  }
+  .grid-11col-md {
+    grid-template-columns: repeat(11, 1fr);
+  }
+  .grid-12col-md {
+    grid-template-columns: repeat(12, 1fr);
+  }
+  .grid-g-md-0, .grid-gx-md-0 {
+    --bs-gutter-x: 0;
+  }
+  .grid-g-md-0, .grid-gy-md-0 {
+    --bs-gutter-y: 0;
+  }
+  .grid-g-md-1, .grid-gx-md-1 {
+    --bs-gutter-x: 0.25em;
+  }
+  .grid-g-md-1, .grid-gy-md-1 {
+    --bs-gutter-y: 0.25em;
+  }
+  .grid-g-md-2, .grid-gx-md-2 {
+    --bs-gutter-x: 0.5em;
+  }
+  .grid-g-md-2, .grid-gy-md-2 {
+    --bs-gutter-y: 0.5em;
+  }
+  .grid-g-md-3, .grid-gx-md-3 {
+    --bs-gutter-x: 1em;
+  }
+  .grid-g-md-3, .grid-gy-md-3 {
+    --bs-gutter-y: 1em;
+  }
+  .grid-g-md-4, .grid-gx-md-4 {
+    --bs-gutter-x: 1.5em;
+  }
+  .grid-g-md-4, .grid-gy-md-4 {
+    --bs-gutter-y: 1.5em;
+  }
+  .grid-g-md-5, .grid-gx-md-5 {
+    --bs-gutter-x: 3em;
+  }
+  .grid-g-md-5, .grid-gy-md-5 {
+    --bs-gutter-y: 3em;
+  }
+}
+@media (min-width: 62em) {
+  .grid-1col-lg {
+    grid-template-columns: 1fr;
+  }
+  .grid-2col-lg {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-3col-lg {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .grid-4col-lg {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .grid-5col-lg {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .grid-6col-lg {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .grid-7col-lg {
+    grid-template-columns: repeat(7, 1fr);
+  }
+  .grid-8col-lg {
+    grid-template-columns: repeat(8, 1fr);
+  }
+  .grid-9col-lg {
+    grid-template-columns: repeat(9, 1fr);
+  }
+  .grid-10col-lg {
+    grid-template-columns: repeat(10, 1fr);
+  }
+  .grid-11col-lg {
+    grid-template-columns: repeat(11, 1fr);
+  }
+  .grid-12col-lg {
+    grid-template-columns: repeat(12, 1fr);
+  }
+  .grid-g-lg-0, .grid-gx-lg-0 {
+    --bs-gutter-x: 0;
+  }
+  .grid-g-lg-0, .grid-gy-lg-0 {
+    --bs-gutter-y: 0;
+  }
+  .grid-g-lg-1, .grid-gx-lg-1 {
+    --bs-gutter-x: 0.25em;
+  }
+  .grid-g-lg-1, .grid-gy-lg-1 {
+    --bs-gutter-y: 0.25em;
+  }
+  .grid-g-lg-2, .grid-gx-lg-2 {
+    --bs-gutter-x: 0.5em;
+  }
+  .grid-g-lg-2, .grid-gy-lg-2 {
+    --bs-gutter-y: 0.5em;
+  }
+  .grid-g-lg-3, .grid-gx-lg-3 {
+    --bs-gutter-x: 1em;
+  }
+  .grid-g-lg-3, .grid-gy-lg-3 {
+    --bs-gutter-y: 1em;
+  }
+  .grid-g-lg-4, .grid-gx-lg-4 {
+    --bs-gutter-x: 1.5em;
+  }
+  .grid-g-lg-4, .grid-gy-lg-4 {
+    --bs-gutter-y: 1.5em;
+  }
+  .grid-g-lg-5, .grid-gx-lg-5 {
+    --bs-gutter-x: 3em;
+  }
+  .grid-g-lg-5, .grid-gy-lg-5 {
+    --bs-gutter-y: 3em;
+  }
+}
+@media (min-width: 75em) {
+  .grid-1col-xl {
+    grid-template-columns: 1fr;
+  }
+  .grid-2col-xl {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-3col-xl {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .grid-4col-xl {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .grid-5col-xl {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .grid-6col-xl {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .grid-7col-xl {
+    grid-template-columns: repeat(7, 1fr);
+  }
+  .grid-8col-xl {
+    grid-template-columns: repeat(8, 1fr);
+  }
+  .grid-9col-xl {
+    grid-template-columns: repeat(9, 1fr);
+  }
+  .grid-10col-xl {
+    grid-template-columns: repeat(10, 1fr);
+  }
+  .grid-11col-xl {
+    grid-template-columns: repeat(11, 1fr);
+  }
+  .grid-12col-xl {
+    grid-template-columns: repeat(12, 1fr);
+  }
+  .grid-g-xl-0, .grid-gx-xl-0 {
+    --bs-gutter-x: 0;
+  }
+  .grid-g-xl-0, .grid-gy-xl-0 {
+    --bs-gutter-y: 0;
+  }
+  .grid-g-xl-1, .grid-gx-xl-1 {
+    --bs-gutter-x: 0.25em;
+  }
+  .grid-g-xl-1, .grid-gy-xl-1 {
+    --bs-gutter-y: 0.25em;
+  }
+  .grid-g-xl-2, .grid-gx-xl-2 {
+    --bs-gutter-x: 0.5em;
+  }
+  .grid-g-xl-2, .grid-gy-xl-2 {
+    --bs-gutter-y: 0.5em;
+  }
+  .grid-g-xl-3, .grid-gx-xl-3 {
+    --bs-gutter-x: 1em;
+  }
+  .grid-g-xl-3, .grid-gy-xl-3 {
+    --bs-gutter-y: 1em;
+  }
+  .grid-g-xl-4, .grid-gx-xl-4 {
+    --bs-gutter-x: 1.5em;
+  }
+  .grid-g-xl-4, .grid-gy-xl-4 {
+    --bs-gutter-y: 1.5em;
+  }
+  .grid-g-xl-5, .grid-gx-xl-5 {
+    --bs-gutter-x: 3em;
+  }
+  .grid-g-xl-5, .grid-gy-xl-5 {
+    --bs-gutter-y: 3em;
+  }
+}
+@media (min-width: 87.5em) {
+  .grid-1col-xxl {
+    grid-template-columns: 1fr;
+  }
+  .grid-2col-xxl {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-3col-xxl {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .grid-4col-xxl {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .grid-5col-xxl {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .grid-6col-xxl {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .grid-7col-xxl {
+    grid-template-columns: repeat(7, 1fr);
+  }
+  .grid-8col-xxl {
+    grid-template-columns: repeat(8, 1fr);
+  }
+  .grid-9col-xxl {
+    grid-template-columns: repeat(9, 1fr);
+  }
+  .grid-10col-xxl {
+    grid-template-columns: repeat(10, 1fr);
+  }
+  .grid-11col-xxl {
+    grid-template-columns: repeat(11, 1fr);
+  }
+  .grid-12col-xxl {
+    grid-template-columns: repeat(12, 1fr);
+  }
+  .grid-g-xxl-0, .grid-gx-xxl-0 {
+    --bs-gutter-x: 0;
+  }
+  .grid-g-xxl-0, .grid-gy-xxl-0 {
+    --bs-gutter-y: 0;
+  }
+  .grid-g-xxl-1, .grid-gx-xxl-1 {
+    --bs-gutter-x: 0.25em;
+  }
+  .grid-g-xxl-1, .grid-gy-xxl-1 {
+    --bs-gutter-y: 0.25em;
+  }
+  .grid-g-xxl-2, .grid-gx-xxl-2 {
+    --bs-gutter-x: 0.5em;
+  }
+  .grid-g-xxl-2, .grid-gy-xxl-2 {
+    --bs-gutter-y: 0.5em;
+  }
+  .grid-g-xxl-3, .grid-gx-xxl-3 {
+    --bs-gutter-x: 1em;
+  }
+  .grid-g-xxl-3, .grid-gy-xxl-3 {
+    --bs-gutter-y: 1em;
+  }
+  .grid-g-xxl-4, .grid-gx-xxl-4 {
+    --bs-gutter-x: 1.5em;
+  }
+  .grid-g-xxl-4, .grid-gy-xxl-4 {
+    --bs-gutter-y: 1.5em;
+  }
+  .grid-g-xxl-5, .grid-gx-xxl-5 {
+    --bs-gutter-x: 3em;
+  }
+  .grid-g-xxl-5, .grid-gy-xxl-5 {
+    --bs-gutter-y: 3em;
+  }
+}

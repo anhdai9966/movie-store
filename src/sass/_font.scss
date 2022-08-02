@@ -1,0 +1,46 @@
+$local-url: unquote($string: "../fonts/segoe-ui");
+$font-name: segoeui;
+$font-weight: (
+  Light: 100,
+  Light-Italic: 100,
+  Semilight: 300,
+  Semilight-Italic: 300,
+  Regular: 400,
+  Italic: 400,
+  Semibold: 500,
+  Semibold-Italic: 500,
+  Bold: 700,
+  Bold-Italic: 700,
+  Black: 900,
+  Black-Italic: 900,
+);
+$font-name-style: "";
+@each $weight, $value in $font-weight {
+  @font-face {
+  font-family: SegoeUI;
+  @if (str-index($string: #{$weight}, $substring: "Italic")) {
+    font-style: italic;
+    @if (#{$weight} == "Italic") {
+      $font-name-style: " " + "#{$weight}" !global;
+    } @else {
+      $dash-index: str-index($string: #{$weight}, $substring: "-") - 1;
+      $font-name-style: " " + str-slice($string: #{$weight}, $start-at: 1, $end-at: $dash-index) + " Italic" !global;
+    }
+  }
+  @else {
+    @if (#{$weight} == "Regular") {
+      $font-name-style: "" !global;
+    } @else {
+      $font-name-style: " " + "#{$weight}" !global;
+    }
+    font-style: normal;
+  }
+  src:
+      local('Segoe UI#{$font-name-style}'),
+      url('#{$local-url}/#{to-lower-case(#{$weight})}/#{$font-name}.woff2') format("woff2"),
+      url('#{$local-url}/#{to-lower-case(#{$weight})}/#{$font-name}.woff') format("woff"),
+      url('#{$local-url}/#{to-lower-case(#{$weight})}/#{$font-name}.ttf') format("truetype");
+  font-weight: $value;
+  font-display: fallback;
+  }
+}

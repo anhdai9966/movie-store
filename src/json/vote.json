@@ -1,0 +1,32 @@
+[
+  {
+    "ReactionName": "Yêu",
+    "IconPath": "https://2sao.vietnamnetjsc.vn/images/2021/01/20/00/11/yeu1.gif",
+    "Id": 1,
+    "Total": 0
+  },
+  {
+    "ReactionName": "Haha",
+    "IconPath": "https://2sao.vietnamnetjsc.vn/images/2021/01/20/00/11/haha.gif",
+    "Id": 2,
+    "Total": 0
+  },
+  {
+    "ReactionName": "Khóc",
+    "IconPath": "https://2sao.vietnamnetjsc.vn/images/2021/01/20/00/12/cry22.gif",
+    "Id": 3,
+    "Total": 0
+  },
+  {
+    "ReactionName": "Ngạc nhiên",
+    "IconPath": "https://2sao.vietnamnetjsc.vn/images/2021/01/20/00/12/abccaaaa-Copy1.gif",
+    "Id": 4,
+    "Total": 0
+  },
+  {
+    "ReactionName": "Giận giữ",
+    "IconPath": "https://2sao.vietnamnetjsc.vn/images/2021/01/20/00/13/gian-ru.gif",
+    "Id": 5,
+    "Total": 0
+  }
+]

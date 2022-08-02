@@ -1,0 +1,54 @@
+$html-font-size: 62.5%;
+
+$body-font-family: 'SegoeUI', sans-serif;
+$body-font-size: 1.6rem;
+$body-font-weight: 400;
+$body-font-style: normal;
+$body-line-height: 1.5;
+$body-color: #f1f1f1;
+$body-bg: #181818;
+
+$scroll-width: 1rem;
+$scroll-track-bg: #000;
+$scroll-thumb-border-width: 0.2rem;
+$scroll-thumb-bg-x: linear-gradient(to left, #e30813, #b70045, #791b53, #3c2341, #181818);
+$scroll-thumb-bg-y: linear-gradient(to top, #e30813, #b70045, #791b53, #3c2341, #181818);
+
+$text-gutter-x: 1.6rem;
+
+$part-gutter-y: .8rem;
+
+$form-control-color: #007AFF;
+$form-control-disabled: #959495;
+
+$input-bg-secondary: #f5f5f5;
+$input-height: 2.4rem;
+$input-border: .2rem;
+$input-rounded: .4rem;
+
+$btn-padding-y: 1.1rem;
+$btn-padding-x: $btn-padding-y * 2;
+$btn-bg-trailer: rgba(0, 0, 0, 0.7);
+
+$pending-bg: #ffffff4d;
+$pending-delay: .2s;
+$pending-text-header: 3rem;
+$pending-text-paragraph: 2.4rem;
+
+$z-index-card-home-hover: 3;
+
+$card-home-height: 25rem;
+$card-home-time-duration: .5s;
+$card-home-width: 16.6rem;
+$card-gutter: 2.4rem;
+$card-home-width-hover: $card-home-width * 2 + $card-gutter;
+$card-home-content-hover-padding: 1.6rem;
+$card-icon-width-start: 1.6rem;
+$card-round: .4rem;
+$card-overlay-hover: radial-gradient(circle, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.5) 100%);
+$card-bg-sub: #ffffff4d;
+
+$footer-icon: 2.4rem;
+$footer-color-secondary: #373737;
+
+$slide-width: 1760px;
