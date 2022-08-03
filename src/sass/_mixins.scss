@@ -25,9 +25,52 @@
     margin-#{$pos}: $margin;
   }
 }
+@mixin margin-child($pos, $margin) {
+  > * {
+    margin-#{$pos}: $margin;
+  }
+}
 @mixin opacity($val) {
   opacity: $val;
 }
 @mixin padding-btn($size) {
   padding: $size calc($size * 2.8);
+}
+@mixin text-truncate($numberLine: 1) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  @if $numberLine != 1 {
+    display: -webkit-box;
+    -webkit-line-clamp: $numberLine;
+    -webkit-box-orient: vertical;
+  } @else {
+    white-space: nowrap;
+  }
+}
+@mixin img-fluid {
+  // Part 1: Set a maximum relative to the parent
+  max-width: 100%;
+  // Part 2: Override the height to auto, otherwise images will be stretched
+  // when setting a width and height attribute on the img element.
+  height: auto;
+}
+@mixin clearfix() {
+  &::after {
+    display: block;
+    clear: both;
+    content: "";
+  }
+}
+@mixin absolute-full() {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+@mixin absolute-center() {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }

@@ -1,15 +1,7 @@
 import * as api from './api.js';
 import * as fn from './function.js';
 
-export const parseRequest = () => {
-  const url = document.location.hash.toLowerCase();
-  const request = url.split('/');
-  return {
-    resource: request[1],
-    id: request[2],
-    action: request[3],
-  }
-}
+
 
 export const movieRequest = async (url, params = {}) => {
   if (!url) return 'Error Url';

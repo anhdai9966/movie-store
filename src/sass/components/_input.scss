@@ -10,23 +10,25 @@
   color: $form-control-disabled;
   cursor: not-allowed;
 }
-.form-control:focus-within {
-  color: $form-control-color;
-}
+// .form-control:focus-within {
+//   color: $form-control-color;
+// }
 %input-rad-check {
   /*Addifnotusingautoprefixer*/
   -webkit-appearance: none;
   /*Removemostallnativeinputstyles*/
   appearance: none;
   /*ForiOS<15*/
-  background-color: $input-bg-secondary;
+  // background-color: $input-bg-secondary;
+  background-color: currentColor;
   /*Notremovedviaappearance*/
   margin: 0;
   font: inherit;
   color: currentColor;
   height: $input-height;
   width: $input-height;
-  border: $input-border solid $input-bg-secondary;
+  // border: $input-border solid $input-bg-secondary;
+  border: $input-border solid currentColor;
   display: grid;
   place-content: center;
 }

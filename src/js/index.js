@@ -3,22 +3,32 @@ import requestMoviedb from './utils/requestMoviedb.js';
 // import { parseRequest } from './utils/utils.js';
 // import error404Screen from './screens/error404Screen.js';
 
-// const routes = {
-//   '/': homeScreen,
-//   '/product/:id': productScreen,
-// };
+const routes = {
+  '/': homeScreen,
+  '/product/:id': productScreen,
+};
 
-// const router = () => {
-//   const request = parseRequest();
-//   const parseUrl =
-//     (request.resource ? `/${request.resource}` : '/') +
-//     (request.id ? ':id' : '') +
-//     (request.action ? `/${request.action}` : '');
-//   const screen = router[parseUrl] ? router[parseUrl] : error404Screen;
+export const parseRequest = () => {
+  const url = document.location.hash.toLowerCase();
+  const request = url.split('/');
+  return {
+    resource: request[1],
+    id: request[2],
+    action: request[3],
+  }
+}
 
-//   const main = document.querySelector('#main-container');
-//   main.innerHTML = screen.render();
-// };
+const router = () => {
+  const request = parseRequest();
+  const parseUrl =
+    (request.resource ? `/${request.resource}` : '/') +
+    (request.id ? ':id' : '') +
+    (request.action ? `/${request.action}` : '');
+  const screen = router[parseUrl] ? router[parseUrl] : error404Screen;
 
-// window.addEventListener('hashchange', router);
+  const main = document.querySelector('#main-container');
+  main.innerHTML = screen.render();
+};
+
+window.addEventListener('hashchange', router);
 

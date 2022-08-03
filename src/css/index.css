@@ -1,4 +1,3 @@
-@import url("../css/grid.css");
 @font-face {
   font-family: SegoeUI;
   font-style: normal;
@@ -84,6 +83,8 @@
   font-display: fallback;
 }
 :root {
+  --bs-gutter-x: 1.2rem;
+  --bs-gap: 2.4rem;
   --html-font-size: 62.5%;
   --body-font-family: SegoeUI, sans-serif;
   --body-font-size: 1.6rem;
@@ -176,7 +177,8 @@ h6, .h6 {
   font-size: 1em;
 }
 
-p {
+p, .p {
+  font-size: 1.6rem;
   margin: 0;
 }
 
@@ -297,18 +299,378 @@ button:not(:disabled),
   border-style: none;
 }
 
-.pending-bg, .pending-text-paragraph, .pending-text-paragraph-5lines, .pending-text-paragraph-4lines, .pending-text-paragraph-3lines, .pending-text-paragraph-2lines, .pending-text-header, .pending-text-header-5lines, .pending-text-header-4lines, .pending-text-header-3lines, .pending-text-header-2lines {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 10;
+.container,
+.container-fluid,
+.container-xxl,
+.container-xl,
+.container-lg,
+.container-md,
+.container-sm {
+  width: 100%;
+  padding-right: var(--bs-gutter-x, 0.75rem);
+  padding-left: var(--bs-gutter-x, 0.75rem);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 36em) {
+  .container-sm, .container {
+    max-width: 54rem;
+  }
+}
+@media (min-width: 48em) {
+  .container-md, .container-sm, .container {
+    max-width: 72rem;
+  }
+}
+@media (min-width: 62em) {
+  .container-lg, .container-md, .container-sm, .container {
+    max-width: 96rem;
+  }
+}
+@media (min-width: 75em) {
+  .container-xl, .container-lg, .container-md, .container-sm, .container {
+    max-width: 114rem;
+  }
+}
+@media (min-width: 87.5em) {
+  .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
+    max-width: 132rem;
+  }
+}
+.grid {
+  display: grid;
+  gap: var(--bs-gap, 1.5rem);
+}
+
+.g-col-1 {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.g-col-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.g-col-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.g-col-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.g-col-5 {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.g-col-6 {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.g-col-7 {
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.g-col-8 {
+  grid-template-columns: repeat(8, 1fr);
+}
+
+.g-col-9 {
+  grid-template-columns: repeat(9, 1fr);
+}
+
+.g-col-10 {
+  grid-template-columns: repeat(10, 1fr);
+}
+
+.g-col-11 {
+  grid-template-columns: repeat(11, 1fr);
+}
+
+.g-col-12 {
+  grid-template-columns: repeat(12, 1fr);
+}
+
+@media (min-width: 36em) {
+  .g-col-sm-1 {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .g-col-sm-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .g-col-sm-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .g-col-sm-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .g-col-sm-5 {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .g-col-sm-6 {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .g-col-sm-7 {
+    grid-template-columns: repeat(7, 1fr);
+  }
+  .g-col-sm-8 {
+    grid-template-columns: repeat(8, 1fr);
+  }
+  .g-col-sm-9 {
+    grid-template-columns: repeat(9, 1fr);
+  }
+  .g-col-sm-10 {
+    grid-template-columns: repeat(10, 1fr);
+  }
+  .g-col-sm-11 {
+    grid-template-columns: repeat(11, 1fr);
+  }
+  .g-col-sm-12 {
+    grid-template-columns: repeat(12, 1fr);
+  }
+}
+@media (min-width: 48em) {
+  .g-col-md-1 {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .g-col-md-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .g-col-md-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .g-col-md-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .g-col-md-5 {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .g-col-md-6 {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .g-col-md-7 {
+    grid-template-columns: repeat(7, 1fr);
+  }
+  .g-col-md-8 {
+    grid-template-columns: repeat(8, 1fr);
+  }
+  .g-col-md-9 {
+    grid-template-columns: repeat(9, 1fr);
+  }
+  .g-col-md-10 {
+    grid-template-columns: repeat(10, 1fr);
+  }
+  .g-col-md-11 {
+    grid-template-columns: repeat(11, 1fr);
+  }
+  .g-col-md-12 {
+    grid-template-columns: repeat(12, 1fr);
+  }
+}
+@media (min-width: 62em) {
+  .g-col-lg-1 {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .g-col-lg-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .g-col-lg-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .g-col-lg-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .g-col-lg-5 {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .g-col-lg-6 {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .g-col-lg-7 {
+    grid-template-columns: repeat(7, 1fr);
+  }
+  .g-col-lg-8 {
+    grid-template-columns: repeat(8, 1fr);
+  }
+  .g-col-lg-9 {
+    grid-template-columns: repeat(9, 1fr);
+  }
+  .g-col-lg-10 {
+    grid-template-columns: repeat(10, 1fr);
+  }
+  .g-col-lg-11 {
+    grid-template-columns: repeat(11, 1fr);
+  }
+  .g-col-lg-12 {
+    grid-template-columns: repeat(12, 1fr);
+  }
+}
+@media (min-width: 75em) {
+  .g-col-xl-1 {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .g-col-xl-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .g-col-xl-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .g-col-xl-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .g-col-xl-5 {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .g-col-xl-6 {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .g-col-xl-7 {
+    grid-template-columns: repeat(7, 1fr);
+  }
+  .g-col-xl-8 {
+    grid-template-columns: repeat(8, 1fr);
+  }
+  .g-col-xl-9 {
+    grid-template-columns: repeat(9, 1fr);
+  }
+  .g-col-xl-10 {
+    grid-template-columns: repeat(10, 1fr);
+  }
+  .g-col-xl-11 {
+    grid-template-columns: repeat(11, 1fr);
+  }
+  .g-col-xl-12 {
+    grid-template-columns: repeat(12, 1fr);
+  }
+}
+@media (min-width: 87.5em) {
+  .g-col-xxl-1 {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .g-col-xxl-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .g-col-xxl-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .g-col-xxl-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .g-col-xxl-5 {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .g-col-xxl-6 {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .g-col-xxl-7 {
+    grid-template-columns: repeat(7, 1fr);
+  }
+  .g-col-xxl-8 {
+    grid-template-columns: repeat(8, 1fr);
+  }
+  .g-col-xxl-9 {
+    grid-template-columns: repeat(9, 1fr);
+  }
+  .g-col-xxl-10 {
+    grid-template-columns: repeat(10, 1fr);
+  }
+  .g-col-xxl-11 {
+    grid-template-columns: repeat(11, 1fr);
+  }
+  .g-col-xxl-12 {
+    grid-template-columns: repeat(12, 1fr);
+  }
+}
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+@media (min-width: 36em) {
+  .text-center-sm {
+    text-align: center;
+  }
+  .text-left-sm {
+    text-align: left;
+  }
+  .text-right-sm {
+    text-align: right;
+  }
+}
+@media (min-width: 48em) {
+  .text-center-md {
+    text-align: center;
+  }
+  .text-left-md {
+    text-align: left;
+  }
+  .text-right-md {
+    text-align: right;
+  }
+}
+@media (min-width: 62em) {
+  .text-center-lg {
+    text-align: center;
+  }
+  .text-left-lg {
+    text-align: left;
+  }
+  .text-right-lg {
+    text-align: right;
+  }
+}
+@media (min-width: 75em) {
+  .text-center-xl {
+    text-align: center;
+  }
+  .text-left-xl {
+    text-align: left;
+  }
+  .text-right-xl {
+    text-align: right;
+  }
+}
+@media (min-width: 87.5em) {
+  .text-center-xxl {
+    text-align: center;
+  }
+  .text-left-xxl {
+    text-align: left;
+  }
+  .text-right-xxl {
+    text-align: right;
+  }
+}
+.dont-break-out {
+  /* These are technically the same, but use both */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  /* This is the dangerous one in WebKit, as it breaks things wherever */
+  word-break: break-all;
+  /* Instead use this non-standard one: */
+  word-break: break-word;
+  /* Adds a hyphen where the word breaks, if supported (No Blink) */
+  -ms-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+.pending, .pending-p-5, .pending-p-4, .pending-p-3, .pending-h-3, .pending-p-2, .pending-h-2, .pending-p-1, .pending-h-1 {
   width: 100%;
   height: 100%;
   background-color: rgba(255, 255, 255, 0.3019607843);
   background-image: linear-gradient(-60deg, transparent, transparent 40%, rgba(255, 255, 255, 0.2666666667) 40%, rgba(255, 255, 255, 0.2666666667) 60%, transparent 60%, transparent 100%);
   background-size: 200% 100%;
   background-repeat: no-repeat;
-  background-position-x: 180%;
+  background-position-x: 160%;
   -webkit-animation: across 2s infinite 0.2s;
           animation: across 2s infinite 0.2s;
   border-radius: 0.3rem;
@@ -335,44 +697,42 @@ button:not(:disabled),
     background-position-x: -100%;
   }
 }
-.pending-text-header, .pending-text-header-5lines, .pending-text-header-4lines, .pending-text-header-3lines, .pending-text-header-2lines {
-  height: var(--pending-text-height, 3rem);
+.pending-h-1 {
+  height: 3rem;
 }
 
-.pending-text-paragraph, .pending-text-paragraph-5lines, .pending-text-paragraph-4lines, .pending-text-paragraph-3lines, .pending-text-paragraph-2lines {
-  height: var(--pending-text-height, 2.4rem);
+.pending-p-1 {
+  height: 2.4rem;
 }
 
-.pending-text-header-2lines {
-  --pending-text-height: calc(3rem * 2);
+.pending-h-2 {
+  height: 6rem;
 }
 
-.pending-text-paragraph-2lines {
-  --pending-text-height: calc(2.4rem * 2);
+.pending-p-2 {
+  height: 4.8rem;
 }
 
-.pending-text-header-3lines {
-  --pending-text-height: calc(3rem * 3);
+.pending-h-3 {
+  height: 9rem;
 }
 
-.pending-text-paragraph-3lines {
-  --pending-text-height: calc(2.4rem * 3);
+.pending-p-3 {
+  height: 7.2rem;
 }
 
-.pending-text-header-4lines {
-  --pending-text-height: calc(3rem * 4);
+.pending-p-4 {
+  height: 9.6rem;
 }
 
-.pending-text-paragraph-4lines {
-  --pending-text-height: calc(2.4rem * 4);
+.pending-p-5 {
+  height: 12rem;
 }
 
-.pending-text-header-5lines {
-  --pending-text-height: calc(3rem * 5);
-}
-
-.pending-text-paragraph-5lines {
-  --pending-text-height: calc(2.4rem * 5);
+.btn {
+  display: block;
+  display: -webkit-box;
+  cursor: pointer;
 }
 
 .scroll-x {
@@ -412,61 +772,6 @@ button:not(:disabled),
   -o-border-radius: 1rem;
 }
 
-.text-1line {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.text-6lines, .text-5lines, .text-4lines, .text-3lines, .text-2lines {
-  display: -webkit-box;
-  -webkit-line-clamp: var(--line-number);
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipse;
-}
-
-.text-2lines {
-  --line-number: 2;
-}
-
-.text-3lines {
-  --line-number: 3;
-}
-
-.text-4lines {
-  --line-number: 4;
-}
-
-.text-5lines {
-  --line-number: 5;
-}
-
-.text-6lines {
-  --line-number: 6;
-}
-
-.dont-break-out {
-  /* These are technically the same, but use both */
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  -ms-word-break: break-all;
-  /* This is the dangerous one in WebKit, as it breaks things wherever */
-  word-break: break-all;
-  /* Instead use this non-standard one: */
-  word-break: break-word;
-  /* Adds a hyphen where the word breaks, if supported (No Blink) */
-  -ms-hyphens: auto;
-  -webkit-hyphens: auto;
-  hyphens: auto;
-}
-
-.btn {
-  display: block;
-  display: -webkit-box;
-  cursor: pointer;
-}
-
 .form-control {
   display: flex;
   align-items: center;
@@ -483,10 +788,6 @@ button:not(:disabled),
   cursor: not-allowed;
 }
 
-.form-control:focus-within {
-  color: #007AFF;
-}
-
 input[type=checkbox], input[type=radio] {
   /*Addifnotusingautoprefixer*/
   -webkit-appearance: none;
@@ -494,14 +795,14 @@ input[type=checkbox], input[type=radio] {
   -moz-appearance: none;
        appearance: none;
   /*ForiOS<15*/
-  background-color: #f5f5f5;
+  background-color: currentColor;
   /*Notremovedviaappearance*/
   margin: 0;
   font: inherit;
   color: currentColor;
   height: 2.4rem;
   width: 2.4rem;
-  border: 0.2rem solid #f5f5f5;
+  border: 0.2rem solid currentColor;
   display: grid;
   place-content: center;
 }
@@ -512,7 +813,7 @@ input[type=checkbox]::before, input[type=radio]::before {
   width: 1.2rem;
   transform: scale(0);
   transition: 120ms transform ease-in-out;
-  box-shadow: inset 1em 1em #007AFF;
+  box-shadow: inset 1em 1em #f1f1f1;
   /* Windows High Contrast Mode */
   background-color: CanvasText;
 }
@@ -1018,4 +1319,256 @@ input[type=checkbox]:disabled {
 #footer .copyright {
   width: 100%;
   color: #373737;
-}/*# sourceMappingURL=index.css.map */
+}
+
+.sec {
+  background-color: #181818;
+  border-top: 1rem solid #333;
+  padding: 4rem 0;
+}
+
+.sec-1 .text-sec-1 > div + div {
+  margin-top: 0.8rem;
+}
+.sec-1 .text-sec-1 .sign-up {
+  color: #E30813;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  margin-top: 1.6rem;
+}
+.sec-1 .text-sec-1 .sign-up svg {
+  margin-left: 0.8rem;
+  width: 2rem;
+  height: 2rem;
+}
+.sec-1 .gift-sec-1 {
+  position: relative;
+}
+.sec-1 .gift-sec-1 .layout-pic-gift {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  display: flex;
+}
+.sec-1 .gift-sec-1 .layout-pic-gift > div + div {
+  margin-left: 1.6rem;
+}
+.sec-1 .gift-sec-1 .layout-pic-gift .pic-item {
+  width: 10rem;
+  height: 16rem;
+  background-color: #222222;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease-out;
+  -webkit-transition: transform 0.3s ease-out;
+  -moz-transition: transform 0.3s ease-out;
+  -ms-transition: transform 0.3s ease-out;
+  -o-transition: transform 0.3s ease-out;
+}
+.sec-1 .gift-sec-1 .layout-pic-gift .pic-item:hover {
+  z-index: 10;
+  transform: scale(1.15);
+  -webkit-transform: scale(1.15);
+  -moz-transform: scale(1.15);
+  -ms-transform: scale(1.15);
+  -o-transform: scale(1.15);
+}
+.sec-1 .gift-sec-1 .layout-pic-gift .pic-item:hover .title {
+  opacity: 1;
+  bottom: 1rem;
+}
+.sec-1 .gift-sec-1 .layout-pic-gift .pic-item:hover .pic-btn {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.sec-1 .gift-sec-1 .layout-pic-gift .pic-item .img {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.3019607843);
+}
+.sec-1 .gift-sec-1 .layout-pic-gift .pic-item .img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.sec-1 .gift-sec-1 .layout-pic-gift .pic-item .title {
+  font-weight: bold;
+  position: absolute;
+  bottom: -30px;
+  left: 1rem;
+  width: calc(100% - 2rem);
+  opacity: 0;
+  z-index: 2;
+  line-height: 1.3;
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+}
+.sec-1 .gift-sec-1 .layout-pic-gift .pic-item .pic-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.sec-1 .gift-sec-1 .shadow-gift {
+  width: 350px;
+  height: 45px;
+  position: absolute;
+  left: 50%;
+  bottom: -30px;
+  transform: translateX(-50%);
+  background: radial-gradient(50% 50% at 50% 50%, rgba(255, 136, 85, 0.3) 0%, rgba(211, 70, 9, 0) 100%);
+}
+
+/* *__________ Start popup wish-buy __________ */
+.popup-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  /* From https://css.glass */
+  background: rgba(34, 34, 34, 0);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup-wish-buy {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: #737373;
+  background-color: #222;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 3rem;
+  border-radius: 1rem;
+}
+@media (max-width: 36em) {
+  .popup-wish-buy {
+    padding: 1.2rem;
+  }
+}
+.popup-wish-buy * {
+  width: 100%;
+}
+.popup-wish-buy .wb-xmark {
+  position: absolute;
+  right: 1.5rem;
+  top: -4.5rem;
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+}
+@media (max-width: 36em) {
+  .popup-wish-buy .wb-xmark {
+    top: 1.5rem;
+  }
+}
+.popup-wish-buy .wb-grid {
+  display: grid;
+  grid-template-areas: "pic text1 text1" "h1 h1 label1" "line1 line1 line1" "h2 p1 buyb" "o p2 rentb";
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.4rem;
+}
+@media (max-width: 36em) {
+  .popup-wish-buy .wb-grid {
+    grid-template-areas: "pic pic pic pic" "text1 text1 text1 text1" "h1 h1 label1 label1" "line1 line1 line1 line1" "h2 p2 p2 p1" "rentb rentb buyb buyb";
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.2rem;
+  }
+}
+.popup-wish-buy .wb-grid > p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: right;
+  align-self: center;
+}
+.popup-wish-buy .wb-grid > [class*=h] {
+  align-self: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.popup-wish-buy .wb-grid > a {
+  background-color: #e30813;
+  height: 4.3rem;
+  color: #f5f5f5;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.popup-wish-buy .wb-grid > .wb-pic {
+  grid-area: pic;
+  position: relative;
+  height: 23rem;
+}
+.popup-wish-buy .wb-grid > .wb-pic .pic-item {
+  position: absolute;
+  transform-origin: 7rem 34.5rem;
+  transition: transform 1s ease-out;
+  width: 14rem;
+  border-radius: 2rem;
+  overflow: hidden;
+}
+.popup-wish-buy .wb-grid > .wb-top-text {
+  grid-area: text1;
+}
+@media (max-width: 36em) {
+  .popup-wish-buy .wb-grid > .wb-top-text {
+    padding: 0 2rem;
+  }
+}
+.popup-wish-buy .wb-grid > .wb-top-text > h3 {
+  color: #f1f1f1;
+  margin-bottom: 0.8rem;
+}
+.popup-wish-buy .wb-grid > .wb-h1 {
+  grid-area: h1;
+}
+.popup-wish-buy .wb-grid > .wb-label {
+  grid-area: label1;
+  justify-content: flex-end;
+  white-space: nowrap;
+}
+.popup-wish-buy .wb-grid > .line {
+  grid-area: line1;
+  height: 0.1rem;
+  background-color: #333;
+}
+.popup-wish-buy .wb-grid > .wb-h2 {
+  grid-area: h2;
+}
+.popup-wish-buy .wb-grid > .wb-p1 {
+  grid-area: p1;
+}
+.popup-wish-buy .wb-grid > .wb-p2 {
+  grid-area: p2;
+}
+.popup-wish-buy .wb-grid > .wb-buy__btn {
+  grid-area: buyb;
+}
+.popup-wish-buy .wb-grid > .wb-rent__btn {
+  grid-area: rentb;
+}
+
+/* __________ End popup wish-buy __________ *//*# sourceMappingURL=index.css.map */

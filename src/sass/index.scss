@@ -6,14 +6,13 @@
 
 @import 'mixins';
 
-// Layout & components
-@import url('../css/grid.css');
-@import 'pending';
+@import 'bootstrap';
 @import 'scroll';
-@import 'text';
-@import 'button';
-@import 'input';
-@import 'card-home';
-@import 'header';
-@import 'footer';
-@import 'p-home';
+
+// Layout & components
+@import 'components/input';
+@import 'components/card-home';
+@import 'components/header';
+@import 'components/footer';
+@import 'components/p-home';
+@import 'components/popup';

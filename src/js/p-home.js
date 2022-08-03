@@ -1,5 +1,7 @@
 import * as c from './components.js';
 
+const picGiftEl = document.querySelector('.js-pic-gift');
+
 const giftDb = async () => {
   const res = await fetch('../json/gift.json');
   const movies = await res.json();
@@ -11,8 +13,8 @@ const giftDb = async () => {
       originalTitle: movie.originalTitle,
       idMovie: movie.idMovie,
     }
-    c.picItem.render(movieObj);
+    return c.picItem.render(movieObj);
   }).join('');
-  
+  picGiftEl.innerHTML = html;
 }
 giftDb();

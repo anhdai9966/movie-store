@@ -19,10 +19,16 @@ ul {
   position: relative;
   list-style-type: none;
 }
-
+/* 3 item 5deg */
+/* 2 item 3.33deg */
+/* 4 item 3.33deg */
+.wrapper {
+  transform: rotate(calc(6 * 5deg / 3));
+  transform-origin: calc(140px / 2) calc(230px + 110px);
+}
 li {
   position: absolute;
-  transform-origin: bottom center;
+  transform-origin: calc(140px / 2) calc(230px + 110px);
 }
 .item {
   transition: transform 1s ease-out;
@@ -75,8 +81,9 @@ li:nth-child(6) {
 } */
 
 .image {
-  width: 144px;
+  width: 140px;
   height: 230px;
   background-color: #aeaeb2;
   border: 1px solid #ff2d55;
+  border-radius: 23px;
 }

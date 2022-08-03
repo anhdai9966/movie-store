@@ -1,0 +1,88 @@
+.sec {
+  background-color: $body-bg;
+  border-top: 1rem solid $color-border-top;
+  padding: 4rem 0;
+}
+
+.sec-1 {
+  .text-sec-1 {
+    @include margin-div(top, .8rem);
+    .sign-up {
+      color: $color-primary;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      margin-top: 1.6rem;
+      svg {
+        margin-left: .8rem;
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+  }
+  .gift-sec-1 {
+    position: relative;
+    .layout-pic-gift {
+      width: fit-content;
+      margin: 0 auto;
+      display: flex;
+      @include margin-div(left, 1.6rem);
+      .pic-item {
+        width: 10rem;
+        height: 16rem;
+        background-color: #222222;
+        position: relative;
+        overflow: hidden;
+        @include transition(transform, .3s, ease-out);
+        &:hover {
+          z-index: 10;
+          @include transform (scale(1.15));
+          .title {
+            opacity: 1;
+            bottom: 1rem;
+          }
+          .pic-btn {
+            background-color: rgba(0, 0, 0, 0.3);
+          }
+        }
+        .img {
+          width: 100%;
+          height: 100%;
+          background-color: $pending-bg;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+        .title {
+          font-weight: bold;
+          position: absolute;
+          bottom: -30px;
+          left: 1rem;
+          width: calc(100% - 2rem);
+          opacity: 0;
+          z-index: 2;
+          line-height: 1.3;
+          @include transition(all, .3s, ease-out);
+        }
+        .pic-btn {
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+        }
+      }
+    }
+    .shadow-gift {
+      width: 350px;
+      height: 45px;
+      position: absolute;
+      left: 50%;
+      bottom: -30px;
+      transform: translateX(-50%);
+      background: radial-gradient(50% 50% at 50% 50%, rgba(255, 136, 85, 0.3) 0%, rgba(211, 70, 9, 0) 100%);
+    }
+  }
+}

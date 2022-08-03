@@ -59,7 +59,8 @@ $fs2: 1.375em;
   $vw: $vw - 0.3vw !global;
   $fs2: $fs2 - 0.025em !global;
 }
-p {
+p, .p {
+  font-size: 1.6rem;
   margin: 0;
 }
 ol,

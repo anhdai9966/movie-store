@@ -12,12 +12,3 @@ node_modules/
 .vscode/
 doc/
 api/
-assets/
-components/
-pages/
-recycle/
-screens/
-services/
-shared/
-utils/
-libs/

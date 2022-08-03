@@ -34,22 +34,23 @@ const listName = ['now_playing', 'popular', 'top_rated', 'upcoming'];
 
 const fetchAPI = async () => {
   try {
-    const res = await fetch('https://62c46f2c7d83a75e39f9dad7.mockapi.io/api/header-movies');
+    const res = await fetch('https://62c46f2c7d83a75e39f9dad7.mockapi.io/api/header-moviess');
     const movies = await res.json();
-    const html = await movies
-      .map(movie => {
-        let mov = {
-          backdropPath: movie.backdropPath,
-          posterPath: movie.posterPath,
-          title: movie.title,
-          originalTitle: movie.originalTitle,
-          idMovie: movie.idMovie,
-        };
-        return picItem.render(mov);
-      })
-      .join('');
-    rowGridEl[0].innerHTML = html;
-    rowGridEl[1].innerHTML = html;
+    console.log(res, movies);
+    // const html = await movies
+    //   .map(movie => {
+    //     let mov = {
+    //       backdropPath: movie.backdropPath,
+    //       posterPath: movie.posterPath,
+    //       title: movie.title,
+    //       originalTitle: movie.originalTitle,
+    //       idMovie: movie.idMovie,
+    //     };
+    //     return picItem.render(mov);
+    //   })
+    //   .join('');
+    // rowGridEl[0].innerHTML = html;
+    // rowGridEl[1].innerHTML = html;
   } catch (error) {
     console.log(error);
     return { Error: error.message };
@@ -86,7 +87,7 @@ const mockapi = async (movie) => {
   });
 }
 
-// fetchAPI();
+fetchAPI();
 
 const headerShadow = document.querySelector('.header-shadow');
 const headerText = document.querySelector('.header-text');
@@ -102,5 +103,5 @@ headerText.addEventListener('mouseleave', () => {
   headerShadow.style.opacity = '0';
   setTimeout(() => {
     headerShadow.style.visibility = 'hidden';
-  }, 250);
+  }, 200);
 });

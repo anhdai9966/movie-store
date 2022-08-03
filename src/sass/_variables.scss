@@ -18,7 +18,7 @@ $text-gutter-x: 1.6rem;
 
 $part-gutter-y: .8rem;
 
-$form-control-color: #007AFF;
+$form-control-color: #f1f1f1;
 $form-control-disabled: #959495;
 
 $input-bg-secondary: #f5f5f5;
@@ -32,8 +32,8 @@ $btn-bg-trailer: rgba(0, 0, 0, 0.7);
 
 $pending-bg: #ffffff4d;
 $pending-delay: .2s;
-$pending-text-header: 3rem;
-$pending-text-paragraph: 2.4rem;
+$pending-h: 3rem;
+$pending-p: 2.4rem;
 
 $z-index-card-home-hover: 3;
 
@@ -52,3 +52,40 @@ $footer-icon: 2.4rem;
 $footer-color-secondary: #373737;
 
 $slide-width: 1760px;
+
+$color-primary: #E30813;
+$color-border-top: #333;
+
+$bs-gap: 2.4rem;
+$bs-gutter-x: calc($bs-gap / 2);
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 36em, // 576px,
+  md: 48em, // 768px,
+  lg: 62em, // 992px,
+  xl: 75em, // 1200px,
+  xxl: 87.5em, // 1400px
+) !default;
+
+$container-max-widths: (
+  sm: 54rem,
+  md: 72rem,
+  lg: 96rem,
+  xl: 114rem,
+  xxl: 132rem,
+) !default;
+
+$sm: 36em; // 576px,
+$md: 48em; // 768px,
+$lg: 62em; // 992px,
+$xl: 75em; // 1200px,
+$xxl: 87.5em; // 1400px
+
+$variable-prefix: bs- !default;
+$grid-gutter-width: 1.5rem !default;
+$container-padding-x: $grid-gutter-width * .5 !default;
+$enable-grid-classes: true !default;
+
+$enable-cssgrid: true !default;
+$grid-columns: 12 !default;
