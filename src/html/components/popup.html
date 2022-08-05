@@ -9,8 +9,11 @@
   </head>
   <body>
     <div class="container">
-      <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/xeg0UhMmzSalvyK7kvhTHcKXIf8.jpg" alt="" />
+      <!-- <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/xeg0UhMmzSalvyK7kvhTHcKXIf8.jpg" alt="" /> -->
+
+      <!-- *__________ Start popup wish-buy __________ -->
       <div class="popup-overlay">
+      
         <div class="popup-wish-buy">
           
           <div class="wb-grid">
@@ -52,7 +55,7 @@
             <a href="#" class="btn wb-rent__btn">Thuê: 80.000 đ</a>
           </div>
 
-          <div class="wb-xmark js-wb-cancel">
+          <div class="wb-xmark__icon js-wb-cancel">
             <svg>
               <use href="../../imgs/icons.svg#icon-xmark"></use>
             </svg>
@@ -60,6 +63,50 @@
           
         </div>
       </div>
+      <!-- __________ End popup wish-buy __________ -->
+
+      <!-- *__________ Start wish-buy-done __________ -->
+      <div class="popup-overlay">
+
+        <div class="popup-wish-buy-done">
+          
+          <div class="wb-grid">
+  
+            <div class="wb-pic">
+              <div class="pic-item">
+                <img src="https://image.tmdb.org/t/p/w500/cjb9NXJvisfh5fmgX9rerxZfFrJ.jpg" alt="movie1" />
+              </div>
+              <div class="pic-item">
+                <img src="https://image.tmdb.org/t/p/w500/qVdpItrjj0dSNGXE9CAaRIGSti2.jpg" alt="movie2" />
+              </div>
+              <div class="pic-item">
+                <img src="https://image.tmdb.org/t/p/w500/xeg0UhMmzSalvyK7kvhTHcKXIf8.jpg" alt="movie3" />
+              </div>
+            </div>
+  
+            <div class="wb-top-text text-center text-left-sm">
+              <h3 class="h3">Mua thành công</h3>
+              <p class="p">Các nội dung đã mua sẽ phát trên các thiết bị tương thích.</p>
+            </div>
+  
+            <div class="wb-done__icon">
+              <svg>
+                <use href="../../imgs/icons.svg#icon-done"></use>
+              </svg>
+            </div>
+  
+            <a href="#" class="btn wb-myVideo__btn">Phim của tôi</a>
+          </div>
+  
+          <div class="wb-xmark__icon js-wb-cancel">
+            <svg>
+              <use href="../../imgs/icons.svg#icon-xmark"></use>
+            </svg>
+          </div>
+          
+        </div>
+      </div>
+      <!-- __________ End wish-buy-done __________ -->
     </div>
   </body>
 </html>

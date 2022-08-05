@@ -174,3 +174,51 @@ $breakpoints: $grid-breakpoints;
   display: -webkit-box;
   cursor: pointer;
 } 
+
+.gradient-loader {
+  width: 100%;
+  height: 100%;
+  flex-shrink: 0;
+  border-radius: 4px;
+  -webkit-animation-duration: 1.25s;
+  animation-duration: 1.25s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-name: i8-gradient-loader__blink;
+  animation-name: i8-gradient-loader__blink;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  background: #a9a9a9;
+  background: linear-gradient(90deg,rgba(0,0,0,.1) 10%,rgba(0,0,0,.05) 18%,rgba(0,0,0,.1) 33%);
+  background: linear-gradient(90deg,var(--gradient-loader-background-color,rgba(0,0,0,.1)) 10%,rgba(0,0,0,.05) 18%,var(--gradient-loader-background-color,rgba(0,0,0,.1)) 33%);
+  position: relative;
+  background-size: 1000px 104px;
+}
+
+@each $name, $width in $grid-breakpoints {
+  @if $width == 0 {
+    .show {
+      display: block;
+    }
+    .hide {
+      display: none;
+    }
+  } @else {
+    .show-#{$name} {
+      @extend .show;
+    }
+    .hide-#{$name} {
+      @extend .hide;
+    }
+    @media (min-width: $width) {
+      .show-#{$name} {
+        display: none;
+      }
+      .hide-#{$name} {
+        display: block;
+      }
+    }
+  }
+}

@@ -18,7 +18,12 @@ body {
   -webkit-text-size-adjust: 100%; // 3
   -webkit-tap-highlight-color: rgba(#000, 0); // 4
 }
-p, li, h1, h2, h3, h4 {
+p,
+li,
+h1,
+h2,
+h3,
+h4 {
   overflow-wrap: break-word;
   /* Optional, not supported for all languages */
   -webkit-hyphens: auto;
@@ -35,11 +40,13 @@ $fs: 2.5em;
 $vw: 1.5vw;
 $fs2: 1.375em;
 @for $h from 1 through 6 {
-  h#{$h}, .h#{$h} {
+  h#{$h},
+  .h#{$h} {
     @extend %head-placehorder;
   }
   @if ($h < 5) {
-    h#{$h}, .h#{$h} {
+    h#{$h},
+    .h#{$h} {
       font-size: calc(#{$fs2} + #{$vw});
       @media (min-width: 75em) {
         font-size: #{$fs};
@@ -51,7 +58,8 @@ $fs2: 1.375em;
       $fs2: $fs2 - 0.025em !global;
     }
   } @else {
-    h#{$h}, .h#{$h} {
+    h#{$h},
+    .h#{$h} {
       font-size: #{$fs};
     }
   }
@@ -59,7 +67,8 @@ $fs2: 1.375em;
   $vw: $vw - 0.3vw !global;
   $fs2: $fs2 - 0.025em !global;
 }
-p, .p {
+p,
+.p {
   font-size: 1.6rem;
   margin: 0;
 }
@@ -91,19 +100,13 @@ a {
 a:hover {
   color: inherit;
 }
-a:not([href]):not([class]), a:not([href]):not([class]):hover {
+a:not([href]):not([class]),
+a:not([href]):not([class]):hover {
   color: inherit;
   text-decoration: none;
 }
-img {
-  max-width: 100%;
-}
-svg {
-  width: 100%;
-  height: 100%;
-  fill: currentColor;
-}
-use{
+
+use {
   width: 100%;
   height: 100%;
 }
@@ -129,11 +132,19 @@ textarea {
   border: 0;
   color: inherit;
 }
+::placeholder,
+:-ms-input-placeholder,
+::-webkit-input-placeholder {
+  color: inherit;
+}
 button,
 select {
   text-transform: none;
 }
-[role=button] {
+button {
+  background-color: transparent;
+}
+[role='button'] {
   cursor: pointer;
 }
 select {
@@ -143,19 +154,35 @@ select:disabled {
   opacity: 1;
 }
 button,
-[type=button],
-[type=reset],
-[type=submit] {
+[type='button'],
+[type='reset'],
+[type='submit'] {
   -webkit-appearance: button;
   border-radius: 0;
 }
 button:not(:disabled),
-[type=button]:not(:disabled),
-[type=reset]:not(:disabled),
-[type=submit]:not(:disabled) {
+[type='button']:not(:disabled),
+[type='reset']:not(:disabled),
+[type='submit']:not(:disabled) {
   cursor: pointer;
 }
 ::-moz-focus-inner {
   padding: 0;
   border-style: none;
+}
+// my
+img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+svg {
+  width: 2.4rem;
+  height: 2.4rem;
+  fill: currentColor;
+}
+button {
+  padding: 0;
+  display: flex;
+  font-weight: inherit;
 }

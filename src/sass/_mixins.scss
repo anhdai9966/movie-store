@@ -68,6 +68,13 @@
   bottom: 0;
   right: 0;
 }
+@mixin fixed-full() {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
 @mixin absolute-center() {
   position: absolute;
   left: 50%;

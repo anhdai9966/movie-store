@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      box-sizing: border-box;
+    }
+    button {
+      font-size: inherit;
+      color: inherit;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .pill {
+      padding: 0.6em 1.2em;
+      margin: 0.25em;
+      border-radius: 1.1em;
+      background: #dddddd;
+    }
+
+    .pill:not(.pill--selected):hover {
+      background: #cccccc;
+    }
+
+    .pill--selected {
+      background: #009578;
+      color: #ffffff;
+    }
+  </style>
+</head>
+<body>
+  <button class="pill" type="button">24 Hours</button>
+  <button class="pill pill--selected" type="button">Top Rated</button>
+</body>
+</html>

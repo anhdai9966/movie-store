@@ -10,9 +10,10 @@
 @import 'scroll';
 
 // Layout & components
+@import 'components/header';
+@import 'components/banner';
 @import 'components/input';
 @import 'components/card-home';
-@import 'components/header';
 @import 'components/footer';
 @import 'components/p-home';
 @import 'components/popup';

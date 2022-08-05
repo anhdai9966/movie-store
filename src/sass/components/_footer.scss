@@ -3,10 +3,15 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  column-gap: 1.6rem;
 }
-#footer {
-  padding: 3.2rem 0;
+.footer {
+  padding-block: 3rem;
   @include margin-div(top, 1.6rem);
+  a {
+    display: block;
+    cursor: pointer;
+  }
   a:hover {
     color: #FF3B30;
     text-decoration: underline;
@@ -14,60 +19,60 @@
     text-decoration-color: #FF3B30;
     -webkit-text-decoration-style: wavy;
     text-decoration-style: wavy;
-    &.icon-social-item {
+    &.social-icon__link {
       transform: scale(1.8);
     }
   }
-  .icon-social {
+  &__icon {
     width: 100%;
     padding: 1.1rem 0;
     @extend %flex-center;
-    @include margin-div(left, 4rem);
-    .icon-social-item {
+    > a + a {
+      margin-left: 2.4rem;
+    }
+    .social-icon__link {
       width: $footer-icon;
       height: $footer-icon;
       transition: transform .3s ease-out;
-    }
-    .social:hover {
-      &:nth-child(1) a{
-        color: #4267B2
-      }
-      &:nth-child(2) a{
-        color: #FF9500;
-      }
-      &:nth-child(3) a{
-        color: #6441a5;
-      }
-      &:nth-child(4) a{
-        color: #1DA1F2
-      }
-      &:nth-child(5) a{
-        color: #FF0000;
+      &:hover {
+        &:nth-child(1){
+          color: #4267B2
+        }
+        &:nth-child(2){
+          color: #FF9500;
+        }
+        &:nth-child(3){
+          color: #6441a5;
+        }
+        &:nth-child(4){
+          color: #1DA1F2
+        }
+        &:nth-child(5){
+          color: #FF0000;
+        }
       }
     }
   }
-  .navigation {
+  &__nav {
     width: 100%;
     padding: 1.2rem 0;
     @extend %flex-center;
-    @include margin-div(left, 1.6rem);
-    + .navigation {
+    + .nav {
       margin-top: 0;
     }
   }
-  .movie-store {
+  &__moviestore {
     width: 100%;
     padding: 1.2rem 0;
     @extend %flex-center;
-    @include margin-div(left, 1.6rem);
-    + .movie-store {
+    + &__moviestore {
       margin-top: 0;
     }
-    .logo {
+    .ms-logo {
       height: 2.4rem;
     }
   }
-  .copyright {
+  &__copyright {
     width: 100%;
     @extend %flex-center;
     color: $footer-color-secondary;
