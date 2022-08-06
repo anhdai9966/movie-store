@@ -7,7 +7,27 @@
     <title>Document</title>
     <link rel="stylesheet" href="../css/index.css" />
   </head>
+  <style>
+    .box-test {
+      width: 300px;
+      height: 300px;
+      margin-block: 20px;
+      background-color: #FF3B30;
+    }
+    .box-content {
+      width: 500px;
+      height: 500px;
+      background-color: #FF9500;
+    }
+  </style>
   <body>
     <div class="box" style="height: 2000px"></div>
+
+    <div class="box-test scroll-x">
+      <div class="box-content"></div>
+    </div>
+    <div class="box-test scroll-y">
+      <div class="box-content"></div>
+    </div>
   </body>
 </html>

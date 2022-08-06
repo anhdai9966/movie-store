@@ -1,0 +1,274 @@
+%absolute-full {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+$hover-delay: 0.3s;
+$hover-duration: 0.3s;
+$card-img-height: --card-img-height;
+$card-img-width: --card-img-width;
+
+.home__card {
+  .card__container {
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    @media (max-width: $sm) {
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      --scroll-width-x: 1rem;
+      &::-webkit-scrollbar-thumb {
+        background-image: $scroll-thumb-bg-x;
+      }
+    }
+    @media (min-width: $sm) {
+      max-width: 54rem;
+    }
+    @media (min-width: $md) {
+      max-width: 72rem;
+    }
+    @media (min-width: $lg) {
+      max-width: 96rem;
+    }
+    @media (min-width: $xl) {
+      max-width: 114rem;
+    }
+    .card__wrapper {
+      width: fit-content;
+      @media (min-width: $sm) {
+        width: 100%;
+      }
+      .card__list {
+        width: 100%;
+        display: flex;
+        flex-flow: row nowrap;
+        > * {
+          scroll-snap-align: start;
+          scroll-snap-stop: always;
+          padding-inline: 12px;
+        }
+        .card__item {
+          position: relative;
+          @media (min-width: $sm) {
+            &:hover {
+              > .card__image {
+                width: 24.6rem;
+                > .poster__img {
+                  // display: none;
+                  visibility: hidden;
+                  opacity: 0;
+                }
+                > .card__hover {
+                  // display: block;
+                  visibility: visible;
+                  opacity: 1;
+                  > .card-hover__info {
+                    > .movie__link {
+                      opacity: 1;
+                    }
+                  }
+                }
+              }
+            }
+          }
+          @media (min-width: $md) {
+            &:hover {
+              > .card__image {
+                width: 33.6rem;
+              }
+            }
+          }
+          @media (min-width: $lg) {
+            &:hover {
+              > .card__image {
+                width: 36rem;
+              }
+            }
+          }
+          @media (min-width: $xl) {
+            &:hover {
+              > .card__image {
+                width: 35.6rem;
+              }
+            }
+          }
+          .card__link {
+            font-weight: bold;
+          }
+          .card__image {
+            #{$card-img-height}: 16.65rem;
+            height: var($card-img-height);
+            #{$card-img-width}: 11.1rem;
+            width: var($card-img-width);
+            border-radius: 1rem;
+            overflow: hidden;
+            transition: all $hover-duration ease $hover-delay;
+            @media (min-width: $sm) {
+              #{$card-img-height}: 23.4rem;
+              height: var($card-img-height);
+              #{$card-img-width}: 15.6rem;
+              width: var($card-img-width);
+            }
+            @media (min-width: $md) {
+              #{$card-img-height}: 23.4rem;
+              height: var($card-img-height);
+              #{$card-img-width}: 15.6rem;
+              width: var($card-img-width);
+            }
+            @media (min-width: $lg) {
+              #{$card-img-height}: 25.2rem;
+              height: var($card-img-height);
+              #{$card-img-width}: 16.8rem;
+              width: var($card-img-width);
+            }
+            @media (min-width: $xl) {
+              #{$card-img-height}: 24.9rem; // 1.5
+              height: var($card-img-height);
+              #{$card-img-width}: 16.6rem;
+              width: var($card-img-width);
+            }
+            .poster__img {
+              width: 100%;
+              height: 100%;
+              visibility: visible;
+              opacity: 1;
+              transition: all $hover-duration $hover-delay;
+            }
+            .card__hover {
+              width: 100%;
+              height: 100%;
+              visibility: hidden;
+              opacity: 0;
+              transition: all $hover-duration $hover-delay;
+              position: relative;
+              top: calc(-1 * var($card-img-height));
+              left: 0;
+              .backdrop__img {
+                width: 100%;
+                height: 100%;
+              }
+              .card__overlay {
+                @extend %absolute-full;
+                background-color: rgba($color: #000, $alpha: 0.1);
+                background-image: radial-gradient(circle, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 100%);
+              }
+              .wishlist__btn {
+                position: absolute;
+                top: 1rem;
+                right: 1rem;
+                .wishlist__icon {
+                  width: 3rem;
+                  height: 3rem;
+                }
+              }
+              .card-hover__info {
+                position: absolute;
+                left: 1rem;
+                bottom: 1rem;
+                width: calc(100% - 2rem);
+                > * {
+                  margin-top: 0.8rem;
+                }
+                .movie__link {
+                  opacity: 0;
+                  transition: opacity calc($hover-duration - 0.1s) $hover-delay;
+                  @include text-truncate(2);
+                }
+                .card-hover__para {
+                  @include text-truncate();
+                }
+                .trailer__link {
+                  display: inline-block;
+                  padding: 0.8rem 2rem;
+                  background-color: rgba($color: #000000, $alpha: 0.6);
+                  border-radius: 2rem;
+                }
+              }
+            }
+          }
+          .card__info {
+            margin-top: 1.6rem;
+            #{$card-img-width}: 11.1rem;
+            width: var($card-img-width);
+            transition: all $hover-duration $hover-delay;
+            @media (min-width: $sm) {
+              #{$card-img-width}: 15.6rem;
+              width: var($card-img-width);
+            }
+            @media (min-width: $md) {
+              #{$card-img-width}: 15.6rem;
+              width: var($card-img-width);
+            }
+            @media (min-width: $lg) {
+              #{$card-img-width}: 16.8rem;
+              width: var($card-img-width);
+            }
+            @media (min-width: $xl) {
+              #{$card-img-width}: 16.6rem;
+              width: var($card-img-width);
+            }
+            .movie__link {
+              @include text-truncate(2);
+            }
+            .card__para {
+              @include text-truncate();
+              @media (max-width: $md) {
+                font-size: 1.5rem;
+              }
+              @media (max-width: $sm) {
+                font-size: 1.4rem;
+              }
+              > span ~ span {
+                margin-left: 1rem;
+              }
+              .star__icon {
+                display: inline-block;
+                width: 1.5rem;
+                height: 1.5rem;
+                margin-bottom: -3px;
+                fill: #ffcc00;
+              }
+            }
+          }
+          .card-mobile__link {
+            display: none;
+            @extend %absolute-full;
+            @media (max-width: $sm) {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+
+    .control-right__btn,
+    .control-left__btn {
+      position: absolute;
+      top: 37%;
+      transform: translateY(-50%);
+      opacity: .7;
+      &:hover {
+        opacity: 1;
+      }
+      @media (max-width: $sm) {
+        display: none;
+      }
+      .control-right__icon,
+      .control-left__icon {
+        width: 5rem;
+        height: 5rem;
+        fill: $color-while;
+      }
+    }
+    .control-left__btn {
+      left: 0;
+    }
+    .control-right__btn {
+      right: 0;
+    }
+  }
+}

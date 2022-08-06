@@ -1,66 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="../../css/index.css">
-</head>
-<body>
-  <header id="header">
-    <div class="top">
-      <div class="container">
-        <div class="header-top">
-          <a href="#" class="btn logo">
-            <img src="../../imgs/logo.png" alt="movie store">
-          </a href="#">
-  
-          <button class="btn login-btn">Đăng nhập</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="header-main">
-      <!-- <div class="pending-bg"></div> -->
-      <div class="header-shadow"></div>
-
-      <div class="header-text">
-        <div class="h1 title">Xem phim không giới hạn và còn hơn thế nữa.</div>
-        <div class="h5">Xem ở bất cứ đâu. Hủy bất cứ lúc nào.</div>
-        <p>Bạn đã sẵn sàng xem chưa? Nhập email của bạn để tạo hoặc bắt đầu lại với tư cách thành viên.</p>
-        <form class="form-input">
-          <input type="text" placeholder="Địa chỉ email của bạn" class="email-input">
-          <button class="get-started h5">Bắt đầu
-            <svg>
-              <use href='../../imgs/icons.svg#icon-right'></use>
-            </svg>
-          </button>
-        </form>
-      </div>
-
-      <div class="main-wrap">
-        <div class="main-content">
-          <div class="slide-container">
-            <div class="slide-wrap">
-              <div class="header-layout">
-                <div class="row-grid">
-                  <!-- render code -->
-                </div>
-                <div class="row-grid">
-                  <!-- render code -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/index.css" />
+  </head>
+  <body>
+    <section class="header__banner">
+      <div class="banner__bg">
+        <div class="background__3d">
+          <div class="bg-3d__rotate">
+            <div class="bg-slide__container">
+              <div class="bg-slide__animation">
+                <div class="bg__grid">
+                  <div class="bg-grid__item">
+                    <div class="pic__item">
+                      <!-- <img src="#" class="movie__img" loading="lazy"> -->
+                      <div class="pending"></div>
+                      <h6 class="movie__title">Thế giới khủng long</h6>
+                      <a href="#" class="movie__link"></a>
+                    </div>
+                    <!-- ... render code -->
+                  </div>
+                  <div class="bg-grid__item">
+                    <div class="pic__item">
+                      <!-- <img src="#" class="movie__img" loading="lazy"> -->
+                      <div class="pending"></div>
+                      <h6 class="movie__title">Thế giới khủng long</h6>
+                      <a href="#" class="movie__link"></a>
+                    </div>
+                    <!-- ... render code -->
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      
-    </div>
-  </header>
 
+      <div class="container">
+        <div class="banner__content">
+          <div class="banner__text">
+            <h1 class="banner__title">Xem phim không giới hạn và còn hơn thế nữa.</h1>
+            <h3 class="banner__subtitle">Xem ở bất cứ đâu. Hủy bất cứ lúc nào.</h3>
+          </div>
   
+          <div class="banner__signup">
+            <h6 class="signup__title">
+              Bạn đã sẵn sàng xem chưa? Nhập email của bạn để tạo hoặc bắt đầu lại với tư cách thành viên.
+            </h6>
+            <form class="banner__form">
+              <label class="email-input">
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  class="email__input"
+                  maxlength="50"
+                  onblur="blurPlaceholder()"
+                  onfocus="focusPlaceholder()"
+                />
+                <label for="email" class="input__placeholder">Địa chỉ email</label>
+              </label>
+              <button class="signup__btn">
+                <span>Bắt đầu</span>
+                <svg class="signup__icon">
+                  <use href="../../imgs/icons.svg#icon-right"></use>
+                </svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <script type="module" src="../../js/header.js"></script>
-</body>
+    <script src="../../js/banner.js"></script>
+  </body>
 </html>

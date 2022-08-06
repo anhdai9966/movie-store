@@ -1,180 +1,72 @@
-$header-bg: #181818;
-$header-bg-btn: #e30813;
-$header-height: 6.4rem;
-$header-padding: 1.2rem;
-$header-round-btn: 1rem;
-$header-pading-btn-login: 0.5rem;
-$header-height-main: 69.6rem;
-
-#header {
-  width: 100%;
-  .top {
-    width: 100%;
-    background-color: $header-bg;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 90%);
+.header__banner {
+  max-width: 1920px;
+  margin: 0 auto;
+  position: relative;
+  background-color: $color-tertiary;
+  text-align: center;
+  .banner__bg {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 10;
-    .header-top {
-      width: 100%;
-      height: $header-height;
-      padding: $header-padding;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      .logo {
-        height: $header-logo-height;
-        img {
-          height: 100%;
-        }
-      }
-      .login-btn {
-        background-color: $header-bg-btn;
-        border-radius: $header-round-btn;
-        font-weight: bold;
-        @include padding-btn($header-pading-btn-login);
-      }
-    }
-  }
-  .header-main {
-    position: relative;
-    max-width: 1920px;
-    margin: 0 auto;
-    height: $header-height-main;
-    max-height: $header-height-main;
+    bottom: 0;
+    right: 0;
     overflow: hidden;
     perspective: 2000px;
     perspective-origin: -235px 840px;
-    .header-shadow {
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      z-index: 1;
-      background: linear-gradient(0deg, rgba(0, 0, 0, 0.78) 0%, rgba(0, 0, 0, 0.43) 50.52%, rgba(0, 0, 0, 0.76) 100%);
-      opacity: 0;
-      transition: opacity 0.5s;
-      visibility: hidden;
-    }
-    .header-text {
-      padding: 1rem 0;
-      text-align: center;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 3;
-      @include margin-div(top, 1.6rem);
-      > p {
-        margin-top: 0.8rem;
-      }
-      .title {
-        font-size: 6rem;
-        font-weight: bolder;
-      }
-      .form-input {
-        max-width: 76rem;
-        margin: 3.8rem auto 0;
-        display: flex;
-        justify-self: center;
-        overflow: hidden;
-        @include border-radius(1rem);
-        .email-input {
-          flex-grow: 1;
-          @include padding-btn(0.8rem);
-        }
-        .get-started {
-          background-color: #e30813;
-          @include padding-btn(1rem);
-          display: flex;
-          align-items: center;
-          svg {
-            margin-left: 0.8rem;
-            width: 2rem;
-            height: 2rem;
-          }
-        }
-      }
-    }
-    .main-wrap {
+    .background__3d {
       transform-style: preserve-3d;
       position: absolute;
       top: -70px;
       left: -310px;
-      @include transform(scale(1.08));
-      .main-content {
+      transform: scale(1.08);
+      .bg-3d__rotate {
         position: absolute;
-        @include transform(rotateY(320deg) rotateZ(20deg));
-        .slide-container {
-          width: $slide-width;
-          height: 990px;
+        transform: rotateY(320deg) rotateZ(20deg);
+        .bg-slide__container {
+          width: 1760px; // 10rem * 16 + 1rem * 16
+          height: 950px;
           overflow: hidden;
-          .slide-wrap {
-            width: 100%;
-            height: 100%;
+          .bg-slide__animation {
             animation: tranX 60s linear infinite;
-            -webkit-animation: tranX 60s linear infinite;
-            // animation-play-state: running;
-            // transition: animation-play-state .5s;
-            // &:hover {
-            // animation-play-state: paused;
-            // }
-            .header-layout {
+            .bg__grid {
               width: fit-content;
               display: flex;
-              // overflow: hidden;
-              .row-grid {
-                padding: 0 0.5rem;
+              .bg-grid__item {
                 display: grid;
-                grid-template-columns: repeat(16, 1fr);
+                grid-template-columns: repeat(16, 10rem);
+                grid-template-rows: repeat(5, 18rem);
                 gap: 1rem;
-                .pic-item {
-                  width: 10rem;
-                  height: 19rem;
-                  background-color: #222222;
+                padding-inline: .5rem;
+                .pic__item {
                   position: relative;
                   overflow: hidden;
-                  @include transition(transform, 0.3s, ease-out);
+                  background-color: #AEAEB2;
+                  text-align: start;
+                  transition: transform .3s;
                   &:hover {
-                    z-index: 10;
-                    @include transform(scale(1.15));
-                    .title {
+                    transform: scale(1.07);
+                    .movie__title {
                       opacity: 1;
                       bottom: 1rem;
                     }
-                    .pic-btn {
-                      background-color: rgba(0, 0, 0, 0.3);
-                    }
                   }
-                  .img {
-                    width: 100%;
-                    height: 100%;
-                    background-color: $pending-bg;
-                    img {
-                      width: 100%;
-                      height: 100%;
-                      object-fit: cover;
-                    }
-                  }
-                  .title {
-                    font-weight: bold;
+                  .movie__title {
+                    @include text-truncate(3);
+                    padding-inline: 1rem;
                     position: absolute;
-                    bottom: -30px;
-                    left: 1rem;
-                    width: calc(100% - 2rem);
+                    left: .5rem;
+                    bottom: -50%;
                     opacity: 0;
-                    z-index: 2;
-                    line-height: 1.3;
-                    @include transition(all, 0.3s, ease-out);
+                    transition: bottom .3s;
                   }
-                  .pic-btn {
+                  .movie__link {
+                    display: block;
                     position: absolute;
                     top: 0;
                     left: 0;
                     bottom: 0;
                     right: 0;
+                    cursor: pointer;
                   }
                 }
               }
@@ -184,13 +76,130 @@ $header-height-main: 69.6rem;
       }
     }
   }
+  .banner__content {
+    padding-block: 20rem 18rem;
+    max-width: 95rem;
+    margin: 0 auto;
+    @media (max-width: $xl) {
+      max-width: 71rem;
+    }
+    @media (max-width: $lg) {
+      max-width: 53rem;
+    }
+    @media (max-width: $md) {
+      max-width: 50rem;
+      padding-block: 12rem 10rem;
+    }
+    .banner__text {
+      padding-inline: 1rem;
+      .banner__title {
+        font-size: 6rem;
+        font-weight: bolder;
+        padding-inline: 6rem;
+        @media (max-width: $xl) {
+          padding-inline: 5rem;
+          font-size: 4.8rem;
+        }
+        @media (max-width: $lg) {
+          padding-inline: 4rem;
+          font-size: 3.4rem;
+        }
+        @media (max-width: $md) {
+          font-size: 3rem;
+        }
+        @media (max-width: $sm) {
+          font-size: 2.8rem;
+        }
+      }
+      .banner__subtitle {
+        padding-block: 1.6rem;
+        @media (max-width: $lg) {
+          font-size: 1.8rem;
+        }
+      }
+    }
+    .banner__signup {
+      padding-inline: 1rem;
+      .signup__title {
+        margin-bottom: 2rem;
+        padding-inline: 1rem;
+      }
+      .banner__form {
+        max-width: 65rem;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @media (max-width: $md) {
+          align-items: stretch;
+          flex-direction: column;
+          row-gap: 2rem;
+        }
+        .email-input {
+          display: block;
+          position: relative;
+          flex-grow: 1;
+          .email__input {
+            display: block;
+            width: 100%;
+            height: 4.8rem;
+            padding-inline: 2rem;
+            padding-block: 1.8rem .8rem;
+
+            color: $color-tertiary;
+            background: $color-while;
+
+            border-top-left-radius: 1rem;
+            border-bottom-left-radius: 1rem;
+            @media (max-width: $md) {
+              border-radius: 1rem;
+            }
+          }
+          .input__placeholder {
+            color: #666;
+            font-weight: 500;
+            position: absolute;
+            top: 1.2rem;
+            left: 2rem;
+            transition: top .3s ease;
+          }
+        }
+        .signup__btn {
+          height: 4.8rem;
+          width: 15rem;
+
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          column-gap: 1rem;
+
+          color: $color-while;
+          background-color: $color-primary;
+
+          border-top-right-radius: 1rem;
+          border-bottom-right-radius: 1rem;
+
+          font-size: 2rem;
+          font-weight: bold;
+          @media (max-width: $md) {
+            border-radius: 1rem;
+            align-self: center;
+          }
+          .signup__icon {
+            width: 1.5rem;
+            height: 1.5rem;
+          }
+        }
+      }
+    }
+  }
 }
 
 @keyframes tranX {
   0% {
-    @include transform(translateX(0));
+    transform: translateX(0);
   }
   100% {
-    @include transform(translateX(#{-$slide-width}));
+    transform: translateX(-1760px);
   }
 }
