@@ -65,7 +65,7 @@
     width: 100%;
     padding: 1.2rem 0;
     @extend %flex-center;
-    + &__moviestore {
+    + .footer__moviestore {
       margin-top: 0;
     }
     .ms-logo {

@@ -8,55 +8,57 @@ const cardLists = cardWrapper.querySelectorAll('.card__list');
 /* *__________ Start render card item __________ */
 
 const cardItemHTML = /*html*/ `
-  <div class="card__item">
-  <div class="card__image">
-    <img
-      src="https://www.themoviedb.org/t/p/w220_and_h330_face/y4SQ2dJ1y2LBUnxTH7hCe8sr29c.jpg"
-      alt="Minions: Sự Trỗi Dậy của Gru"
-      class="card__img poster__img"
-      loading="lazy"
-    />
-    <div class="card__hover">
-      <img
-        src="https://www.themoviedb.org/t/p/w533_and_h300_bestv2/jRss224yETAKKzqrOyudQo5ayUd.jpg"
-        alt="Minions: Sự Trỗi Dậy của Gru"
-        class="backdrop__img"
-        loading="lazy"
-      />
+  <div class="card__list">
+    <div class="card__item">
+      <div class="card__image">
+        <img
+          src="https://www.themoviedb.org/t/p/w220_and_h330_face/y4SQ2dJ1y2LBUnxTH7hCe8sr29c.jpg"
+          alt="Minions: Sự Trỗi Dậy của Gru"
+          class="card__img poster__img"
+          loading="lazy"
+        />
+        <div class="card__hover">
+          <img
+            src="https://www.themoviedb.org/t/p/w533_and_h300_bestv2/jRss224yETAKKzqrOyudQo5ayUd.jpg"
+            alt="Minions: Sự Trỗi Dậy của Gru"
+            class="backdrop__img"
+            loading="lazy"
+          />
 
-      <div class="card__overlay"></div>
+          <div class="card__overlay"></div>
 
-      <button class="card__btn wishlist__btn card__btn--wishlist">
-        <svg class="card__icon wishlist__icon">
-          <use href="../../imgs/icons.svg#icon-bookmark"></use>
-        </svg>
-      </button>
+          <button class="card__btn wishlist__btn card__btn--wishlist">
+            <svg class="card__icon wishlist__icon">
+              <use href="../../imgs/icons.svg#icon-bookmark"></use>
+            </svg>
+          </button>
 
-      <div class="card-hover__info">
-        <a href="#" class="card__link movie__link"> Minions: Sự Trỗi Dậy của Gru</a>
+          <div class="card-hover__info">
+            <a href="#" class="card__link movie__link"> Minions: Sự Trỗi Dậy của Gru</a>
 
-        <p class="card-hover__para"><span>1h 30p</span> - <span>2022</span> - <span>Chỉ từ 80.000 đ</span></p>
+            <p class="card-hover__para"><span>1h 30p</span> - <span>2022</span> - <span>Chỉ từ 80.000 đ</span></p>
 
-        <a href="#" class="card__link trailer__link">Trailer</a>
+            <a href="#" class="card__link trailer__link">Trailer</a>
+          </div>
+        </div>
       </div>
+
+      <div class="card__info">
+        <a href="#" class="card__link movie__link"> Minions: Sự Trỗi Dậy của Gru </a>
+
+        <p class="card__para">
+          <span>7.0</span>
+
+          <svg class="card__icon star__icon">
+            <use href="../../imgs/icons.svg#icon-star-fill"></use>
+          </svg>
+
+          <span>80.000 đ</span>
+        </p>
+      </div>
+
+      <a href="#" class="card__link card-mobile__link"></a>
     </div>
-  </div>
-
-  <div class="card__info">
-    <a href="#" class="card__link movie__link"> Minions: Sự Trỗi Dậy của Gru </a>
-
-    <p class="card__para">
-      <span>7.0</span>
-
-      <svg class="card__icon star__icon">
-        <use href="../../imgs/icons.svg#icon-star-fill"></use>
-      </svg>
-
-      <span>80.000 đ</span>
-    </p>
-  </div>
-
-  <a href="#" class="card__link card-mobile__link"></a>
   </div>
 `;
 

@@ -13,8 +13,6 @@ $card-img-width: --card-img-width;
 
 .home__card {
   .card__container {
-    width: 100%;
-    margin: 0 auto;
     overflow: hidden;
     position: relative;
     @media (max-width: $sm) {
@@ -24,18 +22,6 @@ $card-img-width: --card-img-width;
       &::-webkit-scrollbar-thumb {
         background-image: $scroll-thumb-bg-x;
       }
-    }
-    @media (min-width: $sm) {
-      max-width: 54rem;
-    }
-    @media (min-width: $md) {
-      max-width: 72rem;
-    }
-    @media (min-width: $lg) {
-      max-width: 96rem;
-    }
-    @media (min-width: $xl) {
-      max-width: 114rem;
     }
     .card__wrapper {
       width: fit-content;
