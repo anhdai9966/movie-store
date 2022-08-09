@@ -10,5 +10,5 @@ export const mockapi = {
   API_URL: 'https://62c46f2c7d83a75e39f9dad7.mockapi.io/api/'
 }
 
-// Time out request
+// Thời gian chờ gửi yêu cầu
 export const TIMEOUT_SEC = 10;

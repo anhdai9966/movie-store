@@ -182,3 +182,100 @@ $wb-btn-width: 3rem;
   }
 }
 /* __________ End wish-buy-done __________ */
+%center-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* *__________ Start popup discover __________ */
+.discover__popup {
+  display: none;
+  @media (min-width: $md) {
+    display: block;
+  }
+  .discover__card {
+    overflow: hidden;
+    border-radius: 2.2rem;
+    background: $color-tertiary;
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    width: 28rem;
+    height: 40rem;
+    @media (min-width: $xl) {
+      width: 36rem;
+      height: 43rem;
+    }
+    .card__header {
+      position: relative;
+      flex-grow: 1;
+      display: flex;
+      flex-flow: column;
+      row-gap: 2.4rem;
+      justify-content: flex-end;
+      padding: 2rem;
+      background-color: #333;
+      background-image: url('../imgs/bg edit.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      .card__logo {
+        position: relative;
+        width: 20rem;
+        height: 3rem;
+        @media (min-width: $xl) {
+          height: 4rem;
+          width: 25rem;
+        }
+      }
+      .card__title {
+        position: relative;
+        font-size: 3rem;
+        @media (min-width: $xl) {
+          font-size: 4rem;
+        }
+      }
+      .card__overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(180deg, #22222220 0%, #222 90%);
+        border-radius: 22px 22px 0px 0px;
+      }
+    }
+    .card__main {
+      margin: 1rem;
+      display: flex;
+      align-items: center;
+      flex-flow: column;
+      gap: 2.4rem;
+      @media (min-width: $xl) {
+        margin: 2rem;
+        gap: 3rem;
+        justify-content: space-between;
+        flex-flow: row;
+      }
+      .discover__link {
+        flex-shrink: 0;
+        @extend %center-flex;
+        width: 13rem;
+        height: 4.3rem;
+        font-weight: bold;
+        border-radius: $border-radius-out;
+        background: $color-primary;
+        color: $color-while;
+      }
+    }
+    .dismiss__btn {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      .dismiss__icon {
+        width: 3rem;
+        height: 3rem;
+      }
+    }
+  }
+}
+/* __________ End popup discover __________ */

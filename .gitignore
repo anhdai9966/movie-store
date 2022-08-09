@@ -1,14 +1,5 @@
-.sass-cache/
-*.css.map
-*.sass.map
-*.scss.map
-
-# my
-note.md
-document.md
-test.http
-.prettierrc
-node_modules/
+.parcel-cache/
 .vscode/
+dist/
 doc/
-api/
+node_modules/

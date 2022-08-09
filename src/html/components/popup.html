@@ -12,7 +12,7 @@
       <!-- <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/xeg0UhMmzSalvyK7kvhTHcKXIf8.jpg" alt="" /> -->
 
       <!-- *__________ Start popup wish-buy __________ -->
-      <div class="popup-overlay">
+      <!-- <div class="popup-overlay">
       
         <div class="popup-wish-buy">
           
@@ -62,7 +62,7 @@
           </div>
           
         </div>
-      </div>
+      </div> -->
       <!-- __________ End popup wish-buy __________ -->
 
       <!-- *__________ Start wish-buy-done __________ -->
@@ -108,5 +108,64 @@
       </div> -->
       <!-- __________ End wish-buy-done __________ -->
     </div>
+
+    <!-- *__________ Start popup discover __________ -->
+    <div class="discover__popup">
+      <div class="discover__card">
+        <div class="card__header">
+          <div class="card__overlay"></div>
+
+          <svg class="card__logo">
+            <use href='../../imgs/icons.svg#icon-moviestore'></use>
+          </svg>
+
+          <h3 class="card__title">Nếu bạn chưa sẵn sàng đăng ký thành viên</h3>
+          
+        </div>
+
+        <div class="card__main">
+          <p>Dạo một vòng để khám phá thôi!</p>
+          <a href="#" class="discover__link">Khám phá</a>
+        </div>
+
+        <button class="dismiss__btn">
+          <svg class="dismiss__icon">
+            <use href='../../imgs/icons.svg#icon-dismiss'></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <!-- __________ End popup discover __________ -->
+
+    <!-- *__________ Start Sign in __________ -->
+    <div class="sign-in">
+      <h3>Đăng nhập</h3>
+      <form class="sign-in__form">
+        <label class="email__input">
+          <input type="email" name="email" id="email">
+          <label for="email" class="placeholder_input">Email</label>
+        </label>
+
+        <label class="password__input">
+          <input type="password" name="password" id="password">
+          <label for="password" class="placeholder_input">Mật khẩu</label>
+        </label>
+
+        <input type="button" value="Đăng nhập">
+      </form>
+      <div class="">
+        <label class="checkbox__input">
+          <input type="checkbox" name="checkbox" id="checkbox"/>
+          Nhớ cho lần đăng nhập tiếp theo
+        </label>
+        <button class="forgot-password__btn">Quên mật khẩu?</button>
+      </div>
+
+      <div class="signin__footer">
+        <p>Bạn là thành viên mới?</p>
+        <a href="#" class="signup__link">Đăng ký ngay.</a>
+      </div>
+    </div>
+    <!-- __________ End Sign in __________ -->
   </body>
 </html>

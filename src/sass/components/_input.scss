@@ -1,12 +1,12 @@
-.form-control {
+.checkbox__input {
   display: flex;
   align-items: center;
   column-gap: $text-gutter-x;
 }
-.form-control + .form-control {
+.checkbox__input + .checkbox__input {
   margin-top: $part-gutter-y;
 }
-.form-control--disabled {
+.checkbox__input--disabled {
   color: $form-control-disabled;
   cursor: not-allowed;
 }

@@ -1,0 +1,325 @@
+#detail__main {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  /* *__________ Start detail nav __________ */
+  .main__nav {
+    width: 100%;
+    margin-block: 4.4rem;
+    background: $color-tertiary;
+    border-radius: $border-radius-out;
+    overflow: hidden;
+    .nav__list {
+      padding-inline: .3rem;
+      height: 4.9rem;
+      display: flex;
+      align-items: center;
+      column-gap: .5rem;
+      @media (max-width: $md) {
+        justify-content: space-evenly;
+        column-gap: 0;
+      }
+      .nav__item {
+        // font-weight: bold;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        @media (max-width: $md) {
+          width: 100%;
+        }
+        @media (max-width: $md) {
+          &:last-child,
+          &:first-child {
+            display: none;
+          }
+        }
+        .nav__btn {
+          @media (max-width: $md) {
+            width: 100%;
+            padding-inline: 0;
+          }
+          height: calc(100% - .6rem);
+          padding-inline: 2.2rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          &:hover {
+            border-radius: $border-radius-in;
+            background-color: #333;
+          }
+          &.nav--active {
+            border-radius: $border-radius-in;
+            background-color: $color-hover;
+          }
+          .title-dtk--change {
+            display: none;
+            @media (min-width: $sm) {
+              display: block;
+            }
+          }
+          .title-mobi--change {
+            display: block;
+            @media (min-width: $sm) {
+              display: none;
+            }
+          }
+          &.reset__btn {
+            .reset__icon {
+              margin-bottom: -6px;
+            }
+          }
+        }
+        .nav__reset {
+          display: none;
+        }
+      }
+    }
+    .nav__result {
+      display: none;
+      opacity: 0;
+      transition: opacity .3s .5s;
+      width: 100%;
+      height: 0;
+      background: #252525;
+      transition: height .3s ease-out;
+      display: flex;
+      flex-flow: column;
+      row-gap: 1rem;
+      .result__main {
+        height: 15.5rem;
+        overflow-y: auto;
+        overflow-x: hidden;
+        @media (min-width: $sm) {
+          margin-right: -10px;
+        }
+        .result__grid {
+          display: grid;
+          gap: 1rem;
+          grid-template-columns: repeat(2, 1fr);
+          @media (min-width: $md) {
+            grid-template-columns: repeat(3, 1fr);
+          }
+          @media (min-width: $lg) {
+            grid-template-columns: repeat(4, 1fr);
+          }
+          @media (min-width: $xl) {
+            grid-template-columns: repeat(5, 1fr);
+          }
+          .result__item {
+            @include text-truncate();
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 4.3rem;
+            width: 100%;
+            border-radius: $border-radius-in;
+            &:hover {
+              background: $color-hover;
+            }
+            &.result__item--active {
+              border-radius: $border-radius-in;
+              background-color: $color-hover;
+            }
+          }
+        }
+      }
+      .result__form {
+        padding-block: 1rem 0;
+        border-top: thin solid $color-border;
+        display: flex;
+        justify-content: center;
+        column-gap: 2.4rem;
+        .reset__btn,
+        .apply__btn {
+          height: 4.3rem;
+          width: 10rem;
+          border-radius: $border-radius-out;
+          background: #333;
+          color: $color-gray;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          &:hover {
+            color: $color-while;
+            background: $color-hover;
+          }
+        }
+        .reset__btn {
+          display: none;
+        }
+        .result__input {
+          background-color: #333;
+          color: $color-gray;
+          border-radius: $border-radius-in;
+          padding: 1rem;
+          &:focus {
+            background: #444;
+            color: $color-while;
+          }
+        }
+        .nation__input {
+          display: none;
+        }
+        .year__input {
+          display: none;
+        }
+      }
+    }
+  }
+  /* __________ End detail nav __________ */
+
+  /* *__________ Start detail card __________ */  
+  .main__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.4rem;
+    @media (min-width: $md) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    @media (min-width: $xl) {
+      grid-template-columns: repeat(5, 1fr);
+    }
+    .card__item {
+      width: 100%;
+      display: flex;
+      flex-flow: column;
+      row-gap: 1.6rem;
+      .card__img {
+        position: relative;
+        background: $color-loading;
+        @media (max-width: $sm) {
+          max-height: 13.8rem;
+        }
+        @media (min-width: $sm) {
+          height: 13.8rem;
+        }
+        @media (min-width: $md) {
+          height: 23.4rem;
+        }
+        @media (min-width: $lg) {
+          height: 32.4rem;
+        }
+        @media (min-width: $xl) {
+          height: 30.6rem;
+        }
+        @media (min-width: $xxl) {
+          height: 36rem;
+        }
+        &:hover {
+          .trailer__link {
+            opacity: 1;
+          }
+        }
+        .movie__link {
+          display: block;
+          img {
+          width: 100%;
+          height: 100%;
+          }
+          .movie__poster {
+            display: none;
+            @media (min-width: $md) {
+              display: block;
+            }
+          }
+          .movie__backdrop {
+            display: block;
+            @media (min-width: $md) {
+              display: none;
+            }
+          }
+        }
+        
+        .wishlist__btn {
+          position: absolute;
+          top: 1rem;
+          right: 1rem;
+          .wishlist__icon {
+            width: 3rem;
+            height: 3rem;
+          }
+        }
+        .trailer__link {
+          display: block;
+          opacity: 1;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          transition: opacity .3s;
+          @media (min-width: $md) {
+            opacity: 0;
+          }
+          &:hover {
+            + .card__description {
+              display: none;
+              @media (min-width: $md) {
+                display: block;
+                display: -webkit-box;
+                opacity: 1;
+              }
+            }
+          }
+          .play__icon {
+            width: 5rem;
+            height: 5rem;
+          }
+        }
+        .card__description {
+          @include text-truncate(3);
+          display: none;
+          position: absolute;
+          top: 50%;
+          left: calc(50% + 2.5rem);
+          z-index: 10;
+          height: 9.5rem;
+          background-color: $color-tertiary;
+          border-radius: $border-radius-out;
+          border: 1rem solid $color-tertiary;
+          opacity: 0;
+          transition: opacity .3s;
+          @media (min-width: $md) {
+            width: 25rem;
+          }
+          @media (min-width: $lg) {
+            width: 30rem;
+          }
+        }
+      }
+      .card__info {
+        display: flex;
+        flex-flow: column;
+        row-gap: .8rem;
+        .movie__title {
+          font-weight: bold;
+          @include text-truncate(2);
+        }
+        .movie__description {
+          display: block;
+          color: $color-gray;
+          @include text-truncate(2);
+          @media (min-width: $md) {
+            display: none;
+          }
+        }
+        .movie__rate {
+          display: flex;
+          flex-flow: row nowrap;
+          align-items: center;
+          column-gap: .8rem;
+          color: $color-while;
+          @media (min-width: $md) {
+            color: $color-gray;
+          }
+          .star__icon {
+            width: 1.5rem;
+            height: 1.5rem;
+            fill: #FFCC00;
+            margin-left: -8px;
+          }
+        }
+      }
+    }
+  }
+  /* __________ End detail card __________ */
+}

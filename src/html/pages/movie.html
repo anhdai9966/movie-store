@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Danh sách phim" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/index.min.css" />
+  </head>
+  <body>
+    <main id="detail__main">
+      <div class="container">
+        <nav class="main__nav">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <button class="nav__btn nav__sort">Sắp xếp theo tên</button>
+            </li>
+
+            <li class="nav__item">
+              <button class="nav__btn nav__year">
+                <span class="title-dtk--change">Năm phát hành</span>
+                <span class="title-mobi--change">Năm P. hành</span>
+              </button>
+            </li>
+
+            <li class="nav__item">
+              <button class="nav__btn nav__genres">Thể loại</button>
+            </li>
+
+            <li class="nav__item">
+              <button class="nav__btn nav__nation">Quốc gia</button>
+            </li>
+
+            <li class="nav__item">
+              <button class="nav__btn nav__reset">
+                <svg class="reset__icon">
+                  <use href="../../imgs/icons.svg#icon-reset"></use>
+                </svg>
+              </button>
+            </li>
+          </ul>
+
+          <div class="nav__result">
+            <div class="result__main">
+              <div class="result__grid">
+                <!-- <a href="#" class="result__item">2023</a> -->
+              </div>
+            </div>
+
+            <div class="result__form">
+              <input
+                type="text"
+                name="year__input"
+                id="year__input"
+                class="result__input year__input"
+                placeholder="Năm phát hành"
+              />
+
+              <input
+                type="text"
+                name="nation__input"
+                id="nation__input"
+                class="result__input nation__input"
+                placeholder="Quốc gia"
+              />
+
+              <button class="reset__btn">
+                <svg class="reset__icon">
+                  <use href="../../imgs/icons.svg#icon-reset"></use>
+                </svg>
+              </button>
+
+              <button class="apply__btn">Áp dụng</button>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      <div class="container">
+        <div class="main__grid">
+          <div class="card__item">
+            <div class="card__img">
+              <a href="#" class="movie__link">
+                <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/qVdpItrjj0dSNGXE9CAaRIGSti2.jpg" alt="movie" loading="lazy" class="movie__poster">
+              </a>
+              <a href="#" class="movie__link">
+                <img src="https://www.themoviedb.org/t/p/w533_and_h300_bestv2/nW5fUbldp1DYf2uQ3zJTUdachOu.jpg" alt="movie" loading="lazy" class="movie__backdrop">
+              </a>
+
+              <button class="wishlist__btn">
+                <svg class="wishlist__icon">
+                  <use href='../../imgs/icons.svg#icon-bookmark'></use>
+                </svg>
+              </button>
+              <a href="#" class="trailer__link">
+                <svg class="play__icon">
+                  <use href='../../imgs/icons.svg#icon-play-circle'></use>
+                </svg>
+              </a>
+              <p class="card__description">Bộ phim kể về chuyến hành trình hành động kết hợp khoa học viễn tưởng nhằm giới thiệu câu chuyện về nguồn gốc của nhân vật Buzz Lightyear — người anh hùng đã truyền cảm hứng sáng tạo ra đồ chơi. “Lightyear” sẽ theo chân Cảnh Sát Vũ Trụ huyền thoại trong cuộc hành trình bước ra ngoài không gian cùng với một nhóm chiến binh đầy tham vọng và người bạn đồng hành là chú mèo máy Sox.</p>
+            </div>
+
+            <div class="card__info">
+              <a href="#" class="movie__title">Lightyear: Cảnh Sát Vũ Trụ</a>
+
+              <p class="movie__description">Bộ phim kể về chuyến hành trình hành động kết hợp khoa học viễn tưởng nhằm giới thiệu câu chuyện về nguồn gốc của nhân vật Buzz Lightyear — người anh hùng đã truyền cảm hứng sáng tạo ra đồ chơi. “Lightyear” sẽ theo chân Cảnh Sát Vũ Trụ huyền thoại trong cuộc hành trình bước ra ngoài không gian cùng với một nhóm chiến binh đầy tham vọng và người bạn đồng hành là chú mèo máy Sox.</p>
+
+              <p class="movie__rate">
+                <span>7.0</span>
+                <svg class="star__icon">
+                  <use href='../../imgs/icons.svg#icon-star-fill'></use>
+                </svg>
+                <span>80.000 đ</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="card__item">
+            <div class="card__img">
+              <a href="#" class="movie__link">
+                <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/qVdpItrjj0dSNGXE9CAaRIGSti2.jpg" alt="movie" loading="lazy" class="movie__poster">
+              </a>
+              <a href="#" class="movie__link">
+                <img src="https://www.themoviedb.org/t/p/w533_and_h300_bestv2/nW5fUbldp1DYf2uQ3zJTUdachOu.jpg" alt="movie" loading="lazy" class="movie__backdrop">
+              </a>
+
+              <button class="wishlist__btn">
+                <svg class="wishlist__icon">
+                  <use href='../../imgs/icons.svg#icon-bookmark'></use>
+                </svg>
+              </button>
+              <a href="#" class="trailer__link">
+                <svg class="play__icon">
+                  <use href='../../imgs/icons.svg#icon-play-circle'></use>
+                </svg>
+              </a>
+              <p class="card__description">Bộ phim kể về chuyến hành trình hành động kết hợp khoa học viễn tưởng nhằm giới thiệu câu chuyện về nguồn gốc của nhân vật Buzz Lightyear — người anh hùng đã truyền cảm hứng sáng tạo ra đồ chơi. “Lightyear” sẽ theo chân Cảnh Sát Vũ Trụ huyền thoại trong cuộc hành trình bước ra ngoài không gian cùng với một nhóm chiến binh đầy tham vọng và người bạn đồng hành là chú mèo máy Sox.</p>
+            </div>
+
+            <div class="card__info">
+              <a href="#" class="movie__title">Lightyear: Cảnh Sát Vũ Trụ</a>
+
+              <p class="movie__description">Bộ phim kể về chuyến hành trình hành động kết hợp khoa học viễn tưởng nhằm giới thiệu câu chuyện về nguồn gốc của nhân vật Buzz Lightyear — người anh hùng đã truyền cảm hứng sáng tạo ra đồ chơi. “Lightyear” sẽ theo chân Cảnh Sát Vũ Trụ huyền thoại trong cuộc hành trình bước ra ngoài không gian cùng với một nhóm chiến binh đầy tham vọng và người bạn đồng hành là chú mèo máy Sox.</p>
+
+              <p class="movie__rate">
+                <span>7.0</span>
+                <svg class="star__icon">
+                  <use href='../../imgs/icons.svg#icon-star-fill'></use>
+                </svg>
+                <span>80.000 đ</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="card__item">
+            <div class="card__img">
+              <a href="#" class="movie__link">
+                <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/qVdpItrjj0dSNGXE9CAaRIGSti2.jpg" alt="movie" loading="lazy" class="movie__poster">
+              </a>
+              <a href="#" class="movie__link">
+                <img src="https://www.themoviedb.org/t/p/w533_and_h300_bestv2/nW5fUbldp1DYf2uQ3zJTUdachOu.jpg" alt="movie" loading="lazy" class="movie__backdrop">
+              </a>
+
+              <button class="wishlist__btn">
+                <svg class="wishlist__icon">
+                  <use href='../../imgs/icons.svg#icon-bookmark'></use>
+                </svg>
+              </button>
+              <a href="#" class="trailer__link">
+                <svg class="play__icon">
+                  <use href='../../imgs/icons.svg#icon-play-circle'></use>
+                </svg>
+              </a>
+              <p class="card__description">Bộ phim kể về chuyến hành trình hành động kết hợp khoa học viễn tưởng nhằm giới thiệu câu chuyện về nguồn gốc của nhân vật Buzz Lightyear — người anh hùng đã truyền cảm hứng sáng tạo ra đồ chơi. “Lightyear” sẽ theo chân Cảnh Sát Vũ Trụ huyền thoại trong cuộc hành trình bước ra ngoài không gian cùng với một nhóm chiến binh đầy tham vọng và người bạn đồng hành là chú mèo máy Sox.</p>
+            </div>
+
+            <div class="card__info">
+              <a href="#" class="movie__title">Lightyear: Cảnh Sát Vũ Trụ</a>
+
+              <p class="movie__description">Bộ phim kể về chuyến hành trình hành động kết hợp khoa học viễn tưởng nhằm giới thiệu câu chuyện về nguồn gốc của nhân vật Buzz Lightyear — người anh hùng đã truyền cảm hứng sáng tạo ra đồ chơi. “Lightyear” sẽ theo chân Cảnh Sát Vũ Trụ huyền thoại trong cuộc hành trình bước ra ngoài không gian cùng với một nhóm chiến binh đầy tham vọng và người bạn đồng hành là chú mèo máy Sox.</p>
+
+              <p class="movie__rate">
+                <span>7.0</span>
+                <svg class="star__icon">
+                  <use href='../../imgs/icons.svg#icon-star-fill'></use>
+                </svg>
+                <span>80.000 đ</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="card__item">
+            <div class="card__img">
+              <a href="#" class="movie__link">
+                <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/qVdpItrjj0dSNGXE9CAaRIGSti2.jpg" alt="movie" loading="lazy" class="movie__poster">
+              </a>
+              <a href="#" class="movie__link">
+                <img src="https://www.themoviedb.org/t/p/w533_and_h300_bestv2/nW5fUbldp1DYf2uQ3zJTUdachOu.jpg" alt="movie" loading="lazy" class="movie__backdrop">
+              </a>
+
+              <button class="wishlist__btn">
+                <svg class="wishlist__icon">
+                  <use href='../../imgs/icons.svg#icon-bookmark'></use>
+                </svg>
+              </button>
+              <a href="#" class="trailer__link">
+                <svg class="play__icon">
+                  <use href='../../imgs/icons.svg#icon-play-circle'></use>
+                </svg>
+              </a>
+              <p class="card__description">Bộ phim kể về chuyến hành trình hành động kết hợp khoa học viễn tưởng nhằm giới thiệu câu chuyện về nguồn gốc của nhân vật Buzz Lightyear — người anh hùng đã truyền cảm hứng sáng tạo ra đồ chơi. “Lightyear” sẽ theo chân Cảnh Sát Vũ Trụ huyền thoại trong cuộc hành trình bước ra ngoài không gian cùng với một nhóm chiến binh đầy tham vọng và người bạn đồng hành là chú mèo máy Sox.</p>
+            </div>
+
+            <div class="card__info">
+              <a href="#" class="movie__title">Lightyear: Cảnh Sát Vũ Trụ</a>
+
+              <p class="movie__description">Bộ phim kể về chuyến hành trình hành động kết hợp khoa học viễn tưởng nhằm giới thiệu câu chuyện về nguồn gốc của nhân vật Buzz Lightyear — người anh hùng đã truyền cảm hứng sáng tạo ra đồ chơi. “Lightyear” sẽ theo chân Cảnh Sát Vũ Trụ huyền thoại trong cuộc hành trình bước ra ngoài không gian cùng với một nhóm chiến binh đầy tham vọng và người bạn đồng hành là chú mèo máy Sox.</p>
+
+              <p class="movie__rate">
+                <span>7.0</span>
+                <svg class="star__icon">
+                  <use href='../../imgs/icons.svg#icon-star-fill'></use>
+                </svg>
+                <span>80.000 đ</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="card__item">
+            <div class="card__img">
+              <a href="#" class="movie__link">
+                <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/qVdpItrjj0dSNGXE9CAaRIGSti2.jpg" alt="movie" loading="lazy" class="movie__poster">
+              </a>
+              <a href="#" class="movie__link">
+                <img src="https://www.themoviedb.org/t/p/w533_and_h300_bestv2/nW5fUbldp1DYf2uQ3zJTUdachOu.jpg" alt="movie" loading="lazy" class="movie__backdrop">
+              </a>
+
+              <button class="wishlist__btn">
+                <svg class="wishlist__icon">
+                  <use href='../../imgs/icons.svg#icon-bookmark'></use>
+                </svg>
+              </button>
+              <a href="#" class="trailer__link">
+                <svg class="play__icon">
+                  <use href='../../imgs/icons.svg#icon-play-circle'></use>
+                </svg>
+              </a>
+              <p class="card__description">Bộ phim kể về chuyến hành trình hành động kết hợp khoa học viễn tưởng nhằm giới thiệu câu chuyện về nguồn gốc của nhân vật Buzz Lightyear — người anh hùng đã truyền cảm hứng sáng tạo ra đồ chơi. “Lightyear” sẽ theo chân Cảnh Sát Vũ Trụ huyền thoại trong cuộc hành trình bước ra ngoài không gian cùng với một nhóm chiến binh đầy tham vọng và người bạn đồng hành là chú mèo máy Sox.</p>
+            </div>
+
+            <div class="card__info">
+              <a href="#" class="movie__title">Lightyear: Cảnh Sát Vũ Trụ</a>
+
+              <p class="movie__description">Bộ phim kể về chuyến hành trình hành động kết hợp khoa học viễn tưởng nhằm giới thiệu câu chuyện về nguồn gốc của nhân vật Buzz Lightyear — người anh hùng đã truyền cảm hứng sáng tạo ra đồ chơi. “Lightyear” sẽ theo chân Cảnh Sát Vũ Trụ huyền thoại trong cuộc hành trình bước ra ngoài không gian cùng với một nhóm chiến binh đầy tham vọng và người bạn đồng hành là chú mèo máy Sox.</p>
+
+              <p class="movie__rate">
+                <span>7.0</span>
+                <svg class="star__icon">
+                  <use href='../../imgs/icons.svg#icon-star-fill'></use>
+                </svg>
+                <span>80.000 đ</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="card__item">
+            <div class="card__img">
+              <a href="#" class="movie__link">
+                <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/qVdpItrjj0dSNGXE9CAaRIGSti2.jpg" alt="movie" loading="lazy" class="movie__poster">
+              </a>
+              <a href="#" class="movie__link">
+                <img src="https://www.themoviedb.org/t/p/w533_and_h300_bestv2/nW5fUbldp1DYf2uQ3zJTUdachOu.jpg" alt="movie" loading="lazy" class="movie__backdrop">
+              </a>
+
+              <button class="wishlist__btn">
+                <svg class="wishlist__icon">
+                  <use href='../../imgs/icons.svg#icon-bookmark'></use>
+                </svg>
+              </button>
+              <a href="#" class="trailer__link">
+                <svg class="play__icon">
+                  <use href='../../imgs/icons.svg#icon-play-circle'></use>
+                </svg>
+              </a>
+              <p class="card__description">Bộ phim kể về chuyến hành trình hành động kết hợp khoa học viễn tưởng nhằm giới thiệu câu chuyện về nguồn gốc của nhân vật Buzz Lightyear — người anh hùng đã truyền cảm hứng sáng tạo ra đồ chơi. “Lightyear” sẽ theo chân Cảnh Sát Vũ Trụ huyền thoại trong cuộc hành trình bước ra ngoài không gian cùng với một nhóm chiến binh đầy tham vọng và người bạn đồng hành là chú mèo máy Sox.</p>
+            </div>
+
+            <div class="card__info">
+              <a href="#" class="movie__title">Lightyear: Cảnh Sát Vũ Trụ</a>
+
+              <p class="movie__description">Bộ phim kể về chuyến hành trình hành động kết hợp khoa học viễn tưởng nhằm giới thiệu câu chuyện về nguồn gốc của nhân vật Buzz Lightyear — người anh hùng đã truyền cảm hứng sáng tạo ra đồ chơi. “Lightyear” sẽ theo chân Cảnh Sát Vũ Trụ huyền thoại trong cuộc hành trình bước ra ngoài không gian cùng với một nhóm chiến binh đầy tham vọng và người bạn đồng hành là chú mèo máy Sox.</p>
+
+              <p class="movie__rate">
+                <span>7.0</span>
+                <svg class="star__icon">
+                  <use href='../../imgs/icons.svg#icon-star-fill'></use>
+                </svg>
+                <span>80.000 đ</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="card__item">
+            <div class="card__img">
+              <a href="#" class="movie__link">
+                <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/qVdpItrjj0dSNGXE9CAaRIGSti2.jpg" alt="movie" loading="lazy" class="movie__poster">
+              </a>
+              <a href="#" class="movie__link">
+                <img src="https://www.themoviedb.org/t/p/w533_and_h300_bestv2/nW5fUbldp1DYf2uQ3zJTUdachOu.jpg" alt="movie" loading="lazy" class="movie__backdrop">
+              </a>
+
+              <button class="wishlist__btn">
+                <svg class="wishlist__icon">
+                  <use href='../../imgs/icons.svg#icon-bookmark'></use>
+                </svg>
+              </button>
+              <a href="#" class="trailer__link">
+                <svg class="play__icon">
+                  <use href='../../imgs/icons.svg#icon-play-circle'></use>
+                </svg>
+              </a>
+              <p class="card__description">Bộ phim kể về chuyến hành trình hành động kết hợp khoa học viễn tưởng nhằm giới thiệu câu chuyện về nguồn gốc của nhân vật Buzz Lightyear — người anh hùng đã truyền cảm hứng sáng tạo ra đồ chơi. “Lightyear” sẽ theo chân Cảnh Sát Vũ Trụ huyền thoại trong cuộc hành trình bước ra ngoài không gian cùng với một nhóm chiến binh đầy tham vọng và người bạn đồng hành là chú mèo máy Sox.</p>
+            </div>
+
+            <div class="card__info">
+              <a href="#" class="movie__title">Lightyear: Cảnh Sát Vũ Trụ</a>
+
+              <p class="movie__description">Bộ phim kể về chuyến hành trình hành động kết hợp khoa học viễn tưởng nhằm giới thiệu câu chuyện về nguồn gốc của nhân vật Buzz Lightyear — người anh hùng đã truyền cảm hứng sáng tạo ra đồ chơi. “Lightyear” sẽ theo chân Cảnh Sát Vũ Trụ huyền thoại trong cuộc hành trình bước ra ngoài không gian cùng với một nhóm chiến binh đầy tham vọng và người bạn đồng hành là chú mèo máy Sox.</p>
+
+              <p class="movie__rate">
+                <span>7.0</span>
+                <svg class="star__icon">
+                  <use href='../../imgs/icons.svg#icon-star-fill'></use>
+                </svg>
+                <span>80.000 đ</span>
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </main>
+
+    <script type="module" src="../../js/pages/movie.js"></script>
+  </body>
+</html>
