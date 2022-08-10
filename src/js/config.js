@@ -1,7 +1,7 @@
 // API https://www.themoviedb.org/
 export const themoviedb = {
   API_URL: 'https://api.themoviedb.org/3',
-  KEY: '19cceeb816328f42df0e6b332f489d75',
+  API_KEY: '19cceeb816328f42df0e6b332f489d75',
   LANGUAGE: 'vi',
 };
 
@@ -12,3 +12,6 @@ export const mockapi = {
 
 // Thời gian chờ gửi yêu cầu
 export const TIMEOUT_SEC = 10;
+
+// thông báo lỗi
+export const ERROR_MESSAGE = 'Liên kết có thể bị hỏng hoặc trang này có thể đã bị gỡ.';

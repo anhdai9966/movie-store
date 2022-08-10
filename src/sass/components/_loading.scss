@@ -1,4 +1,8 @@
 .spinner {
+  position: absolute;
+  top: 10rem;
+  left: 50%;
+  transform: translateX(-50%);
   width: fit-content;
   .line__list {
     width: 67px;

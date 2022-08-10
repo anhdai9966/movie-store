@@ -19,6 +19,7 @@ container.addEventListener("click", () => {
   });
 });
 
+
 // for (let i = 0; i < items.length; i++) {
 //   //   item.css({
 //   //     transform: `rotate(${i}deg)`,

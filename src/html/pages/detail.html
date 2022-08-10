@@ -7,14 +7,15 @@
     <meta name="description" content="" />
     <title>Document</title>
     <link rel="stylesheet" href="../../css/index.css" />
+    <script type="module" defer src="../../js/controllers/detailController.js"></script>
   </head>
   <body>
     <header id="header">
 
     </header>
 
-    <div class="detail__header">
-      <div class="detail-header__bg">
+    <section id="detail__banner">
+      <!-- <div class="detail-header__bg">
         <img src="https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/p1F51Lvj3sMopG948F5HsBbl43C.jpg" alt="backdrop" loading="lazy" class="movie__backdrop" />
         <div class="header__overlay"></div>
       </div>
@@ -41,7 +42,7 @@
               <p>
                 <span>7.5</span>
                 <svg class="rate__icon">
-                  <use href='../../../imgs/icons.svg#icon-star-fill'></use>
+                  <use href='../../imgs/icons.svg#icon-star-fill'></use>
                 </svg>
               </p>
               <p>4527 đánh giá</p>
@@ -71,11 +72,11 @@
             <span>Đoạn giới thiệu</span>
           </a>
         </div>
-      </div>
+      </div> -->
       
-    </div>
+    </section>
 
-    <main class="detail__main">
+    <main id="detail__main">
       <div class="container">
         <nav class="main__nav">
           <div class="nav__active"></div>
@@ -91,7 +92,6 @@
               <h5 class="main__title">Giới thiệu phim</h5>
               <p class="movie__description">Sự kiện xảy sau phần phim Người Nhện: Không còn nhà (2021) và mùa đầu tiên của Loki (2021), Bác sĩ Stephen Strange đã sử dụng một phét thuật bị cấm và mở ra cánh cổng dẫn tới đa vũ trụ, vô tình dẫn đưa một biến thể hắc ám của Stephen Strange khác đến vũ trụ mình - mối đe dọa lớn mà Dr. Strange có thể phải đối đầu hoặc hợp sức chống lại một cái ác khác, đồng hành cùng Strange còn có Wong và Wanda Maximoff cùng với nhân vật mới American Chavez. đối đầu hoặc hợp sức chống lại một cái ác khác, đồng hành cùng Strange còn có Wong và Wanda Maximoff cùng với</p>
               <button class="see-more__btn">Thêm</button>
-              <!-- 555 word 5 line -->
             </section>
             
             <section class="main__section">
@@ -444,7 +444,6 @@
                       <svg class="avatar__icon">
                         <use href='../../imgs/icons.svg#icon-user'></use>
                       </svg>
-                      <!-- <img src="" alt=""> -->
                     </div>
                     <h6 class="acc__name">Darick Nguyễn</h6>
                   </div>
@@ -494,7 +493,7 @@
             <button class="comment-all__btn">Xem tất cả bài đánh giá ></button>
           </article>
 
-          <div class="movie__similar">
+          <article id="similar">
             <p class="main__heading">Liên quan</p>
 
             <section class="main__section">
@@ -505,7 +504,7 @@
               
               <div class="similar__wrapper">
                 <div class="similar__list">
-                  <div class="card__item">
+                  <!-- <div class="card__item">
                     <a href="#" class="movie__link">
                       <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/cjb9NXJvisfh5fmgX9rerxZfFrJ.jpg" alt="movie" loading="lazy" class="movie__poster">
                     </a>
@@ -521,135 +520,7 @@
                         <span>80.000 đ</span>
                       </p>
                     </div>
-                  </div>
-                  
-                  <div class="card__item">
-                    <a href="#" class="movie__link">
-                      <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/cjb9NXJvisfh5fmgX9rerxZfFrJ.jpg" alt="movie" loading="lazy" class="movie__poster">
-                    </a>
-  
-                    <div class="movie__info">
-                      <a href="#" class="movie__title">In the Name of the King: A Dungeon Siege Tale</a>
-                      <p>Phim Gia Đình, Phim Hoạt Hình</p>
-                      <p class="movie__rate">
-                        <span>7.0</span>
-                        <svg class="star__icon">
-                          <use href='../../imgs/icons.svg#icon-star-fill'></use>
-                        </svg>
-                        <span>80.000 đ</span>
-                      </p>
-                    </div>
-                  </div>
-                  
-                  <div class="card__item">
-                    <a href="#" class="movie__link">
-                      <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/cjb9NXJvisfh5fmgX9rerxZfFrJ.jpg" alt="movie" loading="lazy" class="movie__poster">
-                    </a>
-  
-                    <div class="movie__info">
-                      <a href="#" class="movie__title">In the Name of the King: A Dungeon Siege Tale</a>
-                      <p>Phim Gia Đình, Phim Hoạt Hình</p>
-                      <p class="movie__rate">
-                        <span>7.0</span>
-                        <svg class="star__icon">
-                          <use href='../../imgs/icons.svg#icon-star-fill'></use>
-                        </svg>
-                        <span>80.000 đ</span>
-                      </p>
-                    </div>
-                  </div>
-                  
-                  <div class="card__item">
-                    <a href="#" class="movie__link">
-                      <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/cjb9NXJvisfh5fmgX9rerxZfFrJ.jpg" alt="movie" loading="lazy" class="movie__poster">
-                    </a>
-  
-                    <div class="movie__info">
-                      <a href="#" class="movie__title">In the Name of the King: A Dungeon Siege Tale</a>
-                      <p>Phim Gia Đình, Phim Hoạt Hình</p>
-                      <p class="movie__rate">
-                        <span>7.0</span>
-                        <svg class="star__icon">
-                          <use href='../../imgs/icons.svg#icon-star-fill'></use>
-                        </svg>
-                        <span>80.000 đ</span>
-                      </p>
-                    </div>
-                  </div>
-                  
-                  <div class="card__item">
-                    <a href="#" class="movie__link">
-                      <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/cjb9NXJvisfh5fmgX9rerxZfFrJ.jpg" alt="movie" loading="lazy" class="movie__poster">
-                    </a>
-  
-                    <div class="movie__info">
-                      <a href="#" class="movie__title">In the Name of the King: A Dungeon Siege Tale</a>
-                      <p>Phim Gia Đình, Phim Hoạt Hình</p>
-                      <p class="movie__rate">
-                        <span>7.0</span>
-                        <svg class="star__icon">
-                          <use href='../../imgs/icons.svg#icon-star-fill'></use>
-                        </svg>
-                        <span>80.000 đ</span>
-                      </p>
-                    </div>
-                  </div>
-                  
-                  <div class="card__item">
-                    <a href="#" class="movie__link">
-                      <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/cjb9NXJvisfh5fmgX9rerxZfFrJ.jpg" alt="movie" loading="lazy" class="movie__poster">
-                    </a>
-  
-                    <div class="movie__info">
-                      <a href="#" class="movie__title">In the Name of the King: A Dungeon Siege Tale</a>
-                      <p>Phim Gia Đình, Phim Hoạt Hình</p>
-                      <p class="movie__rate">
-                        <span>7.0</span>
-                        <svg class="star__icon">
-                          <use href='../../imgs/icons.svg#icon-star-fill'></use>
-                        </svg>
-                        <span>80.000 đ</span>
-                      </p>
-                    </div>
-                  </div>
-                  
-                  <div class="card__item">
-                    <a href="#" class="movie__link">
-                      <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/cjb9NXJvisfh5fmgX9rerxZfFrJ.jpg" alt="movie" loading="lazy" class="movie__poster">
-                    </a>
-  
-                    <div class="movie__info">
-                      <a href="#" class="movie__title">In the Name of the King: A Dungeon Siege Tale</a>
-                      <p>Phim Gia Đình, Phim Hoạt Hình</p>
-                      <p class="movie__rate">
-                        <span>7.0</span>
-                        <svg class="star__icon">
-                          <use href='../../imgs/icons.svg#icon-star-fill'></use>
-                        </svg>
-                        <span>80.000 đ</span>
-                      </p>
-                    </div>
-                  </div>
-                  
-                  <div class="card__item">
-                    <a href="#" class="movie__link">
-                      <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/cjb9NXJvisfh5fmgX9rerxZfFrJ.jpg" alt="movie" loading="lazy" class="movie__poster">
-                    </a>
-  
-                    <div class="movie__info">
-                      <a href="#" class="movie__title">In the Name of the King: A Dungeon Siege Tale</a>
-                      <p>Phim Gia Đình, Phim Hoạt Hình</p>
-                      <p class="movie__rate">
-                        <span>7.0</span>
-                        <svg class="star__icon">
-                          <use href='../../imgs/icons.svg#icon-star-fill'></use>
-                        </svg>
-                        <span>80.000 đ</span>
-                      </p>
-                    </div>
-                  </div>
-                  
-
+                  </div> -->
                 </div>
               </div>
             </section>
@@ -661,7 +532,6 @@
               </div>
 
               <div class="similar__list">
-                <!-- tuong tự -->
               </div>
             </section>
 
@@ -674,7 +544,7 @@
                 <li><a href="#" class="keyword__link">based on comic</a></li>
               </ul>
             </section>
-          </div>
+          </article>
         </div>
       </div>
     </main>
@@ -682,7 +552,5 @@
     <footer id="footer">
 
     </footer>
-
-    <script src="../../js/pages/detail.js"></script>
   </body>
 </html>

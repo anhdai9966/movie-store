@@ -1,5 +1,5 @@
 /* *__________ Start detail header __________ */
-.detail__header {
+#detail__banner {
   position: relative;
   background-color: $color-secondary;
   .header__main {
@@ -242,7 +242,7 @@
 /* __________ End detail header __________ */
 
 /* *__________ Start detail main __________ */
-.detail__main {
+#detail__main {
   padding-block: 4.5rem;
   background: $color-secondary;
   @media (max-width: $md) {
@@ -590,7 +590,7 @@
         }
       }
     }
-    .movie__similar {
+    #similar {
       grid-area: similar;
       width: 100%;
       @media (max-width: $lg) {

@@ -6,7 +6,7 @@ const getPath = {
   countries: 'configuration/countries',
   now_playing: 'movie/now_playing',
 }
-
+// 616037
 const controlDetail = async function () {
   try {
     const id = window.location.hash.slice(1);
@@ -33,7 +33,8 @@ const controlDetail = async function () {
   }
 };
 
-const init = function () {
-  detailView.addHandlerRender(controlDetail);
-};
-init();
+// const init = function () {
+//   detailView.addHandlerRender(controlDetail);
+// };
+// init();
+

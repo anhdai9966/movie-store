@@ -6,7 +6,7 @@
 
 @import 'mixins';
 
-@import 'bootstrap';
+@import 'mylibrary';
 @import 'scroll';
 
 // Layout & components
@@ -15,9 +15,9 @@
 @import 'components/banner';
 @import 'components/card';
 @import 'components/footer';
-@import 'components/p-home';
 @import 'components/popup';
 @import 'components/loading';
 @import 'components/pagination';
-@import 'pages/detail';
+@import 'pages/home1';
 @import 'pages/movie';
+@import 'pages/detail';
