@@ -1,12 +1,8 @@
 .account__popup {
-  position: absolute;
-  top: calc(100% + 1rem);
-  right: 0;
-  z-index: 10;
   color: $color-gray;
   background-color: $color-tertiary;
   width: 28rem;
-  padding-block: 2.4rem;
+  padding-block: 1.4rem 2.4rem;
   border-radius: $border-radius-out;
   .account {
     &__list {
@@ -37,6 +33,7 @@
       border-radius: 50%;
     }
     &__item {
+      position: relative;
       .account__link {
         &:hover {
           color: $color-while;

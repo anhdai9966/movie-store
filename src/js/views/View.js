@@ -2,24 +2,17 @@ import icons from 'url:../../imgs/icons.svg';
 
 export default class View {
   _data; // data này có thể dùng ở nhiều nơi
-  
-  addHandlerRender(handler) {
-    ['hashchange', 'load'].forEach(ev => window.addEventListener(ev, handler));
-  }
 
-  render(data) {
-    if (!data || (Array.isArray(data) && data.length === 0)) return this.renderError();
-
-    this._data = data;
+  // render ra giao diện
+  render() {
     const markup = this._generateMarkup();
-    // const markupMain = this._generateMarkupMain();
-
-    // xóa thông báo không tìm thấy
+    // xóa nội dung hiện tại
     this._clear();
-    // render html
+    // render nội dung mới
     this._parentElement.insertAdjacentHTML('afterbegin', markup);
   }
-
+  
+  // phương thức xóa nội dung cũ
   _clear() {
     this._parentElement.innerHTML = '';
   }

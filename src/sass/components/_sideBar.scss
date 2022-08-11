@@ -1,21 +1,53 @@
+.sidebar__main {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  transition: opacity .3s ease-out;
+  /* From https://css.glass */
+  background: rgba(24, 24, 24, 0.3);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(3px);
+}
 .sidebar {
+  position: relative;
+  top: 0;
+  left: calc(-1 * 28rem);
+  z-index: 100;
+  transition: left .3s ease-out;
   color: $color-gray;
   background-color: $color-tertiary;
   max-width: 28rem;
   height: 100vh;
   border-top-right-radius: 1rem;
   border-bottom-right-radius: 1rem;
+  overflow-y: auto;
   &__btn,
   &__link {
     display: flex;
     align-items: center;
     column-gap: 2.4rem;
-    padding-inline: 2.4rem;
+    padding-left: 2.4rem;
     padding-block: 1rem;
+    font-weight: bold;
+  }
+  > .sidebar__link {
+    height: 5.4rem;
+  }
+  &__logo {
+    width: 14.5rem;
+    height: 3rem;
+    @media (min-width: $sm) {
+      width: 19rem;
+      height: 4rem;
+    }
   }
   &__icon {
-    width: 3rem;
-    height: 3rem;
+    width: 2.8rem;
+    height: 2.8rem;
   }
   &__list {
     display: flex;

@@ -1,4 +1,11 @@
+.search__main {
+  display: none;
+}
 .search__popup {
+  position: absolute;
+  left: 0;
+  top: 5.4rem;
+  width: 100%;
   max-width: 192rem;
   margin: 0 auto;
   color: $color-gray;
@@ -11,10 +18,10 @@
       display: flex;
       align-items: center;
       .search__input {
+        padding-block: 1rem;
         width: 100%;
         border-radius: 1rem;
         background: #333;
-        padding-left: 1rem;
         transition: all 0.3s;
         height: 4.9rem;
         padding-left: 4rem;

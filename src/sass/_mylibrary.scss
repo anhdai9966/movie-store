@@ -200,24 +200,24 @@
 @each $name, $width in $grid-breakpoints {
   @if $width == 0 {
     .show {
-      display: block;
+      display: block !important;
     }
     .hide {
-      display: none;
+      display: none !important;
     }
   } @else {
     .show-#{$name} {
-      @extend .show;
+      @extend .hide;
     }
     .hide-#{$name} {
-      @extend .hide;
+      @extend .show;
     }
     @media (min-width: $width) {
       .show-#{$name} {
-        display: none;
+        display: block !important;
       }
       .hide-#{$name} {
-        display: block;
+        display: none !important;
       }
     }
   }
