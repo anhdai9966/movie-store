@@ -14,10 +14,14 @@
   }
 }
 .banner {
-  max-width: 1920px;
+  width: 100%;
+  max-width: 192rem;
   margin: 0 auto;
   background-color: $color-secondary;
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
   .windows {
     @extend %absolute-full;
     overflow: hidden;

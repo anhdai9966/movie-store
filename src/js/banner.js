@@ -105,9 +105,9 @@
 // });
 
 /* *__________ Start xử lý focus email input __________ */
-const headerBanner = document.querySelector('.header__banner');
+const headerBanner = document.querySelector('.banner');
 const emailInput = headerBanner.querySelector('.email__input');
-const inputPlaceholder = headerBanner.querySelector('.input__placeholder');
+const inputPlaceholder = headerBanner.querySelector('.placeholder');
 let inputPlaceholderStyle = {};
 function blurPlaceholder() {
   if (emailInput.value) {

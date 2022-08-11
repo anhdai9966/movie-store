@@ -10,8 +10,8 @@ export const mockapi = {
   API_URL: 'https://62c46f2c7d83a75e39f9dad7.mockapi.io/api/'
 }
 
-// JSON movie80
-export const MOVIE_80_JSON = '../../json/movie80.json'
+// // JSON movie80
+// export const MOVIE_80_JSON = '../json/movie80.json'
 
 // Thời gian chờ gửi yêu cầu
 export const TIMEOUT_SEC = 10;

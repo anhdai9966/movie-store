@@ -91,6 +91,24 @@ class HeaderView extends View {
         count--;
       }
     });
+
+    this._parentElement.addEventListener('mouseover', function (e) {
+      const btn = e.target.closest('.more__btn--toggle');
+      if (!btn) return;
+      const navPopupMain = btn.nextElementSibling;
+      const findShow = parentElement.querySelector('.show');
+
+      if (!navPopupMain.classList.contains('show')) {
+        if (findShow) findShow.classList.remove('show');
+      }
+      navPopupMain.classList.toggle('show');
+
+      if (count == 1) {
+        navPopupMain.innerHTML = '';
+        navPopupMain.insertAdjacentHTML('afterbegin', markup);
+        count--;
+      }
+    });
   }
 
   addHandlerWishlish() {

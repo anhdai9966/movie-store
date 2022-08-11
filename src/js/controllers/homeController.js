@@ -1,13 +1,16 @@
-import model from '../models/homeModel.js';
+import * as model from '../models/homeModel.js';
 
 import headerView from '../views/headerView.js';
 import sidebarView from '../views/sidebarView.js';
 import searchView from '../views/searchView.js';
+import bannerView from '../views/bannerView.js';
 
 // tạo biến đếm số lần
 let count = [1, 1];
 
-const controlHeaders = function () {
+const controlHeaders = async function () {
+
+  
   headerView.render();
   headerView.addHandlerNavMore();
   headerView.addHandlerNavMoreMovie();
@@ -36,8 +39,14 @@ const controlSearchs = function () {
   searchView.addHandlerToggleSearch();
 };
 
+const controlBanner = async function() {
+  await model.loadMovie80();
+  bannerView.render(model.state.movie80);
+}
+
 const init = function () {
   headerView.addHandlerRender(controlHeaders);
+  bannerView.addHandlerRender(controlBanner);
   headerView.addHandlerOpenSidebar(controlSidebars);
   headerView.addHandlerSearch(controlSearchs);
 };

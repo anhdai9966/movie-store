@@ -2,8 +2,9 @@
   max-width: 192rem;
   min-width: 30rem;
   margin: 0 auto;
-  background: $color-tertiary;
-  color: $color-gray;
+  // background: $color-tertiary;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, .5) 100%);
+  color: $color-while;
   .nav {
     display: flex;
     justify-content: space-between;

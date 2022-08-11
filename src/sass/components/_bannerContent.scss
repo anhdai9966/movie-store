@@ -72,6 +72,7 @@
             width: 100%;
             height: 4.9rem;
             border-radius: $border-radius-out;
+            padding-left: 1rem;
             @media (min-width: $sm) {
               width: 35rem;
               border-top-right-radius: 0;
@@ -80,12 +81,19 @@
             @media (min-width: $md) {
               width: 50rem;
             }
+            &:focus {
+              padding-top: 1rem;
+              + .placeholder {
+                font-weight: bold;
+              }
+            }
           }
           .placeholder {
             color: $color-gray;
             position: absolute;
-            top: 0;
+            top: 1.2rem;
             left: 1rem;
+            transition: top .3s;
           }
         }
         .sign-up__btn {

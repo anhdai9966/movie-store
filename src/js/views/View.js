@@ -4,7 +4,8 @@ export default class View {
   _data; // data này có thể dùng ở nhiều nơi
 
   // render ra giao diện
-  render() {
+  render(data) {
+    this._data = data;
     const markup = this._generateMarkup();
     // xóa nội dung hiện tại
     this._clear();
