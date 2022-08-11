@@ -53,26 +53,3 @@ detailMainEl.addEventListener('click', e => {
     resultItemEL.classList.add('result__item--active');
   }
 }, true);
-
-
-// https://api.themoviedb.org/3/genre/movie/list?api_key=<<api_key>>&language=en-US
-
-detailMainEl.addEventListener('mouseover', e => { 
-  const trailerLinkEl  = e.target.closest('.trailer__link');
-
-  if (!trailerLinkEl) return;
-
-  const maxWidthMd = window.matchMedia("(min-width: 768px)");
-
-  if (maxWidthMd.matches) {
-    const cardDescriptionEl = trailerLinkEl.nextElementSibling;
-    const cardImgEl = trailerLinkEl.parentElement;
-    const cardDescriptionWidth = cardDescriptionEl.offsetWidth;
-    const offsetLeft = cardImgEl.offsetLeft + cardImgEl.offsetWidth;
-    const containerEl = detailMainEl.firstElementChild.offsetWidth;
-
-    if (offsetLeft >= containerEl ) {
-      cardDescriptionEl.style.left = `calc(50% - 2.5rem - ${cardDescriptionWidth}px)`;
-    }
-  }
-}, true);

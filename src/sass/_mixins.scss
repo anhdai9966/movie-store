@@ -39,7 +39,7 @@
 @mixin text-truncate($numberLine: 1) {
   overflow: hidden;
   text-overflow: ellipsis;
-  @if $numberLine != 1 {
+  @if $numberLine != null {
     display: -webkit-box;
     -webkit-line-clamp: $numberLine;
     -webkit-box-orient: vertical;
@@ -58,7 +58,7 @@
   &::after {
     display: block;
     clear: both;
-    content: "";
+    content: '';
   }
 }
 @mixin absolute-full() {

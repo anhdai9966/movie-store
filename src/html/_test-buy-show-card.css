@@ -22,7 +22,7 @@ ul {
 /* 3 item 5deg */
 /* 2 item 3.33deg */
 /* 4 item 3.33deg */
-.wrapper {
+.wrappers {
   transform: rotate(calc(6 * 5deg / 3));
   transform-origin: calc(140px / 2) calc(230px + 110px);
 }

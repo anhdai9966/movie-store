@@ -1,0 +1,98 @@
+.card-movie-2__item {
+  display: flex;
+  flex-flow: column;
+  row-gap: 1.6rem;
+  .first {
+    position: relative;
+    background: $color-loading;
+    &:hover {
+      .trailer__link {
+        opacity: 1;
+      }
+    }
+    .movie__poster,
+    .movie__backdrop {
+      overflow: hidden;
+      border-radius: $border-radius-out ;
+    }
+    .movie__poster {
+      display: none;
+      @media (min-width: $md) {
+        display: block;
+      }
+    }
+    .movie__backdrop {
+      display: block;
+      @media (min-width: $md) {
+        display: none;
+      }
+    }
+    .wishlist__btn {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      .wishlist__icon {
+        width: 3rem;
+        height: 3rem;
+      }
+    }
+    .trailer__link {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: opacity .3s;
+      opacity: 0;
+      display: none;
+      @media (min-width: $md) {
+        display: block;
+      }
+      &:hover {
+        + .movie__overview {
+          display: -webkit-box;
+        }
+      }
+      .play__icon {
+        width: 5rem;
+        height: 5rem;
+      }
+    }
+    .movie__overview {
+      @include text-truncate(3);
+      display: none;
+      position: absolute;
+      top: 50%;
+      left: calc(50% + 2.5rem);
+      z-index: 10;
+      width: 20rem;
+      background-color: $color-tertiary;
+      border: 1rem solid $color-tertiary;
+      border-radius: $border-radius-out;
+    }
+  }
+  .end {
+    display: flex;
+    flex-flow: column;
+    row-gap: .8rem;
+    .movie__title {
+      @include text-truncate(2);
+      font-weight: bold;
+    }
+    .movie__overview {
+      color: $color-gray;
+      display: block;
+      @include text-truncate(2);
+      @media (min-width: $md) {
+        display: none;
+      }
+    }
+    .wrapper {
+      display: flex;
+      align-items: center;
+      column-gap: .8rem;
+      @media (min-width: $md) {
+        color: $color-gray;
+      }
+    }
+  }
+}

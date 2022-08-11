@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../../css/index.min.css">
+  <script type="module" defer src="../../js/layouts/_bannerLayout.js"></script>
+</head>
+<body>
+  <section class="banner">
+    <div class="windows">
+      <div class="view-3d">
+        <div class="rotate">
+          <div class="wrapper">
+            <div class="animation">
+              <div class="grid__wrapper">
+                <div class="card__grid">
+                  <div class="banner-card__item">
+                    <a href="#" class="movie__link">
+                      <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/xeg0UhMmzSalvyK7kvhTHcKXIf8.jpg" class="movie__poster" loading="lazy">
+                      <div class="card__overlay"></div>
+                      <h6 class="movie__title">Thế giới khủng long</h6>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="card__grid">
+                  <div class="banner-card__item">
+                    <a href="#" class="movie__link">
+                      <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/xeg0UhMmzSalvyK7kvhTHcKXIf8.jpg" class="movie__poster" loading="lazy">
+                      <div class="card__overlay"></div>
+                      <h6 class="movie__title">Thế giới khủng long</h6>
+                    </a>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="overlay"></div>
+
+    <div class="container">
+      <div class="content">
+        <div class="title">
+          <h1 class="banner__title">Xem phim không giới hạn và còn hơn thế nữa.</h1>
+          <h3 class="banner__subtitle">Xem ở bất cứ đâu. Hủy bất cứ lúc nào.</h3>
+        </div>
+
+        <div class="form__wrapper">
+          <h6 class="sign-up__title">Bạn đã sẵn sàng xem chưa? Nhập email của bạn để tạo hoặc bắt đầu lại với tư cách thành viên.</h6>
+          <form class="sign-up">
+            <label class="input__wrapper">
+              <input
+                type="email"
+                name="email"
+                id="email"
+                class="email__input"
+                maxlength="50"
+                onblur="blurPlaceholder()"
+                onfocus="focusPlaceholder()"
+              />
+              <label for="email" class="placeholder">Địa chỉ email</label>
+            </label>
+
+            <button class="sign-up__btn">
+              <span>Bắt đầu</span>
+              <svg class="right__icon">
+                <use href="../../imgs/icons.svg#icon-right"></use>
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

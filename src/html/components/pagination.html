@@ -9,52 +9,38 @@
   </head>
   <body>
     <div class="pagination">
-      <div class="container">
-        <div class="pagination__main">
-          <ul class="pagination__list">
-            <li class="pagination__item pagination__left-double">
-              <a href="#" class="left-double__link">
-                <svg class="pagination__icon">
-                  <use href="../../imgs/icons.svg#icon-left-double"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="pagination__item pagination__left">
-              <a href="#" class="left__link">
-                <svg class="pagination__icon">
-                  <use href="../../imgs/icons.svg#icon-left"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="pagination__item">
-              <a href="#" class="item__link">1</a>
-            </li>
-            <li class="pagination__item">
-              <a href="#" class="item__link">2</a>
-            </li>
-            <li class="pagination__item">
-              <a href="#" class="item__link">3</a>
-            </li>
-            <li class="pagination__item pagination__etc">...</li>
-            <li class="pagination__item pagination__right">
-              <a href="#" class="right__link">
-                <svg class="pagination__icon">
-                  <use href="../../imgs/icons.svg#icon-right"></use>
-                </svg>
-              </a>
-            </li>
-            
-          </ul>
-          <div class="pagination__mobile">
-              <a href="#" class="mobile__link">
-                Xem thêm
-                <svg class="pagination__icon">
-                  <use href="../../imgs/icons.svg#icon-arrow-next"></use>
-                </svg>
-              </a>
-            </div>
-        </div>
-      </div>
+      <a href="#" class="pagination__link pagination__link--first">
+        <svg class="pagination__icon">
+          <use href="../../imgs/icons.svg#icon-left-double"></use>
+        </svg>
+      </a>
+
+      <a href="#" class="pagination__link pagination__link--prev">
+        <svg class="pagination__icon">
+          <use href="../../imgs/icons.svg#icon-left"></use>
+        </svg>
+      </a>
+
+      <a href="#" class="pagination__link page__actived">1</a>
+
+      <a href="#" class="pagination__link">2</a>
+
+      <a href="#" class="pagination__link">3</a>
+
+      <p class="pagination__etc">...</p>
+
+      <a href="#" class="pagination__link pagination__link--next">
+        <svg class="pagination__icon">
+          <use href="../../imgs/icons.svg#icon-right"></use>
+        </svg>
+      </a>
+
+      <a href="#" class="pagination-mobile__link--next">
+        Xem thêm
+        <svg class="pagination__icon">
+          <use href="../../imgs/icons.svg#icon-arrow-next"></use>
+        </svg>
+      </a>
     </div>
 
     <script src="../../js/views/paginationView.js"></script>

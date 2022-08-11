@@ -63,7 +63,12 @@ export const pathPictureW600 = function(path) {
   return `https://www.themoviedb.org/t/p/w600_and_h900_bestv2${path}`;
 };
 
-// lấy đường dẫn đầy đủ với width 600px
+// lấy đường dẫn đầy đủ với width 533px
+export const pathPictureW533 = function(path) {
+  return `https://www.themoviedb.org/t/p/w533_and_h300_bestv2${path}`;
+};
+
+// lấy đường dẫn đầy đủ với width 220px
 export const pathPictureW220 = function(path) {
   return `https://www.themoviedb.org/t/p/w220_and_h330_face${path}`;
 };

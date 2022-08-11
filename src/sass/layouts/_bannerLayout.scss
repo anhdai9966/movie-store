@@ -1,0 +1,62 @@
+%absolute-full {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+@keyframes tranX {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-1760px);
+  }
+}
+.banner {
+  max-width: 1920px;
+  margin: 0 auto;
+  background-color: $color-secondary;
+  position: relative;
+  .windows {
+    @extend %absolute-full;
+    overflow: hidden;
+    perspective: 2000px;
+    perspective-origin: -235px 840px;
+    .view-3d {
+      transform-style: preserve-3d;
+      position: absolute;
+      top: -70px;
+      left: -310px;
+      transform: scale(1.08);
+      .rotate {
+        position: absolute;
+        transform: rotateY(320deg) rotateZ(20deg);
+        .wrapper {
+          width: 1760px; // 10rem * 16 + 1rem * 16
+          height: 950px;
+          overflow: hidden;
+          .animation {
+            animation: tranX 60s linear infinite;
+            .grid__wrapper {
+              width: fit-content;
+              display: flex;
+              .card__grid {
+                display: grid;
+                grid-template-columns: repeat(16, 10rem);
+                grid-template-rows: repeat(5, 18rem);
+                gap: 1rem;
+                padding-inline: .5rem;
+              }
+            }
+          }
+        }
+        
+      }
+    }
+  }
+  .overlay {
+    @extend %absolute-full;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.7) 100%);
+  }
+}
