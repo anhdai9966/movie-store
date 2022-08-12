@@ -13,6 +13,22 @@
     transform: translateX(-1760px);
   }
 }
+.banner__container {
+  position: relative;
+  margin-top: -54px;
+  width: 100%;
+  height: 45.7rem;
+  z-index: -1;
+  @media (min-width: $sm) {
+    height: 38rem;
+  }
+  @media (min-width: $lg) {
+    height: 57.4rem;
+  }
+  @media (min-width: $xl) {
+    height: 60.4rem;
+  }
+}
 .banner {
   width: 100%;
   max-width: 192rem;

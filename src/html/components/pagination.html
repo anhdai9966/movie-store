@@ -8,40 +8,52 @@
     <link rel="stylesheet" href="../../css/index.min.css" />
   </head>
   <body>
-    <div class="pagination">
-      <a href="#" class="pagination__link pagination__link--first">
-        <svg class="pagination__icon">
-          <use href="../../imgs/icons.svg#icon-left-double"></use>
-        </svg>
-      </a>
-
-      <a href="#" class="pagination__link pagination__link--prev">
-        <svg class="pagination__icon">
-          <use href="../../imgs/icons.svg#icon-left"></use>
-        </svg>
-      </a>
-
-      <a href="#" class="pagination__link page__actived">1</a>
-
-      <a href="#" class="pagination__link">2</a>
-
-      <a href="#" class="pagination__link">3</a>
-
-      <p class="pagination__etc">...</p>
-
-      <a href="#" class="pagination__link pagination__link--next">
-        <svg class="pagination__icon">
-          <use href="../../imgs/icons.svg#icon-right"></use>
-        </svg>
-      </a>
-
-      <a href="#" class="pagination-mobile__link--next">
-        Xem thêm
-        <svg class="pagination__icon">
-          <use href="../../imgs/icons.svg#icon-arrow-next"></use>
-        </svg>
-      </a>
-    </div>
+    
+    <nav class="pagination__render">
+      <ul class="pagination">
+        <li class="page__item shown-md">
+          <a class="page__link page__link--first" href="#">
+            <svg class="page__icon">
+              <use href="../../imgs/icons.svg#icon-left-double"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="page__item shown-md">
+          <a class="page__link page__link--previous" href="#">
+            <svg class="page__icon">
+              <use href="../../imgs/icons.svg#icon-left"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="page__item shown-md">
+          <a class="page__link" href="#">1</a>
+        </li>
+        <li class="page__item shown-md active">
+          <a class="page__link" href="#">2</a>
+        </li>
+        <li class="page__item shown-md">
+          <a class="page__link" href="#">3</a>
+        </li>
+        <li class="page__item shown-md disabled">
+          <a class="page__link">...</a>
+        </li>
+        <li class="page__item shown-md">
+          <a class="page__link page__link--next" href="#">
+            <svg class="page__icon">
+              <use href="../../imgs/icons.svg#icon-right"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="page__item hidden-md page__item-mobile">
+          <a class="page__link page__link--lazy-loading" href="#">
+            Xem thêm
+            <svg class="page__icon">
+              <use href="../../imgs/icons.svg#icon-arrow-next"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </nav>
 
     <script src="../../js/views/paginationView.js"></script>
   </body>

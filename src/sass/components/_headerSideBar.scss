@@ -1,22 +1,19 @@
-.sidebar__main {
-  display: none;
+.header__sidebar {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  opacity: 0;
-  transition: opacity .3s ease-out;
+  z-index: 100;
   /* From https://css.glass */
   background: rgba(24, 24, 24, 0.3);
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
 }
 .sidebar {
   position: relative;
   top: 0;
   left: calc(-1 * 28rem);
-  z-index: 100;
   transition: left .3s ease-out;
   color: $color-gray;
   background-color: $color-tertiary;

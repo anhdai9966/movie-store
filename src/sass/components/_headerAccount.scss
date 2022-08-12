@@ -1,4 +1,8 @@
-.account__popup {
+.header__account {
+  position: absolute;
+  top: calc(100% + 1rem);
+  right: 0;
+  z-index: 10;
   color: $color-gray;
   background-color: $color-tertiary;
   width: 28rem;

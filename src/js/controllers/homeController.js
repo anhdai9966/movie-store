@@ -4,50 +4,40 @@ import headerView from '../views/headerView.js';
 import sidebarView from '../views/sidebarView.js';
 import searchView from '../views/searchView.js';
 import bannerView from '../views/bannerView.js';
+import introduceView from '../views/introduceView.js';
 
-// tạo biến đếm số lần
-let count = [1, 1];
-
-const controlHeaders = async function () {
-
-  
-  headerView.render();
-  headerView.addHandlerNavMore();
-  headerView.addHandlerNavMoreMovie();
-  headerView.addHandlerAccount();
-  headerView.addHandlerSearch();
-  headerView.addHandlerWishlish();
-  headerView.addHandlerRemoveShowMediaQuery();
-  headerView.addHandlerRemoveShowClick();
-  headerView.addHandlerRemoveShowScroll();
+const controlHeader = function () {
+  headerView.addHandlerShowSidebar(controlSidebar);
+  headerView.addHandlerShowSearch(controlSearch);
 };
 
-const controlSidebars = function () {
-  // chỉ render 1 lần
-  if (count[0] == 1) sidebarView.render();
-  count[0] = 0;
-  sidebarView.addHandlerOpenTransition();
-  sidebarView.addHandlerCloseSidebar();
-  sidebarView.addHandlerCloseSidebarMediaQuery();
-  sidebarView.addHandlerCloseSidebarClickOverlay();
+const controlSidebar = function () {
+  sidebarView.addHandlerShowSidebar();
 };
 
-const controlSearchs = function () {
-  // chỉ render 1 lần
-  if (count[1] == 1) searchView.render();
-  count[1] = 0;
-  searchView.addHandlerToggleSearch();
+const controlSearch = function () {
+  searchView.addHandlerShowSearch();
 };
 
-const controlBanner = async function() {
+const controlBanner = async function () {
   await model.loadMovie80();
-  bannerView.render(model.state.movie80);
+
+  bannerView.addHandlerRenderBanner(model.state.movie80);
+}
+
+const controlIntroduce = async function () {
+  await model.loadMovie2();
+
+  introduceView.renderMovie2(model.state.movie2);
+
+  await model.loadMovie6();
+
+  introduceView.renderMovie6(model.state.movie6);
 }
 
 const init = function () {
-  headerView.addHandlerRender(controlHeaders);
+  headerView.addHandlerRender(controlHeader);
   bannerView.addHandlerRender(controlBanner);
-  headerView.addHandlerOpenSidebar(controlSidebars);
-  headerView.addHandlerSearch(controlSearchs);
+  introduceView.addHandlerRender(controlIntroduce);
 };
 init();

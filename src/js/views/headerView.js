@@ -1,413 +1,173 @@
 import View from './View.js';
 
-import logo from '../../imgs/logo.png';
-import icons from 'url:../../imgs/icons.svg';
-
 class HeaderView extends View {
   _parentElement = document.querySelector('.header');
+
+  _movieBtnToggle = document.querySelector('.movie__btn--toggle');
+  _moreBtnToggle = document.querySelector('.more__btn--toggle');
+  _accountBtnToggle = document.querySelector('.account__btn--toggle');
+  _wishlistBtnToggle = document.querySelector('.wishlist__btn--toggle');
+  _searchBtnToggle = document.querySelector('.search__btn--toggle');
+
+  constructor() {
+    super();
+    this._addHandlerHiddenClick();
+    this._addHandlerShowNavMore();
+    this._addHandlerShowNavMoreMovie();
+    this._addHandlerShowAccount();
+    this._addHandlerShowWishlist();
+    this._addHandlerHiddenNavMoreMediaQuery992();
+    this._addHandlerHiddenNavMoreMediaQuery576();
+  }
 
   // xử lý khi dom đã được tải xong
   addHandlerRender(handler) {
     window.addEventListener('load', handler);
   }
 
-  addHandlerRemoveShowClick() {
-    const parentElement = this._parentElement;
-    document.addEventListener('click', function (e) {
-      const btn1 = e.target.closest('.movie__btn--toggle');
-      const btn2 = e.target.closest('.more__btn--toggle');
-      const btn3 = e.target.closest('.account__btn--toggle');
-      const btn4 = e.target.closest('.search__btn--toggle');
-      const btn5 = e.target.closest('.wishlist__btn--toggle');
-      if (btn1 || btn2 || btn3 || btn4 || btn5) return;
-      const findShow = parentElement.querySelector('.show');
-      if (findShow) findShow.classList.remove('show');
-    });
-  }
-
-  // khi click vào nút menu thì xử lý
-  addHandlerOpenSidebar(handler = () => {}) {
+  // xử lý khi click vào menu sidebar
+  addHandlerShowSidebar(handler) {
     this._parentElement.addEventListener('click', function (e) {
       const btn = e.target.closest('.sidebar__btn--show');
       if (!btn) return;
       handler();
-      const findShow = document.querySelector('.show');
-      if (findShow) findShow.classList.remove('show');
     });
   }
 
-  addHandlerSearch(handler = () => {}) {
-    const parentElement = this._parentElement;
-    this._parentElement.addEventListener('click', function (e) {
-      const btn = e.target.closest('.search__btn--toggle');
-      if (!btn) return;
+  // Thêm xử lý toggle search
+  addHandlerShowSearch(handler) {
+    const parentEl = this._parentElement;
+    let count = 0;
+    this._searchBtnToggle.addEventListener('click', function () {
       handler();
-      const findShow = parentElement.querySelector('.show');
-      if (findShow) findShow.classList.remove('show');
-    });
-  }
-
-  addHandlerNavMoreMovie() {
-    const markup = this._generateMarkupMovie();
-    const parentElement = this._parentElement;
-    let count = 1;
-    this._parentElement.addEventListener('click', function (e) {
-      const btn = e.target.closest('.movie__btn--toggle');
-      if (!btn) return;
-      const navPopupMain = btn.nextElementSibling;
-      const findShow = parentElement.querySelector('.show');
-
-      if (!navPopupMain.classList.contains('show')) {
-        if (findShow) findShow.classList.remove('show');
-      }
-      navPopupMain.classList.toggle('show');
-
-      if (count == 1) {
-        navPopupMain.innerHTML = '';
-        navPopupMain.insertAdjacentHTML('afterbegin', markup);
+      if(count == 0) {
+        parentEl.style.background = '#181818';
+        count++;
+      } else {
+        parentEl.style.background = 'transparent';
         count--;
-      }
+      };
+      
     });
   }
 
-  addHandlerNavMore() {
-    const markup = this._generateMarkupMore();
-    const parentElement = this._parentElement;
-    let count = 1;
-    this._parentElement.addEventListener('click', function (e) {
-      const btn = e.target.closest('.more__btn--toggle');
-      if (!btn) return;
-      const navPopupMain = btn.nextElementSibling;
-      const findShow = parentElement.querySelector('.show');
-
-      if (!navPopupMain.classList.contains('show')) {
-        if (findShow) findShow.classList.remove('show');
-      }
-      navPopupMain.classList.toggle('show');
-
-      if (count == 1) {
-        navPopupMain.innerHTML = '';
-        navPopupMain.insertAdjacentHTML('afterbegin', markup);
-        count--;
-      }
-    });
-
-    this._parentElement.addEventListener('mouseover', function (e) {
-      const btn = e.target.closest('.more__btn--toggle');
-      if (!btn) return;
-      const navPopupMain = btn.nextElementSibling;
-      const findShow = parentElement.querySelector('.show');
-
-      if (!navPopupMain.classList.contains('show')) {
-        if (findShow) findShow.classList.remove('show');
-      }
-      navPopupMain.classList.toggle('show');
-
-      if (count == 1) {
-        navPopupMain.innerHTML = '';
-        navPopupMain.insertAdjacentHTML('afterbegin', markup);
-        count--;
-      }
-    });
+  handlerShowNavMoreMovie() {
+    this.handlerHiddenNavMore.call(this);
+    this.handlerHideAccount.call(this);
+    this.handlerHideWishlist.call(this);
+    this._movieBtnToggle.nextElementSibling.classList.toggle('hidden');
   }
 
-  addHandlerWishlish() {
-    const markup = this._generateMarkupWishlist();
-    this._parentElement.addEventListener('click', function (e) {
-      const btn = e.target.closest('.wishlist__btn--toggle');
-      if (!btn) return;
-      const navPopupMain = btn.nextElementSibling;
-      const findShow = document.querySelector('.show');
-
-      if (!navPopupMain.classList.contains('show')) {
-        if (findShow) findShow.classList.remove('show');
-      }
-      navPopupMain.classList.toggle('show');
-
-      navPopupMain.innerHTML = '';
-      navPopupMain.insertAdjacentHTML('afterbegin', markup);
-    });
+  // thêm xử lý khi click vòa nav more movie
+  _addHandlerShowNavMoreMovie() {
+    this._movieBtnToggle.addEventListener('click', this.handlerShowNavMoreMovie.bind(this));
   }
 
-  addHandlerAccount() {
-    const markup = this._generateMarkupAccount();
-    let count = 1;
-    this._parentElement.addEventListener('click', function (e) {
-      const btn = e.target.closest('.account__btn--toggle');
-      if (!btn) return;
-      const navPopupMain = btn.nextElementSibling;
-      const findShow = document.querySelector('.show');
-
-      if (!navPopupMain.classList.contains('show')) {
-        if (findShow) findShow.classList.remove('show');
-      }
-      navPopupMain.classList.toggle('show');
-
-      if (count == 1) {
-        navPopupMain.innerHTML = '';
-        navPopupMain.insertAdjacentHTML('afterbegin', markup);
-        count--;
-      }
-    });
+  handlerShowNavMore() {
+    this.handlerHiddenNavMoreMovie.call(this);
+    this.handlerHideAccount.call(this);
+    this.handlerHideWishlist.call(this);
+    this._moreBtnToggle.nextElementSibling.classList.toggle('hidden');
   }
 
-  addHandlerRemoveShowMediaQuery() {
-    const parentElement = this._parentElement;
-    const mediaQuery = window.matchMedia(`(min-width: 992px)`);
-    mediaQuery.addListener(handlerRemoveShow);
+  // thêm xử lý khi click vòa nav more
+  _addHandlerShowNavMore() {
+    this._moreBtnToggle.addEventListener('click', this.handlerShowNavMore.bind(this));
+  }
 
-    function handlerRemoveShow(e) {
-      if (!e.matches) {
-        const findShow = parentElement.querySelector('.show');
-        if (findShow) findShow.classList.remove('show');
-      }
+  handlerShowAccount() {
+    this.handlerHiddenNavMore.call(this);
+    this.handlerHiddenNavMoreMovie.call(this);
+    this.handlerHideWishlist.call(this);
+    this._accountBtnToggle.nextElementSibling.classList.toggle('hidden');
+  }
+
+  // Thêm xử lý toggle account
+  _addHandlerShowAccount() {
+    this._accountBtnToggle.addEventListener('click', this.handlerShowAccount.bind(this));
+  }
+
+  handlerShowWishlist() {
+    this.handlerHiddenNavMore.call(this);
+    this.handlerHiddenNavMoreMovie.call(this);
+    this.handlerHideAccount.call(this);
+    this._wishlistBtnToggle.nextElementSibling.classList.toggle('hidden');
+  }
+
+  // Thêm xử lý toggle wishlist
+  _addHandlerShowWishlist() {
+    this._wishlistBtnToggle.addEventListener('click', this.handlerShowWishlist.bind(this));
+  }
+
+  // hidden
+  handlerHideAccount() {
+    if (!this._accountBtnToggle.nextElementSibling.classList.contains('hidden')) {
+      this._accountBtnToggle.nextElementSibling.classList.add('hidden');
     }
-    handlerRemoveShow(mediaQuery);
   }
 
-  addHandlerRemoveShowScroll() {
-    document.onscroll = () => {
-      const findShow = this._parentElement.querySelector('.show');
-      if (findShow) findShow.classList.remove('show');
+  handlerHideWishlist() {
+    if (!this._wishlistBtnToggle.nextElementSibling.classList.contains('hidden')) {
+      this._wishlistBtnToggle.nextElementSibling.classList.add('hidden');
+    }
+  }
+
+  handlerHiddenNavMoreMovie() {
+    if (!this._movieBtnToggle.nextElementSibling.classList.contains('hidden')) {
+      this._movieBtnToggle.nextElementSibling.classList.add('hidden');
+    }
+  }
+
+  handlerHiddenNavMore() {
+    if (!this._moreBtnToggle.nextElementSibling.classList.contains('hidden')) {
+      this._moreBtnToggle.nextElementSibling.classList.add('hidden');
+    }
+  }
+
+  // thêm xử lý khi thay đổi kích thước màn hình
+  _addHandlerHiddenNavMoreMediaQuery992() {
+    // Tạo điểm cuối kích thức cửa sổ rộng ít nhất 992px
+    const mediaQuery = window.matchMedia(`(min-width: 992px)`);
+    // đăng ký với trình nghe sự kiện
+    mediaQuery.addListener(e => {
+      // nếu lớn hơn 992 thì xử lý
+      if (e.matches) {
+        // gọi lại method trong class
+        this.handlerHiddenNavMore.call(this);
+        this.handlerHiddenNavMoreMovie.call(this);
+      }
+    });
+  }
+
+  _addHandlerHiddenNavMoreMediaQuery576() {
+    const mediaQuery = window.matchMedia(`(min-width: 576px)`);
+    mediaQuery.addListener(e => {
+      if (e.matches) {
+        this.handlerHideWishlist.call(this);
+      }
+    });
+  }
+
+  // thêm xử lý khi click bất kỳ thì ẩn những gì đã hiện
+  _addHandlerHiddenClick() {
+    document.onclick = function (e) {
+      const listElementNotHidden = [
+        '.movie__btn--toggle',
+        '.more__btn--toggle',
+        '.account__btn--toggle',
+        '.wishlist__btn--toggle',
+        '.search__btn--toggle',
+      ];
+      let flag = 0;
+      listElementNotHidden.forEach(element => {
+        if(e.target.closest(element)) return flag = 1;
+      });
     };
   }
 
   _generateMarkup() {
     return /*html */ `
-      <div class="container">
-        <nav class="nav">
-          <ul class="nav__list">
-            <li class="nav__item hide-lg">
-              <button class="nav__btn sidebar__btn--show">
-                <svg class="nav__icon">
-                  <use href="${icons}#icon-menu"></use>
-                </svg>
-              </button>
-            </li>
-
-            <li class="nav__item">
-              <a href="#" class="nav__logo">
-                <img src="${logo}" alt="logo moviestore" />
-              </a>
-            </li>
-
-            <li class="nav__item show-lg">
-              <button class="nav__btn movie__btn--toggle">
-                <span>Phim</span>
-                <svg class="nav__icon--small">
-                  <use href="${icons}#icon-caret"></use>
-                </svg>
-              </button>
-              <div class="nav-popup__main"></div>
-            </li>
-
-            <div class="nav__item show-lg">
-              <a href="#" class="nav__link">Trailer</a>
-            </div>
-
-            <div class="nav__item show-lg">
-              <a href="#" class="nav__link">Tin tức</a>
-            </div>
-
-            <li class="nav__item show-lg">
-              <button class="nav__btn more__btn--toggle">
-                <span>Hơn Nữa</span>
-                <svg class="nav__icon--small">
-                  <use href="${icons}#icon-caret"></use>
-                </svg>
-              </button>
-              <div class="nav-popup__main"></div>
-            </li>
-          </ul>
-
-          <ul class="nav__list">
-            <li class="nav__item show-sm">
-              <button class="nav__btn wishlist__btn--toggle">
-                <svg class="nav__icon">
-                  <use href="${icons}#icon-bookmark"></use>
-                </svg>
-              </button>
-              <div class="nav-popup__main"></div> 
-            </li>
-
-            <li class="nav__item">
-              <button class="nav__btn account__btn--toggle">
-                <svg class="nav__icon">
-                  <use href="${icons}#icon-user"></use>
-                </svg>
-              </button>
-              <div class="nav-popup__main"></div> 
-            </li>
-
-            <li class="nav__item">
-              <button class="nav__btn search__btn--toggle">
-                <svg class="nav__icon">
-                  <use href="${icons}#icon-search"></use>
-                </svg>
-              </button>
-            </li>
-
-            <li class="nav__item hide">
-              <button class="signIn__btn">Đăng nhập</button>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    `;
-  }
-
-  _generateMarkupMovie() {
-    return /*html */ `
-      <ul class="moreNav__popup">
-        <li class="moreNav__item">
-          <a href="#" class="moreNav__link">Phim Thịnh Hành</a>
-        </li>
-
-        <li class="moreNav__item">
-          <a href="#" class="moreNav__link">Bảng Xếp Hạng</a>
-        </li>
-
-        <li class="moreNav__item">
-          <a href="#" class="moreNav__link">Phim Sắp Phát Hành</a>
-        </li>
-      </ul>
-    `;
-  }
-
-  _generateMarkupMore() {
-    return /*html */ `
-      <ul class="moreNav__popup">
-        <li class="moreNav__item">
-          <button class="moreNav__btn">Thể loại</button>
-        </li>
-
-        <li class="moreNav__item">
-          <button class="moreNav__btn">Quốc gia</button>
-        </li>
-
-        <li class="moreNav__item">
-          <button class="moreNav__btn">Năm Phát Hành</button>
-        </li>
-
-        <li class="moreNav__item">
-          <a href="#" class="moreNav__link">Người Nổi Tiếng</a>
-        </li>
-      </ul>
-    `;
-  }
-
-  _generateMarkupAccount() {
-    return /*html */ `
-      <div class="account__popup">
-        <ul class="account__list">
-          <div class="account__link">
-            <div class="account__status"></div>
-            <div class="account__info">
-              <p>Hi, anhdai9966</p>
-              <p>3200 xu</p>
-            </div>
-          </div>
-
-          <li class="account__item">
-            <a href="#" class="account__link">
-              <svg class="account__icon">
-                <use href="${icons}#icon-person"></use>
-              </svg>
-              <span>Tài khoản của tôi</span>
-            </a>
-          </li>
-
-          <li class="account__item">
-            <a href="#" class="account__link">
-              <svg class="account__icon">
-                <use href="${icons}#icon-film"></use>
-              </svg>
-              <span>Phim của tôi</span>
-            </a>
-          </li>
-
-          <li class="account__item">
-            <a href="#" class="account__link">
-              <svg class="account__icon">
-                <use href="${icons}#icon-bookmark"></use>
-              </svg>
-              <span>Danh sách mong muốn</span>
-            </a>
-          </li>
-
-          <li class="account__item">
-            <a href="#" class="account__link">
-              <svg class="account__icon">
-                <use href="${icons}#icon-history"></use>
-              </svg>
-              <span>Lịch sử đã xem</span>
-            </a>
-          </li>
-
-          <li class="account__item">
-            <a href="#" class="account__link">
-              <svg class="account__icon">
-                <use href="${icons}#icon-door-out"></use>
-              </svg>
-              <span>Đăng xuất</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-    `;
-  }
-
-  _generateMarkupWishlist() {
-    return /*html */ `
-      <div class="wishlist__popup">
-        <p class="wishlist__title">
-          <svg class="wishlist__icon">
-            <use href="${icons}#icon-bookmark-fill"></use>
-          </svg>
-          <span>Danh sách yêu thích</span>
-        </p>
-
-        <div class="wrapper">
-          <div class="wishlist__list">
-            <div class="popupWishlist__card">
-              <a href="#" class="card__link movie__poster">
-                <img src="https://www.themoviedb.org/t/p/w500/xeg0UhMmzSalvyK7kvhTHcKXIf8.jpg" alt="movie" loading="lazy" />
-              </a>
-          
-              <div class="wrapper">
-                <a href="#" class="card__link">Thế giới khủng long</a>
-                <p class="wrap">
-                  <span class="">
-                    <span class="movie__rate">7.0</span>
-                    <svg class="star__icon">
-                      <use href="${icons}#icon-star-fill"></use>
-                    </svg>
-                  </span>
-                  <span class="movie__price">80.000 đ</span>
-                </p>
-              </div>
-          
-              <button class="card__btn card__btn--remove">
-                <svg class="card__icon">
-                  <use href="${icons}#icon-dismiss"></use>
-                </svg>
-              </button>
-            </div>
       
-            <div class="wishlist__empty">
-              <svg class="wishlist__icon">
-                <use href="${icons}#icon-list-empty"></use>
-              </svg>
-              <p class="wishlist__message">Oops!<br />Bạn hãy chọn phim yêu thích!</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="wishlist__btn">
-          <a href="#" class="view__link">Xem</a>
-          <button class="buy__btn">Mua</button>
-        </div>
-      </div>
     `;
   }
 }

@@ -1,18 +1,14 @@
 [
   {
-  "id": 1,
   "backdropPath": "/9eAn20y26wtB3aet7w9lHjuSgZ3.jpg",
   "posterPath": "/cjb9NXJvisfh5fmgX9rerxZfFrJ.jpg",
   "title": "Thế Giới Khủng Long: Lãnh Địa",
-  "originalTitle": "Jurassic World Dominion",
-  "idMovie": 507086
+  "id": 507086
   },
   {
-    "id": 1,
     "backdropPath": "/wcKFYIiVDvRURrzglV9kGu7fpfY.jpg",
     "posterPath": "/ovMxUPSSuvBD7GcgdQxzbJfsR8q.jpg",
     "title": "Doctor Strange: Đa Vũ Trụ Hỗn Loạn",
-    "originalTitle": "Doctor Strange in the Multiverse of Madness",
-    "idMovie": 453395
+    "id": 453395
   }
 ]

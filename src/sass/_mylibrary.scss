@@ -223,6 +223,30 @@
   }
 }
 
+@each $name, $width in $grid-breakpoints {
+  @if $width == 0 {
+    .shown {
+      display: block !important;
+    }
+    .hidden {
+      display: none !important;
+    }
+  } @else {
+    .shown-#{$name} {
+      display: none !important;
+    }
+    @media (min-width: $width) {
+      .shown-#{$name} {
+        display: block !important;
+      }
+      .hidden-#{$name} {
+        display: none !important;
+      }
+    }
+  }
+}
+
+
 .star__icon {
   width: 1.5rem;
   height: 1.5rem;

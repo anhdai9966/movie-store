@@ -1,0 +1,15 @@
+.btn {
+  &__close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: $color-gray;
+    &:hover {
+      color: $color-while;
+    }
+  }
+  &__icon {
+    width: 2rem;
+    height: 2rem;
+  }
+}

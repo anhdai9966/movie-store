@@ -1,16 +1,16 @@
-.spinner {
+.spinner__render {
   position: absolute;
   top: 10rem;
   left: 50%;
   transform: translateX(-50%);
   width: fit-content;
-  .line__list {
+  .spinner {
     width: 67px;
     height: 67px;
     background: transparent;
     position: relative;
     transform: translateX(33.5px);
-    .spinner__line {
+    .seen {
       background: $color-while;
       border-radius: $border-radius-out;
       height: 18px;

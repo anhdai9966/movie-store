@@ -4,6 +4,7 @@
   align-items: center;
 }
 .footer {
+  background: $color-secondary;
   padding-block: 3rem;
   @include margin-div(top, 1.6rem);
   a {
@@ -72,7 +73,8 @@
     + .footer__moviestore {
       margin-top: 0;
     }
-    .ms-logo {
+    .logo__icon {
+      width: 14rem;
       height: 2.4rem;
     }
   }

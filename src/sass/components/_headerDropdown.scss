@@ -1,0 +1,32 @@
+.dropdown {
+  &__menu {
+    position: absolute;
+    top: calc(100% + 1rem);
+    right: 0;
+    z-index: 10;
+    width: 22rem;
+    background: $color-tertiary;
+    color: $color-gray;
+    font-weight: bold;
+    border-radius: $border-radius-out;
+    padding-block: 1.6rem;
+  }
+  &__item {
+    height: 4.9rem;
+    padding-inline: 2.4rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    &:hover {
+      background: $color-primary;
+      color: $color-while;
+    }
+  }
+  &__btn,
+  &__link {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+}

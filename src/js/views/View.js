@@ -5,7 +5,9 @@ export default class View {
 
   // render ra giao diện
   render(data) {
+    // 
     this._data = data;
+    // lấy đánh dấu
     const markup = this._generateMarkup();
     // xóa nội dung hiện tại
     this._clear();

@@ -10,37 +10,47 @@ $color-normal: #333;
   border-radius: $border-radius-in;
   @extend %center-flex;
 }
+.pagination__render {
+  position: relative;
+}
 .pagination {
   width: 100%;
   height: 4.9rem;
   border-radius: $border-radius-out;
+  color: $color-gray;
   background: $color-tertiary;
-  column-gap: 0.2rem;
+  font-weight: bold;
   @extend %center-flex;
-  .page__actived,
-  a:hover {
+  column-gap: 0.2rem;
+  .active {
     color: $color-while;
     background: $color-normal;
   }
-  &__icon {
-    width: 1.8rem;
-    height: 1.8rem;
+  .disabled {
+    color: $color-disabled;
+    cursor:  not-allowed;
   }
-  .pagination__etc,
-  [class^=pagination__link] {
-    @extend %pagination-have;
-    width: 6rem;
-    display: none;
-    @media (min-width: $md) {
-      display: flex;
+  .page {
+    &__item {
+      width: 6rem;
+      height: 4.3rem;
+      border-radius: $border-radius-in;
+      &:not(.disabled):hover {
+        @extend .active;
+      }
     }
-  }
-  .pagination-mobile__link--next {
-    @extend %pagination-have;
-    width: 15rem;
-    column-gap: 0.8rem;
-    @media (min-width: $md) {
-      display: none;
+    &__item-mobile {
+      width: 15rem;
+    }
+    &__link {
+      width: 100%;
+      height: 100%;
+      @extend %center-flex;
+      column-gap: .8rem;
+    }
+    &__icon {
+      width: 1.8rem;
+      height: 1.8rem;
     }
   }
 }

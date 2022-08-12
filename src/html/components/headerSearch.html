@@ -8,23 +8,17 @@
     <link rel="stylesheet" href="../../css/index.min.css" />
   </head>
   <body>
-    <div class="search__popup">
+    <div class="header__search">
       <div class="container">
         <form class="search__form">
-          <input type="text" placeholder="Tìm kiếm....." class="search__input" />
+          <input type="text" placeholder="Tìm kiếm....." class="form__input" />
           <button class="cancel__btn">Hủy</button>
-
-          <svg class="search__icon">
+  
+          <svg class="form__icon">
             <use href="../../imgs/icons.svg#icon-search"></use>
           </svg>
-
-          <button class="clear__btn clear__btn--clear" title="Xóa tất cả">
-            <svg class="dismiss__icon">
-              <use href="../../imgs/icons.svg#icon-dismiss"></use>
-            </svg>
-          </button>
         </form>
-
+  
         <ul class="search__searched">
           <li class="search__item">
             <a href="#" class="search__link">
@@ -45,14 +39,14 @@
             <button class="search__btn search__btn--remove" title="Xóa tìm kiếm này">Xóa</button>
           </li>
         </ul>
-
+  
         <p class="suggest__title">
           <svg class="search__icon">
             <use href="../../imgs/icons.svg#icon-trending"></use>
           </svg>
           <span>Phim thịnh hành</span>
         </p>
-
+  
         <ul class="search__suggest">
           <li class="search__item">
             <a href="#" class="search__link">
