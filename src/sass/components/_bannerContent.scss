@@ -104,6 +104,9 @@
           width: 100%;
           height: 4.9rem;
           border-radius: $border-radius-out;
+          display: flex;
+          align-items: center;
+          justify-content: center;
           @media (min-width: $sm) {
             width: 15rem;
             border-bottom-left-radius: 0;

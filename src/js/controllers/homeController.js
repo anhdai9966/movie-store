@@ -5,6 +5,7 @@ import sidebarView from '../views/sidebarView.js';
 import searchView from '../views/searchView.js';
 import bannerView from '../views/bannerView.js';
 import introduceView from '../views/introduceView.js';
+import gototopView from '../views/gototopView.js';
 
 const controlHeader = function () {
   headerView.addHandlerShowSidebar(controlSidebar);

@@ -165,6 +165,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        color: #181818;
         column-gap: 2.4rem;
         @media (min-width: $md) {
           justify-content: flex-start;
@@ -204,7 +205,7 @@
     flex-flow: column;
     justify-content: center;
     align-items: center;
-    row-gap: 2.4rem;
+    row-gap: 4rem;
     text-align: center;
     .section-5__form {
       width: 100%;

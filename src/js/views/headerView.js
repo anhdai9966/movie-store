@@ -18,6 +18,7 @@ class HeaderView extends View {
     this._addHandlerShowWishlist();
     this._addHandlerHiddenNavMoreMediaQuery992();
     this._addHandlerHiddenNavMoreMediaQuery576();
+    this._addHandlerScrollTopShowHeader();
   }
 
   // xử lý khi dom đã được tải xong
@@ -163,6 +164,21 @@ class HeaderView extends View {
         if(e.target.closest(element)) return flag = 1;
       });
     };
+  }
+
+  _addHandlerScrollTopShowHeader() {
+    let heightCurrent, height = 0;
+    window.addEventListener('scroll', () => {
+      heightCurrent = document.documentElement.scrollTop;
+      if(height < heightCurrent) {
+        this._parentElement.style.top = "-54px";
+        height = heightCurrent;
+      } else {
+        this._parentElement.style.top = "0";
+        height = heightCurrent;
+      };
+
+    });
   }
 
   _generateMarkup() {

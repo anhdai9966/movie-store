@@ -1,10 +1,20 @@
+.headerIndex,
 .header {
+  width: 100%;
   max-width: 192rem;
   min-width: 30rem;
   margin: 0 auto;
+  height: 5.4rem;
+  display: flex;
+  align-items: center;
   // background: $color-tertiary;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, .5) 100%);
   color: $color-while;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  transition: top .3s ease-out;
   .nav {
     display: flex;
     justify-content: space-between;

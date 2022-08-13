@@ -100,3 +100,10 @@ export const translateVietnamese = function(wordEnglish) {
 
   return vietnamese.find(obj => obj.id == englishId).word;
 };
+
+export function isEmpty(object) {
+  for (let property in object) {
+    return false;
+  }
+  return true;
+}
