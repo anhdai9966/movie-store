@@ -1,6 +1,7 @@
 .header__search {
-  position: absolute;
-  left: 0;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
   top: 5.4rem;
   z-index: 10;
   width: 100%;
@@ -9,6 +10,7 @@
   padding-block: 1.6rem;
   color: $color-gray;
   background: $color-secondary;
+  transition: top .5s ease-out;
   .search {
     &__form {
       position: relative;

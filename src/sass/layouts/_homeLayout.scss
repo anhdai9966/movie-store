@@ -1,0 +1,142 @@
+.home__main {
+  position: relative;
+  background: $color-secondary;
+  h2 {
+    margin-block: 4rem;
+  }
+}
+.verl {
+  font-size: 1.8rem;
+  display: inline-block;
+  width: 2px;
+  height: 24px;
+  background: $color-primary;
+  border-radius: 2px;
+}
+.sect {
+  margin-block: 2.4rem;
+  &__title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: bold;
+    .title {
+      display: flex;
+      align-items: center;
+      column-gap: 1rem;
+      font-size: 1.8rem;
+    }
+    .title__link {
+      display: flex;
+      align-items: center;
+      column-gap: 1rem;
+      color: $color-gray;
+      &:hover {
+        color: $color-while;
+      }
+      @media (max-width: $sm) {
+        font-size: 1.3rem;
+      }
+    }
+  }
+  &__container {
+    position: relative;
+    margin-block: 2.4rem;
+    .right__btn,
+    .left__btn {
+      position: absolute;
+      top: 37%;
+      transform: translateY(-50%);
+      opacity: 0.5;
+      &:hover {
+        opacity: 1;
+      }
+      @media (max-width: $sm) {
+        display: none;
+      }
+    }
+    .control__icon {
+      width: 4rem;
+      height: 4rem;
+      fill: $color-while;
+    }
+    .left__btn {
+      left: -20px;
+    }
+    .right__btn {
+      right: -20px;
+    }
+  }
+}
+
+.card__home1-2,
+.card__home1-3,
+.card__home1-4,
+.card__home1-5,
+.card__home1-6,
+.card__home {
+  --scroll-width-x: 1rem;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  &::-webkit-scrollbar-thumb {
+    background-image: $scroll-thumb-bg-x;
+  }
+  @media (min-width: $sm) {
+    overflow: hidden;
+  }
+}
+
+.card__home2 {
+  --scroll-width-x: 1rem;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  &::-webkit-scrollbar-thumb {
+    background-image: $scroll-thumb-bg-x;
+  }
+  @media (min-width: $sm) {
+    overflow: hidden;
+  }
+}
+.card__home3 {
+  --scroll-width-x: 1rem;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  &::-webkit-scrollbar-thumb {
+    background-image: $scroll-thumb-bg-x;
+  }
+  @media (min-width: $sm) {
+    overflow: hidden;
+  }
+}
+.card__home4 {
+  --scroll-width-x: 1rem;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  &::-webkit-scrollbar-thumb {
+    background-image: $scroll-thumb-bg-x;
+  }
+  @media (min-width: $sm) {
+    overflow: hidden;
+  }
+}
+.card__home5 {
+  --scroll-width-x: 1rem;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  &::-webkit-scrollbar-thumb {
+    background-image: $scroll-thumb-bg-x;
+  }
+  @media (min-width: $sm) {
+    overflow: hidden;
+  }
+}

@@ -11,7 +11,6 @@ class HeaderView extends View {
 
   constructor() {
     super();
-    this._addHandlerHiddenClick();
     this._addHandlerShowNavMore();
     this._addHandlerShowNavMoreMovie();
     this._addHandlerShowAccount();
@@ -19,6 +18,7 @@ class HeaderView extends View {
     this._addHandlerHiddenNavMoreMediaQuery992();
     this._addHandlerHiddenNavMoreMediaQuery576();
     this._addHandlerScrollTopShowHeader();
+    this._addHandlerHiddenClick();
   }
 
   // xử lý khi dom đã được tải xong
@@ -151,33 +151,52 @@ class HeaderView extends View {
 
   // thêm xử lý khi click bất kỳ thì ẩn những gì đã hiện
   _addHandlerHiddenClick() {
-    document.onclick = function (e) {
-      const listElementNotHidden = [
-        '.movie__btn--toggle',
-        '.more__btn--toggle',
-        '.account__btn--toggle',
-        '.wishlist__btn--toggle',
-        '.search__btn--toggle',
-      ];
-      let flag = 0;
-      listElementNotHidden.forEach(element => {
-        if(e.target.closest(element)) return flag = 1;
-      });
-    };
+    const listElementNotHidden = [
+      '.movie__btn--toggle',
+      '.more__btn--toggle',
+      '.account__btn--toggle',
+      '.wishlist__btn--toggle',
+      '.search__btn--toggle',
+    ];
+    window.addEventListener('click', (e) => {
+      const btn = e.target;
+      const flag = listElementNotHidden.some(el => btn.closest(el));
+
+      if (!flag) {
+        this.handlerHiddenNavMore();
+        this.handlerHiddenNavMoreMovie();
+        this.handlerHideAccount();
+        this.handlerHideWishlist();
+      };
+    })
   }
 
+  // nếu cuộn xuống thì ẩn còn cuộn lên thì hiện
   _addHandlerScrollTopShowHeader() {
     let heightCurrent, height = 0;
     window.addEventListener('scroll', () => {
       heightCurrent = document.documentElement.scrollTop;
+      
       if(height < heightCurrent) {
         this._parentElement.style.top = "-54px";
+        this.handlerHiddenNavMore();
+        this.handlerHiddenNavMoreMovie();
+        this.handlerHideAccount();
+        this.handlerHideWishlist();
         height = heightCurrent;
       } else {
         this._parentElement.style.top = "0";
-        height = heightCurrent;
-      };
 
+        heightCurrent == 54 ?
+        this._parentElement.style.background = "transparent" :
+        this._parentElement.style.background = "#181818";
+
+        height = heightCurrent;
+      }
+
+      if (heightCurrent == 0) {
+        this._parentElement.style.top = "0";
+      }
     });
   }
 

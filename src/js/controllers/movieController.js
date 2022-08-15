@@ -1,3 +1,32 @@
+import * as model from '../models/movieModel.js';
+
+import headerView from '../views/headerView.js';
+import sidebarView from '../views/sidebarView.js';
+import searchView from '../views/searchView.js';
+import bannerView from '../views/bannerView.js';
+import gototopView from '../views/gototopView.js';
+
+import paginationView from '../views/paginationView.js';
+import movieCardView from '../views/movieCardView.js';
+
+const controlHeader = function () {
+  headerView.addHandlerShowSidebar(controlSidebar);
+  headerView.addHandlerShowSearch(controlSearch);
+};
+
+const controlSidebar = function () {
+  sidebarView.addHandlerShowSidebar();
+};
+
+const controlSearch = function () {
+  searchView.addHandlerShowSearch();
+};
+
+const controlBanner = async function () {
+  await model.loadMovie80();
+  bannerView.addHandlerRenderBanner(model.state.movie80);
+}
+
 const detailMainEl = document.querySelector('#detail__main');
 const yearInputEl = document.getElementById('year__input');
 const nationInputEl = document.getElementById('nation__input');
@@ -53,3 +82,39 @@ detailMainEl.addEventListener('click', e => {
     resultItemEL.classList.add('result__item--active');
   }
 }, true);
+
+const controlMovieCard = async function () {
+  // hash #now_playing&page=2
+  let prefix;
+  let page;
+  const hash = window.location.hash.slice(1).split('&');
+  // kiểm tra hash và lấy giá trị
+  if (!hash[0]) {
+    prefix = 'now_playing';
+    page = 'page=1';
+  } else if (hash.length == 1) {
+    prefix = hash[0];
+    page = 'page=1';
+  } else if (hash.length == 2) {
+    prefix = hash[0];
+    page = hash[1];
+  };
+  // render con quay chờ đợi
+  movieCardView.renderSpinner();
+  // load api
+  await model.loadMovies(prefix, page);
+  // render card
+  movieCardView.render(model.state.movies);
+  // gọi api được thì mới render ra phân trang
+  paginationView.render(model.state.pages, prefix);
+}
+
+// const controlPagination = function () {
+// }
+
+const init = function () {
+  movieCardView.addHandlerRender(controlMovieCard);
+  headerView.addHandlerRender(controlHeader);
+  bannerView.addHandlerRender(controlBanner);
+}
+init();

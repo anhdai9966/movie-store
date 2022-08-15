@@ -1,21 +1,22 @@
 .goToTop {
   position: fixed;
-  bottom: 3rem;
+  top: calc(100% - 6rem);
   right: 3rem;
+  z-index: 90;
   // transform: translateY(0);
-  transform: translateY(7.5rem);
-  opacity: .5;
-  transition: transform .5s ease-out;
   display: none;
   @media (min-width: $sm) {
     display: block;
   }
-  &:hover {
-    opacity: 1;
-    transform: translateY(-10px);
-  }
   &__icon {
+    transform: translateY(7.5rem);
+    opacity: .5;
+    transition: transform .5s ease-out;
     width: 4rem;
     height: 4rem;
+    &:hover {
+      opacity: 1;
+      transform: translateY(-8px) !important;
+    }
   }
 }

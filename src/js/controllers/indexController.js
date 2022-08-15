@@ -1,11 +1,11 @@
-import * as model from './models/homeModel.js';
+import * as model from '../models/indexModel.js';
 
-import headerView from './views/headerIndexView.js';
-import bannerView from './views/bannerView.js';
-import introduceView from './views/introduceView.js';
-import popupSigninView from './views/popupSigninView.js';
-import discoverView from './views/discoverView.js';
-import gototopView from './views/gototopView.js';
+import headerView from '../views/headerIndexView.js';
+import bannerView from '../views/bannerViewIndex.js';
+import introduceView from '../views/introduceView.js';
+import popupSigninView from '../views/popupSigninView.js';
+import discoverView from '../views/discoverView.js';
+import gototopView from '../views/gototopView.js';
 
 const controlBanner = async function () {
   await model.loadMovie80();

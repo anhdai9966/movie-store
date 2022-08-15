@@ -1,0 +1,39 @@
+// configuration
+@import '../shared/font';
+@import '../shared/variables';
+@import '../shared/root';
+@import '../shared/reboot';
+@import '../shared/mixins';
+@import '../shared/mylibrary';
+@import '../shared/scroll';
+
+@import '../layouts/bannerLayout';
+@import '../components/header';
+@import '../components/footer';
+@import '../components/input';
+@import '../components/spinner';
+@import '../components/placehorders';
+@import '../components/closeButton';
+@import '../components/goToTop';
+@import '../components/tooltips';
+@import '../components/bannerCard';
+@import '../components/bannerContent';
+// @import '../components/introduce';
+// @import '../components/popupDiscover';
+@import '../components/popupSignIn';
+
+@import '../components/headerSideBar';
+@import '../components/headerWishlistCard';
+@import '../components/headerWishlist';
+@import '../components/headerAccount';
+@import '../components/headerSearch';
+@import '../components/headerDropdown';
+@import '../components/popup';
+
+@import '../components/popupGenres';
+@import '../components/bannerContentAdd';
+
+@import '../components/movieCard';
+@import '../components/movieNav';
+@import '../components/pagination';
+@import '../layouts/movieLayout';

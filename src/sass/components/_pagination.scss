@@ -1,4 +1,4 @@
-$color-normal: #333;
+
 %center-flex {
   display: flex;
   align-items: center;
@@ -10,10 +10,11 @@ $color-normal: #333;
   border-radius: $border-radius-in;
   @extend %center-flex;
 }
-.pagination__render {
+.pagination__container {
   position: relative;
 }
 .pagination {
+  margin-block: 4.4rem;
   width: 100%;
   height: 4.9rem;
   border-radius: $border-radius-out;

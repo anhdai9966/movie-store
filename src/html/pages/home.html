@@ -4,20 +4,41 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Trang demo bán phim - by CD">
+    <meta name="description" content="Trang demo bán phim - by CD" />
     <title>MovieStore</title>
-    <link rel="shortcut icon" href="../../imgs/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="../../imgs/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../../imgs/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="../../imgs/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="../../sass/pages/home.scss" />
     <script type="module" defer src="../../js/controllers/homeController.js"></script>
   </head>
   <body>
     <button class="goToTop">
       <svg class="goToTop__icon">
-        <use href='../../imgs/icons.svg#icon-up'></use>
+        <use href="../../imgs/icons.svg#icon-up"></use>
       </svg>
     </button>
+
     <!-- *__________ Start header __________ -->
+    <header class="headerIndex hidden">
+      <div class="container">
+        <nav class="nav">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="#" class="nav__logo">
+                <img src="../../imgs/logo.png" alt="logo moviestore" />
+              </a>
+            </li>
+          </ul>
+
+          <ul class="nav__list">
+            <li class="nav__item">
+              <button class="signIn__btn sigin__btn--open-modal">Đăng nhập</button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
     <header class="header">
       <div class="container">
         <nav class="nav">
@@ -31,7 +52,7 @@
             </li>
 
             <li class="nav__item">
-              <a href="#" class="nav__logo">
+              <a href="../../index.html" class="nav__logo">
                 <img src="../../imgs/logo.png" alt="logo moviestore" />
               </a>
             </li>
@@ -47,7 +68,7 @@
               <!-- *__________ Start dropdown __________ -->
               <ul class="dropdown__menu hidden">
                 <li class="dropdown__item">
-                  <a class="dropdown__btn" href="#">Phim Thịnh Hành</a>
+                  <a class="dropdown__btn" href="./movie.html">Phim Thịnh Hành</a>
                 </li>
                 <li class="dropdown__item">
                   <a class="dropdown__btn" href="#">Bảng Xếp Hạng</a>
@@ -405,14 +426,14 @@
 
     <!-- *__________ Start banner __________ -->
 
-      <section class="banner">
-        <div class="windows">
-          <div class="view-3d">
-            <div class="rotate">
-              <div class="wrapper">
-                <div class="animation">
-                  <div class="grid__wrapper">
-                    <!-- <div class="card__grid">
+    <section class="banner">
+      <div class="windows">
+        <div class="view-3d">
+          <div class="rotate">
+            <div class="wrapper">
+              <div class="animation">
+                <div class="grid__wrapper">
+                  <!-- <div class="card__grid">
                     <div class="banner-card__item">
                       <a href="#" class="movie__link">
                         <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/xeg0UhMmzSalvyK7kvhTHcKXIf8.jpg" class="movie__poster" loading="lazy">
@@ -432,175 +453,850 @@
                     </div>
   
                   </div> -->
-                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+      </div>
 
-        <div class="overlay"></div>
+      <div class="overlay"></div>
 
-        <div class="container">
-          <div class="content">
-            <div class="title">
-              <h1 class="banner__title">Xem phim không giới hạn và còn hơn thế nữa.</h1>
-              <h3 class="banner__subtitle">Xem ở bất cứ đâu. Hủy bất cứ lúc nào.</h3>
-            </div>
-
-            <div class="form__wrapper">
-              <h6 class="sign-up__title">
-                Bạn đã sẵn sàng xem chưa? Nhập email của bạn để tạo hoặc bắt đầu lại với tư cách thành viên.
-              </h6>
-              <form class="sign-up">
-                <label class="input__wrapper">
-                  <input type="email" name="email" id="email" class="email__input" maxlength="50" />
-                  <label for="email" class="placeholder">Địa chỉ email</label>
-                </label>
-
-                <button class="sign-up__btn">
-                  <span>Bắt đầu</span>
-                  <svg class="right__icon">
-                    <use href="../../imgs/icons.svg#icon-right"></use>
-                  </svg>
-                </button>
-              </form>
-            </div>
+      <div class="container">
+        <div class="content">
+          <div class="title">
+            <h1 class="banner__title">Chào mừng các bạn.</h1>
+            <h3 class="banner__subtitle">Hàng triệu bộ phim được cập nhật liên tục. Hãy khám phá ngay bây giờ.</h3>
           </div>
-        </div>
-      </section>
 
-    <!-- __________ End banner __________ -->
-
-    <main class="introduce">
-      <section class="intro__section-1">
-        <div class="container">
-          <div class="section-1">
-            <div class="section-1__text">
-              <h2>Đăng ký ngay hôm nay.</h2>
-              <p>Để nhận khuyến mại cực lớn từ trương trình với hai phim đặc sắc.</p>
-              <a href="#" class="sign-up__link" title="Đăng ký ngay"
-                >Đăng ký ngay
-                <svg class="arrow__icon">
-                  <use href="../../imgs/icons.svg#icon-arrow-next"></use>
-                </svg>
-              </a>
-            </div>
-
-            <div class="section-1__gift">
-              <div class="gift__shadow"></div>
-              <div class="gift__list">
-                <!-- <div class="banner-card__item">
-                  <a href="#" class="movie__link">
-                    <img
-                      src="https://www.themoviedb.org/t/p/w220_and_h330_face/xeg0UhMmzSalvyK7kvhTHcKXIf8.jpg"
-                      class="movie__poster"
-                      loading="lazy"
-                    />
-                    <div class="card__overlay"></div>
-                    <h6 class="movie__title">Thế giới khủng long</h6>
-                  </a>
-                </div> -->
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="intro__section-2">
-        <div class="container">
-          <div class="section-2">
-            <div class="section-2__gift">
-              <div class="gift__shadow"></div>
-              <div class="card__list">
-                <!-- <div class="banner-card__item">
-                  <a href="#" class="movie__link">
-                    <img
-                      src="https://www.themoviedb.org/t/p/w220_and_h330_face/xeg0UhMmzSalvyK7kvhTHcKXIf8.jpg"
-                      class="movie__poster"
-                      loading="lazy"
-                    />
-                    <div class="card__overlay"></div>
-                    <h6 class="movie__title">Thế giới khủng long</h6>
-                  </a>
-                </div> -->
-              </div>
-            </div>
-
-            <div class="section-2__text">
-              <h2>Thưởng thức trực tuyến.</h2>
-              <p>Giải trí với những bộ phim bom tấn của Hollywood.</p>
-              <a href="#" class="sign-up__link" title="Đăng ký ngay"
-                >Khám phá ngay
-                <svg class="arrow__icon">
-                  <use href="../../imgs/icons.svg#icon-arrow-next"></use>
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="intro__section-3">
-        <div class="container">
-          <div class="section-3">
-            <h2>Xem ở mọi nơi.</h2>
-            <p>Phát trực tuyến không giới hạn trên điện thoại, máy tính bảng, máy tính xách tay.</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="intro__section-4">
-        <div class="container">
-          <div class="section-4">
-            <div class="section-4__text">
-              <h2>Bạn có smartphone, muốn cả kho phim trong tầm tay.</h2>
-              <p>Chạm vào màn hình và giải trí ngay thôi.</p>
-
-              <div class="download-app__btn">
-                <button class="google-play__btn" title="Google Play">
-                  <svg class="google-play__icon">
-                    <use href="../../imgs/imgs.svg#icon-google-play-white"></use>
-                  </svg>
-                </button>
-                <button class="app-store__btn" title="App Store">
-                  <svg class="app-store__icon">
-                    <use href="../../imgs/imgs.svg#icon-app-store-white"></use>
-                  </svg>
-                </button>
-              </div>
-            </div>
-
-            <div class="section-4__image">
-              <img src="../../imgs/app-movie.png" alt="app movie store" loading="lazy" class="app-movie__img" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="intro__section-5">
-        <div class="container">
-          <div class="section-5">
-            <h5>Bạn đã sẵn sàng xem chưa? Nhập email của bạn để tạo hoặc bắt đầu lại với tư cách thành viên.</h5>
-            <form class="section-5__form">
-              <input
-                type="email"
-                name="email__bottom"
-                id="email__bottom"
-                placeholder="Địa chỉ email"
-                class="email__input"
-              />
-              <button class="signup__btn">
-                <span>Bắt đầu</span>
-                <svg class="signup__icon">
-                  <use href="../../imgs/icons.svg#icon-right"></use>
-                </svg>
-              </button>
+          <div class="form__wrapper">
+            <form class="search__form">
+              <label class="input__group">
+                <input type="text" name="text__search" id="text__search" class="text__search"/>
+                <label for="text__search" class="placeholder">Tìm kiếm phim</label>
+              </label>
             </form>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
+
+    <!-- __________ End banner __________ -->
+
+    <!-- *__________ Start Main container __________ -->
+    <main class="home__main">
+      <div class="container">
+        <h2>Có gì xem</h2>
+
+        <section class="sect">
+          <div class="sect__title">
+            <p class="title"><span class="verl"></span>Phim thịnh hành</p>
+            <a href="#" class="title__link"
+              >Xem tất cả
+              <svg class="title__icon">
+                <use href="../../imgs/icons.svg#icon-right-double"></use>
+              </svg>
+            </a>
+          </div>
+
+          <div class="sect__container cardHome">
+            <div class="card__home">
+              <div class="card__list">
+                <!-- <div class="card__item">
+                  <div class="card__image">
+                    <a href="#" class="card__img-link">
+                      <img
+                        src="https://www.themoviedb.org/t/p/w220_and_h330_face/y4SQ2dJ1y2LBUnxTH7hCe8sr29c.jpg"
+                        alt="Minions: Sự Trỗi Dậy của Gru"
+                        loading="lazy"
+                        class="card__poster"
+                      />
+                    </a>
+
+                    <div class="card__hover">
+                      <a href="#" class="card__img-link">
+                        <img
+                          src="https://www.themoviedb.org/t/p/w533_and_h300_bestv2/jRss224yETAKKzqrOyudQo5ayUd.jpg"
+                          alt="Minions: Sự Trỗi Dậy của Gru"
+                          loading="lazy"
+                          class="card__backdrop"
+                        />
+                      </a>
+
+                      <div class="card__overlay"></div>
+
+                      <button class="card__btn-wishlist card__btn--wishlist">
+                        <svg class="card__icon">
+                          <use href="../../imgs/icons.svg#icon-bookmark"></use>
+                        </svg>
+                      </button>
+
+                      <div class="card__hover-info">
+                        <a href="#" class="card__link">
+                          <h6 class="card__hover-title">Minions: Sự Trỗi Dậy của Gru</h6>
+                        </a>
+
+                        <p class="card__hover-info2">
+                          <span>1h 30p</span> - <span>2022</span> - <span>Chỉ từ 80.000 đ</span>
+                        </p>
+
+                        <a href="#" class="card__link-btn card__link--trailer">Trailer</a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card__info">
+                    <a href="#" class="card__link">
+                      <h6 class="card__title">Minions: Sự Trỗi Dậy của Gru</h6>
+                    </a>
+
+                    <p class="card__title">
+                      <span>7.0</span>
+
+                      <svg class="star__icon">
+                        <use href="../../imgs/icons.svg#icon-star-fill"></use>
+                      </svg>
+
+                      <span>80.000 đ</span>
+                    </p>
+                  </div>
+                </div> -->
+                <div class="spinner__render">
+                  <ul class="spinner">
+                    <li class="seen"></li>
+                    <li class="seen"></li>
+                    <li class="seen"></li>
+                    <li class="seen"></li>
+                    <li class="seen"></li>
+                    <li class="seen"></li>
+                    <li class="seen"></li>
+                    <li class="seen"></li>
+                    <li class="seen"></li>
+                    <li class="seen"></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <button class="left__btn hidden">
+              <svg class="control__icon">
+                <use href="../../imgs/icons.svg#icon-left-circle"></use>
+              </svg>
+            </button>
+
+            <button class="right__btn">
+              <svg class="control__icon">
+                <use href="../../imgs/icons.svg#icon-right-circle"></use>
+              </svg>
+            </button>
+          </div>
+        </section>
+
+        <section class="sect">
+          <div class="sect__title">
+            <p class="title"><span class="verl"></span>Mới đáng chú ý</p>
+            <a href="#" class="title__link"
+              >Xem tất cả
+              <svg class="title__icon">
+                <use href="../../imgs/icons.svg#icon-right-double"></use>
+              </svg>
+            </a>
+          </div>
+
+          <div class="sect__container cardHome2">
+            <div class="card__home2">
+              <div class="card__list">
+                <!-- <div class="card__item">
+                  <div class="card__image">
+                    <a href="#" class="card__poster-link">
+                      <img
+                        src="https://www.themoviedb.org/t/p/w220_and_h330_face/y4SQ2dJ1y2LBUnxTH7hCe8sr29c.jpg"
+                        alt="Minions: Sự Trỗi Dậy của Gru"
+                        loading="lazy"
+                        class="card__poster"
+                      />
+                    </a>
+        
+                    <a href="#" class="card__backdrop-link">
+                      <img
+                        src="https://www.themoviedb.org/t/p/w533_and_h300_bestv2/jRss224yETAKKzqrOyudQo5ayUd.jpg"
+                        alt="Minions: Sự Trỗi Dậy của Gru"
+                        loading="lazy"
+                        class="card__backdrop"
+                      />
+                    </a>
+        
+                    <a href="#" class="card__link-btn card__link--trailer">
+                      <svg class="card__icon">
+                        <use href='../../imgs/icons.svg#icon-play-circle'></use>
+                      </svg>
+                    </a>
+                  </div>
+        
+                  <div class="card__info">
+                    <a href="#" class="card__link">
+                      <h6 class="card__title">Minions: Sự Trỗi Dậy của Gru</h6>
+                    </a>
+        
+                    <p class="card__hover-info2"><span>Phim Gia Đình</span>, <span>Phim Hoạt Hình</span></p>
+        
+                    <p class="card__title">
+                      <span>7.0</span>
+        
+                      <svg class="star__icon">
+                        <use href="../../imgs/icons.svg#icon-star-fill"></use>
+                      </svg>
+        
+                      <span>80.000 đ</span>
+                    </p>
+                  </div>
+                </div> -->
+              </div>
+            </div>
+
+            <button class="left__btn hidden">
+              <svg class="control__icon">
+                <use href="../../imgs/icons.svg#icon-left-circle"></use>
+              </svg>
+            </button>
+
+            <button class="right__btn">
+              <svg class="control__icon">
+                <use href="../../imgs/icons.svg#icon-right-circle"></use>
+              </svg>
+            </button>
+          </div>
+        </section>
+
+        <section class="sect">
+          <div class="sect__title">
+            <p class="title"><span class="verl"></span>Xếp hạng đánh giá</p>
+            <a href="#" class="title__link"
+              >Xem tất cả
+              <svg class="title__icon">
+                <use href="../../imgs/icons.svg#icon-right-double"></use>
+              </svg>
+            </a>
+          </div>
+
+          <div class="sect__container cardHome1-2">
+            <div class="card__home1-2">
+              <div class="card__list">
+                <div class="card__item">
+                  <div class="card__image">
+                    <a href="#" class="card__img-link">
+                      <img
+                        src="https://www.themoviedb.org/t/p/w220_and_h330_face/y4SQ2dJ1y2LBUnxTH7hCe8sr29c.jpg"
+                        alt="Minions: Sự Trỗi Dậy của Gru"
+                        loading="lazy"
+                        class="card__poster"
+                      />
+                    </a>
+
+                    <div class="card__hover">
+                      <a href="#" class="card__img-link">
+                        <img
+                          src="https://www.themoviedb.org/t/p/w533_and_h300_bestv2/jRss224yETAKKzqrOyudQo5ayUd.jpg"
+                          alt="Minions: Sự Trỗi Dậy của Gru"
+                          loading="lazy"
+                          class="card__backdrop"
+                        />
+                      </a>
+
+                      <div class="card__overlay"></div>
+
+                      <button class="card__btn-wishlist card__btn--wishlist">
+                        <svg class="card__icon">
+                          <use href="../../imgs/icons.svg#icon-bookmark"></use>
+                        </svg>
+                      </button>
+
+                      <div class="card__hover-info">
+                        <a href="#" class="card__link">
+                          <h6 class="card__hover-title">Minions: Sự Trỗi Dậy của Gru</h6>
+                        </a>
+
+                        <p class="card__hover-info2">
+                          <span>1h 30p</span> - <span>2022</span> - <span>Chỉ từ 80.000 đ</span>
+                        </p>
+
+                        <a href="#" class="card__link-btn card__link--trailer">Trailer</a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card__info">
+                    <a href="#" class="card__link">
+                      <h6 class="card__title">Minions: Sự Trỗi Dậy của Gru</h6>
+                    </a>
+
+                    <p class="card__title">
+                      <span>7.0</span>
+
+                      <svg class="star__icon">
+                        <use href="../../imgs/icons.svg#icon-star-fill"></use>
+                      </svg>
+
+                      <span>80.000 đ</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button class="left__btn hidden">
+              <svg class="control__icon">
+                <use href="../../imgs/icons.svg#icon-left-circle"></use>
+              </svg>
+            </button>
+
+            <button class="right__btn">
+              <svg class="control__icon">
+                <use href="../../imgs/icons.svg#icon-right-circle"></use>
+              </svg>
+            </button>
+          </div>
+        </section>
+
+        <section class="sect">
+          <div class="sect__title">
+            <p class="title"><span class="verl"></span>Trailer mới</p>
+            <a href="#" class="title__link"
+              >Xem tất cả
+              <svg class="title__icon">
+                <use href="../../imgs/icons.svg#icon-right-double"></use>
+              </svg>
+            </a>
+          </div>
+
+          <div class="sect__container cardHome3">
+            <div class="card__home3">
+              <div class="card__list">
+                <div class="card__item">
+                  <a href="#" class="card__link">
+                    <img
+                      src="https://i.ytimg.com/vi/5PSNL1qE6VY/hqdefault.jpg"
+                      alt="Avatar | Official Trailer (HD) | 20th Century FOX"
+                      loading="lazy"
+                      class="card__thumbnails"
+                    />
+                    <svg class="card__icon">
+                      <use href='../../imgs/icons.svg#icon-play'></use>
+                    </svg>
+                    <p class="card__title">Avatar | Official Trailer (HD) | 20th Century FOX</p>
+                  </a> 
+                </div>
+              </div>
+            </div>
+
+            <button class="left__btn hidden">
+              <svg class="control__icon">
+                <use href="../../imgs/icons.svg#icon-left-circle"></use>
+              </svg>
+            </button>
+
+            <button class="right__btn">
+              <svg class="control__icon">
+                <use href="../../imgs/icons.svg#icon-right-circle"></use>
+              </svg>
+            </button>
+          </div>
+        </section>
+
+        <section class="sect">
+          <div class="sect__title">
+            <p class="title"><span class="verl"></span>Hành động</p>
+            <a href="#" class="title__link"
+              >Xem tất cả
+              <svg class="title__icon">
+                <use href="../../imgs/icons.svg#icon-right-double"></use>
+              </svg>
+            </a>
+          </div>
+
+          <div class="sect__container cardHome1-3">
+            <div class="card__home1-3">
+              <div class="card__list">
+                <div class="card__item">
+                  <div class="card__image">
+                    <a href="#" class="card__img-link">
+                      <img
+                        src="https://www.themoviedb.org/t/p/w220_and_h330_face/y4SQ2dJ1y2LBUnxTH7hCe8sr29c.jpg"
+                        alt="Minions: Sự Trỗi Dậy của Gru"
+                        loading="lazy"
+                        class="card__poster"
+                      />
+                    </a>
+
+                    <div class="card__hover">
+                      <a href="#" class="card__img-link">
+                        <img
+                          src="https://www.themoviedb.org/t/p/w533_and_h300_bestv2/jRss224yETAKKzqrOyudQo5ayUd.jpg"
+                          alt="Minions: Sự Trỗi Dậy của Gru"
+                          loading="lazy"
+                          class="card__backdrop"
+                        />
+                      </a>
+
+                      <div class="card__overlay"></div>
+
+                      <button class="card__btn-wishlist card__btn--wishlist">
+                        <svg class="card__icon">
+                          <use href="../../imgs/icons.svg#icon-bookmark"></use>
+                        </svg>
+                      </button>
+
+                      <div class="card__hover-info">
+                        <a href="#" class="card__link">
+                          <h6 class="card__hover-title">Minions: Sự Trỗi Dậy của Gru</h6>
+                        </a>
+
+                        <p class="card__hover-info2">
+                          <span>1h 30p</span> - <span>2022</span> - <span>Chỉ từ 80.000 đ</span>
+                        </p>
+
+                        <a href="#" class="card__link-btn card__link--trailer">Trailer</a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card__info">
+                    <a href="#" class="card__link">
+                      <h6 class="card__title">Minions: Sự Trỗi Dậy của Gru</h6>
+                    </a>
+
+                    <p class="card__title">
+                      <span>7.0</span>
+
+                      <svg class="star__icon">
+                        <use href="../../imgs/icons.svg#icon-star-fill"></use>
+                      </svg>
+
+                      <span>80.000 đ</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button class="left__btn hidden">
+              <svg class="control__icon">
+                <use href="../../imgs/icons.svg#icon-left-circle"></use>
+              </svg>
+            </button>
+
+            <button class="right__btn">
+              <svg class="control__icon">
+                <use href="../../imgs/icons.svg#icon-right-circle"></use>
+              </svg>
+            </button>
+          </div>
+        </section>
+
+        <section class="sect">
+          <div class="sect__title">
+            <p class="title"><span class="verl"></span>Hoạt hình</p>
+            <a href="#" class="title__link"
+              >Xem tất cả
+              <svg class="title__icon">
+                <use href="../../imgs/icons.svg#icon-right-double"></use>
+              </svg>
+            </a>
+          </div>
+
+          <div class="sect__container cardHome1-4">
+            <div class="card__home1-4">
+              <div class="card__list">
+                <div class="card__item">
+                  <div class="card__image">
+                    <a href="#" class="card__img-link">
+                      <img
+                        src="https://www.themoviedb.org/t/p/w220_and_h330_face/y4SQ2dJ1y2LBUnxTH7hCe8sr29c.jpg"
+                        alt="Minions: Sự Trỗi Dậy của Gru"
+                        loading="lazy"
+                        class="card__poster"
+                      />
+                    </a>
+
+                    <div class="card__hover">
+                      <a href="#" class="card__img-link">
+                        <img
+                          src="https://www.themoviedb.org/t/p/w533_and_h300_bestv2/jRss224yETAKKzqrOyudQo5ayUd.jpg"
+                          alt="Minions: Sự Trỗi Dậy của Gru"
+                          loading="lazy"
+                          class="card__backdrop"
+                        />
+                      </a>
+
+                      <div class="card__overlay"></div>
+
+                      <button class="card__btn-wishlist card__btn--wishlist">
+                        <svg class="card__icon">
+                          <use href="../../imgs/icons.svg#icon-bookmark"></use>
+                        </svg>
+                      </button>
+
+                      <div class="card__hover-info">
+                        <a href="#" class="card__link">
+                          <h6 class="card__hover-title">Minions: Sự Trỗi Dậy của Gru</h6>
+                        </a>
+
+                        <p class="card__hover-info2">
+                          <span>1h 30p</span> - <span>2022</span> - <span>Chỉ từ 80.000 đ</span>
+                        </p>
+
+                        <a href="#" class="card__link-btn card__link--trailer">Trailer</a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card__info">
+                    <a href="#" class="card__link">
+                      <h6 class="card__title">Minions: Sự Trỗi Dậy của Gru</h6>
+                    </a>
+
+                    <p class="card__title">
+                      <span>7.0</span>
+
+                      <svg class="star__icon">
+                        <use href="../../imgs/icons.svg#icon-star-fill"></use>
+                      </svg>
+
+                      <span>80.000 đ</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="left__btn hidden">
+              <svg class="control__icon">
+                <use href="../../imgs/icons.svg#icon-left-circle"></use>
+              </svg>
+            </button>
+
+            <button class="right__btn">
+              <svg class="control__icon">
+                <use href="../../imgs/icons.svg#icon-right-circle"></use>
+              </svg>
+            </button>
+          </div>
+        </section>
+
+        <section class="sect">
+          <div class="sect__title">
+            <p class="title"><span class="verl"></span>Kinh dị</p>
+            <a href="#" class="title__link"
+              >Xem tất cả
+              <svg class="title__icon">
+                <use href="../../imgs/icons.svg#icon-right-double"></use>
+              </svg>
+            </a>
+          </div>
+
+          <div class="sect__container cardHome1-5">
+            <div class="card__home1-5">
+              <div class="card__list">
+                <div class="card__item">
+                  <div class="card__image">
+                    <a href="#" class="card__img-link">
+                      <img
+                        src="https://www.themoviedb.org/t/p/w220_and_h330_face/y4SQ2dJ1y2LBUnxTH7hCe8sr29c.jpg"
+                        alt="Minions: Sự Trỗi Dậy của Gru"
+                        loading="lazy"
+                        class="card__poster"
+                      />
+                    </a>
+
+                    <div class="card__hover">
+                      <a href="#" class="card__img-link">
+                        <img
+                          src="https://www.themoviedb.org/t/p/w533_and_h300_bestv2/jRss224yETAKKzqrOyudQo5ayUd.jpg"
+                          alt="Minions: Sự Trỗi Dậy của Gru"
+                          loading="lazy"
+                          class="card__backdrop"
+                        />
+                      </a>
+
+                      <div class="card__overlay"></div>
+
+                      <button class="card__btn-wishlist card__btn--wishlist">
+                        <svg class="card__icon">
+                          <use href="../../imgs/icons.svg#icon-bookmark"></use>
+                        </svg>
+                      </button>
+
+                      <div class="card__hover-info">
+                        <a href="#" class="card__link">
+                          <h6 class="card__hover-title">Minions: Sự Trỗi Dậy của Gru</h6>
+                        </a>
+
+                        <p class="card__hover-info2">
+                          <span>1h 30p</span> - <span>2022</span> - <span>Chỉ từ 80.000 đ</span>
+                        </p>
+
+                        <a href="#" class="card__link-btn card__link--trailer">Trailer</a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card__info">
+                    <a href="#" class="card__link">
+                      <h6 class="card__title">Minions: Sự Trỗi Dậy của Gru</h6>
+                    </a>
+
+                    <p class="card__title">
+                      <span>7.0</span>
+
+                      <svg class="star__icon">
+                        <use href="../../imgs/icons.svg#icon-star-fill"></use>
+                      </svg>
+
+                      <span>80.000 đ</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="left__btn hidden">
+              <svg class="control__icon">
+                <use href="../../imgs/icons.svg#icon-left-circle"></use>
+              </svg>
+            </button>
+
+            <button class="right__btn">
+              <svg class="control__icon">
+                <use href="../../imgs/icons.svg#icon-right-circle"></use>
+              </svg>
+            </button>
+          </div>
+        </section>
+
+        <section class="sect">
+          <div class="sect__title">
+            <p class="title"><span class="verl"></span>Tin tức</p>
+            <a href="#" class="title__link"
+              >Xem tất cả
+              <svg class="title__icon">
+                <use href="../../imgs/icons.svg#icon-right-double"></use>
+              </svg>
+            </a>
+          </div>
+
+          <div class="sect__container cardHome3-2">
+            <div class="card__home3-2">
+              <div class="card__list">
+                <div class="card__item">
+                  <a href="#" class="card__link">
+                    <img
+                      src="https://i.ytimg.com/vi/5PSNL1qE6VY/hqdefault.jpg"
+                      alt="Avatar | Official Trailer (HD) | 20th Century FOX"
+                      loading="lazy"
+                      class="card__thumbnails"
+                    />
+                    <svg class="card__icon">
+                      <use href='../../imgs/icons.svg#icon-play'></use>
+                    </svg>
+                    <p class="card__title">Avatar | Official Trailer (HD) | 20th Century FOX</p>
+                  </a> 
+                </div>
+              </div>
+            </div>
+            <button class="left__btn hidden">
+              <svg class="control__icon">
+                <use href="../../imgs/icons.svg#icon-left-circle"></use>
+              </svg>
+            </button>
+
+            <button class="right__btn">
+              <svg class="control__icon">
+                <use href="../../imgs/icons.svg#icon-right-circle"></use>
+              </svg>
+            </button>
+          </div>
+        </section>
+
+        <section class="sect">
+          <div class="sect__title">
+            <p class="title"><span class="verl"></span>Người nổi tiếng</p>
+            <a href="#" class="title__link"
+              >Xem tất cả
+              <svg class="title__icon">
+                <use href="../../imgs/icons.svg#icon-right-double"></use>
+              </svg>
+            </a>
+          </div>
+
+          <div class="sect__container cardHome4">
+            <div class="card__home4">
+              <div class="card__list">
+                <div class="card__item">
+                  <a href="#" class="card__link">
+                    <img
+                      src="https://www.themoviedb.org/t/p/w235_and_h235_face/vkoSSVrGxFYvtr2uUdz99ENXF1v.jpg"
+                      alt="Ana de Armas"
+                      loading="lazy"
+                      class="card__poster"
+                    />
+                    <p class="card__title">Ana de Armas</p>
+                    <p class="card__info">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                  </a> 
+                </div>
+              </div>
+            </div>
+
+            <button class="left__btn hidden">
+              <svg class="control__icon">
+                <use href="../../imgs/icons.svg#icon-left-circle"></use>
+              </svg>
+            </button>
+
+            <button class="right__btn">
+              <svg class="control__icon">
+                <use href="../../imgs/icons.svg#icon-right-circle"></use>
+              </svg>
+            </button>
+          </div>
+        </section>
+
+        <section class="sect">
+          <div class="sect__title">
+            <p class="title"><span class="verl"></span>Sắp phát hành</p>
+            <a href="#" class="title__link"
+              >Xem tất cả
+              <svg class="title__icon">
+                <use href="../../imgs/icons.svg#icon-right-double"></use>
+              </svg>
+            </a>
+          </div>
+
+          <div class="sect__container cardHome1-6">
+            <div class="card__home1-6">
+              <div class="card__list">
+                <div class="card__item">
+                  <div class="card__image">
+                    <a href="#" class="card__img-link">
+                      <img
+                        src="https://www.themoviedb.org/t/p/w220_and_h330_face/y4SQ2dJ1y2LBUnxTH7hCe8sr29c.jpg"
+                        alt="Minions: Sự Trỗi Dậy của Gru"
+                        loading="lazy"
+                        class="card__poster"
+                      />
+                    </a>
+
+                    <div class="card__hover">
+                      <a href="#" class="card__img-link">
+                        <img
+                          src="https://www.themoviedb.org/t/p/w533_and_h300_bestv2/jRss224yETAKKzqrOyudQo5ayUd.jpg"
+                          alt="Minions: Sự Trỗi Dậy của Gru"
+                          loading="lazy"
+                          class="card__backdrop"
+                        />
+                      </a>
+
+                      <div class="card__overlay"></div>
+
+                      <button class="card__btn-wishlist card__btn--wishlist">
+                        <svg class="card__icon">
+                          <use href="../../imgs/icons.svg#icon-bookmark"></use>
+                        </svg>
+                      </button>
+
+                      <div class="card__hover-info">
+                        <a href="#" class="card__link">
+                          <h6 class="card__hover-title">Minions: Sự Trỗi Dậy của Gru</h6>
+                        </a>
+
+                        <p class="card__hover-info2">
+                          <span>1h 30p</span> - <span>2022</span>
+                        </p>
+
+                        <a href="#" class="card__link-btn card__link--trailer">Trailer</a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card__info">
+                    <a href="#" class="card__link">
+                      <h6 class="card__title">Minions: Sự Trỗi Dậy của Gru</h6>
+                    </a>
+
+                    <p class="card__title">
+                      <span>7.0</span>
+
+                      <svg class="star__icon">
+                        <use href="../../imgs/icons.svg#icon-star-fill"></use>
+                      </svg>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="left__btn hidden">
+              <svg class="control__icon">
+                <use href="../../imgs/icons.svg#icon-left-circle"></use>
+              </svg>
+            </button>
+
+            <button class="right__btn">
+              <svg class="control__icon">
+                <use href="../../imgs/icons.svg#icon-right-circle"></use>
+              </svg>
+            </button>
+          </div>
+        </section>
+
+        <section class="sect">
+          <div class="sect__title">
+            <p class="title"><span class="verl"></span>Thể loại</p>
+            <button class="title__link popup-genres__btn-show"
+              >Xem tất cả
+              <svg class="title__icon">
+                <use href="../../imgs/icons.svg#icon-right-double"></use>
+              </svg>
+            </button>
+          </div>
+
+          <div class="sect__container cardHome5">
+            <div class="card__home5">
+              <div class="card__list">
+                <!-- <div class="card__item">
+                  <a href="#" class="card__link">
+                    <p class="card__title">Hành động</p>
+                  </a> 
+                </div> -->
+              </div>
+            </div>
+
+            <button class="left__btn hidden">
+              <svg class="control__icon">
+                <use href="../../imgs/icons.svg#icon-left-circle"></use>
+              </svg>
+            </button>
+
+            <button class="right__btn">
+              <svg class="control__icon">
+                <use href="../../imgs/icons.svg#icon-right-circle"></use>
+              </svg>
+            </button>
+          </div>
+        </section>
+      </div>
+
+      <div class="genres__popup hidden">
+        <div class="genres__wrapper">
+          <div class="genres__list">
+            <!-- <a href="#" class="genres__item">Phim Gia Đình</a> -->
+          </div>
+          
+          <button type="button" class="btn__close">
+            <svg class="btn__icon">
+              <use href='../../imgs/icons.svg#icon-xmark'></use>
+            </svg>
+          </button>
+        </div>
+      </div>
     </main>
+    <!-- __________ End Main container __________ -->
 
     <!-- *__________ Start name __________ -->
     <footer class="footer">

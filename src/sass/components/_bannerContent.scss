@@ -10,7 +10,7 @@
     display: flex;
     flex-flow: column;
     row-gap: 1rem;
-    padding-block: 10rem 5rem;
+    padding-block: 14rem 5rem;
     @media (min-width: $lg) {
       padding-block: 20rem 10rem;
     }
@@ -35,13 +35,14 @@
         }
         @media (min-width: $xl) {
           padding-inline: 15rem;
-          font-size: 6rem;
+          font-size: 5rem;
         }
         @media (min-width: $xxl) {
           padding-inline: 20rem;
         }
       }
       .banner__subtitle {
+        font-size: 2rem;
         @media (max-width: $lg) {
           font-size: 1.8rem;
         }

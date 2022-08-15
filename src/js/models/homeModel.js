@@ -1,15 +1,277 @@
-import { AJAX } from '../helpers.js';
+import { AJAX } from '../shared/helpers.js';
+import { themoviedb, youtubeSearch } from '../shared/config.js';
 
 import movie80 from '../../json/movie80.json';
-import movie2 from '../../json/movie2.json';
-import movie6 from '../../json/movie6.json';
+import genres from '../../json/genres.json';
 
 export let state = {
   movie80: [],
-  movie2: [],
-  movie6: [],
+  nowPlaying: [],
+  popular: [],
+  topRate: [],
+  trailer: [],
+  action: [],
+  cartoon: [],
+  horror: [],
+  peoplePopular: [],
+  upcoming: [],
+  genres: [],
 };
 
+// https://api.themoviedb.org/3/movie/now_playing?api_key=<<api_key>>&language=en-US&page=1
+export const loadNowPlaying = async function() {
+  try {
+    const data = await AJAX(`${themoviedb.API_URL}/movie/now_playing?api_key=${themoviedb.API_KEY}&language=${themoviedb.LANGUAGE}&page=1`);
+    
+    state.nowPlaying = data.results.map(movie => {
+      return {
+        adult: movie.adult,
+        backdropPath: movie.backdrop_path,
+        genreIds: movie.genre_ids, // arr
+        id: movie.id,
+        originalLanguage: movie.original_language,
+        originalTitle: movie.original_title,
+        overview: movie.overview,
+        popularity: movie.popularity,
+        posterPath: movie.poster_path,
+        releaseDate: movie.release_date,
+        title: movie.title,
+        video: movie.video,
+        voteAverage: movie.vote_average,
+        voteCount: movie.vote_count,
+      }
+    })
+  } catch (error) {
+    console.log(error)
+    throw error;
+  }
+}
+
+// https://api.themoviedb.org/3/movie/popular?api_key=<<api_key>>&language=en-US&page=1
+export const loadPopular = async function() {
+  try {
+    const data = await AJAX(`${themoviedb.API_URL}/movie/popular?api_key=${themoviedb.API_KEY}&language=${themoviedb.LANGUAGE}&page=1`);
+    
+    state.popular = data.results.map(movie => {
+      return {
+        adult: movie.adult,
+        backdropPath: movie.backdrop_path,
+        genreIds: movie.genre_ids, // arr
+        id: movie.id,
+        originalLanguage: movie.original_language,
+        originalTitle: movie.original_title,
+        overview: movie.overview,
+        popularity: movie.popularity,
+        posterPath: movie.poster_path,
+        releaseDate: movie.release_date,
+        title: movie.title,
+        video: movie.video,
+        voteAverage: movie.vote_average,
+        voteCount: movie.vote_count,
+      }
+    })
+  } catch (error) {
+    console.log(error)
+    throw error;
+  }
+}
+
+// https://api.themoviedb.org/3/movie/top_rated?api_key=<<api_key>>&language=en-US&page=1
+export const loadTopRate = async function() {
+  try {
+    const data = await AJAX(`${themoviedb.API_URL}/movie/top_rated?api_key=${themoviedb.API_KEY}&language=${themoviedb.LANGUAGE}&page=1`);
+    
+    state.topRate = data.results.map(movie => {
+      return {
+        adult: movie.adult,
+        backdropPath: movie.backdrop_path,
+        genreIds: movie.genre_ids, // arr
+        id: movie.id,
+        originalLanguage: movie.original_language,
+        originalTitle: movie.original_title,
+        overview: movie.overview,
+        popularity: movie.popularity,
+        posterPath: movie.poster_path,
+        releaseDate: movie.release_date,
+        title: movie.title,
+        video: movie.video,
+        voteAverage: movie.vote_average,
+        voteCount: movie.vote_count,
+      }
+    })
+  } catch (error) {
+    console.log(error)
+    throw error;
+  }
+}
+
+// https://www.googleapis.com/youtube/v3/search?part=snippet&key=AIzaSyBDpgsyZOUhJ0ETZ_7FdF7dVA5wb2THdF8&type=video&q=avatar%20trailer
+// watch https://www.youtube.com/watch?v=tST-F75I2To
+export const loadNewTrailers = async function() {
+  try {
+    const yearCurrent = new Date().getFullYear();
+
+    const data = await AJAX(`${youtubeSearch.API_URL}trailer%20${yearCurrent}`);
+    
+    data.items.forEach(item => {
+      const { snippet, id } = item;
+      let pushData = {
+        channelId: snippet.channelId,
+        channelTitle: snippet.channelTitle,
+        description: snippet.description,
+        liveBroadcastContent: snippet.liveBroadcastContent,
+        publishTime: snippet.publishTime,
+        publishedAt: snippet.publishedAt,
+        thumbnails: snippet.thumbnails, // obj obj obj
+        title: snippet.title,
+        videoId: id.videoId,
+      }
+      state.trailer.push(pushData);
+    })
+  } catch (error) {
+    console.log(error)
+    throw error;
+  }
+}
+
+// https://api.themoviedb.org/3/discover/movie?api_key=###&with_genres=28
+export const loadAction = async function() {
+  try {
+    const data = await AJAX(`${themoviedb.API_URL}/discover/movie?api_key=${themoviedb.API_KEY}&language=${themoviedb.LANGUAGE}&with_genres=28&page=1`);
+    
+    state.action = data.results.map(movie => {
+      return {
+        adult: movie.adult,
+        backdropPath: movie.backdrop_path,
+        genreIds: movie.genre_ids, // arr
+        id: movie.id,
+        originalLanguage: movie.original_language,
+        originalTitle: movie.original_title,
+        overview: movie.overview,
+        popularity: movie.popularity,
+        posterPath: movie.poster_path,
+        releaseDate: movie.release_date,
+        title: movie.title,
+        video: movie.video,
+        voteAverage: movie.vote_average,
+        voteCount: movie.vote_count,
+      }
+    })
+  } catch (error) {
+    console.log(error)
+    throw error;
+  }
+}
+
+export const loadCartoon = async function() {
+  try {
+    const data = await AJAX(`${themoviedb.API_URL}/discover/movie?api_key=${themoviedb.API_KEY}&language=${themoviedb.LANGUAGE}&with_genres=16&page=1`);
+    
+    state.cartoon = data.results.map(movie => {
+      return {
+        adult: movie.adult,
+        backdropPath: movie.backdrop_path,
+        genreIds: movie.genre_ids, // arr
+        id: movie.id,
+        originalLanguage: movie.original_language,
+        originalTitle: movie.original_title,
+        overview: movie.overview,
+        popularity: movie.popularity,
+        posterPath: movie.poster_path,
+        releaseDate: movie.release_date,
+        title: movie.title,
+        video: movie.video,
+        voteAverage: movie.vote_average,
+        voteCount: movie.vote_count,
+      }
+    })
+  } catch (error) {
+    console.log(error)
+    throw error;
+  }
+}
+
+export const loadHorror = async function() {
+  try {
+    const data = await AJAX(`${themoviedb.API_URL}/discover/movie?api_key=${themoviedb.API_KEY}&language=${themoviedb.LANGUAGE}&with_genres=27&page=1`);
+    
+    state.horror = data.results.map(movie => {
+      return {
+        adult: movie.adult,
+        backdropPath: movie.backdrop_path,
+        genreIds: movie.genre_ids, // arr
+        id: movie.id,
+        originalLanguage: movie.original_language,
+        originalTitle: movie.original_title,
+        overview: movie.overview,
+        popularity: movie.popularity,
+        posterPath: movie.poster_path,
+        releaseDate: movie.release_date,
+        title: movie.title,
+        video: movie.video,
+        voteAverage: movie.vote_average,
+        voteCount: movie.vote_count,
+      }
+    })
+  } catch (error) {
+    console.log(error)
+    throw error;
+  }
+}
+
+// https://api.themoviedb.org/3/person/popular?api_key=<<api_key>>&language=en-US&page=1
+export const loadPeoplePopular = async function() {
+  try {
+    const data = await AJAX(`${themoviedb.API_URL}/person/popular?api_key=${themoviedb.API_KEY}&language=${themoviedb.LANGUAGE}&with_genres=27&page=1`);
+    
+    state.peoplePopular = data.results.map(people => {
+      return {
+        adult: people.adult,
+        gender: people.gender,
+        id: people.id,
+        knownFor: people.known_for,
+        knownFor_department: people.known_for_department,
+        name: people.name,
+        popularity: people.popularity,
+        profilePath: people.profile_path,
+      }
+    })
+  } catch (error) {
+    console.log(error)
+    throw error;
+  }
+}
+
+// https://api.themoviedb.org/3/movie/upcoming?api_key=<<api_key>>&language=en-US&page=1
+export const loadUpcoming = async function() {
+  try {
+    const data = await AJAX(`${themoviedb.API_URL}/movie/upcoming?api_key=${themoviedb.API_KEY}&language=${themoviedb.LANGUAGE}&page=1`);
+    
+    state.upcoming = data.results.map(movie => {
+      return {
+        adult: movie.adult,
+        backdropPath: movie.backdrop_path,
+        genreIds: movie.genre_ids, // arr
+        id: movie.id,
+        originalLanguage: movie.original_language,
+        originalTitle: movie.original_title,
+        overview: movie.overview,
+        popularity: movie.popularity,
+        posterPath: movie.poster_path,
+        releaseDate: movie.release_date,
+        title: movie.title,
+        video: movie.video,
+        voteAverage: movie.vote_average,
+        voteCount: movie.vote_count,
+      }
+    })
+  } catch (error) {
+    console.log(error)
+    throw error;
+  }
+}
+
+// load từ file json
 export const loadMovie80 = async function() {
   try {
     const data = movie80; // arr
@@ -25,44 +287,22 @@ export const loadMovie80 = async function() {
 
   } catch (error) {
     console.log(error)
-    throw err;
+    throw error;
   }
 }
 
-export const loadMovie2 = async function() {
+export const loadGenres = async function() {
   try {
-    const data = movie2; // arr
+    const data = genres;
 
-    state.movie2 = data.map(rec => {
+    state.genres = data.map(rec => {
       return {
         id: rec.id,
-        title: rec.title,
-        backdropPath: rec.backdropPath,
-        posterPath: rec.posterPath,
-      };
-    });
-
+        name: rec.name,
+      }
+    })
   } catch (error) {
     console.log(error)
-    throw err;
-  }
-}
-
-export const loadMovie6 = async function() {
-  try {
-    const data = movie6; // arr
-
-    state.movie6 = data.map(rec => {
-      return {
-        id: rec.id,
-        title: rec.title,
-        backdropPath: rec.backdropPath,
-        posterPath: rec.posterPath,
-      };
-    });
-
-  } catch (error) {
-    console.log(error)
-    throw err;
+    throw error;
   }
 }

@@ -1,0 +1,97 @@
+.card__home2 {
+  .card {
+    &__list {
+      display: grid;
+      grid-template-rows: repeat(3, 1fr);
+      grid-template-columns: repeat(7, 100%);
+      grid-auto-flow: column;
+      gap: 2.4rem;
+      transform: translate(0);
+      transition: transform 0.2s ease-out 0.2s;
+      @media (max-width: $sm) {
+        transform: translate(0) !important;
+      }
+      @media (min-width: $md) {
+        grid-template-columns: repeat(7, 33.6rem);
+      }
+      @media (min-width: $lg) {
+        grid-template-columns: repeat(7, 29.6rem);
+      }
+      @media (min-width: $xl) {
+        grid-template-columns: repeat(7, 35.6rem);
+      }
+      @media (min-width: $xxl) {
+        grid-template-columns: repeat(7, 41.6rem);
+      }
+      > * {
+        width: 100%;
+        scroll-snap-align: start;
+      }
+    }
+    &__item {
+      display: flex;
+      column-gap: 1.2rem;
+      &:hover {
+        background: #222;
+        border-radius: $border-radius-out;
+      }
+    }
+    &__image {
+      flex-shrink: 0;
+      flex-basis: 50%;
+      position: relative;
+      @media (min-width: $md) {
+        flex-basis: 30%;
+      }
+    }
+    &__poster-link {
+      height: 100%;
+      border-radius: $border-radius-out;
+      overflow: hidden;
+      display: none;
+      @media (min-width: $md) {
+        display: block;
+      }
+    }
+    &__backdrop-link {
+      height: 100%;
+      border-radius: $border-radius-out;
+      overflow: hidden;
+      display: block;
+      @media (min-width: $md) {
+        display: none;
+      }
+    }
+    &__link-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: opacity .3s;
+      opacity: 0;
+      @media (min-width: $md) {
+        &:hover {
+          opacity: 1;
+        }
+      }
+      .card__icon {
+        width: 4rem;
+        height: 4rem;
+      }
+    }
+    &__info {
+      margin-block: 1rem;
+      margin-right: 1rem;
+      display: flex;
+      flex-flow: column;
+      gap: .8rem;
+      p {
+        color: $color-gray;
+        @include text-truncate();
+      }
+    }
+    &__title {
+      @include text-truncate(2);
+    }
+  }
+}

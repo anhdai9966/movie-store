@@ -75,7 +75,7 @@
     flex-flow: column;
     row-gap: .8rem;
     .movie__title {
-      @include text-truncate(2);
+      @include text-truncate(1);
       font-weight: bold;
     }
     .movie__overview {

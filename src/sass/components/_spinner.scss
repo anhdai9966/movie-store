@@ -1,10 +1,11 @@
 .spinner__render {
-  position: absolute;
-  top: 10rem;
-  left: 50%;
-  transform: translateX(-50%);
+  width: 300px;
+  margin: 0 auto;
+  padding: 10rem;
   width: fit-content;
   .spinner {
+    padding-left: 33px;
+    margin: 0 auto;
     width: 67px;
     height: 67px;
     background: transparent;

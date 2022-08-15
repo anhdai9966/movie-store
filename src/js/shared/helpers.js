@@ -1,5 +1,7 @@
 import { TIMEOUT_SEC } from './config.js';
 
+import genres from '../../json/genres.json';
+
 // tạo lỗi về thời gian yêu từ api
 const timeout = function (s) {
   return new Promise(function (_, reject) {
@@ -68,37 +70,32 @@ export const pathPictureW533 = function(path) {
   return `https://www.themoviedb.org/t/p/w533_and_h300_bestv2${path}`;
 };
 
+// lấy đường dẫn đầy đủ với width 235px
+export const pathPictureW235 = function(path) {
+  return `https://www.themoviedb.org/t/p/w235_and_h235_face${path}`;
+};
 // lấy đường dẫn đầy đủ với width 220px
 export const pathPictureW220 = function(path) {
   return `https://www.themoviedb.org/t/p/w220_and_h330_face${path}`;
 };
 
 // dịch sang ngôn ngữ tiếng việt
-export const translateVietnamese = function(wordEnglish) {
-  const english = [
+export const translateVietnamese = function(word) {
+  const dictionary = [
     {
       id: 0,
-      word: 'Released',
+      english: 'Released',
+      vietnamese: 'Đã phát hành',
     },
     {
       id: 1,
-      word: 'en',
+      english: 'en',
+      vietnamese: 'Tiếng anh',
     }
-  ]
+  ];
+  const findWord = dictionary.find(w => w.english.toLowerCase() == word.toLowerCase());
 
-  const vietnamese = [
-    {
-      id: 0,
-      word: 'Đã phát hành',
-    },
-    {
-      id: 1,
-      word: 'Tiếng anh',
-    }
-  ]
-  const englishId = english.find(obj => obj.word.toLowerCase() == wordEnglish.toLowerCase()).id;
-
-  return vietnamese.find(obj => obj.id == englishId).word;
+  return findWord.vietnamese;
 };
 
 export function isEmpty(object) {
@@ -106,4 +103,47 @@ export function isEmpty(object) {
     return false;
   }
   return true;
+}
+
+export function getGenresId(id) {
+  if(!id) return 'Trống';
+  const genreId = genres.find(genre => genre.id == id);
+  return genreId.name;
+}
+
+export function getYear(releaseDate) {
+  if(!releaseDate) return 'Trống';
+  const year = releaseDate.slice(0, 4);
+  return year;
+}
+
+export function getVoteAverage(voteAverage) {
+  if(!voteAverage) return 'Trống';
+  const vote = voteAverage.toFixed(1);
+  return vote;
+}
+
+export function getOverview(overview) {
+  if(!overview) return 'Trống';
+  return overview;
+}
+
+// export function randomColor() {
+//   return '#' + Math.floor(Math.random()*16777215).toString(16);
+// }
+export function randomColor() {
+  const x = Math.round(0xffffff * Math.random()).toString(16);
+  const y = (6 - x.length);
+  const z = '000000';
+  const z1 = z.substring(0, y);
+  return '#' + z1 + x;
+}
+
+export function handlerScrollRender(position, handler, flag) {
+  window.addEventListener('scroll', () => {
+    if(document.documentElement.scrollTop > position && flag == 1) {
+      handler();
+      flag++;
+    }
+  })
 }

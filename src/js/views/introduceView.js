@@ -1,4 +1,4 @@
-import { pathPictureW220 } from '../helpers.js';
+import { pathPictureW220 } from '../shared/helpers.js';
 
 class IntroduceView {
   _parentElement = document.querySelector('.introduce');

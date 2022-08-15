@@ -1,12 +1,12 @@
 import View from './View.js';
-import { pathPictureW220 } from '../helpers.js';
+import { pathPictureW220 } from '../shared/helpers.js';
 
 class BannerView extends View {
   _parentElement = document.querySelector('.banner');
 
   _gridWrapper = this._parentElement.querySelector('.grid__wrapper');
 
-  _emailInput = this._parentElement.querySelector('.email__input');
+  _searchInput = this._parentElement.querySelector('.text__search');
   _placeholder = this._parentElement.querySelector('.placeholder');
 
   constructor() {
@@ -25,11 +25,11 @@ class BannerView extends View {
 
   // xử lý khi focus
   _addHandlerFocusInput() {
-    this._emailInput.addEventListener('focus', this.handlerFocusInput.bind(this));
+    this._searchInput.addEventListener('focus', this.handlerFocusInput.bind(this));
   }
 
   handlerBlurInput() {
-    if (this._emailInput.value) {
+    if (this._searchInput.value) {
       const placeholderStyle = {
         'top': 0,
         'font-size': '1.2rem',
@@ -46,7 +46,7 @@ class BannerView extends View {
 
   // xử lý khi blur
   _addHandlerBlurInput() {
-    this._emailInput.addEventListener('blur', this.handlerBlurInput.bind(this));
+    this._searchInput.addEventListener('blur', this.handlerBlurInput.bind(this));
   }
 
   addHandlerRender(handler) {

@@ -14,6 +14,15 @@ export default class View {
     // render nội dung mới
     this._parentElement.insertAdjacentHTML('afterbegin', markup);
   }
+
+  renderCard(data) {
+    this._data = data;
+
+    const markup = this._generateMarkup();
+    this._clear();
+    // render nội dung mới
+    this._cardListElement.insertAdjacentHTML('afterbegin', markup);
+  }
   
   // phương thức xóa nội dung cũ
   _clear() {

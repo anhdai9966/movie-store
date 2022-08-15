@@ -1,0 +1,42 @@
+.banner {
+  .banner__title {
+    font-size: 5rem;
+  }
+  .form__wrapper {
+    margin-block: 5rem;
+    .search__form {
+      .input__group {
+        position: relative;
+        color: $color-gray;
+        border-radius: $border-radius-in;
+        overflow: hidden;
+        width: 100%;
+        @media (min-width:$sm) {
+          width: fit-content;
+        }
+        .text__search {
+          height: 4.9rem;
+          width: 100%;
+          padding-left: 1rem;
+          @media (min-width: $sm) {
+            width: 60rem;
+          }
+          &:focus {
+            padding-top: 2rem;
+            + .placeholder {
+              top: 0;
+              font-size: 1.3rem;
+              font-weight: bold;
+            }
+          }
+        }
+        .placeholder {
+          position: absolute;
+          top: 1.3rem;
+          left: 1rem;
+          transition: top .3s ease-out;
+        }
+      }
+    }
+  }
+}
