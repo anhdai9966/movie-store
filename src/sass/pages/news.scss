@@ -9,15 +9,9 @@
 
 @import '../components/header';
 @import '../components/footer';
-@import '../components/input';
 @import '../components/spinner';
-@import '../components/placehorders';
-@import '../components/closeButton';
 @import '../components/goToTop';
-// @import '../components/tooltips';
-@import '../components/bannerCard';
-@import '../components/bannerContent';
-
+@import '../components/tooltips';
 @import '../components/headerSideBar';
 @import '../components/headerWishlistCard';
 @import '../components/headerWishlist';
@@ -26,10 +20,6 @@
 @import '../components/headerDropdown';
 @import '../components/popup';
 
-@import '../components/detailBanner';
-@import '../layouts/detailLayout';
+@import '../layouts/newsLayout';
 @import '../components/navBtn';
-@import '../components/collectionCard';
-@import '../components/castCard';
-@import '../components/commentItem';
-@import '../components/homeCard2';
+@import '../components/pagination';

@@ -1,6 +1,8 @@
 import { TIMEOUT_SEC } from './config.js';
 
 import genres from '../../json/genres.json';
+import certifications from '../../json/certifications.json';
+import dictionary from '../../json/dictionary.json';
 
 // tạo lỗi về thời gian yêu từ api
 const timeout = function (s) {
@@ -78,23 +80,15 @@ export const pathPictureW235 = function(path) {
 export const pathPictureW220 = function(path) {
   return `https://www.themoviedb.org/t/p/w220_and_h330_face${path}`;
 };
+// https://www.themoviedb.org/t/p/w138_and_h175_face/fBEucxECxGLKVHBznO0qHtCGiMO.jpg
+export const pathPictureW138 = function(path) {
+  return `https://www.themoviedb.org/t/p/w138_and_h175_face${path}`;
+};
 
 // dịch sang ngôn ngữ tiếng việt
 export const translateVietnamese = function(word) {
-  const dictionary = [
-    {
-      id: 0,
-      english: 'Released',
-      vietnamese: 'Đã phát hành',
-    },
-    {
-      id: 1,
-      english: 'en',
-      vietnamese: 'Tiếng anh',
-    }
-  ];
-  const findWord = dictionary.find(w => w.english.toLowerCase() == word.toLowerCase());
-
+  const findWord = dictionary.find(w => w.english.toLowerCase() === word.toLowerCase());
+  if (!findWord) return word;
   return findWord.vietnamese;
 };
 
@@ -146,4 +140,13 @@ export function handlerScrollRender(position, handler, flag) {
       flag++;
     }
   })
+}
+
+export function getCertification(us) {
+  const order = certifications.US.find(u => u.certification == us).order;
+
+  return {
+    certification: certifications.VN.find(v => v.order == order).certification,
+    meaning: certifications.VN.find(v => v.order == order).meaning,
+  }
 }

@@ -1,46 +1,50 @@
-import { themoviedb } from '../config.js';
-import { AJAX } from '../helpers.js';
+import { themoviedb } from '../shared/config.js';
+import { AJAX } from '../shared/helpers.js';
 
 export const state = {
   detail: {},
-  similar: {},
-  recommendations: {},
+  similar: [],
+  recommendations: [],
+  certificatioUS: '',
+  cast: [],
+  director: {},
+  writer: {},
+  keywords: [],
 };
 
-// tải chỉ tiết phim
+// tải chi tiết phim
 // https://api.themoviedb.org/3/movie/{movie_id}?api_key=<<api_key>>&language=en-US
-export const loadDetails = async function (movieId) {
+export const loadDetails = async function (id) {
   try {
-    const data = await AJAX(`${themoviedb.API_URL}/movie/${movieId}?api_key=${themoviedb.API_KEY}&language=${themoviedb.LANGUAGE}`);
+    const data = await AJAX(`${themoviedb.API_URL}/movie/${id}?api_key=${themoviedb.API_KEY}&language=${themoviedb.LANGUAGE}`);
 
     // vì data chung quá nên gọi nó là detail
-    const detail = data;
     state.detail = {
-      adult: detail.adult,
-      backdropPath: detail.backdrop_path,
-      belongsToCollection: detail.belongs_to_collection, // obj
-      budget: detail.budget,
-      genres: detail.genres, // arr
-      homepage: detail.homepage,
-      id: detail.id,
-      imdbId: detail.imdb_id,
-      originalLanguage: detail.original_language,
-      originalTitle: detail.original_title,
-      overview: detail.overview,
-      popularity: detail.popularity,
-      posterPath: detail.poster_path,
-      productionCompanies: detail.production_companies, // arr
-      productionCountries: detail.production_countries, // arr
-      releaseDate: detail.release_date,
-      revenue: detail.revenue,
-      runtime: detail.runtime,
-      spokenLanguages: detail.spoken_languages, // arr
-      status: detail.status,
-      tagline: detail.tagline,
-      title: detail.title,
-      video: detail.video,
-      voteAverage: detail.vote_average,
-      voteCount: detail.vote_count,
+      adult: data.adult,
+      backdropPath: data.backdrop_path,
+      belongsToCollection: data.belongs_to_collection, // obj
+      budget: data.budget,
+      genres: data.genres, // arr
+      homepage: data.homepage,
+      id: data.id,
+      imdbId: data.imdb_id,
+      originalLanguage: data.original_language,
+      originalTitle: data.original_title,
+      overview: data.overview,
+      popularity: data.popularity,
+      posterPath: data.poster_path,
+      productionCompanies: data.production_companies, // arr
+      productionCountries: data.production_countries, // arr
+      releaseDate: data.release_date,
+      revenue: data.revenue,
+      runtime: data.runtime,
+      spokenLanguages: data.spoken_languages, // arr
+      status: data.status,
+      tagline: data.tagline,
+      title: data.title,
+      video: data.video,
+      voteAverage: data.vote_average,
+      voteCount: data.vote_count,
     };
   } catch (error) {
     console.log(error,'⚡⚡⚡⚡');
@@ -50,10 +54,9 @@ export const loadDetails = async function (movieId) {
 
 // tải các phim tương tự
 // https://api.themoviedb.org/3/movie/{movie_id}/similar?api_key=<<api_key>>&language=en-US&page=1
-// https://api.themoviedb.org/3/movie/675353/similar?api_key=19cceeb816328f42df0e6b332f489d75&language=vi&page=1
-export const loadSimilarMovies = async function(movieId) {
+export const loadSimilar = async function(id) {
   try {
-    const data = await AJAX(`${themoviedb.API_URL}/movie/${movieId}/similar?api_key=${themoviedb.API_KEY}&language=${themoviedb.LANGUAGE}&page=1`);
+    const data = await AJAX(`${themoviedb.API_URL}/movie/${id}/similar?api_key=${themoviedb.API_KEY}&language=${themoviedb.LANGUAGE}&page=1`);
 
     state.similar = data.results.map(movie => {
       return {
@@ -79,11 +82,11 @@ export const loadSimilarMovies = async function(movieId) {
   }
 };
 
-// tải các phim khuyến khích
+// tải các phim khuyến nghị
 // https://api.themoviedb.org/3/movie/675353/recommendations?api_key=19cceeb816328f42df0e6b332f489d75&language=en-US&page=1
-export const loadrecommendations = async function(movieId) {
+export const loadRecommendations = async function(id) {
   try {
-    const data = await AJAX(`${themoviedb.API_URL}/movie/${movieId}/recommendations?api_key=${themoviedb.API_KEY}&language=${themoviedb.LANGUAGE}&page=1`);
+    const data = await AJAX(`${themoviedb.API_URL}/movie/${id}/recommendations?api_key=${themoviedb.API_KEY}&language=${themoviedb.LANGUAGE}&page=1`);
 
     state.recommendations = data.results.map(movie => {
       return {
@@ -109,3 +112,76 @@ export const loadrecommendations = async function(movieId) {
     throw error;
   }
 };
+
+// tải chứng nhận
+// https://api.themoviedb.org/3/movie/539681/release_dates?api_key=19cceeb816328f42df0e6b332f489d75
+export const loadCertification = async function (id) {
+  try {
+    const data = await AJAX(`${themoviedb.API_URL}/movie/${id}/release_dates?api_key=${themoviedb.API_KEY}`);
+
+    const us = data.results.find(i => i.iso_3166_1 == 'US');
+
+    state.certificatioUS = us.release_dates[0].certification;
+    // {
+    //   "iso_3166_1": "US",
+    //   "release_dates": [
+    //     {
+    //       "certification": "PG",
+    //       "iso_639_1": "",
+    //       "note": "",
+    //       "release_date": "2022-07-29T00:00:00.000Z",
+    //       "type": 3
+    //     }
+    //   ]
+    // },
+  } catch (error) {
+    console.log(error,'⚡⚡⚡⚡');
+    throw error;
+  }
+}
+
+// tải dàn diễn viên
+// https://api.themoviedb.org/3/movie/{movie_id}/credits?api_key=19cceeb816328f42df0e6b332f489d75&language=en-US
+export const loadCast = async function (id) {
+  try {
+    const data = await AJAX(`${themoviedb.API_URL}/movie/${id}/credits?api_key=${themoviedb.API_KEY}&language=${themoviedb.LANGUAGE}`);
+
+    state.cast = data.cast.map(c => {
+      return {
+        castId: c.cast_id,
+        character: c.character,
+        creditId: c.credit_id,
+        gender: c.gender,
+        id: c.id,
+        known_for_department: c.known_for_department,
+        name: c.name,
+        order: c.order,
+        originalName: c.original_name,
+        popularity: c.popularity,
+        profilePath: c.profile_path,
+      }
+    })
+    
+    state.director = data.crew.find(c => c.job == 'Director');
+    state.writer = data.crew.find(c => c.job == 'Writer');
+  } catch (error) {
+    console.log(error,'⚡⚡⚡⚡');
+    throw error;
+  }
+}
+
+// tải keyword
+// https://api.themoviedb.org/3/movie/453395/keywords?api_key=19cceeb816328f42df0e6b332f489d75
+export const loadKeywords = async function (id) {
+  try {
+    const data = await AJAX(`${themoviedb.API_URL}/movie/${id}/keywords?api_key=${themoviedb.API_KEY}&language=${themoviedb.LANGUAGE}`);
+    state.keywords = data.keywords.map(k => {
+      return {
+        id: k.id,
+        name: k.name,
+      };
+    })
+  } catch (error) {
+    console.log(error)
+  }
+}

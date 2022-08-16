@@ -1,3 +1,4 @@
+// configuration
 @import './shared/font';
 @import './shared/variables';
 @import './shared/root';
@@ -6,12 +7,23 @@
 @import './shared/mylibrary';
 @import './shared/scroll';
 
-@import './layouts/homeLayout';
-@import './components/homeCard';
-@import './components/homeCard2';
-@import './components/homeCard3';
-@import './components/homeCard4';
-@import './components/homeCard5';
-@import './components/popupGenres';
-@import './components/closeButton';
+@import './components/header';
+@import './components/footer';
+@import './components/input';
 @import './components/spinner';
+@import './components/placehorders';
+@import './components/closeButton';
+@import './components/goToTop';
+@import './components/tooltips';
+@import './components/bannerCard';
+@import './components/bannerContent';
+
+@import './components/headerSideBar';
+@import './components/headerWishlistCard';
+@import './components/headerWishlist';
+@import './components/headerAccount';
+@import './components/headerSearch';
+@import './components/headerDropdown';
+@import './components/popup';
+@import './components/bannerContentAdd';
+@import './components/detailBanner';

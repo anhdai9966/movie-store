@@ -32,6 +32,7 @@ class HeaderView extends View {
       const btn = e.target.closest('.sidebar__btn--show');
       if (!btn) return;
       handler();
+      console.log('run');
     });
   }
 

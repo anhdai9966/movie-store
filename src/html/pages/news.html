@@ -6,15 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Danh sách phim" />
     <title>Document</title>
-    <link rel="stylesheet" href="../../sass/pages/movie.scss">
-    <script type="module" defer src="../../js/controllers/movieController.js"></script>
+    <link rel="stylesheet" href="../../sass/pages/news.scss">
+    <script type="module" defer src="../../js/controllers/newsControler.js"></script>
   </head>
   <body>
+    <!-- *__________ Start go to top __________ -->
     <button class="goToTop">
       <svg class="goToTop__icon">
         <use href="../../imgs/icons.svg#icon-up"></use>
       </svg>
     </button>
+    <!-- __________ End go to top __________ -->
 
     <!-- *__________ Start header __________ -->
     <header class="headerIndex hidden">
@@ -83,7 +85,7 @@
             </div>
 
             <div class="nav__item shown-lg">
-              <a href="./news.html" class="nav__link">Tin tức</a>
+              <a href="#" class="nav__link">Tin tức</a>
             </div>
 
             <li class="nav__item shown-lg">
@@ -422,183 +424,65 @@
     </div>
     <!-- __________ End search __________ -->
 
-    <!-- *__________ Start banner __________ -->
-
-    <section class="banner">
-      <div class="windows">
-        <div class="view-3d">
-          <div class="rotate">
-            <div class="wrapper">
-              <div class="animation">
-                <div class="grid__wrapper">
-                  <!-- <div class="card__grid">
-                    <div class="banner-card__item">
-                      <a href="#" class="movie__link">
-                        <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/xeg0UhMmzSalvyK7kvhTHcKXIf8.jpg" class="movie__poster" loading="lazy">
-                        <div class="card__overlay"></div>
-                        <h6 class="movie__title">Thế giới khủng long</h6>
-                      </a>
-                    </div>
-                  </div>
-  
-                  <div class="card__grid">
-                    <div class="banner-card__item">
-                      <a href="#" class="movie__link">
-                        <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/xeg0UhMmzSalvyK7kvhTHcKXIf8.jpg" class="movie__poster" loading="lazy">
-                        <div class="card__overlay"></div>
-                        <h6 class="movie__title">Thế giới khủng long</h6>
-                      </a>
-                    </div>
-  
-                  </div> -->
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="overlay"></div>
-
-      <div class="container">
-        <div class="content">
-          <div class="title">
-            <h1 class="banner__title">Chào mừng các bạn.</h1>
-            <h3 class="banner__subtitle">Hàng triệu bộ phim được cập nhật liên tục. Hãy khám phá ngay bây giờ.</h3>
-          </div>
-
-          <div class="form__wrapper">
-            <form class="search__form">
-              <label class="input__group">
-                <input type="text" name="text__search" id="text__search" class="text__search"/>
-                <label for="text__search" class="placeholder">Tìm kiếm phim</label>
-              </label>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- __________ End banner __________ -->
+    <div class="margin-header"></div>
 
     <!-- *__________ Start main __________ -->
-    <main id="detail__main">
+    <main class="news">
       <div class="container">
-        <nav class="main__nav">
+        <!-- *__________ Start nav news __________ -->
+        <nav class="nav">
           <ul class="nav__list">
-            <li class="nav__item">
-              <button class="nav__btn nav__sort">Sắp xếp theo tên</button>
+            <li class="item nav__actived">
+              <button class="btn"><span class="line-one">Phim chiếu rạp</span></button>
             </li>
-
-            <li class="nav__item">
-              <button class="nav__btn nav__year">
-                <span class="title-dtk--change">Năm phát hành</span>
-                <span class="title-mobi--change">Năm P. hành</span>
-              </button>
-            </li>
-
-            <li class="nav__item">
-              <button class="nav__btn nav__genres">Thể loại</button>
-            </li>
-
-            <li class="nav__item">
-              <button class="nav__btn nav__nation">Quốc gia</button>
-            </li>
-
-            <li class="nav__item">
-              <button class="nav__btn nav__reset">
-                <svg class="reset__icon">
-                  <use href="../../imgs/icons.svg#icon-reset"></use>
-                </svg>
-              </button>
+    
+            <li class="item">
+              <button class="btn"><span class="line-one">Phim việt nam</span></button>
             </li>
           </ul>
-
-          <div class="nav__result">
-            <div class="result__main">
-              <div class="result__grid">
-                <!-- <a href="#" class="result__item">2023</a> -->
-              </div>
-            </div>
-
-            <div class="result__form">
-              <input
-                type="text"
-                name="year__input"
-                id="year__input"
-                class="result__input year__input"
-                placeholder="Năm phát hành"
-              />
-
-              <input
-                type="text"
-                name="nation__input"
-                id="nation__input"
-                class="result__input nation__input"
-                placeholder="Quốc gia"
-              />
-
-              <button class="reset__btn">
-                <svg class="reset__icon">
-                  <use href="../../imgs/icons.svg#icon-reset"></use>
-                </svg>
-              </button>
-
-              <button class="apply__btn">Áp dụng</button>
-            </div>
-          </div>
         </nav>
+        <!-- __________ End nav news __________ -->
 
-        <div class="card__grid">
-          <!-- <div class="card-movie-2__item">
-            <div class="first">
-              <a href="#" class="movie__poster movie__link">
-                <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/qVdpItrjj0dSNGXE9CAaRIGSti2.jpg" alt="movie" loading="lazy">
-              </a>
-              <a href="#" class="movie__backdrop movie__link">
-                <img src="https://www.themoviedb.org/t/p/w533_and_h300_bestv2/nW5fUbldp1DYf2uQ3zJTUdachOu.jpg" alt="movie" loading="lazy">
-              </a>
-      
-              <button class="wishlist__btn">
-                <svg class="wishlist__icon">
-                  <use href='../../imgs/icons.svg#icon-bookmark'></use>
-                </svg>
-              </button>
-      
-              <a href="#" class="trailer__link">
-                <svg class="play__icon">
-                  <use href='../../imgs/icons.svg#icon-play-circle'></use>
-                </svg>
-              </a>
-      
-              <p class="movie__overview">Bộ phim kể về chuyến hành trình hành động kết hợp khoa học viễn tưởng nhằm giới thiệu câu chuyện về nguồn gốc của nhân vật Buzz Lightyear — người anh hùng đã truyền cảm hứng sáng tạo ra đồ chơi. “Lightyear” sẽ theo chân Cảnh Sát Vũ Trụ huyền thoại trong cuộc hành trình bước ra ngoài không gian cùng với một nhóm chiến binh đầy tham vọng và người bạn đồng hành là chú mèo máy Sox.</p>
+        <!-- *__________ Start news grid __________ -->
+        <div class="news__grid">
+          <!-- <div class="news__item">
+            <div class="image">
+              <img src="https://kenh14cdn.com/zoom/500_314/203336854389633024/2022/8/14/photo1660482386890-1660482387019855486358.png" alt="img">
             </div>
+            
+            <div class="text">
+              <h6 class="title">
+                Hạ Cánh Khẩn Cấp: Bom tấn đề tài thảm họa có vượt qua được Train to Busan?
+              </h6>
       
-            <div class="end">
-              <a href="#" class="movie__title">Lightyear: Cảnh Sát Vũ Trụ</a>
+              <p class="description">Bộ phim hành động, giật gân Hạ Cánh Khẩn Cấp (Emergency Declaration) với sự góp mặt của Song Kang Ho, Lee Byung Hun, Jeon Do Yeon được ví như Train to Busan phiên bản trên không.</p>
       
-              <p class="movie__overview">Bộ phim kể về chuyến hành trình hành động kết hợp khoa học viễn tưởng nhằm giới thiệu câu chuyện về nguồn gốc của nhân vật Buzz Lightyear — người anh hùng đã truyền cảm hứng sáng tạo ra đồ chơi. “Lightyear” sẽ theo chân Cảnh Sát Vũ Trụ huyền thoại trong cuộc hành trình bước ra ngoài không gian cùng với một nhóm chiến binh đầy tham vọng và người bạn đồng hành là chú mèo máy Sox.</p>
-      
-              <p class="wrapper">
-                <span>
-                  <span class="movie__vote-average">7.0</span>
-        
-                  <svg class="star__icon">
-                    <use href='../../imgs/icons.svg#icon-star-fill'></use>
-                  </svg>
-                </span>
-      
-                <span class="movie__price">80.000 đ</span>
+              <p class="time">
+                2 ngày trước
               </p>
             </div>
           </div> -->
-          
+          <div class="spinner__render">
+            <ul class="spinner">
+              <li class="seen"></li>
+              <li class="seen"></li>
+              <li class="seen"></li>
+              <li class="seen"></li>
+              <li class="seen"></li>
+              <li class="seen"></li>
+              <li class="seen"></li>
+              <li class="seen"></li>
+              <li class="seen"></li>
+              <li class="seen"></li>
+            </ul>
+          </div>
         </div>
+        <!-- __________ End news grid __________ -->
 
         <!-- *__________ Start pagination __________ -->
-        <nav class="pagination__container">
+        <nav class="pagination__render">
           <ul class="pagination">
-            <!-- <li class="page__item shown-md">
+            <li class="page__item shown-md">
               <a class="page__link page__link--first" href="#">
                 <svg class="page__icon">
                   <use href="../../imgs/icons.svg#icon-left-double"></use>
@@ -638,13 +522,13 @@
                   <use href="../../imgs/icons.svg#icon-arrow-next"></use>
                 </svg>
               </a>
-            </li> -->
+            </li>
           </ul>
         </nav>
         <!-- __________ End pagination __________ -->
       </div>
-      </main>
-      <!-- __________ End main __________ -->
+    </main>
+    <!-- __________ End main __________ -->
 
     <!-- *__________ Start footer __________ -->
     <footer class="footer">

@@ -1,0 +1,58 @@
+{
+  "US": [
+    {
+      "certification": "G",
+      "meaning": "All ages admitted. There is no content that would be objectionable to most parents. This is one of only two ratings dating back to 1968 that still exists today.",
+      "order": 1
+    },
+    {
+      "certification": "PG-13",
+      "meaning": "Some material may be inappropriate for children under 13. Films given this rating may contain sexual content, brief or partial nudity, some strong language and innuendo, humor, mature themes, political themes, terror and/or intense action violence. However, bloodshed is rarely present. This is the minimum rating at which drug content is present.",
+      "order": 3
+    },
+    {
+      "certification": "R",
+      "meaning": "Under 17 requires accompanying parent or adult guardian 21 or older. The parent/guardian is required to stay with the child under 17 through the entire movie, even if the parent gives the child/teenager permission to see the film alone. These films may contain strong profanity, graphic sexuality, nudity, strong violence, horror, gore, and strong drug use. A movie rated R for profanity often has more severe or frequent language than the PG-13 rating would permit. An R-rated movie may have more blood, gore, drug use, nudity, or graphic sexuality than a PG-13 movie would admit.",
+      "order": 4
+    },
+    {
+      "certification": "NC-17",
+      "meaning": "These films contain excessive graphic violence, intense or explicit sex, depraved, abhorrent behavior, explicit drug abuse, strong language, explicit nudity, or any other elements which, at present, most parents would consider too strong and therefore off-limits for viewing by their children and teens. NC-17 does not necessarily mean obscene or pornographic in the oft-accepted or legal meaning of those words.",
+      "order": 5
+    },
+    { "certification": "NR", "meaning": "No rating information.", "order": 0 },
+    {
+      "certification": "PG",
+      "meaning": "Some material may not be suitable for children under 10. These films may contain some mild language, crude/suggestive humor, scary moments and/or violence. No drug content is present. There are a few exceptions to this rule. A few racial insults may also be heard.",
+      "order": 2
+    }
+  ],
+  "VN": [
+    { "certification": "", "meaning": "Không có thông tin xếp hạng.", "order": 0 },
+    {
+      "certification": "P",
+      "meaning": "Mọi lứa tuổi đều được chấp nhận. Không có nội dung nào có thể gây phản cảm đối với hầu hết các bậc cha mẹ. Đây là một trong hai xếp hạng duy nhất có từ năm 1968 vẫn còn tồn tại cho đến ngày nay.",
+      "order": 1
+    },
+    {
+      "certification": "P",
+      "meaning": "Một số tài liệu có thể không phù hợp với trẻ em dưới 10 tuổi. Những phim này có thể chứa một số ngôn ngữ nhẹ nhàng, hài hước thô thiển / khêu gợi, khoảnh khắc đáng sợ và / hoặc bạo lực. Không có nội dung ma túy. Quy tắc này có một vài ngoại lệ . Một vài lời lăng mạ chủng tộc cũng có thể được nghe thấy. ",
+      "order": 2
+    },
+    {
+      "certification": "C-13",
+      "meaning": "Một số tài liệu có thể không phù hợp với trẻ em dưới 13 tuổi. Phim được xếp hạng này có thể chứa nội dung khiêu dâm, ảnh khỏa thân ngắn gọn hoặc một phần, một số ngôn ngữ thô tục và ám chỉ, hài hước, chủ đề người lớn, chủ đề chính trị, khủng bố và / hoặc bạo lực hành động dữ dội . Tuy nhiên, hiếm khi xảy ra hiện tượng đổ máu. Đây là mức đánh giá tối thiểu mà tại đó hàm lượng thuốc có mặt. ",
+      "order": 3
+    },
+    {
+      "certification": "C-17",
+      "meaning": "Dưới 17 tuổi cần có cha mẹ hoặc người giám hộ từ 21 tuổi trở lên đi cùng. Cha mẹ / người giám hộ bắt buộc phải ở cùng với trẻ dưới 17 tuổi trong toàn bộ bộ phim, ngay cả khi cha mẹ cho phép trẻ em / thiếu niên xem phim một mình . Những phim này có thể chứa ngôn từ tục tĩu, hình ảnh khiêu dâm, ảnh khỏa thân, bạo lực mạnh, kinh dị, máu me và sử dụng ma túy mạnh. Phim được xếp hạng R về ngôn từ tục tĩu thường có ngôn từ nghiêm trọng hoặc thường xuyên hơn mức xếp hạng PG-13. Một phim được xếp hạng R- phim được xếp hạng có thể có nhiều máu me, sử dụng ma túy, khỏa thân hoặc đồ họa tình dục nhiều hơn so với một phim PG-13 được thừa nhận. ",
+      "order": 4
+    },
+    {
+      "certification": "C-18",
+      "meaning": "Những phim này có hình ảnh bạo lực quá mức, tình dục gay gắt hoặc rõ ràng, đồi trụy, hành vi ghê tởm, lạm dụng ma túy rõ ràng, ngôn từ thô tục, ảnh khỏa thân rõ ràng hoặc bất kỳ yếu tố nào khác mà hiện tại, hầu hết các bậc cha mẹ đều cho là quá mạnh và do đó đã tắt -limits để trẻ em và thanh thiếu niên của họ xem. NC-17 không nhất thiết có có nghĩa tục tĩu hoặc khiêu dâm theo nghĩa được chấp nhận hoặc hợp pháp của những từ đó. ",
+      "order": 5
+    }
+  ]
+}

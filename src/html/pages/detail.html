@@ -6,325 +6,731 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="" />
     <title>Document</title>
-    <link rel="stylesheet" href="../../css/index.css" />
+    <link rel="stylesheet" href="../../sass/pages/detail.scss" />
+    <!-- <link rel="stylesheet" href="../../css/index.min.css"> -->
     <script type="module" defer src="../../js/controllers/detailController.js"></script>
   </head>
   <body>
-    <header id="header">
+    <button class="goToTop">
+      <svg class="goToTop__icon">
+        <use href="../../imgs/icons.svg#icon-up"></use>
+      </svg>
+    </button>
 
+    <!-- *__________ Start header __________ -->
+    <header class="headerIndex hidden">
+      <div class="container">
+        <nav class="nav">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="#" class="nav__logo">
+                <img src="../../imgs/logo.png" alt="logo moviestore" />
+              </a>
+            </li>
+          </ul>
+
+          <ul class="nav__list">
+            <li class="nav__item">
+              <button class="signIn__btn sigin__btn--open-modal">Đăng nhập</button>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
-    <section id="detail__banner">
-      <!-- <div class="detail-header__bg">
-        <img src="https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/p1F51Lvj3sMopG948F5HsBbl43C.jpg" alt="backdrop" loading="lazy" class="movie__backdrop" />
-        <div class="header__overlay"></div>
-      </div>
-
+    <header class="header">
       <div class="container">
-        <div class="header__main">
-          <div class="header__bg">
-            <img src="https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/p1F51Lvj3sMopG948F5HsBbl43C.jpg" alt="backdrop" loading="lazy" class="movie__backdrop" />
-            <div class="header__overlay"></div>
-          </div>
-
-          <div class="header__section">
-            <a href="#" class="movie__poster">
-              <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/xeg0UhMmzSalvyK7kvhTHcKXIf8.jpg" alt="poster" loading="lazy">
-            </a>
-            <div class="header__text">
-              <h1 class="movie__title">Thor: Tình Yêu và Sấm Sét</h1>
-              <p class="movie__info"><span>Giả tưởng</span> • <span>2022</span> • <span>2 giờ 6 phút</span></p>
-            </div>
-          </div>
-          
-          <div class="header__section">
-            <div class="movie__rate">
-              <p>
-                <span>7.5</span>
-                <svg class="rate__icon">
-                  <use href='../../imgs/icons.svg#icon-star-fill'></use>
+        <nav class="nav">
+          <ul class="nav__list">
+            <li class="nav__item hidden-lg">
+              <button class="nav__btn sidebar__btn--show">
+                <svg class="nav__icon">
+                  <use href="../../imgs/icons.svg#icon-menu"></use>
                 </svg>
-              </p>
-              <p>4527 đánh giá</p>
+              </button>
+            </li>
+
+            <li class="nav__item">
+              <a href="../../index.html" class="nav__logo">
+                <img src="../../imgs/logo.png" alt="logo moviestore" />
+              </a>
+            </li>
+
+            <li class="nav__item shown-lg">
+              <button class="nav__btn navMore__btn movie__btn--toggle">
+                <span>Phim</span>
+                <svg class="nav__icon--small">
+                  <use href="../../imgs/icons.svg#icon-caret"></use>
+                </svg>
+              </button>
+
+              <!-- *__________ Start dropdown __________ -->
+              <ul class="dropdown__menu hidden">
+                <li class="dropdown__item">
+                  <a class="dropdown__btn" href="./movie.html#now_playing">Phim Thịnh Hành</a>
+                </li>
+                <li class="dropdown__item">
+                  <a class="dropdown__btn" href="./movie.html#top_rated">Bảng Xếp Hạng</a>
+                </li>
+                <li class="dropdown__item">
+                  <a class="dropdown__link" href="./movie.html#upcoming">Phim Sắp Phát Hành</a>
+                </li>
+              </ul>
+              <!-- __________ End dropdown __________ -->
+            </li>
+
+            <div class="nav__item shown-lg">
+              <a href="#" class="nav__link">Trailer</a>
             </div>
-            <div class="vertical__rule"></div>
-            <div class="header__certification">
-              <p class="certification">C 13</p>
-              <p>Mức phân loại</p>
+
+            <div class="nav__item shown-lg">
+              <a href="./news.html" class="nav__link">Tin tức</a>
             </div>
-          </div>
 
-          <div class="header__section">
-            <button class="buy__btn">Mua: 210.000 đ</button>
-            <button class="rent__btn">Thuê: 80.000 đ</button>
-            <button class="wishlist__btn">
-              <svg class="wishlist__icon">
-                <use href='../../imgs/icons.svg#icon-bookmark'></use>
-              </svg>
-              <span>Thêm vào danh sách yêu thích</span>
-            </button>
-          </div>
+            <li class="nav__item shown-lg">
+              <button class="nav__btn navMore__btn more__btn--toggle">
+                <span>Hơn Nữa</span>
+                <svg class="nav__icon--small">
+                  <use href="../../imgs/icons.svg#icon-caret"></use>
+                </svg>
+              </button>
 
-          <a href="#" class="trailer__btn">
-            <svg class="play__icon">
-              <use href='../../imgs/icons.svg#icon-play'></use>
-            </svg>
-            <span>Đoạn giới thiệu</span>
-          </a>
-        </div>
-      </div> -->
-      
-    </section>
+              <!-- *__________ Start dropdown __________ -->
+              <ul class="dropdown__menu hidden">
+                <li class="dropdown__item">
+                  <button class="dropdown__btn">Thể loại</button>
+                </li>
+                <li class="dropdown__item">
+                  <button class="dropdown__btn">Quốc gia</button>
+                </li>
+                <li class="dropdown__item">
+                  <button class="dropdown__btn">Năm Phát Hành</button>
+                </li>
+                <li class="dropdown__item">
+                  <a class="dropdown__link" href="#">Người Nổi Tiếng</a>
+                </li>
+              </ul>
+              <!-- __________ End dropdown __________ -->
+            </li>
+          </ul>
 
-    <main id="detail__main">
-      <div class="container">
-        <nav class="main__nav">
-          <div class="nav__active"></div>
-          <button class="detail-nav__btn" onclick="activeTranX(0)">Chi tiết</button>
-          <button class="comment-nav__btn" onclick="activeTranX(1)">Nhận xét</button>
-          <button class="similar-nav__btn" onclick="activeTranX(2)">Liên quan</button>
-        </nav>
+          <ul class="nav__list">
+            <li class="nav__item show-sm">
+              <button class="nav__btn wishlist__btn--toggle">
+                <svg class="nav__icon">
+                  <use href="../../imgs/icons.svg#icon-bookmark"></use>
+                </svg>
+              </button>
 
-        <div class="main__grid">
-          <article class="movie__detail main__show">
-            <p class="main__heading">Chi tiết</p>
-            <section class="main__section">
-              <h5 class="main__title">Giới thiệu phim</h5>
-              <p class="movie__description">Sự kiện xảy sau phần phim Người Nhện: Không còn nhà (2021) và mùa đầu tiên của Loki (2021), Bác sĩ Stephen Strange đã sử dụng một phét thuật bị cấm và mở ra cánh cổng dẫn tới đa vũ trụ, vô tình dẫn đưa một biến thể hắc ám của Stephen Strange khác đến vũ trụ mình - mối đe dọa lớn mà Dr. Strange có thể phải đối đầu hoặc hợp sức chống lại một cái ác khác, đồng hành cùng Strange còn có Wong và Wanda Maximoff cùng với nhân vật mới American Chavez. đối đầu hoặc hợp sức chống lại một cái ác khác, đồng hành cùng Strange còn có Wong và Wanda Maximoff cùng với</p>
-              <button class="see-more__btn">Thêm</button>
-            </section>
+              <!-- *__________ Start wish list __________ -->
+              <div class="header__wishlist hidden">
+                <p class="wishlist__title">
+                  <svg class="wishlist__icon">
+                    <use href="../../imgs/icons.svg#icon-bookmark-fill"></use>
+                  </svg>
+                  <span>Danh sách yêu thích</span>
+                </p>
+
+                <div class="wrapper">
+                  <div class="wishlist__list">
+                    <!-- <div class="popupWishlist__card">
+                    <a href="#" class="card__link movie__poster">
+                      <img src="https://www.themoviedb.org/t/p/w500/xeg0UhMmzSalvyK7kvhTHcKXIf8.jpg" alt="movie" loading="lazy" />
+                    </a>
+                
+                    <div class="wrapper">
+                      <a href="#" class="card__link">Thế giới khủng long</a>
+                      <p class="wrap">
+                        <span class="">
+                          <span class="movie__rate">7.0</span>
+                          <svg class="star__icon">
+                            <use href="../../imgs/icons.svg#icon-star-fill"></use>
+                          </svg>
+                        </span>
+                        <span class="movie__price">80.000 đ</span>
+                      </p>
+                    </div>
+                
+                    <button class="card__btn card__btn--remove">
+                      <svg class="card__icon">
+                        <use href="../../imgs/icons.svg#icon-dismiss"></use>
+                      </svg>
+                    </button>
+                  </div>
             
-            <section class="main__section">
-              <h5 class="main__title">Có trong bộ</h5>
-              <div class="movie__collection">
-                <a href="#" class="collection__backdrop">
-                  <img src="https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/3KL8UNKFWgIKXzLHjwY0uwgjzYl.jpg" alt="" class="movie__backdrop">
-                </a>
-                <div class="collection__text">
-                  <a href="#" class="collection__title">
-                    <h6>Doctor Strange Collection</h6>
-                  </a>
-                  <p class="collection__category"><span>Giả tưởng</span>, <span>Hành động</span>, <span>phưu lưu</span></p>
-                </div>
-              </div>
-            </section>
-
-            <section class="main__section">
-              <div class="section__title">
-                <h5 class="main__title">Đoàn làm phim</h5>
-                <a href="#" class="cast__link">Xem tất cả ></a>
-              </div>
-              <h6 class="cast__title">Dàn diễn viên</h6>
-              <div class="cast__container">
-                <div class="cast__wrapper">
-                  <div class="cast__list">
-                    <div class="cast__item">
-                      <a href="#" class="cast__avatar">
-                        <img src="https://www.themoviedb.org/t/p/w138_and_h175_face/jpurJ9jAcLCYjgHHfYF32m3zJYm.jpg" alt="cast" class="cast__poster">
-                      </a>
-                      <a href="#" class="cast__name"><h6>Chris Hemsworth Hemsworth</h6></a>
-                      <p class="cast__character">Thor Odinson</p>
-                    </div>
-                    
-                    <div class="cast__item">
-                      <a href="#" class="cast__avatar">
-                        <img src="https://www.themoviedb.org/t/p/w138_and_h175_face/jpurJ9jAcLCYjgHHfYF32m3zJYm.jpg" alt="cast" class="cast__poster">
-                      </a>
-                      <a href="#" class="cast__name"><h6>Chris Hemsworth Hemsworth</h6></a>
-                      <p class="cast__character">Thor Odinson</p>
-                    </div>
-                    <div class="cast__item">
-                      <a href="#" class="cast__avatar">
-                        <img src="https://www.themoviedb.org/t/p/w138_and_h175_face/jpurJ9jAcLCYjgHHfYF32m3zJYm.jpg" alt="cast" class="cast__poster">
-                      </a>
-                      <a href="#" class="cast__name"><h6>Chris Hemsworth Hemsworth</h6></a>
-                      <p class="cast__character">Thor Odinson</p>
-                    </div>
-                    <div class="cast__item">
-                      <a href="#" class="cast__avatar">
-                        <img src="https://www.themoviedb.org/t/p/w138_and_h175_face/jpurJ9jAcLCYjgHHfYF32m3zJYm.jpg" alt="cast" class="cast__poster">
-                      </a>
-                      <a href="#" class="cast__name"><h6>Chris Hemsworth Hemsworth</h6></a>
-                      <p class="cast__character">Thor Odinson</p>
-                    </div>
-                    <div class="cast__item">
-                      <a href="#" class="cast__avatar">
-                        <img src="https://www.themoviedb.org/t/p/w138_and_h175_face/jpurJ9jAcLCYjgHHfYF32m3zJYm.jpg" alt="cast" class="cast__poster">
-                      </a>
-                      <a href="#" class="cast__name"><h6>Chris Hemsworth Hemsworth</h6></a>
-                      <p class="cast__character">Thor Odinson</p>
-                    </div>
-                    <div class="cast__item">
-                      <a href="#" class="cast__avatar">
-                        <img src="https://www.themoviedb.org/t/p/w138_and_h175_face/jpurJ9jAcLCYjgHHfYF32m3zJYm.jpg" alt="cast" class="cast__poster">
-                      </a>
-                      <a href="#" class="cast__name"><h6>Chris Hemsworth Hemsworth</h6></a>
-                      <p class="cast__character">Thor Odinson</p>
-                    </div>
-                    <div class="cast__item">
-                      <a href="#" class="cast__avatar">
-                        <img src="https://www.themoviedb.org/t/p/w138_and_h175_face/jpurJ9jAcLCYjgHHfYF32m3zJYm.jpg" alt="cast" class="cast__poster">
-                      </a>
-                      <a href="#" class="cast__name"><h6>Chris Hemsworth Hemsworth</h6></a>
-                      <p class="cast__character">Thor Odinson</p>
-                    </div>
-                    <div class="cast__item">
-                      <a href="#" class="cast__avatar">
-                        <img src="https://www.themoviedb.org/t/p/w138_and_h175_face/jpurJ9jAcLCYjgHHfYF32m3zJYm.jpg" alt="cast" class="cast__poster">
-                      </a>
-                      <a href="#" class="cast__name"><h6>Chris Hemsworth Hemsworth</h6></a>
-                      <p class="cast__character">Thor Odinson</p>
-                    </div>
-  
+                  <div class="wishlist__empty">
+                    <svg class="wishlist__icon">
+                      <use href="../../imgs/icons.svg#icon-list-empty"></use>
+                    </svg>
+                    <p class="wishlist__message">Oops!<br />Bạn hãy chọn phim yêu thích!</p>
+                  </div> -->
                   </div>
                 </div>
 
-                <button class="cast__btn cast-left__btn">
-                  <svg class="cast__icon">
-                    <use href='../../imgs/icons.svg#icon-left-circle'></use>
-                  </svg>
-                </button>
-
-                <button class="cast__btn cast-right__btn">
-                  <svg class="cast__icon">
-                    <use href='../../imgs/icons.svg#icon-right-circle'></use>
-                  </svg>
-                </button>
-
+                <div class="wishlist__btn">
+                  <a href="#" class="view__link">Xem</a>
+                  <button class="buy__btn">Mua</button>
+                </div>
               </div>
-              <h6 class="cast__title">Đạo diễn</h6>
-              <p>Sam Raimi</p>
-              <h6 class="cast__title">Kịch bản</h6>
-              <p>Michael Waldron</p>
-            </section>
+              <!-- __________ End wish list __________ -->
+            </li>
 
-            <section class="main__section">
-              <h5 class="main__title">Thông tin</h5>
-              <div class="movie__info">
-                <ul class="info__list">
-                  <li class="info__item">
+            <li class="nav__item">
+              <button class="nav__btn account__btn--toggle">
+                <svg class="nav__icon">
+                  <use href="../../imgs/icons.svg#icon-user"></use>
+                </svg>
+              </button>
+
+              <!-- *__________ Start account __________ -->
+              <div class="header__account hidden">
+                <ul class="account__list">
+                  <div class="account__link">
+                    <div class="account__status"></div>
+                    <div class="account__info">
+                      <p>Hi, anhdai9966</p>
+                      <p>3200 xu</p>
+                    </div>
+                  </div>
+
+                  <li class="account__item">
+                    <a href="#" class="account__link">
+                      <svg class="account__icon">
+                        <use href="../../imgs/icons.svg#icon-person"></use>
+                      </svg>
+                      <span>Tài khoản của tôi</span>
+                    </a>
+                  </li>
+
+                  <li class="account__item">
+                    <a href="#" class="account__link">
+                      <svg class="account__icon">
+                        <use href="../../imgs/icons.svg#icon-film"></use>
+                      </svg>
+                      <span>Phim của tôi</span>
+                    </a>
+                  </li>
+
+                  <li class="account__item">
+                    <a href="#" class="account__link">
+                      <svg class="account__icon">
+                        <use href="../../imgs/icons.svg#icon-bookmark"></use>
+                      </svg>
+                      <span>Danh sách mong muốn</span>
+                    </a>
+                  </li>
+
+                  <li class="account__item">
+                    <a href="#" class="account__link">
+                      <svg class="account__icon">
+                        <use href="../../imgs/icons.svg#icon-history"></use>
+                      </svg>
+                      <span>Lịch sử đã xem</span>
+                    </a>
+                  </li>
+
+                  <li class="account__item">
+                    <a href="#" class="account__link">
+                      <svg class="account__icon">
+                        <use href="../../imgs/icons.svg#icon-door-out"></use>
+                      </svg>
+                      <span>Đăng xuất</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <!-- __________ End account __________ -->
+            </li>
+
+            <li class="nav__item">
+              <button class="nav__btn search__btn--toggle">
+                <svg class="nav__icon">
+                  <use href="../../imgs/icons.svg#icon-search"></use>
+                </svg>
+              </button>
+            </li>
+
+            <li class="nav__item hidden">
+              <button class="signIn__btn signin__btn--open-modal">Đăng nhập</button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- __________ End header __________ -->
+
+    <!-- *__________ Start sidebar __________ -->
+    <div class="header__sidebar hidden">
+      <div class="sidebar">
+        <div class="sidebar__link">
+          <button class="sidebar__btn--close">
+            <svg class="sidebar__icon">
+              <use href="../../imgs/icons.svg#icon-menu"></use>
+            </svg>
+          </button>
+
+          <a href="./home.html" class="sidebar__logo">
+            <img src="../../imgs/logo.png" alt="logo moviestore" />
+          </a>
+        </div>
+
+        <ul class="sidebar__list">
+          <li class="sidebar__item">
+            <a href="./home.html" class="sidebar__link">
+              <svg class="sidebar__icon">
+                <use href="../../imgs/icons.svg#icon-home"></use>
+              </svg>
+              <span>Trang chủ</span>
+            </a>
+          </li>
+
+          <li class="sidebar__item">
+            <a href="./movie.html#now_playing" class="sidebar__link">
+              <svg class="sidebar__icon">
+                <use href="../../imgs/icons.svg#icon-movie-new"></use>
+              </svg>
+              <span>Phim Mới</span>
+            </a>
+          </li>
+
+          <li class="sidebar__item">
+            <button class="sidebar__btn category__btn--show">
+              <svg class="sidebar__icon">
+                <use href="../../imgs/icons.svg#icon-select-all"></use>
+              </svg>
+              <span>Thể loại</span>
+            </button>
+          </li>
+
+          <li class="sidebar__item">
+            <button class="sidebar__btn nation__btn--show">
+              <svg class="sidebar__icon">
+                <use href="../../imgs/icons.svg#icon-globe"></use>
+              </svg>
+              <span>Quốc gia</span>
+            </button>
+          </li>
+
+          <li class="sidebar__item">
+            <button class="sidebar__btn release-year__btn--show">
+              <svg class="sidebar__icon">
+                <use href="../../imgs/icons.svg#icon-calendar"></use>
+              </svg>
+              <span>Năm phát hành</span>
+            </button>
+          </li>
+
+          <li class="sidebar__item">
+            <a href="./movie.html#popular" class="sidebar__link">
+              <svg class="sidebar__icon">
+                <use href="../../imgs/icons.svg#icon-flame-fill"></use>
+              </svg>
+              <span>Phim thịnh hành</span>
+            </a>
+          </li>
+
+          <li class="sidebar__item">
+            <a href="./movie.html#top_rated#" class="sidebar__link">
+              <svg class="sidebar__icon">
+                <use href="../../imgs/icons.svg#icon-list"></use>
+              </svg>
+              <span>Bảng xếp hạng</span>
+            </a>
+          </li>
+
+          <li class="sidebar__item">
+            <a href="./movie.html#upcoming" class="sidebar__link">
+              <svg class="sidebar__icon">
+                <use href="../../imgs/icons.svg#icon-calendar-time"></use>
+              </svg>
+              <span>Phim sắp phát hành</span>
+            </a>
+          </li>
+
+          <li class="sidebar__item">
+            <a href="./news.html" class="sidebar__link">
+              <svg class="sidebar__icon">
+                <use href="../../imgs/icons.svg#icon-news"></use>
+              </svg>
+              <span>Tin tức</span>
+            </a>
+          </li>
+
+          <li class="sidebar__item">
+            <a href="#" class="sidebar__link">
+              <svg class="sidebar__icon">
+                <use href="../../imgs/icons.svg#icon-user"></use>
+              </svg>
+              <span>Người nổi tiếng</span>
+            </a>
+          </li>
+
+          <li class="sidebar__item">
+            <a href="#" class="sidebar__link">
+              <svg class="sidebar__icon">
+                <use href="../../imgs/icons.svg#icon-youtube"></use>
+              </svg>
+              <span>Trailer mới</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- __________ End sidebar __________ -->
+
+    <!-- *__________ Start search __________ -->
+    <div class="header__search hidden">
+      <div class="container">
+        <form class="search__form">
+          <input type="text" placeholder="Tìm kiếm....." class="form__input" />
+          <button class="cancel__btn">Hủy</button>
+
+          <svg class="form__icon">
+            <use href="../../imgs/icons.svg#icon-search"></use>
+          </svg>
+        </form>
+
+        <ul class="search__searched">
+          <!-- <li class="search__item">
+          <a href="#" class="search__link">
+            <svg class="search__icon">
+              <use href="../../imgs/icons.svg#icon-history"></use>
+            </svg>
+            <span>Anh hùng</span>
+          </a>
+          <button class="search__btn search__btn--remove" title="Xóa tìm kiếm này">Xóa</button>
+        </li> -->
+        </ul>
+
+        <p class="suggest__title">
+          <svg class="search__icon">
+            <use href="../../imgs/icons.svg#icon-trending"></use>
+          </svg>
+          <span>Phim thịnh hành</span>
+        </p>
+
+        <ul class="search__suggest">
+          <!-- <li class="search__item">
+          <a href="#" class="search__link">
+            <svg class="search__icon">
+              <use href="../../imgs/icons.svg#icon-search"></use>
+            </svg>
+            <span>Thế giới khủng long: Lãnh địa</span>
+          </a>
+        </li> -->
+        </ul>
+      </div>
+    </div>
+    <!-- __________ End search __________ -->
+
+    <section class="banner__detail">
+      <!-- <div class="container">
+        <div class="banner__wrapper">
+          <div class="banner__backdrop">
+            <img src="https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/p1F51Lvj3sMopG948F5HsBbl43C.jpg" alt="backdrop" loading="lazy" />
+            <div class="banner__overlay"></div>
+          </div>
+
+          <div class="banner__content">
+            <a href="#" class="banner__btn--trailer btn__top hidden-lg">
+              <svg class="banner__icon">
+                <use href='../../imgs/icons.svg#icon-play'></use>
+              </svg>
+
+              <span>Đoạn giới thiệu</span>
+            </a>
+
+            <div class="banner__content_1">
+              <a href="#" class="banner__poster shown-lg">
+                <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/xeg0UhMmzSalvyK7kvhTHcKXIf8.jpg" alt="poster" loading="lazy">
+              </a>
+              
+              <div class="banner__text">
+                <h1 class="banner__title">Thor: Tình Yêu và Sấm Sét</h1>
+  
+                <p class="banner__info">
+                  <span>Giả tưởng</span> • 
+                  <span>2022</span> • 
+                  <span>2 giờ 6 phút</span>
+                </p>
+              </div>
+            </div>
+
+            <div class="banner__content_2">
+              <div class="banner__wrap">
+                <p class="banner__rate">
+                  <span>7.5</span>
+
+                  <svg class="star__icon">
+                    <use href='../../imgs/icons.svg#icon-star-fill'></use>
+                  </svg>
+                </p>
+
+                <p>4527 đánh giá</p>
+              </div>
+  
+              <div class="vertical__rule"></div>
+  
+              <div class="banner__wrap">
+                <p class="certification">C 13</p>
+
+                <p>Mức phân loại</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="banner__btn">
+            <div class="banner__btn_1">
+              <button class="banner__btn--buy">Mua: 210.000 đ</button>
+  
+              <button class="banner__btn--rent">Thuê: 80.000 đ</button>
+            </div>
+          
+            <div class="banner__btn_2">
+              <button class="banner__btn--wishlist">
+                <svg class="banner__icon">
+                  <use href='../../imgs/icons.svg#icon-bookmark'></use>
+                </svg>
+
+                <span>Thêm vào danh sách yêu thích</span>
+              </button>
+    
+              <a href="#" class="banner__btn--trailer">
+                <svg class="banner__icon">
+                  <use href='../../imgs/icons.svg#icon-play'></use>
+                </svg>
+
+                <span>Đoạn giới thiệu</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div> -->
+    </section>
+
+    <main class="detail__main">
+      <div class="container">
+        <div class="detail__nav hidden-lg">
+          <nav class="nav">
+            <ul class="nav__list">
+              <li class="item">
+                <button class="btn details__btn nav__actived"><span class="line-one">Chi tiết</span></button>
+              </li>
+
+              <li class="item">
+                <button class="btn comments__btn"><span class="line-one">Nhận xét</span></button>
+              </li>
+
+              <li class="item">
+                <button class="btn recommend__btn"><span class="line-one">Liên quan</span></button>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="detail__grid">
+          <article class="detail__detail">
+            <p class="detail__heading">Chi tiết</p>
+
+            <section class="detail__section_1 detail__render">
+              <!-- <h5 class="detail__title">Giới thiệu phim</h5>
+
+              <div class="detail__description">
+                <p class="detail__text--wrap">
+                  Sự kiện xảy sau phần phim Người Nhện: Không còn nhà (2021) và mùa đầu tiên của Loki (2021), Bác sĩ
+                  Stephen Strange đã sử dụng một phét thuật bị cấm và mở ra cánh cổng dẫn tới đa vũ trụ, vô tình dẫn đưa
+                  một biến thể hắc ám của Stephen Strange khác đến vũ trụ mình - mối đe dọa lớn mà Dr. Strange có thể
+                  phải đối đầu hoặc hợp sức chống lại một cái ác khác, đồng hành cùng Strange còn có Wong và Wanda
+                  Maximoff cùng với nhân vật mới American Chavez. đối đầu hoặc hợp sức chống lại một cái ác khác, đồng
+                  hành cùng Strange còn có Wong và Wanda Maximoff cùng với
+                </p>
+
+                <button class="detail__btn--more">Thêm</button>
+              </div>
+
+              <h5 class="detail__title">Có trong bộ</h5>
+
+              <div class="detail__collection">
+                <div class="collection__card">
+                  <a href="#" class="collection__backdrop">
+                    <img
+                      src="https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/3KL8UNKFWgIKXzLHjwY0uwgjzYl.jpg"
+                      alt=""
+                      loading="lazy"
+                    />
+                  </a>
+
+                  <div class="collection__info">
+                    <a href="#" class="collection__title">
+                      <h6>Doctor Strange Collection</h6>
+                    </a>
+
+                    <p class="collection__genres">
+                      <span>Giả tưởng</span>, <span>Hành động</span>, <span>phưu lưu</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <h5 class="detail__title">Thông tin</h5>
+
+              <div class="detail__info">
+                <ul class="detail__info_list">
+                  <li class="detail__info_item">
                     <span>Hãng phim</span>
                     <span>Marvel Studios</span>
                   </li>
-                  <li class="info__item">
+                  <li class="detail__info_item">
                     <span>Quốc gia</span>
                     <span>United States of America</span>
                   </li>
-                  <li class="info__item">
+                  <li class="detail__info_item">
                     <span>Tiêu đề gốc</span>
                     <span>Doctor Strange in the Multiverse of Madness</span>
                   </li>
-                  <li class="info__item">
+                  <li class="detail__info_item">
                     <span>Thể loại</span>
                     <span>Giả tưởng, Hành động, phưu lưu</span>
                   </li>
-                  <li class="info__item">
+                  <li class="detail__info_item">
                     <span>Phát hành</span>
                     <span>05/04/2022</span>
                   </li>
-                  <li class="info__item">
+                  <li class="detail__info_item">
                     <span>Độ dài</span>
                     <span>2 giờ 6 phút</span>
                   </li>
-                  <li class="info__item">
+                  <li class="detail__info_item">
                     <span>Trạng thái</span>
                     <span>Đã phát hành</span>
                   </li>
-                  <li class="info__item">
+                  <li class="detail__info_item">
                     <span>Ngôn ngữ chính</span>
                     <span>Tiếng Anh</span>
                   </li>
                 </ul>
+              </div> -->
+            </section>
+
+            <section class="detail__section_2">
+              <div class="detail__title">
+                <h5 class="">Đoàn làm phim</h5>
+                <a href="#" class="detail__link--cast">Xem tất cả ></a>
+              </div>
+
+              <h6 class="detail__title">Dàn diễn viên</h6>
+
+              <div class="detail__cast">
+                <div class="detail__cast_wrapper">
+                  <div class="cast__list">
+                    <!-- <div class="cast__item">
+                      <a href="#" class="cast__poster">
+                        <img
+                          src="https://www.themoviedb.org/t/p/w138_and_h175_face/jpurJ9jAcLCYjgHHfYF32m3zJYm.jpg"
+                          alt="cast"
+                          loading="lazy"
+                        />
+                      </a>
+
+                      <a href="#" class="cast__name"><h6>Chris Hemsworth Hemsworth</h6></a>
+
+                      <p class="cast__character">Thor Odinson</p>
+                    </div> -->
+                  </div>
+                </div>
+
+                <button class="left__btn hidden">
+                  <svg class="control__icon">
+                    <use href="../../imgs/icons.svg#icon-left-circle"></use>
+                  </svg>
+                </button>
+
+                <button class="right__btn">
+                  <svg class="control__icon">
+                    <use href="../../imgs/icons.svg#icon-right-circle"></use>
+                  </svg>
+                </button>
+              </div>
+
+              <div class="detail__crew">
+                <!-- <h6 class="detail__title">Đạo diễn</h6>
+  
+                <p>Sam Raimi</p>
+  
+                <h6 class="detail__title">Biên kịch</h6>
+  
+                <p>Michael Waldron</p> -->
               </div>
             </section>
           </article>
-            
-          <article class="movie__comment">
-            <p class="main__heading">Nhận xét</p>
 
-            <section class="star__section">
-              <div class="star__header">
+          <article class="detail__comment shown-lg">
+            <p class="detail__heading">Nhận xét</p>
+
+            <section class="detail__section_1">
+              <div class="detail__title detail__comment_title">
                 <ul class="star__list">
                   <li class="star__item">
                     <svg class="star__icon">
-                      <use href='../../imgs/icons.svg#icon-star-fill'></use>
+                      <use href="../../imgs/icons.svg#icon-star-fill"></use>
                     </svg>
                   </li>
+
                   <li class="star__item">
                     <svg class="star__icon">
-                      <use href='../../imgs/icons.svg#icon-star-fill'></use>
+                      <use href="../../imgs/icons.svg#icon-star-fill"></use>
                     </svg>
                   </li>
+
                   <li class="star__item">
                     <svg class="star__icon">
-                      <use href='../../imgs/icons.svg#icon-star-fill'></use>
+                      <use href="../../imgs/icons.svg#icon-star-fill"></use>
                     </svg>
                   </li>
+
                   <li class="star__item">
                     <svg class="star__icon">
-                      <use href='../../imgs/icons.svg#icon-star-fill'></use>
+                      <use href="../../imgs/icons.svg#icon-star-fill"></use>
                     </svg>
                   </li>
+
                   <li class="star__item">
                     <svg class="star__icon">
-                      <use href='../../imgs/icons.svg#icon-star-fill'></use>
+                      <use href="../../imgs/icons.svg#icon-star-fill"></use>
                     </svg>
                   </li>
                 </ul>
+
                 <h5 class="star__count">5 bài xếp hạng</h5>
               </div>
-  
+
               <div class="star__main">
                 <ul class="star__wrapper">
                   <li>
                     <ul class="star__list">
                       <li class="star__item">
                         <svg class="star__icon">
-                          <use href='../../imgs/icons.svg#icon-star-fill'></use>
+                          <use href="../../imgs/icons.svg#icon-star-fill"></use>
                         </svg>
                       </li>
                       <li class="star__item">
                         <svg class="star__icon">
-                          <use href='../../imgs/icons.svg#icon-star-fill'></use>
+                          <use href="../../imgs/icons.svg#icon-star-fill"></use>
                         </svg>
                       </li>
                       <li class="star__item">
                         <svg class="star__icon">
-                          <use href='../../imgs/icons.svg#icon-star-fill'></use>
+                          <use href="../../imgs/icons.svg#icon-star-fill"></use>
                         </svg>
                       </li>
                       <li class="star__item">
                         <svg class="star__icon">
-                          <use href='../../imgs/icons.svg#icon-star-fill'></use>
+                          <use href="../../imgs/icons.svg#icon-star-fill"></use>
                         </svg>
                       </li>
                       <li class="star__item">
                         <svg class="star__icon">
-                          <use href='../../imgs/icons.svg#icon-star-fill'></use>
-                        </svg>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <ul class="star__list">
-                      <li class="star__item">
-                        <svg class="star__icon">
-                          <use href='../../imgs/icons.svg#icon-star-fill'></use>
-                        </svg>
-                      </li>
-                      <li class="star__item">
-                        <svg class="star__icon">
-                          <use href='../../imgs/icons.svg#icon-star-fill'></use>
-                        </svg>
-                      </li>
-                      <li class="star__item">
-                        <svg class="star__icon">
-                          <use href='../../imgs/icons.svg#icon-star-fill'></use>
-                        </svg>
-                      </li>
-                      <li class="star__item">
-                        <svg class="star__icon">
-                          <use href='../../imgs/icons.svg#icon-star-fill'></use>
+                          <use href="../../imgs/icons.svg#icon-star-fill"></use>
                         </svg>
                       </li>
                     </ul>
@@ -333,31 +739,22 @@
                     <ul class="star__list">
                       <li class="star__item">
                         <svg class="star__icon">
-                          <use href='../../imgs/icons.svg#icon-star-fill'></use>
+                          <use href="../../imgs/icons.svg#icon-star-fill"></use>
                         </svg>
                       </li>
                       <li class="star__item">
                         <svg class="star__icon">
-                          <use href='../../imgs/icons.svg#icon-star-fill'></use>
+                          <use href="../../imgs/icons.svg#icon-star-fill"></use>
                         </svg>
                       </li>
                       <li class="star__item">
                         <svg class="star__icon">
-                          <use href='../../imgs/icons.svg#icon-star-fill'></use>
-                        </svg>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <ul class="star__list">
-                      <li class="star__item">
-                        <svg class="star__icon">
-                          <use href='../../imgs/icons.svg#icon-star-fill'></use>
+                          <use href="../../imgs/icons.svg#icon-star-fill"></use>
                         </svg>
                       </li>
                       <li class="star__item">
                         <svg class="star__icon">
-                          <use href='../../imgs/icons.svg#icon-star-fill'></use>
+                          <use href="../../imgs/icons.svg#icon-star-fill"></use>
                         </svg>
                       </li>
                     </ul>
@@ -366,7 +763,40 @@
                     <ul class="star__list">
                       <li class="star__item">
                         <svg class="star__icon">
-                          <use href='../../imgs/icons.svg#icon-star-fill'></use>
+                          <use href="../../imgs/icons.svg#icon-star-fill"></use>
+                        </svg>
+                      </li>
+                      <li class="star__item">
+                        <svg class="star__icon">
+                          <use href="../../imgs/icons.svg#icon-star-fill"></use>
+                        </svg>
+                      </li>
+                      <li class="star__item">
+                        <svg class="star__icon">
+                          <use href="../../imgs/icons.svg#icon-star-fill"></use>
+                        </svg>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <ul class="star__list">
+                      <li class="star__item">
+                        <svg class="star__icon">
+                          <use href="../../imgs/icons.svg#icon-star-fill"></use>
+                        </svg>
+                      </li>
+                      <li class="star__item">
+                        <svg class="star__icon">
+                          <use href="../../imgs/icons.svg#icon-star-fill"></use>
+                        </svg>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <ul class="star__list">
+                      <li class="star__item">
+                        <svg class="star__icon">
+                          <use href="../../imgs/icons.svg#icon-star-fill"></use>
                         </svg>
                       </li>
                     </ul>
@@ -391,132 +821,163 @@
               </div>
             </section>
 
-            <section class="write-comment__section">
-              <h5 class="main__title">Xếp hạng phim này</h5>
+            <section class="detail__section_2">
+              <h5 class="detail__title">Xếp hạng phim này</h5>
+
               <p>Cho chúng tôi biết suy nghĩ của bạn.</p>
-              <div class="write__star">
+
+              <div class="detail__comment_write">
                 <ul class="star__list">
                   <li class="star__item">
                     <button class="star__btn">
                       <svg class="star__icon">
-                        <use href='../../imgs/icons.svg#icon-star-fill'></use>
+                        <use href="../../imgs/icons.svg#icon-star-fill"></use>
                       </svg>
                     </button>
                   </li>
                   <li class="star__item">
                     <button class="star__btn">
                       <svg class="star__icon">
-                        <use href='../../imgs/icons.svg#icon-star-fill'></use>
+                        <use href="../../imgs/icons.svg#icon-star-fill"></use>
                       </svg>
                     </button>
                   </li>
                   <li class="star__item">
                     <button class="star__btn">
                       <svg class="star__icon">
-                        <use href='../../imgs/icons.svg#icon-star-fill'></use>
+                        <use href="../../imgs/icons.svg#icon-star-fill"></use>
                       </svg>
                     </button>
                   </li>
                   <li class="star__item">
                     <button class="star__btn">
                       <svg class="star__icon">
-                        <use href='../../imgs/icons.svg#icon-star-fill'></use>
+                        <use href="../../imgs/icons.svg#icon-star-fill"></use>
                       </svg>
                     </button>
                   </li>
                   <li class="star__item">
                     <button class="star__btn">
                       <svg class="star__icon">
-                        <use href='../../imgs/icons.svg#icon-star-fill'></use>
+                        <use href="../../imgs/icons.svg#icon-star-fill"></use>
                       </svg>
                     </button>
                   </li>
                 </ul>
-                <button class="comment__btn">Viết nhận xét</button>
+
+                <button class="detail__comment_btn">Viết nhận xét</button>
               </div>
             </section>
 
-            <section class="comment__section">
+            <section class="detail__section_3">
               <div class="comment__list">
                 <div class="comment__item">
                   <div class="comment__account">
-                    <div class="acc__avatar">
-                      <svg class="avatar__icon">
-                        <use href='../../imgs/icons.svg#icon-user'></use>
-                      </svg>
-                    </div>
-                    <h6 class="acc__name">Darick Nguyễn</h6>
+                    <svg class="comment__icon">
+                      <use href="../../imgs/icons.svg#icon-user"></use>
+                    </svg>
+
+                    <h6 class="comment__name">Darick Nguyễn</h6>
                   </div>
 
                   <div class="comment__rate">
                     <ul class="star__list">
                       <li class="star__item">
                         <svg class="star__icon">
-                          <use href='../../imgs/icons.svg#icon-star-fill'></use>
+                          <use href="../../imgs/icons.svg#icon-star-fill"></use>
                         </svg>
                       </li>
                       <li class="star__item">
                         <svg class="star__icon">
-                          <use href='../../imgs/icons.svg#icon-star-fill'></use>
+                          <use href="../../imgs/icons.svg#icon-star-fill"></use>
                         </svg>
                       </li>
                       <li class="star__item">
                         <svg class="star__icon">
-                          <use href='../../imgs/icons.svg#icon-star-fill'></use>
+                          <use href="../../imgs/icons.svg#icon-star-fill"></use>
                         </svg>
                       </li>
                       <li class="star__item">
                         <svg class="star__icon">
-                          <use href='../../imgs/icons.svg#icon-star-fill'></use>
+                          <use href="../../imgs/icons.svg#icon-star-fill"></use>
                         </svg>
                       </li>
                       <li class="star__item">
                         <svg class="star__icon">
-                          <use href='../../imgs/icons.svg#icon-star-fill'></use>
+                          <use href="../../imgs/icons.svg#icon-star-fill"></use>
                         </svg>
                       </li>
                     </ul>
+
                     <p class="comment__date">30 tháng 6, 2022</p>
                   </div>
 
-                  <p class="comment__content">Bác sĩ trang đỉnh quá
-                  </p>
-                  <button class="comment-menu__btn">
+                  <p class="comment__content">Bác sĩ trang đỉnh quá</p>
+
+                  <button class="comment__btn">
                     <svg class="menu__icon">
-                      <use href='../../imgs/icons.svg#icon-more-circle-fill'></use>
+                      <use href="../../imgs/icons.svg#icon-more-circle-fill"></use>
                     </svg>
                   </button>
                 </div>
               </div>
             </section>
 
-            <button class="comment-all__btn">Xem tất cả bài đánh giá ></button>
+            <button class="detail__comment_btn--show">Xem tất cả bài đánh giá ></button>
           </article>
 
-          <article id="similar">
-            <p class="main__heading">Liên quan</p>
+          <article class="detail__recommendations shown-lg">
+            <p class="detail__heading">Liên quan</p>
 
-            <section class="main__section">
-              <div class="section__title">
-                <h5 class="main__title">Phim tương tự</h5>
+            <section class="detail__section_1">
+              <div class="detail__title">
+                <h5 class="">Phim tương tự</h5>
                 <a href="#" class="movie__link">Xem tất cả ></a>
               </div>
-              
-              <div class="similar__wrapper">
-                <div class="similar__list">
+
+              <div class="detail__recommendations_wrapper">
+                <div class="detail__recommendations_list card__home2">
                   <!-- <div class="card__item">
-                    <a href="#" class="movie__link">
-                      <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/cjb9NXJvisfh5fmgX9rerxZfFrJ.jpg" alt="movie" loading="lazy" class="movie__poster">
-                    </a>
+                    <div class="card__image">
+                      <a href="#" class="card__poster-link">
+                        <img
+                          src="https://www.themoviedb.org/t/p/w220_and_h330_face/y4SQ2dJ1y2LBUnxTH7hCe8sr29c.jpg"
+                          alt="Minions: Sự Trỗi Dậy của Gru"
+                          loading="lazy"
+                          class="card__poster"
+                        />
+                      </a>
   
-                    <div class="movie__info">
-                      <a href="#" class="movie__title">In the Name of the King: A Dungeon Siege Tale</a>
-                      <p>Phim Gia Đình, Phim Hoạt Hình</p>
-                      <p class="movie__rate">
-                        <span>7.0</span>
-                        <svg class="star__icon">
-                          <use href='../../imgs/icons.svg#icon-star-fill'></use>
+                      <a href="#" class="card__backdrop-link">
+                        <img
+                          src="https://www.themoviedb.org/t/p/w533_and_h300_bestv2/jRss224yETAKKzqrOyudQo5ayUd.jpg"
+                          alt="Minions: Sự Trỗi Dậy của Gru"
+                          loading="lazy"
+                          class="card__backdrop"
+                        />
+                      </a>
+  
+                      <a href="#" class="card__link-btn card__link--trailer">
+                        <svg class="card__icon">
+                          <use href="../../imgs/icons.svg#icon-play-circle"></use>
                         </svg>
+                      </a>
+                    </div>
+  
+                    <div class="card__info">
+                      <a href="#" class="card__link">
+                        <h6 class="card__title">Minions: Sự Trỗi Dậy của Gru</h6>
+                      </a>
+  
+                      <p class="card__hover-info2"><span>Phim Gia Đình</span>, <span>Phim Hoạt Hình</span></p>
+  
+                      <p class="card__title">
+                        <span>7.0</span>
+  
+                        <svg class="star__icon">
+                          <use href="../../imgs/icons.svg#icon-star-fill"></use>
+                        </svg>
+  
                         <span>80.000 đ</span>
                       </p>
                     </div>
@@ -525,23 +986,70 @@
               </div>
             </section>
 
-            <section class="main__section">
-              <div class="section__title">
-                <h5 class="main__title">Phim về phép thuật</h5>
+            <section class="detail__section_2">
+              <div class="detail__title">
+                <h5 class="">Phim đề xuất</h5>
                 <a href="#" class="movie__link">Xem tất cả ></a>
               </div>
 
-              <div class="similar__list">
+              <div class="detail__recommendations_wrapper">
+                <div class="detail__similar_list detail__recommendations_list card__home2">
+                  <!-- <div class="card__item">
+                    <div class="card__image">
+                      <a href="#" class="card__poster-link">
+                        <img
+                          src="https://www.themoviedb.org/t/p/w220_and_h330_face/y4SQ2dJ1y2LBUnxTH7hCe8sr29c.jpg"
+                          alt="Minions: Sự Trỗi Dậy của Gru"
+                          loading="lazy"
+                          class="card__poster"
+                        />
+                      </a>
+  
+                      <a href="#" class="card__backdrop-link">
+                        <img
+                          src="https://www.themoviedb.org/t/p/w533_and_h300_bestv2/jRss224yETAKKzqrOyudQo5ayUd.jpg"
+                          alt="Minions: Sự Trỗi Dậy của Gru"
+                          loading="lazy"
+                          class="card__backdrop"
+                        />
+                      </a>
+  
+                      <a href="#" class="card__link-btn card__link--trailer">
+                        <svg class="card__icon">
+                          <use href="../../imgs/icons.svg#icon-play-circle"></use>
+                        </svg>
+                      </a>
+                    </div>
+  
+                    <div class="card__info">
+                      <a href="#" class="card__link">
+                        <h6 class="card__title">Minions: Sự Trỗi Dậy của Gru</h6>
+                      </a>
+  
+                      <p class="card__hover-info2"><span>Phim Gia Đình</span>, <span>Phim Hoạt Hình</span></p>
+  
+                      <p class="card__title">
+                        <span>7.0</span>
+  
+                        <svg class="star__icon">
+                          <use href="../../imgs/icons.svg#icon-star-fill"></use>
+                        </svg>
+  
+                        <span>80.000 đ</span>
+                      </p>
+                    </div>
+                  </div> -->
+                </div>
               </div>
             </section>
 
+            <section class="detail__section_3">
+              <h5 class="detail__title">Từ khóa</h5>
 
-            <section class="main__section">
-              <h5 class="main__title">Từ khóa</h5>
-              <ul class="main__keywork">
-                <li><a href="#" class="keyword__link">magic</a></li>
-                <li><a href="#" class="keyword__link">superhero</a></li>
-                <li><a href="#" class="keyword__link">based on comic</a></li>
+              <ul class="keyword__list">
+                <!-- <li class="keyword__item">
+                  <a href="#" class="keyword__link">magic</a>
+                </li> -->
               </ul>
             </section>
           </article>
@@ -549,8 +1057,84 @@
       </div>
     </main>
 
-    <footer id="footer">
+    <!-- *__________ Start footer __________ -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__icon">
+          <a href="#" class="social-icon__link">
+            <svg>
+              <use href="../../imgs/icons.svg#icon-facebook"></use>
+            </svg>
+          </a>
 
+          <a href="#" class="social-icon__link">
+            <svg>
+              <use href="../../imgs/icons.svg#icon-instagram"></use>
+            </svg>
+          </a>
+
+          <a href="#" class="social-icon__link">
+            <svg>
+              <use href="../../imgs/icons.svg#icon-twitch"></use>
+            </svg>
+          </a>
+
+          <a href="#" class="social-icon__link">
+            <svg>
+              <use href="../../imgs/icons.svg#icon-twitter"></use>
+            </svg>
+          </a>
+
+          <a href="#" class="social-icon__link">
+            <svg>
+              <use href="../../imgs/icons.svg#icon-youtube"></use>
+            </svg>
+          </a>
+        </div>
+
+        <div class="footer__nav">
+          <a href="#">Trang chủ</a>
+
+          <a href="#">Phim mới</a>
+
+          <a href="#">Phim sắp phát hành</a>
+
+          <a href="#">Tin tức</a>
+
+          <a href="#">Người nổi tiếng</a>
+
+          <a href="#">Trailer mới</a>
+        </div>
+
+        <div class="footer__nav">
+          <a href="#">Tài khoản</a>
+
+          <a href="#">Phim của tôi</a>
+
+          <a href="#">Danh sách mong muốn</a>
+
+          <a href="#">Lịch sử đã xem</a>
+        </div>
+
+        <div class="footer__moviestore">
+          <a href="#" class="ms-logo">
+            <svg class="logo__icon">
+              <use href="../../imgs/icons.svg#icon-moviestore"></use>
+            </svg>
+          </a>
+        </div>
+
+        <div class="footer__moviestore">
+          <a href="#">Thông tin</a>
+
+          <a href="#">Giới thiệu</a>
+
+          <a href="#">Liên hệ: 1900 **00</a>
+        </div>
+
+        <p class="footer__copyright">&copy;2022 by CD</p>
+      </div>
     </footer>
+    <!-- __________ End footer __________ -->
   </body>
 </html>

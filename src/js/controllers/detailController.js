@@ -1,94 +1,98 @@
 import * as model from '../models/detailModel.js';
+import { handlerScrollRender } from '../shared/helpers.js';
+
+import headerView from '../views/headerView.js';
+import sidebarView from '../views/sidebarView.js';
+import searchView from '../views/searchView.js';
+import gototopView from '../views/gototopView.js';
+import detailNav from '../views/detailNav.js';
+
+import detailBannerView from '../views/detailBannerView.js';
 import detailView from '../views/detailView.js';
-import similarView from '../views/similarView.js';
-import { ERROR_MESSAGE } from '../config.js';
+import detailCastView from '../views/detailCastView.js';
+import detailCrewView from '../views/detailCrewView.js';
+import detailRecommendationsView from '../views/detailRecommendationsView.js';
+import detailSimilarView from '../views/detailSimilarView.js';
+import detailKeywordsView from '../views/detailKeywordsView.js';
 
-const controlDetails = async function () {
+const controlHeader = function () {
+  headerView.addHandlerShowSidebar(controlSidebar);
+  headerView.addHandlerShowSearch(controlSearch);
+};
+
+const controlSidebar = function () {
+  sidebarView.addHandlerShowSidebar();
+};
+
+const controlSearch = function () {
+  searchView.addHandlerShowSearch();
+};
+
+const controlDetailBanner = async function () {
   try {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
     // hash nhận #616037 nên cắt kỹ tự #
-    const movieId = window.location.hash.slice(1);
-
+    const id = window.location.hash.slice(1);
+    // const id = window.location.pathname;
     // nếu ko có id thì thôi
-    if (!movieId) return;
-
+    if (!id) return;
     // render giao diện chờ
-    detailView.renderSpinner();
-
+    let flag = [1, 1, 1, 1, 1]
     // 1) load detail
-    await model.loadDetails(movieId);
-    await model.loadrecommendations(movieId);
-    const { detail } = model.state;
-    const { recommendations } = model.state;
+    await model.loadDetails(id);
+    await model.loadCertification(id);
 
     // 2) render detail
-    detailView.render(detail);
-    similarView.render(recommendations);
+    detailBannerView.render(model.state.detail, model.state.certificatioUS);
+    // render phần liên quan
+    controlRecommendations(id)
+    // render luôn phần detail
+    controlDetail();
+    // lắng nghe sự kiện cuộn trang
+    handlerScrollRender(500, controlCast, flag[0]);
+    handlerScrollRender(600, controlSimilar, flag[1]);
+    handlerScrollRender(700, controlKeywords, flag[2]);
+    // đưa trang lên top
   } catch (error) {
-    console.log(error, '⚡⚡⚡⚡');
-    detailView.renderError(ERROR_MESSAGE);
+    console.log(error)
   }
 };
 
-const init = function() {
-  detailView.addHandlerRender(controlDetails);
+const controlDetail= async function () {
+  detailView.render(model.state.detail);
 };
-init();
 
-const detailMain = document.querySelector('#detail__main');
-const navActiveEl = detailMain.querySelector('.nav__active');
-function activeTranX(e) {
-  const targetEl = window.event.target;
-  if (!targetEl) return;
-  const getStr = targetEl.getAttribute('class');
-  const nameEl = getStr.substring(0, getStr.indexOf('-'));
-  console.log(nameEl);
-  switch (e) {
-    case 0:
-      navActiveEl.style.left = `calc(((100% - .6rem) / 3) * ${e} + .3rem)`;
-      detailMain.querySelector('.main__show').classList.remove('main__show');
-      detailMain.querySelector(`.movie__${nameEl}`).classList.add('main__show');
-      break;
-    case 1:
-      navActiveEl.style.left = `calc(((100% - .6rem) / 3) * ${e} + .3rem)`;
-      detailMain.querySelector('.main__show').classList.remove('main__show');
-      detailMain.querySelector(`.movie__${nameEl}`).classList.add('main__show');
-      break;
-    case 2:
-      navActiveEl.style.left = `calc(((100% - .6rem) / 3) * ${e} + .3rem)`;
-      detailMain.querySelector('.main__show').classList.remove('main__show');
-      detailMain.querySelector(`.movie__${nameEl}`).classList.add('main__show');
-      break;
-  }
+const controlCast = async function () {
+  const id = window.location.hash.slice(1);
+  await model.loadCast(id);
+  detailCastView.render(model.state.cast);
+  controlCrew();
 }
 
-// 616037
-const controlDetail = async function () {
-  try {
-    const id = window.location.hash.slice(1);
-    console.log(id);
-    if (!id) return;
-
-    if (!getPath.hasOwnProperty(id)) return;
-    // recipeView.renderSpinner();
-
-    // 0) Update results view to mark selected search result
-    // resultsView.update(model.getSearchResultsPage());
-
-    // 1) Updating bookmarks view
-    // bookmarksView.update(model.state.bookmarks);
-
-    // 2) Loading thể loại genres
-    await model.loadTheMovieNoPage(getPath[id]);
-
-    // 3) Rendering recipe
-    // recipeView.render(model.state.recipe);
-  } catch (err) {
-    // recipeView.renderError();
-    console.error(err);
-  }
+const controlCrew = async function () {
+  detailCrewView.render(model.state.director, model.state.writer);
+}
+const controlRecommendations = async function (id) {
+  await model.loadRecommendations(id);
+  detailRecommendationsView.render(model.state.recommendations);
+}
+const controlSimilar = async function () {
+  const id = window.location.hash.slice(1);
+  await model.loadSimilar(id);
+  detailSimilarView.render(model.state.similar);
+}
+const controlKeywords = async function () {
+  const id = window.location.hash.slice(1);
+  await model.loadKeywords(id);
+  detailKeywordsView.render(model.state.keywords);
+}
+// tạo trình khởi động
+const init = function() {
+  headerView.addHandlerRender(controlHeader);
+  detailBannerView.addHandlerRender(controlDetailBanner);
 };
 
-// const init = function () {
-//   detailView.addHandlerRender(controlDetail);
-// };
-// init();
+init();

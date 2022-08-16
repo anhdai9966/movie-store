@@ -16,6 +16,7 @@ export let state = {
 // https://api.themoviedb.org/3/movie/top_rated?api_key=<<api_key>>&language=en-US&page=1
 // https://api.themoviedb.org/3/movie/upcoming?api_key=<<api_key>>&language=en-US&page=1
 // https://api.themoviedb.org/3/discover/movie?api_key=###&with_genres=28
+// https://api.themoviedb.org/3/keyword/9715/movies?api_key=19cceeb816328f42df0e6b332f489d75&language=vi&include_adult=false
 export const loadMovies = async function (prefix, pg) {
   try {
     let data;

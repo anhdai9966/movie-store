@@ -98,6 +98,39 @@ class PaginationView {
       `;
     }
 
+    // page gần cuối cuối
+    if (+curPage === numPages - 1 && numPages > 1) {
+      return /*html */`
+        <li class="page__item shown-md">
+          <a class="page__link page__link--previous" href="./movie.html#${this._prefix}&page=${+curPage - 1}">
+            <svg class="page__icon">
+              <use href="${icons}#icon-left"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="page__item shown-md disabled">
+          <a class="page__link">...</a>
+        </li>
+        <li class="page__item shown-md">
+          <a class="page__link" href="./movie.html#${this._prefix}&page=${+curPage - 1}">${+curPage - 1}</a>
+        </li>
+        <li class="page__item shown-md active">
+          <a class="page__link" href="./movie.html#${this._prefix}&page=${+curPage}">${+curPage}</a>
+        </li>
+        <li class="page__item shown-md">
+          <a class="page__link" href="./movie.html#${this._prefix}&page=${+curPage + 1}">${+curPage + 1}</a>
+        </li>
+        <li class="page__item hidden-md page__item-mobile">
+          <a class="page__link page__link--lazy-loading" href="./movie.html#${this._prefix}&page=${+curPage}">
+            Trang cuối
+            <svg class="page__icon">
+              <use href="${icons}#icon-arrow-next"></use>
+            </svg>
+          </a>
+        </li>
+      `;
+    }
+
     // page cuối
     if (+curPage === numPages && numPages > 1) {
       return /*html */`
