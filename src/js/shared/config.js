@@ -10,10 +10,18 @@ export const youtubeSearch = {
   API_URL: 'https://www.googleapis.com/youtube/v3/search?part=snippet&key=AIzaSyBDpgsyZOUhJ0ETZ_7FdF7dVA5wb2THdF8&type=video&maxResults=24&q=',
 };
 
+export const youtubeClick = {
+  API_URL: 'https://www.googleapis.com/youtube/v3/search?part=snippet&key=AIzaSyBDpgsyZOUhJ0ETZ_7FdF7dVA5wb2THdF8&type=video&maxResults=5&q=',
+};
+
 // v12
 // https://script.google.com/macros/s/AKfycbwD1nTQ9mDGu47Fv4BKC45Yqx0bjtoM3tbrubxDFPZ8M15ctnoW8IZB0GPLC3LFkWMe/exec
 export const googleSheetNews = {
   API_URL: 'https://script.google.com/macros/s/AKfycbzDcQM2yMhRk1o9mL6bLuNhOn7ygV5HPSjUA6xpkKXHY_K_Diuxwexmdj0Yw-LYPsJa/exec',
+}
+
+export const googleSheetUsers = {
+  API_KEY: 'https://script.google.com/macros/s/AKfycbxgQZshMYOdwu4ySbhyfNwhRgmJ2vUUtzOxEW4HOvvMKu7gfqA-Z0rOQyBFg-fU8Y8vPQ/exec'
 }
 
 // API https://mockapi.io/

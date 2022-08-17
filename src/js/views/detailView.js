@@ -15,6 +15,27 @@ class DetailView {
     this._parentElement.insertAdjacentHTML('afterbegin', markup);
   }
 
+  renderSpinner() {
+    const markup = /*html*/ `
+    <div class="spinner__render">
+    <ul class="spinner">
+      <li class="seen"></li>
+      <li class="seen"></li>
+      <li class="seen"></li>
+      <li class="seen"></li>
+      <li class="seen"></li>
+      <li class="seen"></li>
+      <li class="seen"></li>
+      <li class="seen"></li>
+      <li class="seen"></li>
+      <li class="seen"></li>
+    </ul>
+  </div>
+    `;
+    this._parentElement.innerHTML = '';
+    this._parentElement.insertAdjacentHTML('afterbegin', markup);
+  }
+
   _generateMarkup() {
     let hidden = '';
     if (!this._data.belongsToCollection) hidden = 'hidden' ;
@@ -59,11 +80,11 @@ class DetailView {
         <ul class="detail__info_list">
           <li class="detail__info_item">
             <span>Hãng phim</span>
-            <span>${this._data.productionCompanies[0].name}</span>
+            <span>${this._data.productionCompanies? this._data.productionCompanies[0].name : ''}</span>
           </li>
           <li class="detail__info_item">
             <span>Quốc gia</span>
-            <span>${this._data.productionCountries[0].name}</span>
+            <span>${this._data.productionCountries? this._data.productionCountries[0].name : ''}</span>
           </li>
           <li class="detail__info_item">
             <span>Tiêu đề gốc</span>
@@ -71,7 +92,7 @@ class DetailView {
           </li>
           <li class="detail__info_item">
             <span>Thể loại</span>
-            <span>${this._data.genres.map(i => i.name).join(', ')}</span>
+            <span>${this._data.genres? this._data.genres.map(i => i.name).join(', ') : ''}</span>
           </li>
           <li class="detail__info_item">
             <span>Phát hành</span>

@@ -16,6 +16,20 @@
       </svg>
     </button>
 
+    <div class="trailer__overlay hidden">
+      <div class="trailer__wrapper">
+        <div class="trailer__show">
+
+        </div>
+
+        <button type="button" class="btn__close trailer__btn--close">
+          <svg class="btn__icon">
+            <use href='../../imgs/icons.svg#icon-xmark'></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+
     <!-- *__________ Start header __________ -->
     <header class="headerIndex hidden">
       <div class="container">
@@ -69,10 +83,10 @@
                   <a class="dropdown__btn" href="./movie.html">Phim Thịnh Hành</a>
                 </li>
                 <li class="dropdown__item">
-                  <a class="dropdown__btn" href="#">Bảng Xếp Hạng</a>
+                  <a class="dropdown__btn" href="./movie.html#top_rated">Bảng Xếp Hạng</a>
                 </li>
                 <li class="dropdown__item">
-                  <a class="dropdown__link" href="#">Phim Sắp Phát Hành</a>
+                  <a class="dropdown__link" href="./movie.html#upcoming">Phim Sắp Phát Hành</a>
                 </li>
               </ul>
               <!-- __________ End dropdown __________ -->
@@ -487,7 +501,7 @@
         <nav class="main__nav">
           <ul class="nav__list">
             <li class="nav__item">
-              <button class="nav__btn nav__sort">Sắp xếp theo tên</button>
+              <a href="#" class="nav__btn nav__sort">Lọc theo tên</a>
             </li>
 
             <li class="nav__item">
@@ -514,7 +528,7 @@
             </li>
           </ul>
 
-          <div class="nav__result">
+          <div class="nav__result hidden">
             <div class="result__main">
               <div class="result__grid">
                 <!-- <a href="#" class="result__item">2023</a> -->
@@ -523,10 +537,10 @@
 
             <div class="result__form">
               <input
-                type="text"
+                type="number"
                 name="year__input"
                 id="year__input"
-                class="result__input year__input"
+                class="result__input year__input hidden"
                 placeholder="Năm phát hành"
               />
 
@@ -534,17 +548,17 @@
                 type="text"
                 name="nation__input"
                 id="nation__input"
-                class="result__input nation__input"
+                class="result__input nation__input hidden"
                 placeholder="Quốc gia"
               />
 
-              <button class="reset__btn">
+              <button class="reset__btn hidden">
                 <svg class="reset__icon">
                   <use href="../../imgs/icons.svg#icon-reset"></use>
                 </svg>
               </button>
 
-              <button class="apply__btn">Áp dụng</button>
+              <button class="close__btn">Đóng</button>
             </div>
           </div>
         </nav>

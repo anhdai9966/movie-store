@@ -74,7 +74,6 @@
       }
     }
     .nav__result {
-      display: none;
       opacity: 0;
       transition: opacity .3s .5s;
       width: 100%;
@@ -129,7 +128,7 @@
         justify-content: center;
         column-gap: 2.4rem;
         .reset__btn,
-        .apply__btn {
+        .close__btn {
           height: 4.3rem;
           width: 10rem;
           border-radius: $border-radius-out;
@@ -143,9 +142,6 @@
             background: $color-hover;
           }
         }
-        .reset__btn {
-          display: none;
-        }
         .result__input {
           background-color: #333;
           color: $color-gray;
@@ -155,12 +151,6 @@
             background: #444;
             color: $color-while;
           }
-        }
-        .nation__input {
-          display: none;
-        }
-        .year__input {
-          display: none;
         }
       }
     }

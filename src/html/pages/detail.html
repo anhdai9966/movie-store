@@ -7,7 +7,6 @@
     <meta name="description" content="" />
     <title>Document</title>
     <link rel="stylesheet" href="../../sass/pages/detail.scss" />
-    <!-- <link rel="stylesheet" href="../../css/index.min.css"> -->
     <script type="module" defer src="../../js/controllers/detailController.js"></script>
   </head>
   <body>
@@ -16,6 +15,20 @@
         <use href="../../imgs/icons.svg#icon-up"></use>
       </svg>
     </button>
+
+    <div class="trailer__overlay hidden">
+      <div class="trailer__wrapper">
+        <div class="trailer__show">
+
+        </div>
+
+        <button type="button" class="btn__close trailer__btn--close">
+          <svg class="btn__icon">
+            <use href='../../imgs/icons.svg#icon-xmark'></use>
+          </svg>
+        </button>
+      </div>
+    </div>
 
     <!-- *__________ Start header __________ -->
     <header class="headerIndex hidden">
@@ -932,7 +945,7 @@
             <section class="detail__section_1">
               <div class="detail__title">
                 <h5 class="">Phim tương tự</h5>
-                <a href="#" class="movie__link">Xem tất cả ></a>
+                <a href="" class="movie__link recommendations__link">Xem tất cả ></a>
               </div>
 
               <div class="detail__recommendations_wrapper">
@@ -989,7 +1002,7 @@
             <section class="detail__section_2">
               <div class="detail__title">
                 <h5 class="">Phim đề xuất</h5>
-                <a href="#" class="movie__link">Xem tất cả ></a>
+                <a href="" class="movie__link similar__link">Xem tất cả ></a>
               </div>
 
               <div class="detail__recommendations_wrapper">

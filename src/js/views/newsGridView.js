@@ -13,20 +13,20 @@ class NewsGridView {
 
   renderSpinner() {
     const markup = /*html*/ `
-      <div class='spinner'>
-        <ul class='line__list'>
-          <li class='spinner__line'></li>
-          <li class='spinner__line'></li>
-          <li class='spinner__line'></li>
-          <li class='spinner__line'></li>
-          <li class='spinner__line'></li>
-          <li class='spinner__line'></li>
-          <li class='spinner__line'></li>
-          <li class='spinner__line'></li>
-          <li class='spinner__line'></li>
-          <li class='spinner__line'></li>
-        </ul>
-      </div>
+    <div class="spinner__render">
+    <ul class="spinner">
+      <li class="seen"></li>
+      <li class="seen"></li>
+      <li class="seen"></li>
+      <li class="seen"></li>
+      <li class="seen"></li>
+      <li class="seen"></li>
+      <li class="seen"></li>
+      <li class="seen"></li>
+      <li class="seen"></li>
+      <li class="seen"></li>
+    </ul>
+  </div>
     `;
     this._parentElement.innerHTML = '';
     this._parentElement.insertAdjacentHTML('afterbegin', markup);
@@ -43,7 +43,7 @@ class NewsGridView {
   _generateMarkupCard(news) {
     return /*html */`
       <div class="news__item">
-        <a href="#" class="image">
+        <a href="./detailNews.html#${news.id}" class="image">
           <img src="${news.imageUrl}" alt="${news.title}">
         </a>
         

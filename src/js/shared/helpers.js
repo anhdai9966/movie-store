@@ -143,6 +143,7 @@ export function handlerScrollRender(position, handler, flag) {
 }
 
 export function getCertification(us) {
+  if(!us) return ''; 
   const order = certifications.US.find(u => u.certification == us).order;
 
   return {

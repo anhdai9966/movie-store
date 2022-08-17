@@ -17,6 +17,16 @@ class DetailSimilarView {
     this._parentElement.insertAdjacentHTML('afterbegin', markup);
   }
 
+  addHandlerClickTrailer(handler) {
+    document.addEventListener('click', (e) => {
+      const trailerBtn = e.target.closest('.card__link--trailer');
+      if(!trailerBtn) return ;
+      e.preventDefault();
+      const title = trailerBtn.dataset.title
+      handler(title);
+    })
+  }
+
   _generateMarkup() {
     return this._data.map(this._generateMarkupPreview).join('');
   }
@@ -43,11 +53,11 @@ class DetailSimilarView {
             />
           </a>
 
-          <a href="#" class="card__link-btn card__link--trailer">
+          <button data-title="${recommendations.originalTitle}" class="card__link-btn card__link--trailer">
             <svg class="card__icon">
               <use href="${icons}#icon-play-circle"></use>
             </svg>
-          </a>
+          </button>
         </div>
 
         <div class="card__info">

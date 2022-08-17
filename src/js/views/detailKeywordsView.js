@@ -20,7 +20,7 @@ class DetailKeywordsView {
   _generateMarkupPreview(keyword) {
     return /*html*/ `
       <li class="keyword__item">
-        <a href="./movie.html/#keyword/${keyword.id}" class="keyword__link">${keyword.name}</a>
+        <a href="./movie.html#keyword/${keyword.id}" class="keyword__link">${keyword.name}</a>
       </li>
     `;
   }

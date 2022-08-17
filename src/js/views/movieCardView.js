@@ -19,23 +19,33 @@ class MovieCardView {
     ['hashchange', 'load'].forEach(ev => window.addEventListener(ev, handler));
   }
 
+  addHandlerClickTrailer(handler) {
+    document.addEventListener('click', (e) => {
+      const trailerBtn = e.target.closest('.card__btn--trailer');
+      if(!trailerBtn) return ;
+      e.preventDefault();
+      const title = trailerBtn.dataset.title
+      handler(title);
+    })
+  }
+
   // giao diện chờ
   renderSpinner() {
     const markup = /*html*/ `
-      <div class='spinner'>
-        <ul class='line__list'>
-          <li class='spinner__line'></li>
-          <li class='spinner__line'></li>
-          <li class='spinner__line'></li>
-          <li class='spinner__line'></li>
-          <li class='spinner__line'></li>
-          <li class='spinner__line'></li>
-          <li class='spinner__line'></li>
-          <li class='spinner__line'></li>
-          <li class='spinner__line'></li>
-          <li class='spinner__line'></li>
-        </ul>
-      </div>
+    <div class="spinner__render">
+    <ul class="spinner">
+      <li class="seen"></li>
+      <li class="seen"></li>
+      <li class="seen"></li>
+      <li class="seen"></li>
+      <li class="seen"></li>
+      <li class="seen"></li>
+      <li class="seen"></li>
+      <li class="seen"></li>
+      <li class="seen"></li>
+      <li class="seen"></li>
+    </ul>
+  </div>
     `;
     this._parentElement.innerHTML = '';
     this._parentElement.insertAdjacentHTML('afterbegin', markup);
@@ -62,11 +72,11 @@ class MovieCardView {
             </svg>
           </button>
 
-          <a href="#trailer=" class="trailer__link">
+          <button data-title="${movie.originalTitle}" class="trailer__link card__btn--trailer">
             <svg class="play__icon">
               <use href='${icons}#icon-play-circle'></use>
             </svg>
-          </a>
+          </button>
 
           <p class="movie__overview">${getOverview(movie.overview)}</p>
         </div>

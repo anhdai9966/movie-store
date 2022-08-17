@@ -1,4 +1,4 @@
-import { themoviedb } from '../shared/config.js';
+import { themoviedb, youtubeClick } from '../shared/config.js';
 import { AJAX } from '../shared/helpers.js';
 
 export const state = {
@@ -10,6 +10,7 @@ export const state = {
   director: {},
   writer: {},
   keywords: [],
+  trailer: {},
 };
 
 // tải chi tiết phim
@@ -120,7 +121,7 @@ export const loadCertification = async function (id) {
     const data = await AJAX(`${themoviedb.API_URL}/movie/${id}/release_dates?api_key=${themoviedb.API_KEY}`);
 
     const us = data.results.find(i => i.iso_3166_1 == 'US');
-
+    if(!us) return ;
     state.certificatioUS = us.release_dates[0].certification;
     // {
     //   "iso_3166_1": "US",
@@ -183,5 +184,24 @@ export const loadKeywords = async function (id) {
     })
   } catch (error) {
     console.log(error)
+  }
+}
+
+// load youtube 
+export const loadTrailer = async function (title) {
+  try {
+    const data = await AJAX(`${youtubeClick.API_URL}${title}%20trailer%20Office`);
+    
+    const { id, snippet } = data.items[0];
+
+    state.trailer = {
+      videoId: id.videoId,
+      description: snippet.description,
+      thumbnails: snippet.thumbnails.high.url,
+      title: snippet.title,
+    } 
+  } catch (error) {
+    console.log(error)
+    throw error;
   }
 }

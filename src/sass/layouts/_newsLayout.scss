@@ -1,5 +1,6 @@
 .news {
   &__grid {
+    margin-block: 2.4rem;
     width: 100%;
     display: grid;
     gap: 2rem;
@@ -19,6 +20,9 @@
     }
     .image {
       flex-basis: 50%;
+      > * {
+        border-radius: $border-radius-out;
+      }
     }
     .text {
       flex-basis: 50%;

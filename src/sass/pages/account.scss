@@ -1,4 +1,3 @@
-// configuration
 @import '../shared/font';
 @import '../shared/variables';
 @import '../shared/root';
@@ -7,10 +6,6 @@
 @import '../shared/mylibrary';
 @import '../shared/scroll';
 
-// Layout & components
-
-// index
-@import '../layouts/bannerLayout';
 @import '../components/header';
 @import '../components/footer';
 @import '../components/input';
@@ -21,11 +16,7 @@
 @import '../components/tooltips';
 @import '../components/bannerCard';
 @import '../components/bannerContent';
-// @import '../components/introduce';
-// @import '../components/popupDiscover';
-@import '../components/popupSignIn';
 
-// home
 @import '../components/headerSideBar';
 @import '../components/headerWishlistCard';
 @import '../components/headerWishlist';
@@ -33,13 +24,10 @@
 @import '../components/headerSearch';
 @import '../components/headerDropdown';
 @import '../components/popup';
-
-@import '../layouts/homeLayout';
-@import '../components/homeCard';
-@import '../components/homeCard2';
-@import '../components/homeCard3';
-@import '../components/homeCard4';
-@import '../components/homeCard5';
-@import '../components/popupGenres';
 @import '../components/bannerContentAdd';
+@import '../components/detailBanner';
+
+@import '../components/button';
+@import '../components/icon';
+@import '../layouts/accountLayout';
 @import '../components//trailer';

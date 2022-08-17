@@ -24,6 +24,37 @@ class DetailBanerView {
     ['hashchange', 'load'].forEach(ev => window.addEventListener(ev, handler));
   }
 
+  addHandlerClickTrailer(handler) {
+    document.addEventListener('click', (e) => {
+      const trailerBtn = e.target.closest('.banner__btn--trailer');
+      if(!trailerBtn) return ;
+      e.preventDefault();
+      const title = trailerBtn.dataset.title
+      handler(title);
+    })
+  }
+
+  renderSpinner() {
+    const markup = /*html*/ `
+    <div class="spinner__render">
+    <ul class="spinner">
+      <li class="seen"></li>
+      <li class="seen"></li>
+      <li class="seen"></li>
+      <li class="seen"></li>
+      <li class="seen"></li>
+      <li class="seen"></li>
+      <li class="seen"></li>
+      <li class="seen"></li>
+      <li class="seen"></li>
+      <li class="seen"></li>
+    </ul>
+  </div>
+    `;
+    this._parentElement.innerHTML = '';
+    this._parentElement.insertAdjacentHTML('afterbegin', markup);
+  }
+
   // HyperText Markup Language
   _generateMarkup() {
     return /*html*/ `
@@ -35,13 +66,13 @@ class DetailBanerView {
           </div>
 
           <div class="banner__content">
-            <a href="#" class="banner__btn--trailer btn__top hidden-lg">
+            <button data-title="${this._data.originalTitle}" class="banner__btn--trailer btn__top hidden-lg">
               <svg class="banner__icon">
                 <use href='${icons}#icon-play'></use>
               </svg>
 
               <span>Đoạn giới thiệu</span>
-            </a>
+            </button>
 
             <div class="banner__content_1">
               <a href="#" class="banner__poster shown-lg">
@@ -75,7 +106,7 @@ class DetailBanerView {
               <div class="vertical__rule"></div>
 
               <div class="banner__wrap">
-                <p class="certification" title="${getCertification(this._certification).meaning}">${getCertification(this._certification).certification}</p>
+                <p class="certification" title="${getCertification(this._certification)? getCertification(this._certification).meaning : ''}">${getCertification(this._certification)? getCertification(this._certification).certification : 'Chưa phân loại'}</p>
 
                 <p>Mức phân loại</p>
               </div>
@@ -98,13 +129,13 @@ class DetailBanerView {
                 <span>Thêm vào danh sách yêu thích</span>
               </button>
 
-              <a href="#" class="banner__btn--trailer">
+              <button data-title="${this._data.originalTitle}" class="banner__btn--trailer">
                 <svg class="banner__icon">
                   <use href='${icons}#icon-play'></use>
                 </svg>
 
                 <span>Đoạn giới thiệu</span>
-              </a>
+              </button>
             </div>
           </div>
         </div>

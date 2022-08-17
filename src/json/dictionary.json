@@ -13,5 +13,15 @@
     "id": 2,
     "english": "ja",
     "vietnamese": "Nhật Bản"
+  },
+  {
+    "id": 3,
+    "english": "ko",
+    "vietnamese": "Hàn Quốc"
+  },
+  {
+    "id": 4,
+    "english": "fr",
+    "vietnamese": "Pháp"
   }
 ]

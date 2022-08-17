@@ -5,7 +5,13 @@ import icons from 'url:../../imgs/icons.svg';
 class DetailRecommendationsView {
   _data;
   _parentElement = document.querySelector('.detail__recommendations_list');
+  _linkRecommendation = document.querySelector('.recommendations__link');
+  _linkSimilar = document.querySelector('.similar__link');
 
+  constructor() {
+    this._addHanlerLinkRecom();
+    this._addHanlerLinkSimiler();
+  }
   render(data) {
     // 
     this._data = data;
@@ -15,6 +21,51 @@ class DetailRecommendationsView {
     this._parentElement.innerHTML = '';
     // render nội dung mới
     this._parentElement.insertAdjacentHTML('afterbegin', markup);
+  }
+
+  _addHanlerLinkRecom() {
+    ['hashchange', 'load'].forEach(ev => window.addEventListener(ev, () => {
+      const id = window.location.hash;
+      this._linkRecommendation.setAttribute('href', `./movie.html${id}/recommendations`)
+    }))
+  }
+
+  _addHanlerLinkSimiler() {
+    ['hashchange', 'load'].forEach(ev => window.addEventListener(ev, () => {
+      const id = window.location.hash;
+      this._linkSimilar.setAttribute('href', `./movie.html${id}/similar`)
+    }))
+  }
+
+  renderSpinner() {
+    const markup = /*html*/ `
+    <div class="spinner__render">
+    <ul class="spinner">
+      <li class="seen"></li>
+      <li class="seen"></li>
+      <li class="seen"></li>
+      <li class="seen"></li>
+      <li class="seen"></li>
+      <li class="seen"></li>
+      <li class="seen"></li>
+      <li class="seen"></li>
+      <li class="seen"></li>
+      <li class="seen"></li>
+    </ul>
+  </div>
+    `;
+    this._parentElement.innerHTML = '';
+    this._parentElement.insertAdjacentHTML('afterbegin', markup);
+  }
+
+  addHandlerClickTrailer(handler) {
+    document.addEventListener('click', (e) => {
+      const trailerBtn = e.target.closest('.card__link--trailer');
+      if(!trailerBtn) return ;
+      e.preventDefault();
+      const title = trailerBtn.dataset.title
+      handler(title);
+    })
   }
 
   _generateMarkup() {
@@ -43,11 +94,11 @@ class DetailRecommendationsView {
             />
           </a>
 
-          <a href="#" class="card__link-btn card__link--trailer">
+          <button data-title="${recommendations.originalTitle}" class="card__link-btn card__link--trailer">
             <svg class="card__icon">
               <use href="${icons}#icon-play-circle"></use>
             </svg>
-          </a>
+          </button>
         </div>
 
         <div class="card__info">
