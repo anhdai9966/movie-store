@@ -34,7 +34,7 @@ export const loadMovies = async function (prefix, pg) {
     if (prefix.includes('JP')) sort = '&sort_by=original_title.desc' ;
     if (discoverList.some(pre => prefix.includes(pre))) {
       data = await AJAX(`${themoviedb.API_URL}/discover/movie?api_key=${themoviedb.API_KEY}&language=${themoviedb.LANGUAGE}&include_adult=false&${prefix}&${pg}${sort}`);
-    } if (prefix.includes('keyword')) {
+    } else if (prefix.includes('keyword')) {
       data = await AJAX(`${themoviedb.API_URL}/${prefix}/movies?api_key=${themoviedb.API_KEY}&language=${themoviedb.LANGUAGE}&include_adult=false&${pg}`);
     } else {
       data = await AJAX(`${themoviedb.API_URL}/movie/${prefix}?api_key=${themoviedb.API_KEY}&language=${themoviedb.LANGUAGE}&include_adult=false&${pg}`);

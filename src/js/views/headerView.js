@@ -197,6 +197,7 @@ class HeaderView extends View {
 
       if (heightCurrent == 0) {
         this._parentElement.style.top = "0";
+        this._parentElement.style.background = "transparent";
       }
     });
   }

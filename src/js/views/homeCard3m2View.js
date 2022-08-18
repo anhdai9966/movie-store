@@ -1,9 +1,7 @@
 import homeView from './homeView';
 
-import icons from 'url:../../imgs/icons.svg';
-
-class HomeCard3View extends homeView {
-  _parentElement = document.querySelector('.cardHome3');
+class HomeCard3m2View extends homeView {
+  _parentElement = document.querySelector('.cardHome3-2');
   _cardListElement = this._parentElement.querySelector('.card__list');
   _leftBtn = this._parentElement.querySelector('.left__btn');
   _rightBtn = this._parentElement.querySelector('.right__btn');
@@ -33,24 +31,21 @@ class HomeCard3View extends homeView {
     return this._data.map(this._generateMarkupCard2).join('');
   }
 
-  _generateMarkupCard2(trailer) {
+  _generateMarkupCard2(news) {
     return /*html */ `
       <div class="card__item">
-        <button data-title="${trailer.title}" class="card__link card__btn--trailer">
+        <a href="./detailNews.html#${news.id}" class="card__link">
           <img
-            src="${trailer.thumbnails.high.url}"
-            alt="${trailer.title}"
+            src="${news.imageUrl}"
+            alt="${news.title}"
             loading="lazy"
             class="card__thumbnails"
           />
-          <svg class="card__icon">
-            <use href='${icons}#icon-play'></use>
-          </svg>
-          <p class="card__title">${trailer.title}</p>
-        </button> 
+          <p class="card__title">${news.title}</p>
+        </a> 
       </div>
     `;
   }
 }
 
-export default new HomeCard3View();
+export default new HomeCard3m2View();

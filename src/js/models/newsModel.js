@@ -3,16 +3,21 @@ import { googleSheetNews } from '../shared/config.js';
 
 export let state = {
   news: [],
-  totalPages: 0,
-  totalResults: 0,
+  pages: {
+    page: 0,
+    totalPages: 0,
+    totalResults: 0,
+  }
 };
 
 // https://script.google.com/macros/s/AKfycbwD1nTQ9mDGu47Fv4BKC45Yqx0bjtoM3tbrubxDFPZ8M15ctnoW8IZB0GPLC3LFkWMe/exec
-// các tham số hỗ trợ : id, query, list(giới hạn 10 item), tìm theo quốc gia (với VN countryId=1 Quốc tế =2) (giới hạn 10 item)
-export const loadNews = async function () {
+// các tham số hỗ trợ : id, query, page, list(giới hạn 10 item), tìm theo quốc gia (với VN countryId=1 Quốc tế =2) (giới hạn 10 item)
+export const loadNews = async function (pg = '') {
   try {
-    const data = await AJAX(googleSheetNews.API_URL);
+    const data = await AJAX(`${googleSheetNews.API_URL}?${pg}`);
     
+    if(data.status == 'fail') return ;
+
     state.news = data.results.map(news => {
       return {
         author: news.author,
@@ -26,9 +31,11 @@ export const loadNews = async function () {
         title: news.title,
       }
     })
-
-    state.totalPages = data.total_pages;
-    state.totalResults = data.total_results
+    state.pages = {
+      page: data.page,
+      totalPages: data.total_pages,
+      totalResults: data.total_results,
+    }
   } catch (error) {
     console.log(error)
     throw error;

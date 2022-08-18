@@ -23,11 +23,11 @@
     display: flex;
     flex-flow: column;
     width: 28rem;
-    height: 40rem;
+    height: 35rem;
     padding-bottom: 1.6rem;
     @media (min-width: $xl) {
-      width: 36rem;
-      height: 43rem;
+      width: 33rem;
+      height: 37rem;
     }
     .card__header {
       position: relative;
@@ -43,18 +43,18 @@
       background-repeat: no-repeat;
       .card__logo {
         position: relative;
-        width: 20rem;
-        height: 3rem;
+        width: 15rem;
+        height: 2rem;
         @media (min-width: $xl) {
-          height: 4rem;
-          width: 25rem;
+          height: 3rem;
+          width: 18rem;
         }
       }
       .card__title {
         position: relative;
-        font-size: 3rem;
+        font-size: 2rem;
         @media (min-width: $xl) {
-          font-size: 4rem;
+          font-size: 2.4rem;
         }
       }
       .card__overlay {

@@ -11,6 +11,16 @@ class HomeCardView extends homeView {
     super();
   }
 
+  addHandlerClickTrailer(handler) {
+    document.addEventListener('click', (e) => {
+      const trailerBtn = e.target.closest('.card__btn--trailer');
+      if(!trailerBtn) return ;
+      e.preventDefault();
+      const title = trailerBtn.dataset.title
+      handler(title);
+    })
+  }
+
   //  xử lý khi dom đã được tải xong
   addHandlerRender(handler) {
     window.addEventListener('load', handler);

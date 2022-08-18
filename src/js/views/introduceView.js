@@ -46,7 +46,7 @@ class IntroduceView {
   _generateMarkupCard(movie) {
     return /*html */ `
       <div class="banner-card__item">
-        <a href="#${movie.id}" class="movie__link">
+        <a href="./html/pages/detail.html#${movie.id}" class="movie__link">
           <img
             src="${pathPictureW220(movie.posterPath)}"
             class="movie__poster"

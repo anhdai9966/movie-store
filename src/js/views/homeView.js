@@ -102,20 +102,20 @@ export default class View {
   // giao diện chờ
   renderSpinner() {
     const markup = /*html*/ `
-      <div class='spinner'>
-        <ul class='line__list'>
-          <li class='spinner__line'></li>
-          <li class='spinner__line'></li>
-          <li class='spinner__line'></li>
-          <li class='spinner__line'></li>
-          <li class='spinner__line'></li>
-          <li class='spinner__line'></li>
-          <li class='spinner__line'></li>
-          <li class='spinner__line'></li>
-          <li class='spinner__line'></li>
-          <li class='spinner__line'></li>
-        </ul>
-      </div>
+    <div class="spinner__render">
+    <ul class="spinner">
+      <li class="seen"></li>
+      <li class="seen"></li>
+      <li class="seen"></li>
+      <li class="seen"></li>
+      <li class="seen"></li>
+      <li class="seen"></li>
+      <li class="seen"></li>
+      <li class="seen"></li>
+      <li class="seen"></li>
+      <li class="seen"></li>
+    </ul>
+  </div>
     `;
     this._clear();
     this._cardListElement.insertAdjacentHTML('afterbegin', markup);
@@ -137,7 +137,7 @@ export default class View {
     return /*html */ `
       <div class="card__item">
         <div class="card__image">
-          <a href="#" class="card__img-link">
+          <a href="./detail.html#${movie.id}" class="card__img-link">
             <img
               src="${pathPictureW220(movie.posterPath)}"
               alt="${movie.title}"
@@ -147,7 +147,7 @@ export default class View {
           </a>
 
           <div class="card__hover">
-            <a href="#" class="card__img-link">
+            <a href="./detail.html#${movie.id}" class="card__img-link">
               <img
                 src="${pathPictureW533(movie.backdropPath)}"
                 alt="${movie.title}"
@@ -165,7 +165,7 @@ export default class View {
             </button>
 
             <div class="card__hover-info">
-              <a href="#" class="card__link">
+              <a href="./detail.html#${movie.id}" class="card__link">
                 <h6 class="card__hover-title">${movie.title}</h6>
               </a>
 
@@ -173,13 +173,13 @@ export default class View {
                 <span>${getGenresId(movie.genreIds[0])}</span> - <span>${getYear(movie.releaseDate)}</span> - <span>Chỉ từ 80.000 đ</span>
               </p>
 
-              <a href="#" class="card__link-btn card__link--trailer">Trailer</a>
+              <button data-title="${movie.originalTitle}" class="card__link-btn card__btn--trailer">Trailer</button>
             </div>
           </div>
         </div>
 
         <div class="card__info">
-          <a href="#" class="card__link">
+          <a href="./detail.html#${movie.id}" class="card__link">
             <h6 class="card__title">${movie.title}</h6>
           </a>
 

@@ -41,7 +41,7 @@ class HomeCard5View extends homeView {
   _generateMarkupCard2(genre) {
     return /*html */ `
       <div class="card__item">
-        <a href="#" class="card__link" style="background: linear-gradient(222deg, ${randomColor()} 0%, ${randomColor()} 100%);">
+        <a href="./movie.html#with_genres=${genre.id}" class="card__link" style="background: linear-gradient(222deg, ${randomColor()} 0%, ${randomColor()} 100%);">
           <p class="card__title">${genre.name}</p>
         </a> 
       </div>

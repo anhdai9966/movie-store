@@ -24,6 +24,11 @@ class HeaderIndexView {
         height = heightCurrent;
       };
 
+      if (heightCurrent == 0) {
+        this._parentElement.style.top = "0";
+        this._parentElement.style.background = "transparent";
+      }
+
     });
   }
 

@@ -1,5 +1,5 @@
 import { AJAX } from '../shared/helpers.js';
-import { themoviedb, youtubeSearch } from '../shared/config.js';
+import { themoviedb, youtubeSearch, googleSheetNews, youtubeClick } from '../shared/config.js';
 
 import movie80 from '../../json/movie80.json';
 import genres from '../../json/genres.json';
@@ -9,13 +9,15 @@ export let state = {
   nowPlaying: [],
   popular: [],
   topRate: [],
-  trailer: [],
+  trailers: [],
   action: [],
   cartoon: [],
   horror: [],
   peoplePopular: [],
   upcoming: [],
   genres: [],
+  news: [],
+  trailer: []
 };
 
 // https://api.themoviedb.org/3/movie/now_playing?api_key=<<api_key>>&language=en-US&page=1
@@ -126,7 +128,7 @@ export const loadNewTrailers = async function() {
         title: snippet.title,
         videoId: id.videoId,
       }
-      state.trailer.push(pushData);
+      state.trailers.push(pushData);
     })
   } catch (error) {
     console.log(error)
@@ -271,6 +273,32 @@ export const loadUpcoming = async function() {
   }
 }
 
+export const loadNews = async function () {
+  try {
+    const data = await AJAX(googleSheetNews.API_URL);
+    
+    state.news = data.results.map(news => {
+      return {
+        author: news.author,
+        countryId: news.country_id,
+        createdAt: news.created_at,
+        description: news.description,
+        id: news.id,
+        imageUrl: news.image_url,
+        nameSource: news.name_source,
+        sourceUrl: news.source_url,
+        title: news.title,
+      }
+    })
+
+    state.totalPages = data.total_pages;
+    state.totalResults = data.total_results
+  } catch (error) {
+    console.log(error)
+    throw error;
+  }
+}
+
 // load từ file json
 export const loadMovie80 = async function() {
   try {
@@ -301,6 +329,24 @@ export const loadGenres = async function() {
         name: rec.name,
       }
     })
+  } catch (error) {
+    console.log(error)
+    throw error;
+  }
+}
+// load youtube 
+export const loadTrailer = async function (title) {
+  try {
+    const data = await AJAX(`${youtubeClick.API_URL}${title}%20trailer%20Office`);
+    
+    const { id, snippet } = data.items[0];
+
+    state.trailer = {
+      videoId: id.videoId,
+      description: snippet.description,
+      thumbnails: snippet.thumbnails.high.url,
+      title: snippet.title,
+    } 
   } catch (error) {
     console.log(error)
     throw error;

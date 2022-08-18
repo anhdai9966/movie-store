@@ -66,7 +66,7 @@ class HomeCard2View extends homeView {
     return /*html */ `
       <div class="card__item">
         <div class="card__image">
-          <a href="#" class="card__poster-link">
+          <a href="./detail.html#${movie.id}" class="card__poster-link">
             <img
               src="${pathPictureW220(movie.posterPath)}"
               alt="${movie.title}"
@@ -75,7 +75,7 @@ class HomeCard2View extends homeView {
             />
           </a>
 
-          <a href="#" class="card__backdrop-link">
+          <a href="./detail.html#${movie.id}" class="card__backdrop-link">
             <img
               src="${pathPictureW533(movie.backdropPath)}"
               alt="${movie.title}"
@@ -84,15 +84,15 @@ class HomeCard2View extends homeView {
             />
           </a>
 
-          <a href="#" class="card__link-btn card__link--trailer">
+          <button data-title="${movie.originalTitle}" class="card__link-btn card__btn--trailer">
             <svg class="card__icon">
               <use href='${icons}#icon-play-circle'></use>
             </svg>
-          </a>
+          </button>
         </div>
 
         <div class="card__info">
-          <a href="#" class="card__link">
+          <a href="./detail.html#${movie.id}" class="card__link">
             <h6 class="card__title">${movie.title}</h6>
           </a>
 
