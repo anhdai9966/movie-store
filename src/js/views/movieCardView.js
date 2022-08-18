@@ -25,8 +25,47 @@ class MovieCardView {
       if(!trailerBtn) return ;
       e.preventDefault();
       const title = trailerBtn.dataset.title
+      console.log('🚀 ~ MovieCardView ~ document.addEventListener ~ title', title)
       handler(title);
     })
+  }
+
+  addHandlerAddBookmark(handler) {
+    this._parentElement.addEventListener('click', function (e) {
+      const btn = e.target.closest('.card__btn--wishlist');
+      if (!btn) return;
+      const id = btn.dataset.id;
+      handler(id);
+    });
+  }
+
+  update(data) {
+    this._data = data;
+    const newMarkup = this._generateMarkup();
+
+    const newDOM = document.createRange().createContextualFragment(newMarkup);
+    const newElements = Array.from(newDOM.querySelectorAll('*'));
+    const curElements = Array.from(this._parentElement.querySelectorAll('*'));
+
+    newElements.forEach((newEl, i) => {
+      const curEl = curElements[i];
+      // console.log(curEl, newEl.isEqualNode(curEl));
+
+      // Updates changed TEXT
+      if (
+        !newEl.isEqualNode(curEl) &&
+        newEl.firstChild?.nodeValue.trim() !== ''
+      ) {
+        // console.log('💥', newEl.firstChild.nodeValue.trim());
+        curEl.textContent = newEl.textContent;
+      }
+
+      // Updates changed ATTRIBUES
+      if (!newEl.isEqualNode(curEl))
+        Array.from(newEl.attributes).forEach(attr =>
+          curEl.setAttribute(attr.name, attr.value)
+        );
+    });
   }
 
   // giao diện chờ
@@ -66,9 +105,9 @@ class MovieCardView {
             <img src="${pathPictureW533(movie.backdropPath)}" alt="movie" loading="lazy">
           </a>
 
-          <button class="wishlist__btn">
+          <button data-id="${movie.id}" class="wishlist__btn card__btn--wishlist">
             <svg class="wishlist__icon">
-              <use href='${icons}#icon-bookmark'></use>
+              <use href='${icons}#icon-bookmark${movie.bookmarked? '-fill': ''}'></use>
             </svg>
           </button>
 

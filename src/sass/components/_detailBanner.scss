@@ -177,6 +177,12 @@
       @media (max-width: $lg) {
         margin: 0 auto;
       }
+      &-hidden {
+        display: none;
+        @media (min-width: $lg) {
+          display: block;
+        }
+      }
     }
   }
 }

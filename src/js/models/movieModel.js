@@ -13,6 +13,8 @@ export let state = {
   countries: [],
   year: [],
   trailer: [],
+  bookmarks: [],
+  bookmarkLocal: [],
 };
 
 // https://api.themoviedb.org/3/movie/now_playing?api_key=<<api_key>>&language=en-US&page=1
@@ -41,6 +43,8 @@ export const loadMovies = async function (prefix, pg) {
     };
     
     state.movies = data.results.map(movie => {
+      let bm = false;
+      if (state.bookmarkLocal.some(bookmark => bookmark.id == movie.id)) bm = true;
       return {
         adult: movie.adult,
         backdropPath: movie.backdrop_path,
@@ -56,6 +60,7 @@ export const loadMovies = async function (prefix, pg) {
         video: movie.video,
         voteAverage: movie.vote_average,
         voteCount: movie.vote_count,
+        bookmarked: bm,
       }
     })
 
@@ -158,3 +163,37 @@ export const loadTrailer = async function (title) {
     throw error;
   }
 }
+const persistBookmarks = function () {
+  localStorage.setItem('bookmarks', JSON.stringify(state.bookmarkLocal));
+};
+
+const init = function () {
+  const storage = localStorage.getItem('bookmarks');
+  if (storage) state.bookmarkLocal = JSON.parse(storage);
+};
+init();
+
+export const addBookmark = function (id) {
+  // tìm id và render dữ liệu với id là true
+  const data = state.movies.map(movie => {
+    if(movie.id == id) {
+      if (!movie.bookmarked) {
+        movie.bookmarked = true;
+        state.bookmarkLocal.push(movie);
+      } else {
+        console.log(id);
+        movie.bookmarked = false;
+        const index = state.bookmarkLocal.findIndex(el => el.id == id);
+        console.log('🚀 ~ addBookmark ~ index', index)
+        state.bookmarkLocal.splice(index, 1);
+        console.log(state.bookmarkLocal);
+      };
+    }
+    return movie;
+  })
+  // Add bookmark để render
+  state.bookmarks = data;
+  
+  // lưu vào local
+  persistBookmarks();
+};

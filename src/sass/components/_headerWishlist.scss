@@ -29,17 +29,18 @@
     .wishlist__list {
       display: flex;
       flex-flow: column;
-      .wishlist__empty {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        row-gap: 2.4rem;
-        margin-block: 2.4rem;
-        text-align: center;
-        .wishlist__icon {
-          width: 5rem;
-          height: 5rem;
-        }
+      
+    }
+    .wishlist__empty {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      row-gap: 2.4rem;
+      margin-block: 2.4rem;
+      text-align: center;
+      .wishlist__icon {
+        width: 5rem;
+        height: 5rem;
       }
     }
   }

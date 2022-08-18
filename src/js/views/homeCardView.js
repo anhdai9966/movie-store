@@ -21,6 +21,17 @@ class HomeCardView extends homeView {
     })
   }
 
+  addHandlerAddBookmark(handler) {
+    this._parentElement.addEventListener('click', function (e) {
+      const btn = e.target.closest('.card__btn--wishlist');
+      if (!btn) return;
+      const id = btn.dataset.id;
+      handler(id);
+    });
+  }
+
+  
+
   //  xử lý khi dom đã được tải xong
   addHandlerRender(handler) {
     window.addEventListener('load', handler);

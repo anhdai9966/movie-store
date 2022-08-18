@@ -129,7 +129,7 @@ class DetailBanerView {
                 <span>Thêm vào danh sách yêu thích</span>
               </button>
 
-              <button data-title="${this._data.originalTitle}" class="banner__btn--trailer">
+              <button data-title="${this._data.originalTitle}" class="banner__btn--trailer banner__btn--trailer-hidden">
                 <svg class="banner__icon">
                   <use href='${icons}#icon-play'></use>
                 </svg>

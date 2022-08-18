@@ -53,7 +53,7 @@ class HopupGenres {
 
   _generateMarkupItem(item) {
     return /*html */ `
-      <a href="#genre/${item.id}" class="genres__item">${item.name}</a>
+      <a href="#with_genres=${item.id}" class="genres__item">${item.name}</a>
     `;
   }
 }

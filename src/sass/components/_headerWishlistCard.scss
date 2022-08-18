@@ -5,8 +5,15 @@
   justify-content: space-between;
   padding: 1rem 2.4rem;
   border-bottom: thin solid $color-border;
+  column-gap: 1.2rem;
   &:hover {
     background: #292929;
+  }
+  .movie__poster {
+    width: 40%;
+    > * {
+      border-radius: .8rem;
+    }
   }
   .card__link {
     font-weight: bold;

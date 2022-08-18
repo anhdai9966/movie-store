@@ -11,6 +11,7 @@ import movieCardView from '../views/movieCardView.js';
 import movieNavResultView from '../views/movieNavResultView.js';
 import movieNavBtnView from '../views/movieNavBtnView.js';
 import trailerView from '../views/trailerView.js';
+import movieLayout from '../layouts/movieLayout.js';
 
 
 const controlHeader = function () {
@@ -107,8 +108,18 @@ const controlTrailer = async function (title) {
   trailerView.render(model.state.trailer);
 }
 
+const controlAddBookmark = function (id) {
+  // 1) Thêm/xóa bookmark
+  model.addBookmark(id);
+  
+  movieCardView.update(model.state.movies);
+  console.log(model.state.bookmarks)
+  movieCardView.render(model.state.bookmarks);
+}
+
 const init = function () {
   movieCardView.addHandlerRender(controlMovieCard);
+  movieCardView.addHandlerAddBookmark(controlAddBookmark);
   headerView.addHandlerRender(controlHeader);
   bannerView.addHandlerRender(controlBanner);
   movieNavBtnView.addHandlerRender(controlNavBtn);

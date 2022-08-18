@@ -1,4 +1,4 @@
-import { AJAX } from '../shared/helpers.js';
+import { AJAX, getGenresId } from '../shared/helpers.js';
 import { themoviedb, youtubeSearch, googleSheetNews, youtubeClick } from '../shared/config.js';
 
 import movie80 from '../../json/movie80.json';
@@ -17,7 +17,9 @@ export let state = {
   upcoming: [],
   genres: [],
   news: [],
-  trailer: []
+  trailer: [],
+  bookmarks: [],
+  bookmarkLocal: [],
 };
 
 // https://api.themoviedb.org/3/movie/now_playing?api_key=<<api_key>>&language=en-US&page=1
@@ -70,6 +72,7 @@ export const loadPopular = async function() {
         video: movie.video,
         voteAverage: movie.vote_average,
         voteCount: movie.vote_count,
+        bookmarked: false,
       }
     })
   } catch (error) {
@@ -352,3 +355,60 @@ export const loadTrailer = async function (title) {
     throw error;
   }
 }
+
+const persistBookmarks = function () {
+  localStorage.setItem('bookmarks', JSON.stringify(state.bookmarkLocal));
+};
+const init = function () {
+  const storage = localStorage.getItem('bookmarks');
+  if (storage) state.bookmarks = JSON.parse(storage);
+};
+init();
+
+export const addBookmark = function (id) {
+  // tìm id và render dữ liệu với id là true
+  const data = state.popular.map(movie => {
+    if(movie.id == id) {
+      if (!movie.bookmarked) {
+        movie.bookmarked = true;
+        state.bookmarkLocal.push(movie);
+      } else {
+        movie.bookmarked = false;
+        const index = state.bookmarkLocal.findIndex(el => el.id === id);
+        state.bookmarkLocal.splice(index, 1);
+      };
+    }
+    return movie;
+  })
+  // Add bookmark để render
+  state.bookmarks = data;
+  
+  // lưu vào local
+  persistBookmarks();
+};
+
+  // https://script.google.com/macros/s/AKfycbzL4uAAoWATIx7VJJJM7ro0sREU2Y-q36XTQLrbBi45kEHh25e7b6W-_4Q6Ges8tFsn/exec
+const postDataGooogle = async function (m) {
+  try {
+      // tạo dữ liệu gửi lên api
+    const reqData = {
+      id: m.id,
+      genre: getGenresId(m.genreIds[0]),
+      originalTitle: m.originalTitle,
+      posterPath: m.posterPath,
+      backdropPath: m.backdropPath,
+      releaseDate: m.releaseDate,
+      title: m.title,
+      voteAverage: m.voteAverage,
+      voteCount: m.voteCount,
+      userId: '1l6x7sada',
+    }
+
+    const res = await AJAX('https://script.google.com/macros/s/AKfycbzL4uAAoWATIx7VJJJM7ro0sREU2Y-q36XTQLrbBi45kEHh25e7b6W-_4Q6Ges8tFsn/exec', reqData);
+
+    console.log(res);
+  } catch (error) {
+    console.log(error)
+  }
+}
+

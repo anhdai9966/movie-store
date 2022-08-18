@@ -7,7 +7,8 @@ export let state = {
     page: 0,
     totalPages: 0,
     totalResults: 0,
-  }
+  },
+  bookmarks: [],
 };
 
 // https://script.google.com/macros/s/AKfycbwD1nTQ9mDGu47Fv4BKC45Yqx0bjtoM3tbrubxDFPZ8M15ctnoW8IZB0GPLC3LFkWMe/exec
@@ -41,3 +42,9 @@ export const loadNews = async function (pg = '') {
     throw error;
   }
 }
+
+const init = function () {
+  const storage = localStorage.getItem('bookmarks');
+  if (storage) state.bookmarks = JSON.parse(storage);
+};
+init();

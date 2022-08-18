@@ -93,8 +93,6 @@ class HomeCard1m6View extends homeView {
             <svg class="star__icon">
               <use href="${icons}#icon-star-fill"></use>
             </svg>
-
-            <span>80.000 đ</span>
           </p>
         </div>
       </div>

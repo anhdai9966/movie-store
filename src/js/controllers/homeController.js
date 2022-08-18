@@ -39,6 +39,14 @@ const controlBanner = async function () {
   bannerView.addHandlerRenderBanner(model.state.movie80);
 };
 
+const controlAddBookmark = function (id) {
+  // 1) Thêm/xóa bookmark
+  model.addBookmark(id);
+  
+  homeCardView.update(model.state.popular);
+  homeCardView.renderCard(model.state.bookmarks);
+}
+
 const controlHomeCard = async function () {
   let flagArr = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
   homeCardView.renderSpinner();
@@ -192,5 +200,6 @@ const init = function () {
   headerView.addHandlerRender(controlHeader);
   bannerView.addHandlerRender(controlBanner);
   homeCardView.addHandlerRender(controlHomeCard);
+  homeCardView.addHandlerAddBookmark(controlAddBookmark);
 };
 init();

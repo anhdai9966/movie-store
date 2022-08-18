@@ -8,6 +8,7 @@ import gototopView from '../views/gototopView.js';
 
 import paginationView from '../views/newspagination.js';
 import newsGridView from '../views/newsGridView.js';
+import wishlistCardView from '../views/wishlistCardView.js';
 
 const controlHeader = function () {
   headerView.addHandlerShowSidebar(controlSidebar);
@@ -22,21 +23,36 @@ const controlSearch = async function () {
   try {  
     // 1) Get search query
     const query = searchView.getQuery();
-    if (!query) return;
+
+    if (!query) {
+      searchView.addHandlerSearchListClear();
+      searchView.addHandlerShowPopularList();
+      return;
+    } 
 
     // 2) Load search results
     await modelShare.loadSearch(query);
-    console.log(modelShare.state.search);
     
     // 3) Render results
+    searchView.addHandlerHiddenPopularList();
     searchView.addHandlerRenderResultSearch(modelShare.state.search.results);
   } catch (err) {
     console.log(err);
   }
 };
 
-const controlHeaderSearch = function () {
+const controlHeaderSearch = async function () {
   searchView.addHandlerShowSearch();
+  searchView.addHandlerShowPopularList();
+  // load dữ liệu phổ biến
+  await modelShare.loadPopular();
+  // render dữ liệu
+  searchView.addHandlerSuggest(modelShare.state.popular);
+}
+
+const controlWishList = async function () {
+  console.log(model.state.bookmarks);
+  wishlistCardView.render(model.state.bookmarks);
 }
 
 const controlNewsGrid = async function () {
@@ -49,7 +65,6 @@ const controlNewsGrid = async function () {
     newsGridView.renderSpinner();
 
     await model.loadNews(prefix);
-    console.log(model.state);
     newsGridView.render(model.state.news);
     controlPagination(prefix)
   } catch (error) {
@@ -65,10 +80,11 @@ const controlPagination = function (prefix) {
 
 
 const init = function () {
+  document.title = 'Báo phim mới';
   headerView.addHandlerRender(controlHeader);
   newsGridView.addHandlerRender(controlNewsGrid);
   searchView.addHandlerSearchInput(controlSearch);
-
+  wishlistCardView.addHandlerRender(controlWishList);
 }
 
 init();

@@ -5,6 +5,7 @@ export default class View {
   _data;
   _tempHover = 0;
   _tempContainer = 0;
+  _count = 0;
 
   renderCard(data) {
     this._data = data;
@@ -17,6 +18,37 @@ export default class View {
     this._addHandlerHoverOver();
     this._addHandlerClickControlRight();
     this._addHandlerClickControlLeft();
+  }
+
+  update(data) {
+    this._data = data;
+    const newMarkup = this._generateMarkup();
+
+    const newDOM = document.createRange().createContextualFragment(newMarkup);
+    const newElements = Array.from(newDOM.querySelectorAll('*'));
+    const curElements = Array.from(this._cardListElement.querySelectorAll('*'));
+
+    newElements.forEach((newEl, i) => {
+      const curEl = curElements[i];
+      // console.log(curEl, newEl.isEqualNode(curEl));
+
+      // Updates changed TEXT
+      if (
+        !newEl.isEqualNode(curEl) &&
+        newEl.firstChild?.nodeValue.trim() !== ''
+      ) {
+        // console.log('💥', newEl.firstChild.nodeValue.trim());
+        curEl.textContent = newEl.textContent;
+      }
+
+      // Updates changed ATTRIBUES
+      if (!newEl.isEqualNode(curEl))
+        Array.from(newEl.attributes).forEach(attr =>
+          curEl.setAttribute(attr.name, attr.value)
+        );
+    });
+    this._tempContainer = (this._parentElement.offsetWidth + 24) * this._count;
+    console.log(this._tempContainer, this._parentElement.offsetWidth, this._count);
   }
 
   // mouseenter mouseover
@@ -50,6 +82,7 @@ export default class View {
   _addHandlerClickControlRight() {
     let translateX = 0;
     this._rightBtn.addEventListener('click', () => {
+      this._count += 1;
       // lấy độ dài card
       const cardWidth = this._cardListElement.firstElementChild.offsetWidth;
       // lấy độ dài cardList = số card * width card
@@ -70,13 +103,15 @@ export default class View {
       }
       // hiển thị control trái
       this._leftBtn.classList.remove('hidden');
-    })
+      console.log(this._tempContainer, this._parentElement.offsetWidth, this._count);
+    }, true)
   }
 
   // Xử lý khi click trái
   _addHandlerClickControlLeft() {
     let translateX = 0;
     this._leftBtn.addEventListener('click', () => {
+      this._count -= 1;
       translateX = this._parentElement.offsetWidth + 24;
       this._tempContainer -= translateX;
       this._cardListElement.style.transform = `translateX(${-this._tempContainer}px)`;
@@ -87,7 +122,8 @@ export default class View {
         }, 500);
       }
       this._rightBtn.classList.remove('hidden');
-    })
+      console.log(this._tempContainer, this._parentElement.offsetWidth, this._count);
+    }, true)
   }
 
   _generateMarkup() {
@@ -158,9 +194,9 @@ export default class View {
 
             <div class="card__overlay"></div>
 
-            <button class="card__btn-wishlist card__btn--wishlist">
+            <button data-id="${movie.id}" class="card__btn-wishlist card__btn--wishlist">
               <svg class="card__icon">
-                <use href="${icons}#icon-bookmark"></use>
+                <use href="${icons}#icon-bookmark${movie.bookmarked? '-fill': ''}"></use>
               </svg>
             </button>
 

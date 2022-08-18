@@ -32,20 +32,20 @@ export default class View {
   // giao diện chờ
   renderSpinner() {
     const markup = /*html*/ `
-      <div class='spinner'>
-        <ul class='line__list'>
-          <li class='spinner__line'></li>
-          <li class='spinner__line'></li>
-          <li class='spinner__line'></li>
-          <li class='spinner__line'></li>
-          <li class='spinner__line'></li>
-          <li class='spinner__line'></li>
-          <li class='spinner__line'></li>
-          <li class='spinner__line'></li>
-          <li class='spinner__line'></li>
-          <li class='spinner__line'></li>
-        </ul>
-      </div>
+    <div class="spinner__render">
+    <ul class="spinner">
+      <li class="seen"></li>
+      <li class="seen"></li>
+      <li class="seen"></li>
+      <li class="seen"></li>
+      <li class="seen"></li>
+      <li class="seen"></li>
+      <li class="seen"></li>
+      <li class="seen"></li>
+      <li class="seen"></li>
+      <li class="seen"></li>
+    </ul>
+  </div>
     `;
     this._clear();
     this._parentElement.insertAdjacentHTML('afterbegin', markup);
