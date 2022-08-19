@@ -37,3 +37,5 @@ export const TIMEOUT_SEC = 10;
 
 // thông báo lỗi
 export const ERROR_MESSAGE = 'Liên kết có thể bị hỏng hoặc trang này có thể đã bị gỡ.';
+
+export const MESSAGE_DONT_BUY_CART = 'Tính năng mua bằng tiền không khả dụng';

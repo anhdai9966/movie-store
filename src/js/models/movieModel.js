@@ -17,6 +17,9 @@ export let state = {
   bookmarkLocal: [],
   query: '',
   searched: [],
+  xu: 0,
+  purchased: [],
+  purchasedLocal: [],
 };
 
 // https://api.themoviedb.org/3/movie/now_playing?api_key=<<api_key>>&language=en-US&page=1
@@ -54,6 +57,8 @@ export const loadMovies = async function (prefix, pg) {
     state.movies = data.results.map(movie => {
       let bm = false;
       if (state.bookmarkLocal.some(bookmark => bookmark.id == movie.id)) bm = true;
+      let pur = false;
+      if (state.purchasedLocal.some(pur => pur.id == movie.id)) pur = true; 
       return {
         adult: movie.adult,
         backdropPath: movie.backdrop_path,
@@ -70,6 +75,11 @@ export const loadMovies = async function (prefix, pg) {
         voteAverage: movie.vote_average,
         voteCount: movie.vote_count,
         bookmarked: bm,
+        price: {
+          buy: 210000,
+          rent: 60000,
+        },
+        purchased: pur,
       };
     });
 
@@ -199,6 +209,11 @@ export const addBookmark = function (id) {
   persistBookmarks();
 };
 
+export const clearBookmarks = function () {
+  localStorage.removeItem('bookmarks');
+  state.bookmarkLocal = [];
+};
+
 export const removeBookmark = function (id) {
   // tìm id và render dữ liệu với id là true
   const index = state.bookmarkLocal.findIndex(el => el.id == id);
@@ -217,6 +232,26 @@ export const removeBookmark = function (id) {
   persistBookmarks();
 };
 
+export const addPurchased = function (pur) {
+  // tìm id và render dữ liệu với id là true
+  const data = state.movies.map(movie => {
+    if (pur.some(pu => pu.id == movie.id)) {
+      movie.purchased = true;
+      state.purchasedLocal.push(movie);
+    }
+    return movie;
+  });
+  // Add bookmark để render
+  state.purchased = data;
+  
+  // lưu vào local
+  persistPurchased();
+}
+
+export const persistPurchased = function () {
+  localStorage.setItem('purchased', JSON.stringify(state.purchasedLocal));
+}
+
 export const addSearched = function (title) {
   state.bookmarkLocal.push(title);
 
@@ -234,12 +269,30 @@ export const persistSeached = function () {
   localStorage.setItem('searched', JSON.stringify(state.searched));
 }
 
+export const setXu = function (xu) {
+  state.xu = xu;
+
+  persistXu()
+}
+
+export const persistXu = function () {
+  localStorage.setItem('xu', JSON.stringify(state.xu));
+}
+
+
+
 const init = function () {
   const storage = localStorage.getItem('bookmarks');
   if (storage) state.bookmarkLocal = JSON.parse(storage);
   
   const storageSearched = localStorage.getItem('searched');
   if (storageSearched) state.searched = JSON.parse(storageSearched);
+
+  const storageXu = localStorage.getItem('xu');
+  if (storageXu) state.xu = JSON.parse(storageXu);
+
+  const storagePurchased = localStorage.getItem('purchased');
+  if (storagePurchased) state.purchasedLocal = JSON.parse(storagePurchased);
 };
 init();
 

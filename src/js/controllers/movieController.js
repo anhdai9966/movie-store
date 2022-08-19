@@ -1,5 +1,6 @@
 import * as model from '../models/movieModel.js';
 import * as modelShare from '../models/model.js';
+import { MESSAGE_DONT_BUY_CART } from '../shared/config.js';
 
 import headerView from '../views/headerView.js';
 import sidebarView from '../views/sidebarView.js';
@@ -16,6 +17,13 @@ import trailerView from '../views/trailerView.js';
 import movieLayout from '../layouts/movieLayout.js';
 import wishlistCardView from '../views/wishlistCardView.js';
 import bannerSearchView from '../views/bannerSearchView.js';
+import popupWishlistBuyView from '../views/popupWishlistBuyView.js';
+import wishlistView from '../views/wishlistView.js';
+import popupWishlistXuView from '../views/popupWishlistXuView.js';
+import popupWishlistBtnView from '../views/popupWishlistBtnView.js';
+import popupWishlistMessageView from '../views/popupWishlistMessageView.js';
+import messageView from '../views/messageView.js';
+import wishlistBuyDoneView from '../views/wishlistBuyDoneView.js';
 
 
 const controlHeader = function () {
@@ -163,7 +171,8 @@ const controlAddBookmark = function (id) {
   
   movieCardView.update(model.state.movies);
 
-  movieCardView.render(model.state.bookmarks);
+  // movieCardView.render(model.state.bookmarks);
+  wishlistCardView.render(model.state.bookmarkLocal);
 
   controlWishList();
 }
@@ -173,7 +182,7 @@ const controlRemoveWishlist = function (id) {
   
   movieCardView.update(model.state.movies);
 
-  movieCardView.render(model.state.bookmarks);
+  // movieCardView.render(model.state.bookmarks);
 
   controlWishList();
 }
@@ -197,6 +206,62 @@ const controlDeleteQuery = function (title) {
   seachedView.render(modelShare.state.searched);
 }
 
+// bắt đầu wishlist
+const controlPopupWishlistBuy = function () {
+  // hiển thị lên
+  popupWishlistBuyView.addHandlerNotDoneShownWishlisttitle();
+  popupWishlistBtnView.addHandlerShownWishlistBtn();
+  popupWishlistXuView.addHandlerShownWishlistXu();
+  wishlistBuyDoneView.addHandlerHiddennWishlistBuyDone();
+
+  popupWishlistBuyView.renderPic(model.state.bookmarkLocal);
+  popupWishlistBuyView.addHandlerShowPopupWishlistBuy();
+  setTimeout(() => {
+    popupWishlistBuyView.addHandlerPicWishlistAnimation();
+  }, 300);
+  controlWishlistXu();
+}
+
+const controlWishlistXu = function () {
+  model.setXu(5000000);
+  popupWishlistXuView.renderXu(model.state.bookmarkLocal, model.state.xu);
+  popupWishlistBtnView.render(model.state.bookmarkLocal);
+}
+
+const controlWishlistBtn = function (priceBuy) {
+  popupWishlistBtnView.render(model.state.bookmarkLocal, priceBuy);
+}
+// điều khiển thông báo
+const controlWishlistMessage = function (price) {
+  if (+price == 0) {
+    popupWishlistMessageView.addHandlerShowMessage();
+  } else {
+    controlMessage(MESSAGE_DONT_BUY_CART);
+  }
+}
+
+const controlBuyMovie = function () {
+  popupWishlistMessageView.renderSpinner();
+  // vì trong sự kiện này là mua tất cả nên dữ liệu là tất cả item trong local
+  model.addPurchased(model.state.bookmarkLocal);
+  model.clearBookmarks();
+
+  movieCardView.update(model.state.purchased);
+  wishlistCardView.render(model.state.bookmarkLocal);
+  setTimeout(() => {
+    popupWishlistMessageView.addHandlerHiddenMessage();
+    popupWishlistBuyView.addHandlerDonenWishlisttitle();
+    popupWishlistBtnView.addHandlerHiddennWishlistBtn();
+    popupWishlistXuView.addHandlerHiddennWishlistXu();
+    wishlistBuyDoneView.addHandlerShownWishlistBuyDone();
+  }, 1000);
+}
+
+const controlMessage = function (mess) {
+  messageView.render(mess);
+  messageView.addHandlerShowMessage();
+}
+
 const init = function () {
   document.title = 'MovieStore | Trang phim';
   movieCardView.addHandlerRender(controlMovieCard);
@@ -215,5 +280,10 @@ const init = function () {
   searchView.addHandlerClickSearched(controlSeached);
   seachedView.addHandlerSearchedClick(controlSetQuery);
   seachedView.addHandlerClickDelete(controlDeleteQuery);
+  wishlistView.addHandlerClickBuyWishlist(controlPopupWishlistBuy);
+  popupWishlistXuView.addHandlerCheckedXuInput(controlWishlistBtn);
+  popupWishlistMessageView.addHandlerMessageClickBuy(controlBuyMovie);
+  popupWishlistBtnView.addHandlerClickBtnBuy(controlWishlistMessage);
+  popupWishlistBtnView.addHandlerClickBtnRent(controlWishlistMessage);
 }
 init();

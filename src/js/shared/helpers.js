@@ -152,3 +152,7 @@ export function getCertification(us) {
     meaning: certifications.VN.find(v => v.order == order).meaning,
   }
 }
+
+export function numberWithCommas(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+}

@@ -104,7 +104,7 @@ class MovieCardView {
             <img src="${pathPictureW533(movie.backdropPath)}" alt="movie" loading="lazy">
           </a>
 
-          <button data-id="${movie.id}" class="wishlist__btn card__btn--wishlist">
+          <button data-id="${movie.id}" class="wishlist__btn card__btn--wishlist ${movie.purchased? 'hidden' : ''}">
             <svg class="wishlist__icon">
               <use href='${icons}#icon-bookmark${movie.bookmarked? '-fill': ''}'></use>
             </svg>
@@ -133,7 +133,7 @@ class MovieCardView {
               </svg>
             </span>
 
-            <span class="movie__price">80.000 đ</span>
+            <span class="movie__price">${movie.purchased? 'Đã Mua' : movie.price.rent}</span>
           </p>
         </div>
       </div>

@@ -12,7 +12,9 @@
   @extend %btn;
   color: $color-gray;
   background: $color-tertiary;
+  border: thin solid $color-gray;
   &:hover {
+    border: thin solid $color-normal;
     color: $color-while;
     background: $color-normal;
   }

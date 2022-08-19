@@ -3,9 +3,16 @@ import icons from 'url:../../imgs/icons.svg';
 class WishlistView {
   _data;
   _parentElement = document.querySelector('.header__wishlist');
+  _buyBtnElement = this._parentElement.querySelector('.buy__btn');
 
   addHandlerRender(handler) {
     window.addEventListener('load', handler);
+  }
+
+  addHandlerClickBuyWishlist(handler) {
+    this._buyBtnElement.addEventListener('click', () => {
+      handler();
+    })
   }
 
   // render card movie
