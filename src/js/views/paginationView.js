@@ -19,8 +19,6 @@ class PaginationView {
   }
 
   _generateMarkup() {
-    console.log(this._prefix)
-
     let curPage = this._data.page;
     console.log('🚀 ~ PaginationView ~ _generateMarkup ~ curPage', curPage)
     let numPages = this._data.totalPages;

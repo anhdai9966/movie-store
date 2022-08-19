@@ -194,7 +194,7 @@ export default class View {
 
             <div class="card__overlay"></div>
 
-            <button data-id="${movie.id}" class="card__btn-wishlist card__btn--wishlist">
+            <button data-id="${movie.id}" class="card__btn-wishlist card__btn--wishlist hidden">
               <svg class="card__icon">
                 <use href="${icons}#icon-bookmark${movie.bookmarked? '-fill': ''}"></use>
               </svg>

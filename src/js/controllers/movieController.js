@@ -1,10 +1,12 @@
 import * as model from '../models/movieModel.js';
+import * as modelShare from '../models/model.js';
 
 import headerView from '../views/headerView.js';
 import sidebarView from '../views/sidebarView.js';
 import searchView from '../views/searchView.js';
 import bannerView from '../views/bannerView.js';
 import gototopView from '../views/gototopView.js';
+import seachedView from '../views/seachedView.js';
 
 import paginationView from '../views/paginationView.js';
 import movieCardView from '../views/movieCardView.js';
@@ -12,20 +14,67 @@ import movieNavResultView from '../views/movieNavResultView.js';
 import movieNavBtnView from '../views/movieNavBtnView.js';
 import trailerView from '../views/trailerView.js';
 import movieLayout from '../layouts/movieLayout.js';
+import wishlistCardView from '../views/wishlistCardView.js';
+import bannerSearchView from '../views/bannerSearchView.js';
 
 
 const controlHeader = function () {
   headerView.addHandlerShowSidebar(controlSidebar);
-  headerView.addHandlerShowSearch(controlSearch);
+  headerView.addHandlerShowSearch(controlHeaderSearch);
 };
+
+const controlClickSearch = function () {
+  headerView.handlerHideAccount();
+  headerView.handlerHideWishlist();
+}
+
+const controlClickAccount = function () {
+  headerView.handlerHideWishlist();
+  searchView.handlerShowSearch();
+}
 
 const controlSidebar = function () {
   sidebarView.addHandlerShowSidebar();
 };
 
-const controlSearch = function () {
-  searchView.addHandlerShowSearch();
+const controlSearch = async function () {
+  try {  
+    // 1) Get search query
+    const query = searchView.getQuery();
+
+    if (!query) {
+      searchView.addHandlerSearchListClear();
+      searchView.addHandlerShowPopularList();
+      seachedView.addHandlerShowSearched();
+      return;
+    } 
+    
+    // 2) Load search results
+    await modelShare.loadSearch(query);
+    // 3) Render results
+    searchView.addHandlerHiddenPopularList();
+    seachedView.addHandlerHiddenSearched();
+    searchView.addHandlerRenderResultSearch(modelShare.state.search.results);
+  } catch (err) {
+    console.log(err);
+  }
 };
+
+const controlSeached = function () {
+  const query = searchView.getQuery();
+  modelShare.addSearched(query);
+  seachedView.render(modelShare.state.searched);
+}
+
+const controlHeaderSearch = async function () {
+  searchView.addHandlerShowSearch();
+  searchView.addHandlerShowPopularList();
+  // load dữ liệu phổ biến
+  await modelShare.loadPopular();
+  // render dữ liệu
+  searchView.addHandlerSuggest(modelShare.state.popular);
+  seachedView.render(modelShare.state.searched);
+}
 
 const controlBanner = async function () {
   await model.loadMovie80();
@@ -113,15 +162,58 @@ const controlAddBookmark = function (id) {
   model.addBookmark(id);
   
   movieCardView.update(model.state.movies);
-  console.log(model.state.bookmarks)
+
   movieCardView.render(model.state.bookmarks);
+
+  controlWishList();
+}
+const controlRemoveWishlist = function (id) {
+  // 1) Thêm/xóa bookmark
+  model.removeBookmark(id);
+  
+  movieCardView.update(model.state.movies);
+
+  movieCardView.render(model.state.bookmarks);
+
+  controlWishList();
+}
+
+const controlWishList = function () {
+  wishlistCardView.render(model.state.bookmarkLocal);
+}
+
+const controlSearchResult = async function (value) {
+  await model.loadSearch(value);
+  movieCardView.render(model.state.movies);
+}
+
+const controlSetQuery = function (title) {
+  searchView.setQuery(title)
+  controlSearch();
+}
+
+const controlDeleteQuery = function (title) {
+  modelShare.deleteSearched(title);
+  seachedView.render(modelShare.state.searched);
 }
 
 const init = function () {
+  document.title = 'MovieStore | Trang phim';
   movieCardView.addHandlerRender(controlMovieCard);
   movieCardView.addHandlerAddBookmark(controlAddBookmark);
   headerView.addHandlerRender(controlHeader);
+  headerView.addHandlerRenderWishList(controlWishList);
+  headerView.addHandlerClickSearch(controlClickSearch)
+  headerView.addHandlerClickAccount(controlClickAccount);
   bannerView.addHandlerRender(controlBanner);
   movieNavBtnView.addHandlerRender(controlNavBtn);
+  searchView.addHandlerSearchInput(controlSearch);
+  searchView.addHandlerChangeInput(controlSearch);
+  wishlistCardView.addHandlerRender(controlWishList);
+  wishlistCardView.addHandlerRemoveCard(controlRemoveWishlist);
+  bannerSearchView.addHandlerSubmit(controlSearchResult);
+  searchView.addHandlerClickSearched(controlSeached);
+  seachedView.addHandlerSearchedClick(controlSetQuery);
+  seachedView.addHandlerClickDelete(controlDeleteQuery);
 }
 init();

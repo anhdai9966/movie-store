@@ -15,6 +15,7 @@ const controlNewsDetail = async function () {
     newsDetailView.renderSpinner();
     await model.loadDetails(id);
     newsDetailView.render(model.state.detailNews);
+    document.title = `MovieStore | ${model.state.detailNews.title}`;
   } catch (error) {
     console.log(error)
   }

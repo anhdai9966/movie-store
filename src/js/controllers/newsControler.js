@@ -51,7 +51,6 @@ const controlHeaderSearch = async function () {
 }
 
 const controlWishList = async function () {
-  console.log(model.state.bookmarks);
   wishlistCardView.render(model.state.bookmarks);
 }
 
@@ -77,10 +76,8 @@ const controlPagination = function (prefix) {
   paginationView.render(model.state.pages, prefix);
 }
 
-
-
 const init = function () {
-  document.title = 'Báo phim mới';
+  document.title = 'Tin tức phim';
   headerView.addHandlerRender(controlHeader);
   newsGridView.addHandlerRender(controlNewsGrid);
   searchView.addHandlerSearchInput(controlSearch);

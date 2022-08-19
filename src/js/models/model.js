@@ -76,15 +76,19 @@ const persistSearched = function () {
 
 export const addSearched = function (word) {
   // Add bookmark
-  state.searched.push(word);
+  const searched = {
+    title: word,
+  }
+  if (state.searched.some(w => w.title == word)) return ;
+  state.searched.push(searched);
 
   persistSearched();
 };
 
-export const deleteSearched = function (id) {
+export const deleteSearched = function (title) {
   // Delete search
-  const index = state.searched.findIndex(el => el == id);
-  state.bookmarks.splice(index, 1);
+  const index = state.searched.findIndex(el => el.title == title);
+  state.searched.splice(index, 1);
 
   persistSearched();
 };

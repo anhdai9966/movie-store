@@ -1,6 +1,6 @@
 import icons from 'url:../../imgs/icons.svg';
 
-import { pathPictureW235, getVoteAverage } from '../shared/helpers.js';
+import { pathPictureW220, getVoteAverage } from '../shared/helpers.js';
 
 class WishlistView {
   _data;
@@ -19,8 +19,7 @@ class WishlistView {
   render(data) {
     this._data = data;
     // lấy đánh dấu
-    let markup
-    console.log(data.length, data);
+    let markup;
     if (data.length == 0) {
       markup = this._generateMarkupEmpty();
       this._btnElement.classList.add('hidden');
@@ -34,6 +33,15 @@ class WishlistView {
     this._parentElement.insertAdjacentHTML('afterbegin', markup);
   }
 
+  addHandlerRemoveCard(handler) {
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('.card__btn--remove');
+      if(!btn) return ;
+      const id = btn.dataset.id;
+      handler(id);
+    })
+  }
+
   _generateMarkup() {
     return this._data.map(this._generateMarkupCard).join('');
   }
@@ -41,8 +49,8 @@ class WishlistView {
   _generateMarkupCard(movie) {
     return /*html */ `
       <div class="popupWishlist__card">
-        <a href="#" class="card__link movie__poster">
-          <img src="${pathPictureW235(movie.posterPath)}" alt="${movie.title}" loading="lazy" />
+        <a href="./detail.html#${movie.id}" class="card__link movie__poster">
+          <img src="${pathPictureW220(movie.posterPath)}" alt="${movie.title}" loading="lazy" />
         </a>
 
         <div class="wrapper">
@@ -58,7 +66,7 @@ class WishlistView {
           </p>
         </div>
 
-        <button class="card__btn card__btn--remove">
+        <button data-id="${movie.id}" class="card__btn card__btn--remove">
           <svg class="card__icon">
             <use href="${icons}#icon-dismiss"></use>
           </svg>

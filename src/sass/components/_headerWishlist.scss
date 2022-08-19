@@ -8,6 +8,7 @@
   width: 35rem;
   padding-block: 2.4rem;
   border-radius: $border-radius-out;
+  transition: top .6s ease-out;
   .wishlist__title {
     display: flex;
     align-items: center;

@@ -17,6 +17,7 @@
         flex: 0 0 auto;
         width: calc(100% / var(--cd-col));
         scroll-snap-align: start;
+        margin-bottom: 3rem;
         @media (min-width: $sm) {
           --cd-col: 3;
         }

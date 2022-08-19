@@ -11,6 +11,7 @@
   }
   .movie__poster {
     width: 40%;
+    flex-shrink: 0;
     > * {
       border-radius: .8rem;
     }
@@ -29,5 +30,8 @@
       width: 2.5rem;
       height: 2.5rem;
     }
+  }
+  .wrapper {
+    width: 100%;
   }
 }

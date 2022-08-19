@@ -5,7 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Danh sách phim" />
-    <title>Document</title>
+    <link rel="shortcut icon" href="../../imgs/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../imgs/favicon.ico" type="image/x-icon">
+    <title>MovieStore</title>
     <link rel="stylesheet" href="../../sass/pages/movie.scss">
     <script type="module" defer src="../../js/controllers/movieController.js"></script>
   </head>
@@ -71,7 +73,7 @@
 
             <li class="nav__item shown-lg">
               <button class="nav__btn navMore__btn movie__btn--toggle">
-                <span>Phim</span>
+                <span style="color: #FF3B30;">Phim</span>
                 <svg class="nav__icon--small">
                   <use href="../../imgs/icons.svg#icon-caret"></use>
                 </svg>
@@ -403,6 +405,17 @@
           </svg>
         </form>
 
+        <ul class="search__results">
+          <!-- <li class="search__item">
+          <a href="#" class="search__link">
+            <svg class="search__icon">
+              <use href="../../imgs/icons.svg#icon-search"></use>
+            </svg>
+            <span>Thế giới khủng long: Lãnh địa</span>
+          </a>
+        </li> -->
+        </ul>
+
         <ul class="search__searched">
           <!-- <li class="search__item">
           <a href="#" class="search__link">
@@ -415,23 +428,25 @@
         </li> -->
         </ul>
 
-        <p class="suggest__title">
-          <svg class="search__icon">
-            <use href="../../imgs/icons.svg#icon-trending"></use>
-          </svg>
-          <span>Phim thịnh hành</span>
-        </p>
-
-        <ul class="search__suggest">
-          <!-- <li class="search__item">
-          <a href="#" class="search__link">
+        <div class="suggest__wrapper">
+          <p class="suggest__title">
             <svg class="search__icon">
-              <use href="../../imgs/icons.svg#icon-search"></use>
+              <use href="../../imgs/icons.svg#icon-trending"></use>
             </svg>
-            <span>Thế giới khủng long: Lãnh địa</span>
-          </a>
-        </li> -->
-        </ul>
+            <span>Phim thịnh hành</span>
+          </p>
+  
+          <ul class="search__suggest">
+            <!-- <li class="search__item">
+            <a href="#" class="search__link">
+              <svg class="search__icon">
+                <use href="../../imgs/icons.svg#icon-search"></use>
+              </svg>
+              <span>Thế giới khủng long: Lãnh địa</span>
+            </a>
+          </li> -->
+          </ul>
+        </div>
       </div>
     </div>
     <!-- __________ End search __________ -->
@@ -482,7 +497,7 @@
           </div>
 
           <div class="form__wrapper">
-            <form class="search__form">
+            <form class="search__form banner__form--search">
               <label class="input__group">
                 <input type="text" name="text__search" id="text__search" class="text__search"/>
                 <label for="text__search" class="placeholder">Tìm kiếm phim</label>
@@ -501,7 +516,7 @@
         <nav class="main__nav">
           <ul class="nav__list">
             <li class="nav__item">
-              <a href="#" class="nav__btn nav__sort">Lọc theo tên</a>
+              <a href="#sort_by=original_title.asc" class="nav__btn nav__sort">Lọc theo tên</a>
             </li>
 
             <li class="nav__item">

@@ -74,7 +74,7 @@ class HomeCard1m6View extends homeView {
               </a>
 
               <p class="card__hover-info2">
-                <span>${getGenresId(movie.genreIds[0])}</span> - <span>${getYear(movie.releaseDate)}</span> - <span>Chỉ từ 80.000 đ</span>
+                <span>${getGenresId(movie.genreIds[0])}</span> - <span>${getYear(movie.releaseDate)}</span>
               </p>
 
               <button data-title="${movie.originalTitle}" class="card__link-btn card__btn--trailer">Trailer</button>

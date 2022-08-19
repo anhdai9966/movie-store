@@ -96,6 +96,22 @@ class HeaderView extends View {
     this._wishlistBtnToggle.nextElementSibling.classList.toggle('hidden');
   }
 
+  addHandlerRenderWishList(handler) {
+    this._wishlistBtnToggle.addEventListener('click', () => {
+      handler();
+    })
+  }
+  addHandlerClickSearch(handler) {
+    this._searchBtnToggle.addEventListener('click', () => {
+      handler();
+    })
+  }
+  addHandlerClickAccount(handler) {
+    this._accountBtnToggle.addEventListener('click', () => {
+      handler();
+    })
+  }
+
   // Thêm xử lý toggle wishlist
   _addHandlerShowWishlist() {
     this._wishlistBtnToggle.addEventListener('click', this.handlerShowWishlist.bind(this));
@@ -167,7 +183,6 @@ class HeaderView extends View {
         this.handlerHiddenNavMore();
         this.handlerHiddenNavMoreMovie();
         this.handlerHideAccount();
-        this.handlerHideWishlist();
       };
     })
   }
@@ -183,11 +198,11 @@ class HeaderView extends View {
         this.handlerHiddenNavMore();
         this.handlerHiddenNavMoreMovie();
         this.handlerHideAccount();
-        this.handlerHideWishlist();
+        this._wishlistBtnToggle.nextElementSibling.style.top = '-500px';
         height = heightCurrent;
       } else {
         this._parentElement.style.top = "0";
-
+        this._wishlistBtnToggle.nextElementSibling.style.top = 'calc(100% + 1rem)';
         heightCurrent == 54 ?
         this._parentElement.style.background = "transparent" :
         this._parentElement.style.background = "#181818";

@@ -1,5 +1,4 @@
 const cardGridElment = document.querySelector('.card__grid');
-const containerElement = document.querySelector('.container');
 
 cardGridElment.addEventListener('mouseover', e => { 
   // lấy dúng sự kiện tại phần tử trailer
@@ -18,8 +17,10 @@ cardGridElment.addEventListener('mouseover', e => {
   const offsetLeft = parentElement.offsetLeft + parentElement.offsetWidth;
 
   // kiểm tra nếu nó vượt quá container thì di chuyển overview sang trái
-  if (offsetLeft >= containerElement.offsetWidth ) {
+  if (offsetLeft >= cardGridElment.offsetWidth ) {
     movieOverview.style.left = `calc(50% - 2.5rem - ${cardDescriptionWidth}px)`;
+  } else {
+    movieOverview.style.left = `calc(50% + 2.5rem)`;
   };
 }, true); // true là ưu tiên sự kiện con trước
 

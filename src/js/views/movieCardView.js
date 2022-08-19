@@ -25,7 +25,6 @@ class MovieCardView {
       if(!trailerBtn) return ;
       e.preventDefault();
       const title = trailerBtn.dataset.title
-      console.log('🚀 ~ MovieCardView ~ document.addEventListener ~ title', title)
       handler(title);
     })
   }

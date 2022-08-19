@@ -61,6 +61,7 @@ const controlDetailBanner = async function () {
     handlerScrollRender(700, controlKeywords, flag[2]);
     // đưa trang lên top
     detailBannerView.addHandlerClickTrailer(controlTrailer);
+    document.title = `MovieStore | ${model.state.detail.title}`;
   } catch (error) {
     console.log(error)
   }
