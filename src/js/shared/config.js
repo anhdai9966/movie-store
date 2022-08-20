@@ -21,12 +21,22 @@ export const googleSheetNews = {
 }
 
 export const googleSheetUsers = {
-  API_KEY: 'https://script.google.com/macros/s/AKfycbxgQZshMYOdwu4ySbhyfNwhRgmJ2vUUtzOxEW4HOvvMKu7gfqA-Z0rOQyBFg-fU8Y8vPQ/exec'
+  API_KEY: 'https://script.google.com/macros/s/AKfycbxgQZshMYOdwu4ySbhyfNwhRgmJ2vUUtzOxEW4HOvvMKu7gfqA-Z0rOQyBFg-fU8Y8vPQ/exec',
 }
 
 // API https://mockapi.io/
 export const mockapi = {
-  API_URL: 'https://62c46f2c7d83a75e39f9dad7.mockapi.io/api/'
+  API_URL: 'https://62c46f2c7d83a75e39f9dad7.mockapi.io/api/',
+}
+
+// API user
+export const googleUsers = {
+  API_KEY: 'https://script.google.com/macros/s/AKfycbxgQZshMYOdwu4ySbhyfNwhRgmJ2vUUtzOxEW4HOvvMKu7gfqA-Z0rOQyBFg-fU8Y8vPQ/exec',
+}
+
+// v2 https://script.google.com/macros/s/AKfycbw08pAHnPpTt3fUjXyMcJOK6vfAkh_3gd_XIlnjw7Bhhxum6bi9FtKv7agyc0RB5vaY/exec
+export const googleInfoUsers = {
+  API_KEY: 'https://script.google.com/macros/s/AKfycbw08pAHnPpTt3fUjXyMcJOK6vfAkh_3gd_XIlnjw7Bhhxum6bi9FtKv7agyc0RB5vaY/exec',
 }
 
 // // JSON movie80
@@ -39,3 +49,11 @@ export const TIMEOUT_SEC = 10;
 export const ERROR_MESSAGE = 'Liên kết có thể bị hỏng hoặc trang này có thể đã bị gỡ.';
 
 export const MESSAGE_DONT_BUY_CART = 'Tính năng mua bằng tiền không khả dụng';
+
+export const MESSAGE_ERROR_ACCOUNT = 'Email hoặc mật khẩu của bạn nhập không chính xác!';
+export const MESSAGE_CORRECT_ACCOUNT = 'Đăng nhập thành công';
+export const MESSAGE_NOT_SUPPORT = 'Ứng dụng này chưa được hỗ trợ';
+
+export const CONFIRM_NUMBER = '123';
+export const MESSAGE_CONFIRM = 'Mã xác nhận không đúng';
+export const MESSAGE_CONFIRM_ERROR_CREATE = 'Tài khoản này đã tồn tại';

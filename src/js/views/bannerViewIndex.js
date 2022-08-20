@@ -6,13 +6,23 @@ class BannerView extends View {
 
   _gridWrapper = this._parentElement.querySelector('.grid__wrapper');
 
-  _emailInput = this._parentElement.querySelector('.email__input');
+  _emailInput = this._parentElement.querySelector('.top__email');
   _placeholder = this._parentElement.querySelector('.placeholder');
-
+  _linkSignupElement = this._parentElement.querySelector('.sign-up__btn');
   constructor() {
     super();
     this._addHandlerFocusInput();
     this._addHandlerBlurInput();
+  }
+
+  getValueEmail() {
+    return this._emailInput.value;
+  }
+
+  addHandlerClickLinkSignup(handler) {
+    this._linkSignupElement.addEventListener('click', (e) => {
+      handler();
+    })
   }
 
   handlerFocusInput() {

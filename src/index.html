@@ -18,6 +18,12 @@
       </svg>
     </button>
 
+    <div class="message__wrapper hidden">
+      <!-- <div class="message__main">
+        <p class="message__content">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+      </div> -->
+    </div>
+
     <!-- *__________ Start header __________ -->
     <header class="headerIndex">
       <div class="container">
@@ -90,16 +96,16 @@
               </h6>
               <form class="sign-up">
                 <label class="input__wrapper">
-                  <input type="email" name="email" id="email" class="email__input" maxlength="50" />
-                  <label for="email" class="placeholder">Địa chỉ email</label>
+                  <input type="email" name="top__email" id="top__email" class="email__input top__email" maxlength="50" />
+                  <label for="top__email" class="placeholder">Địa chỉ email</label>
                 </label>
 
-                <button class="sign-up__btn">
+                <a href="./html/pages/signup.html" class="sign-up__btn">
                   <span>Bắt đầu</span>
                   <svg class="right__icon">
                     <use href="./imgs/icons.svg#icon-right"></use>
                   </svg>
-                </button>
+                </a>
               </form>
             </div>
           </div>
@@ -250,10 +256,10 @@
             <form class="section-5__form">
               <input
                 type="email"
-                name="email__bottom"
-                id="email__bottom"
+                name="bottom__email"
+                id="bottom__email"
                 placeholder="Địa chỉ email"
-                class="email__input"
+                class="email__input bottom__email"
               />
               <button class="signup__btn">
                 <span>Bắt đầu</span>
@@ -272,27 +278,27 @@
     <div class="signin__popup hidden">
       <div class="signin__wrapper">
         <div class="signin__list">
-          <form class="signin__item">
+          <form class="signin__item" onsubmit="return false">
             <h2>Đăng nhập.</h2>
     
             <div class="signin__input-group email__group">
-              <input type="email" name="email__input" id="email__input">
-              <label for="email__input" class="placeholder__input">Email</label>
-              <span class="signin__messeger">lỗi</span>
+              <input type="email" name="email__input" id="email__input" class="email__input email__signin" placeholder="Email">
+              <span class="signin__messeger"></span>
+              <label for="email__input" class="placeholder__input hidden">Email</label>
             </div>
     
             <div class="signin__input-group password__group">
-              <input type="password" name="password__input" id="password__input">
-              <label for="password__input" class="placeholder__input">Mật khẩu</label>
-              <span class="signin__messeger">lỗi</span>
+              <input type="password" name="password__input" id="password__input" class="password__signin" placeholder="Mật khẩu">
+              <span class="signin__messeger"></span>
+              <label for="password__input" class="placeholder__input hidden">Mật khẩu</label>
             </div>
             
     
-            <button type="button" class="signin__btn">Đăng nhập</button>
+            <button type="button" class="signin__btn button--signin">Đăng nhập</button>
   
             <div class="signin__group signin__checkbox">
               <div class="checkbox__group">
-                <input type="checkbox" name="signin__checkbox" id="signin__checkbox"/>
+                <input type="checkbox" name="signin__checkbox" id="signin__checkbox" class="checkbox--signin"/>
                 <label for="signin__checkbox">Nhớ cho lần đăng nhập tiếp theo</label>
               </div>
               <button class="signin__btn-para signin__btn--forgetpassword">Quên mật khẩu?</button>

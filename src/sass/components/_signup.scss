@@ -1,0 +1,87 @@
+.signup {
+  &__wrapper {
+    display: grid;
+    grid-template-rows: 5.4rem 1fr;
+    gap: 10vh;
+    margin-bottom: 5rem;
+  }
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__logo {
+    width: 14rem;
+    height: 3rem;
+  }
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3.6rem;
+    border-radius: $border-radius-in;
+    background: $color-primary;
+    font-weight: bold;
+    color: $color-while;
+  }
+  &__signin {
+    width: 15rem;
+  }
+  &__content {
+    padding: 1rem;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: $border-radius-out;
+    background: $color-tertiary;
+    @media (min-width:$sm) {
+      width: 50rem;
+      padding: 3rem;
+    }
+    .input__group {
+      display: flex;
+      flex-flow: column;
+      row-gap: 2.4rem;
+      > * {
+        flex-grow: 1;
+        border-radius: $border-radius-in;
+        height: 4.6rem;
+      }
+      input {
+        color: $color-tertiary;
+        padding-left: 2rem;
+      }
+      .messega {
+        height: 2.4rem;
+        margin-top: -18px;
+      }
+    }
+    .text__group {
+      display: flex;
+      flex-flow: column;
+      row-gap: 1.2rem;
+    }
+  }
+  &__create_credit,
+  &__create_info,
+  &__confirm,
+  &__create {
+    display: flex;
+    flex-flow: column;
+    row-gap: 4rem;
+    .credit__btn {
+      background-color: $color-while;
+      color: $color-tertiary;
+      display: flex;
+      align-items: center;
+      padding-left: 2rem;
+    }
+  }
+  &__btn_create_credit {
+    background: $color-normal;
+    width: 10rem;
+    align-self: flex-end;
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}

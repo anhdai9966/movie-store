@@ -1,6 +1,6 @@
 .message {
   &__wrapper {
-    position: absolute;
+    position: fixed;
     top: 6.4rem;
     right: 1rem; // -300px
     width: calc(100% - 2rem);

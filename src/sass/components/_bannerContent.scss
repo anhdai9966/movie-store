@@ -66,19 +66,21 @@
         .input__wrapper {
           position: relative;
           width: 100%;
+          border-radius: $border-radius-out;
+          overflow: hidden;
           @media (min-width: $sm) {
             width: fit-content;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
           }
           .email__input {
             color: $color-tertiary;
+            background: $color-while;
             width: 100%;
             height: 4.9rem;
-            border-radius: $border-radius-out;
             padding-left: 1rem;
             @media (min-width: $sm) {
               width: 35rem;
-              border-top-right-radius: 0;
-              border-bottom-right-radius: 0;
             }
             @media (min-width: $md) {
               width: 50rem;

@@ -15,6 +15,8 @@ class BannerView extends View {
     this._addHandlerBlurInput();
   }
 
+
+
   handlerFocusInput() {
     const placeholderStyle = {
       'top': 0,

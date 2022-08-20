@@ -156,3 +156,14 @@ export function getCertification(us) {
 export function numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 }
+
+export function validateEmail(value, message) 
+{
+  const regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  return regex.test(value) ? undefined : message || 'Trường này phải là email';
+}
+
+export function validatePassword(value, min, message) {
+  return value.length >= min ? undefined : message || `Vui lòng nhập tối thiểu ${min} kí tự`;
+}
+

@@ -34,6 +34,8 @@ const controlHeader = function () {
 const controlClickSearch = function () {
   headerView.handlerHideAccount();
   headerView.handlerHideWishlist();
+  searchView.clearInput();
+  searchView.addHandlerSearchListClear();
 }
 
 const controlClickAccount = function () {

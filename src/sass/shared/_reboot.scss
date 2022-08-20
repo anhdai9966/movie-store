@@ -120,6 +120,7 @@ label {
 button:focus:not(:focus-visible) {
   outline: 0;
 }
+
 input,
 button,
 select,
@@ -205,4 +206,7 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type=number] {
   -moz-appearance: textfield;
+}
+button:disabled {
+  cursor: not-allowed;
 }

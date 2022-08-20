@@ -29,7 +29,7 @@ class SearchView extends View {
     this._searchInput.value = value;
   }
 
-  _clearInput() {
+  clearInput() {
     this._searchInput.value = '';
   }
 
