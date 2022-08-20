@@ -21,7 +21,7 @@ class SignupCreditView {
 
   _addHandlerClickCredit() {
     this._signupBtnCredit.addEventListener('click', () => {
-      window.location.assign('../../index.html');
+      window.location.assign('../../html/pages/home.html');
     })
   }
 };
