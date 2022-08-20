@@ -47,9 +47,9 @@ const controlSignin = async function (email, password) {
     controlCheckboxSignin();
     controlMessage(MESSAGE_CORRECT_ACCOUNT);
     // chờ 1 giây rồi tải trang home
-    // setTimeout(() => {
-    //   window.location.assign('../../html/pages/home.html');
-    // }, 1000);
+    setTimeout(() => {
+      window.location.assign('../../html/pages/home.html');
+    }, 1000);
   } else {
     controlMessage(MESSAGE_ERROR_ACCOUNT);
   };
