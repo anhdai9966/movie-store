@@ -77,12 +77,11 @@ export const loadMovies = async function (prefix, pg) {
         bookmarked: bm,
         price: {
           buy: 210000,
-          rent: 60000,
+          rent: 80000,
         },
         purchased: pur,
       };
     });
-
     const { page, total_pages, total_results } = data;
 
     state.pages = {

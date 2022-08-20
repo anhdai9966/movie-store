@@ -40,6 +40,7 @@ class PopupWishlistBuyView {
 
   _generateMarkup() {
     // tính giá trừ
+    console.log(this._data);
     let totalPiece = 0;
     this._data.forEach(movie => {
       totalPiece += movie.price.buy;

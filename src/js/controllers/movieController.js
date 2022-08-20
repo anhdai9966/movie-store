@@ -226,6 +226,7 @@ const controlPopupWishlistBuy = function () {
 
 const controlWishlistXu = function () {
   model.setXu(5000000);
+  console.log(model.state.bookmarkLocal);
   popupWishlistXuView.renderXu(model.state.bookmarkLocal, model.state.xu);
   popupWishlistBtnView.render(model.state.bookmarkLocal);
 }
