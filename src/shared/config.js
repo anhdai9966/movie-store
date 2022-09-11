@@ -89,6 +89,9 @@ export const NOTIFICATION_WRONG_PASSWORD = 'Mật khẩu nhập lại không ch�
 export const WARNING_TITLE_SIGNOUT = 'Bạn có muốn đăng xuất!';
 export const NOTIFICATION_ERROR_CREATE = 'Email hoặc mật khẩu nhập chưa chính xác';
 export const NOTIFICATION_CONFIRM_ERROR_CREATE = 'Tài khoản này đã tồn tại';
+export const NOTIFICATION_CONFIRM_CORRECT = 'Xác nhận thành công';
+export const NOTIFICATION_CONFIRM = 'Sai mã xác nhận';
+
 
 // tạo các breakpoint min width và maxwidth
 export const BREAKPOINTS_MIN_WIDTH_1 = [
