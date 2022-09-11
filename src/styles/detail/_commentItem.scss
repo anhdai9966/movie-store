@@ -1,0 +1,43 @@
+.comment {
+  &__list {
+    display: flex;
+    flex-flow: column;
+    row-gap: 1.2rem;
+    p {
+      color: $color-gray-6;
+    }
+  }
+  &__item {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    row-gap: .8rem;
+    margin-block: 1rem;
+  }
+  &__account {
+    display: flex;
+    column-gap: 1.2rem;
+    align-items: center;
+  }
+  &__icon {
+    width: 3rem;
+    height: 3rem;
+  }
+  &__rate {
+    display: flex;
+    column-gap: 1.2rem;
+    align-items: center;
+  }
+  &__content {
+    @include text-truncate(5);
+  }
+  &__btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: $color-gray-6;
+    &:hover {
+      color: $color-white;
+    }
+  }
+}

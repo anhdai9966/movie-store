@@ -1,0 +1,49 @@
+
+%center-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pagination {
+  &__list {
+    height: 4.9rem;
+    margin-block: 4.4rem;
+    border-radius: 1.1rem;
+    color: $color-gray-6;
+    background: $color-gray-1;
+    font-weight: bold;
+    @extend %center-flex;
+    column-gap: 0.2rem;
+  }
+  &__item {
+    width: 6rem;
+    height: 4.3rem;
+    border-radius: .8rem;
+    @extend %center-flex;
+    &:not(.disabled):hover {
+      color: $color-white;
+      background: $color-gray-3;
+    }
+    &-mobile {
+      width: 15rem;
+    }
+    &-active {
+      color: $color-white;
+      background: $color-gray-3;
+    }
+  }
+  &__icon {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+  &__link {
+    width: 100%;
+    height: 100%;
+    @extend %center-flex;
+    column-gap: .8rem;
+  }
+}
+
+.disabled {
+  cursor: not-allowed;
+}

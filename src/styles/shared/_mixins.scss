@@ -1,0 +1,19 @@
+@mixin text-truncate($numberLine: 1) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $numberLine;
+  -webkit-box-orient: vertical;
+}
+@mixin position($val, $pos) {
+  position: $val;
+  @if $pos == 'center' {
+    --po: 50%;
+    transform: translate(-50%, -50%);
+  } @else if $pos == 'full' {
+    bottom: 0;
+    right: 0;
+  }
+  top: var(--po, 0);
+  left: var(--po, 0);
+}

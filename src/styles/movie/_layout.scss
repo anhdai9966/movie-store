@@ -1,0 +1,13 @@
+.card__grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.4rem;
+  @media (min-width: $md) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  @media (min-width: $xl) {
+    // grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+  }
+}

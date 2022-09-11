@@ -4,41 +4,215 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Trang demo bán phim - by CD">
-    <title>MovieStore</title>
-    <link rel="shortcut icon" href="./imgs/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="./imgs/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="./sass/pages/index.scss" />
-    <script type="module" defer src="./js/controllers/indexController.js"></script>
+    <meta name="description" content="Trang giới thiệu MovieStore">
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="./images/favicon.ico" type="image/x-icon" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/indexStyle.scss" />
+    <script type="module" src="./controllers/indexController.js"></script>
   </head>
   <body>
-    <button class="goToTop">
-      <svg class="goToTop__icon">
-        <use href='./imgs/icons.svg#icon-up'></use>
+    <!-- *__________ Start go to top __________ -->
+    <button class="gototop hidden-maw-sm">
+      <svg class="gototop__icon">
+        <use href="./images/icons.svg#icon-up"></use>
       </svg>
     </button>
+    <!-- __________ End go to top __________ -->
 
-    <div class="message__wrapper hidden">
-      <!-- <div class="message__main">
-        <p class="message__content">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <!-- *__________ Start notification __________ -->
+    <div class="notification hidden">
+      <!-- <div class="notification__wrapper--transition-x">
+      <p class="notification__content">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    </div> -->
+    </div>
+    <!-- __________ End notification __________ -->
+
+    <!-- *__________ Start loading spinner __________ -->
+    <!-- <div class="loading">
+      <svg class="loading__spinner">
+        <use href='./images/icons.svg#icon-loading'></use>
+      </svg>
+    </div> -->
+    <!-- __________ End loading spinner __________ -->
+
+    <!-- *__________ Start visualcompletion __________ -->
+    <div class="visualcompletion hidden"></div>
+    <!-- __________ End visualcompletion  __________ -->
+
+    <!-- *__________ Start popup warning __________ -->
+    <div class="warning hidden">
+      <!-- <div class="warning__overlay"></div>
+      <div class="warning__wrapper">
+        <h6 class="warning__title">Bạn có muốn đăng xuất</h6>
+        <button class="btn-secondary warning__cancel">Đóng</button>
+        <button class="btn-primary warning__ok">OK</button>
       </div> -->
     </div>
+    <!-- __________ End popup warning __________ -->
+
+    <!-- *__________ Start discover __________ -->
+    <div class="discover hidden-maw-md">
+      <div class="discover__wrapper">
+        <div class="discover__header">
+          <img src="./images/app-movie.png" alt="app movie" class="discover__img" />
+
+          <div class="discover__overlay"></div>
+
+          <svg class="discover__logo">
+            <use href="./images/icons.svg#icon-moviestore"></use>
+          </svg>
+
+          <h3 class="discover__title">Nếu bạn chưa sẵn sàng đăng ký thành viên</h3>
+        </div>
+
+        <div class="discover__main">
+          <p>Dạo một vòng để khám phá thôi!</p>
+          <a href="./home.html" class="btn-primary">Khám phá</a>
+        </div>
+
+        <button class="btn__close">
+          <svg class="btn__icon">
+            <use href="./images/icons.svg#icon-xmark"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <!-- __________ End discover __________ -->
+
+    <!-- *__________ Start signin __________ -->
+    <div class="signin hidden">
+      <div class="overlay signin__overlay"></div>
+
+      <div class="signin__wrapper">
+        <div class="signin__list">
+          <form class="signin__item signin__form">
+            <h2>Đăng nhập.</h2>
+
+            <div class="signin__input-group email__group">
+              <input type="email" required name="email" id="email__input" class="email__input email__signin" placeholder="Email" />
+
+              <span class="signin__messenger hidden"></span>
+
+              <label for="email__input" class="placeholder__input hidden">Email</label>
+            </div>
+
+            <div class="signin__input-group password__group">
+              <input type="password" required name="password" id="password__input" class="password__signin" placeholder="Mật khẩu" />
+
+              <span class="signin__messenger hidden"></span>
+
+              <label for="password__input" class="placeholder__input hidden">Mật khẩu</label>
+            </div>
+
+            <button class="signin__btn button--signin">Đăng nhập</button>
+
+            <div class="signin__group signin__checkbox">
+              <div class="checkbox__group">
+                <input type="checkbox" name="signin__checkbox" id="signin__checkbox" class="checkbox--signin" />
+
+                <label for="signin__checkbox">Nhớ cho lần đăng nhập tiếp theo</label>
+              </div>
+
+              <button class="signin__btn-para signin__btn--forgetpassword">Quên mật khẩu?</button>
+            </div>
+
+            <div class="signin__group">
+              <p>Bạn là thành viên mới?</p>
+              <a href="./signup.html" class="signup__link">Đăng ký ngay.</a>
+            </div>
+          </form>
+
+          <form class="signin__item forgetpassword__form hidden">
+            <h2>Bạn quên mật khẩu?</h2>
+
+            <p>Nhập email của bạn.</p>
+
+            <div class="signin__input-group">
+              <input type="email" required name="email" id="email__forget" placeholder="Email" class="forgetpassword__email" />
+              
+              <span class="signin__messenger hidden"></span>
+
+              <label for="email__forget" class="placeholder__input hidden">Email</label>
+            </div>
+
+            <button class="signin__btn signin__btn--continue">Tiếp tục</button>
+          </form>
+
+          <form class="signin__item confirm__form hidden">
+            <h2>Nhập mã xác minh.</h2>
+
+            <div class="signin__input-group">
+              <input type="text" name="confirm" id="number__confirm" class="confirm__number" placeholder="Mã xác minh" />
+
+              <label for="number__confirm" class="placeholder__input hidden">Mã xác minh</label>
+
+              <span class="signin__messenger hidden"></span>
+            </div>
+
+            <button class="signin__btn signin__btn--confirm">OK</button>
+          </form>
+
+          <form class="signin__item createPassword__form hidden">
+            <h2>Tạo mật khẩu mới.</h2>
+
+            <div class="signin__input-group">
+              <input type="password" name="new__password" id="new__password" placeholder="Nhập mật khẩu" class="createPassword__input" />
+
+              <span class="signin__messenger hidden"></span>
+
+              <label for="new__password" class="placeholder__input hidden">Nhập mật khẩu</label>
+            </div>
+
+            <div class="signin__input-group">
+              <input type="password" name="enter__password" id="enter__password" placeholder="Nhập lại mật khẩu" class="createPassword__input_repeat" />
+              
+              <span class="signin__messenger hidden"></span>
+
+              <label for="enter__password" class="placeholder__input hidden">Nhập lại mật khẩu</label>
+            </div>
+
+            <button class="signin__btn signin__btn--createPassword">OK</button>
+          </form>
+
+          <div class="signin__item createPassword__done hidden">
+            <h2>Tạo mật khẩu thành công.</h2>
+
+            <svg class="signin__icon--done">
+              <use href="./images/icons.svg#icon-done"></use>
+            </svg>
+
+            <button class="signin__btn signin__btn--done">Đăng nhập</button>
+          </div>
+        </div>
+
+        <button class="btn__close">
+          <svg class="btn__icon">
+            <use href="./images/icons.svg#icon-xmark"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <!-- __________ End signin __________ -->
 
     <!-- *__________ Start header __________ -->
-    <header class="headerIndex">
+    <header class="header header-not-account">
       <div class="container">
-        <nav class="nav">
-          <ul class="nav__list">
-            <li class="nav__item">
-              <a href="./html/pages/home.html" class="nav__logo">
-                <img src="./imgs/logo.png" alt="logo moviestore" />
+        <nav class="header__nav">
+          <ul class="header__nav-list">
+            <li class="header__nav-item">
+              <a href="./index.html" class="header__logo">
+                <img src="./images/logo.png" alt="logo moviestore" />
               </a>
             </li>
           </ul>
 
-          <ul class="nav__list">
-            <li class="nav__item">
-              <button class="signIn__btn sigin__btn--open-modal">Đăng nhập</button>
+          <ul class="header__nav-list">
+            <li class="header__nav-item header__signin">
+              <button class="btn-primary header__btn">Đăng nhập</button>
+            </li>
+            <li class="header__nav-item header__signout hidden">
+              <button class="btn-primary header__btn">Đăng xuất</button>
             </li>
           </ul>
         </nav>
@@ -47,405 +221,282 @@
     <!-- __________ End header __________ -->
 
     <!-- *__________ Start banner __________ -->
-      <section class="banner">
-        <div class="windows">
-          <div class="view-3d">
-            <div class="rotate">
-              <div class="wrapper">
-                <div class="animation">
-                  <div class="grid__wrapper">
-                    <!-- <div class="card__grid">
+    <section class="banner">
+      <div class="windows">
+        <div class="view-3d">
+          <div class="rotate">
+            <div class="wrapper">
+              <div class="animation">
+                <div class="grid__wrapper">
+                  <!-- <div class="card__grid">
                     <div class="banner-card__item">
                       <a href="#" class="movie__link">
-                        <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/xeg0UhMmzSalvyK7kvhTHcKXIf8.jpg" class="movie__poster" loading="lazy">
+                        <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/xeg0UhMmzSalvyK7kvhTHcKXIf8.jpg" class="movie__poster" loading="lazy" />
                         <div class="card__overlay"></div>
                         <h6 class="movie__title">Thế giới khủng long</h6>
                       </a>
                     </div>
                   </div>
-  
+
                   <div class="card__grid">
                     <div class="banner-card__item">
                       <a href="#" class="movie__link">
-                        <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/xeg0UhMmzSalvyK7kvhTHcKXIf8.jpg" class="movie__poster" loading="lazy">
+                        <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/xeg0UhMmzSalvyK7kvhTHcKXIf8.jpg" class="movie__poster" loading="lazy" />
                         <div class="card__overlay"></div>
                         <h6 class="movie__title">Thế giới khủng long</h6>
                       </a>
                     </div>
-  
                   </div> -->
-                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
-        <div class="overlay"></div>
-
-        <div class="container">
-          <div class="content">
-            <div class="title">
-              <h1 class="banner__title">Xem phim không giới hạn và còn hơn thế nữa.</h1>
-              <h3 class="banner__subtitle">Xem ở bất cứ đâu. Hủy bất cứ lúc nào.</h3>
-            </div>
-
-            <div class="form__wrapper">
-              <h6 class="sign-up__title">
-                Bạn đã sẵn sàng xem chưa? Nhập email của bạn để tạo hoặc bắt đầu lại với tư cách thành viên.
-              </h6>
-              <form class="sign-up">
-                <label class="input__wrapper">
-                  <input type="email" name="top__email" id="top__email" class="email__input top__email" maxlength="50" />
-                  <label for="top__email" class="placeholder">Địa chỉ email</label>
-                </label>
-
-                <a href="./html/pages/signup.html" class="sign-up__btn">
-                  <span>Bắt đầu</span>
-                  <svg class="right__icon">
-                    <use href="./imgs/icons.svg#icon-right"></use>
-                  </svg>
-                </a>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
-
-    <!-- __________ End banner __________ -->
-
-    <!-- *__________ Start discover __________ -->
-    <div class="discover__popup">
-      <div class="discover__card">
-        <div class="card__header">
-          <div class="card__overlay"></div>
-  
-          <svg class="card__logo">
-            <use href='./imgs/icons.svg#icon-moviestore'></use>
-          </svg>
-  
-          <h3 class="card__title">Nếu bạn chưa sẵn sàng đăng ký thành viên</h3>
-          
-        </div>
-  
-        <div class="card__main">
-          <p>Dạo một vòng để khám phá thôi!</p>
-          <a href="./html/pages/home.html" class="discover__link">Khám phá</a>
-        </div>
-  
-        <button type="button" class="btn__close">
-          <svg class="btn__icon">
-            <use href='./imgs/icons.svg#icon-xmark'></use>
-          </svg>
-        </button>
       </div>
-    </div>
-    <!-- __________ End discover __________ -->
 
-    <!-- *__________ Start main __________ -->
-    <main class="introduce">
-      <section class="intro__section-1">
-        <div class="container">
-          <div class="section-1">
-            <div class="section-1__text">
-              <h2>Đăng ký ngay hôm nay.</h2>
-              <p>Để nhận khuyến mại cực lớn từ chương trình với hai phim đặc sắc.</p>
-              <a href="./html/pages/detail.html?id=123" class="sign-up__link" title="Đăng ký ngay"
-                >Đăng ký ngay
-                <svg class="arrow__icon">
-                  <use href="./imgs/icons.svg#icon-arrow-next"></use>
-                </svg>
-              </a>
-            </div>
+      <div class="banner__overlay"></div>
 
-            <div class="section-1__gift">
-              <div class="gift__shadow"></div>
-              <div class="gift__list">
-                <!-- <div class="banner-card__item">
-                  <a href="#" class="movie__link">
-                    <img
-                      src="https://www.themoviedb.org/t/p/w220_and_h330_face/xeg0UhMmzSalvyK7kvhTHcKXIf8.jpg"
-                      class="movie__poster"
-                      loading="lazy"
-                    />
-                    <div class="card__overlay"></div>
-                    <h6 class="movie__title">Thế giới khủng long</h6>
-                  </a>
-                </div> -->
-              </div>
-            </div>
+      <div class="container">
+        <div class="banner__content">
+          <div class="banner__wrapper">
+            <h1 class="banner__title">Xem phim không giới hạn và<br />còn hơn thế nữa.</h1>
+
+            <h5 class="banner__subtitle">Xem ở bất cứ đâu. Hủy bất cứ lúc nào.</h5>
+
           </div>
-        </div>
-      </section>
-
-      <section class="intro__section-2">
-        <div class="container">
-          <div class="section-2">
-            <div class="section-2__gift">
-              <div class="gift__shadow"></div>
-              <div class="card__list">
-                <!-- <div class="banner-card__item">
-                  <a href="#" class="movie__link">
-                    <img
-                      src="https://www.themoviedb.org/t/p/w220_and_h330_face/xeg0UhMmzSalvyK7kvhTHcKXIf8.jpg"
-                      class="movie__poster"
-                      loading="lazy"
-                    />
-                    <div class="card__overlay"></div>
-                    <h6 class="movie__title">Thế giới khủng long</h6>
-                  </a>
-                </div> -->
-              </div>
-            </div>
-
-            <div class="section-2__text">
-              <h2>Xem trực tuyến.</h2>
-              <p>Giải trí với những bộ phim bom tấn của Hollywood.</p>
-              <a href="./html/pages/home.html" class="sign-up__link" title="Khám phá ngay"
-                >Khám phá ngay
-                <svg class="arrow__icon">
-                  <use href="./imgs/icons.svg#icon-arrow-next"></use>
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="intro__section-3">
-        <div class="container">
-          <div class="section-3">
-            <h2>Xem mọi lúc mọi nơi.</h2>
-            <p>Phát trực tuyến không giới hạn trên điện thoại, máy tính bảng, máy tính xách tay.</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="intro__section-4">
-        <div class="container">
-          <div class="section-4">
-            <div class="section-4__text">
-              <h2>Bạn có smartphone, muốn cả kho phim trong tầm tay.</h2>
-              <p>Chạm vào màn hình và giải trí ngay thôi.</p>
-
-              <div class="download-app__btn">
-                <button class="google-play__btn" title="Google Play">
-                  <svg class="google-play__icon">
-                    <use href="./imgs/imgs.svg#icon-google-play-white"></use>
-                  </svg>
-                </button>
-                <button class="app-store__btn" title="App Store">
-                  <svg class="app-store__icon">
-                    <use href="./imgs/imgs.svg#icon-app-store-white"></use>
-                  </svg>
-                </button>
-              </div>
-            </div>
-
-            <div class="section-4__image">
-              <img src="./imgs/app-movie.png" alt="app movie store" loading="lazy" class="app-movie__img" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="intro__section-5">
-        <div class="container">
-          <div class="section-5">
-            <h5>Bạn đã sẵn sàng xem chưa? Nhập email của bạn để tạo hoặc bắt đầu lại với tư cách thành viên.</h5>
-            <form class="section-5__form">
-              <input
-                type="email"
-                name="bottom__email"
-                id="bottom__email"
-                placeholder="Địa chỉ email"
-                class="email__input bottom__email"
-              />
-              <button class="signup__btn">
+          
+          <div class="banner__wrapper banner__signup">
+            <p class="banner__subtitle-2">Bạn đã sẵn sàng xem chưa? Nhập email của bạn để tạo hoặc bắt đầu lại với tư cách thành viên.</p>
+            <form class="banner__form">
+              <label class="input__wrapper">
+                <input type="email" name="email" id="banner__input-email" class="input__email" maxlength="50" />
+  
+                <label for="banner__input-email" class="input__placeholder">Địa chỉ email</label>
+              </label>
+  
+              <button class="banner__btn btn-primary">
                 <span>Bắt đầu</span>
-                <svg class="signup__icon">
-                  <use href="./imgs/icons.svg#icon-right"></use>
+  
+                <svg class="btn__icon">
+                  <use href="./images/icons.svg#icon-right"></use>
                 </svg>
               </button>
             </form>
           </div>
+
+          <div class="banner__wrapper banner__logged hidden">
+            <p class="banner__subtitle-2">Hãy bắt đầu để xem những bộ phim bom tất được cập nhật liên tục.</p>
+
+            <a href="./home.html" class="btn-primary banner__btn_link">
+              <span>Xem ngay</span>
+
+              <svg class="btn__icon">
+                <use href="./images/icons.svg#icon-right"></use>
+              </svg>
+            </a>
+          </div>
         </div>
-      </section>
+      </div>
+    </section>
+    <!-- __________ End banner __________ -->
+
+    <!-- *__________ Start main __________ -->
+    <main class="introduce">
+      <div class="container">
+        <section class="section-1">
+          <div class="section-1__wrap-2">
+            <h3>Đăng ký ngay hôm nay.</h3>
+            <p>Để nhận khuyến mại cực lớn từ chương trình với hai phim đặc sắc.</p>
+
+            <a href="./signup.html" class="btn-secondary section__btn" title="Đăng ký ngay"
+              >Đăng ký ngay
+
+              <svg class="btn__icon">
+                <use href="./images/icons.svg#icon-arrow-next"></use>
+              </svg>
+            </a>
+          </div>
+
+          <div class="section-1__wrap-1">
+            <div class="section-1__list">
+              <!-- <div class="pic__item">
+                <a href="#" class="pic__link">
+                  <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/ujr5pztc1oitbe7ViMUOilFaJ7s.jpg" alt="movie" />
+
+                  <div class="pic__overlay"></div>
+
+                  <h6 class="pic__title">Thế giới khủng long</h6>
+                </a>
+              </div> -->
+            </div>
+          </div>
+        </section>
+
+        <section class="section-2">
+          <div class="section-2__wrap-1">
+            <div class="section-2__list">
+              <!-- <div class="pic__item">
+                <a href="#" class="pic__link">
+                  <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/ujr5pztc1oitbe7ViMUOilFaJ7s.jpg" alt="movie" />
+
+                  <div class="pic__overlay"></div>
+
+                  <h6 class="pic__title">Thế giới khủng long</h6>
+                </a>
+              </div> -->
+            </div>
+          </div>
+
+          <div class="section-2__wrap-2">
+            <h3>Xem trực tuyến.</h3>
+            <p>Giải trí với những bộ phim bom tấn của Hollywood.</p>
+
+            <a href="./home.html" class="btn-secondary section__btn" title="Khám phá ngay"
+              >Khám phá ngay
+              <svg class="btn__icon">
+                <use href="./images/icons.svg#icon-arrow-next"></use>
+              </svg>
+            </a>
+          </div>
+        </section>
+
+        <section class="section-3">
+          <h3>Xem mọi lúc mọi nơi.</h3>
+          <p>Phát trực tuyến không giới hạn trên điện thoại, máy tính bảng, máy tính xách tay.</p>
+        </section>
+
+        <section class="section-4">
+          <div class="section-4__wrap-1">
+            <h3>
+              Bạn có smartphone,<br />
+              muốn cả kho phim <br />
+              trong tầm tay.
+            </h3>
+
+            <p>Chạm vào màn hình và giải trí ngay thôi.</p>
+
+            <div class="section-4__btn">
+              <button class="google-play__btn" title="Google Play">
+                <svg class="google-play__icon">
+                  <use href="./images/imgs.svg#icon-google-play-white"></use>
+                </svg>
+              </button>
+
+              <button class="app-store__btn" title="App Store">
+                <svg class="app-store__icon">
+                  <use href="./images/imgs.svg#icon-app-store-white"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="section-4__wrap-2">
+            <img src="./images/app-movie.png" alt="app movie store" class="app-movie__img" />
+          </div>
+        </section>
+
+        <section class="section-5">
+          <div class="section-5__signup">
+            <h6>Bạn đã sẵn sàng xem chưa? Nhập email của bạn để tạo hoặc bắt đầu lại với tư cách thành viên.</h6>
+  
+            <form class="section-5__form">
+              <input type="email" name="email" id="section-5__email" placeholder="Địa chỉ email" class="section-5__email" />
+  
+              <button class="btn-primary section-5__btn">
+                <span>Bắt đầu</span>
+  
+                <svg class="btn__icon">
+                  <use href="./images/icons.svg#icon-right"></use>
+                </svg>
+              </button>
+            </form>
+          </div>
+
+          <div class="section-5__logged hidden">
+            <h6>Hãy bắt đầu để xem những bộ phim bom tất được cập nhật liên tục.</h6>
+
+            <a href="./home.html" class="btn-primary section-5__btn_link">
+              <span>Xem ngay</span>
+
+              <svg class="btn__icon">
+                <use href="./images/icons.svg#icon-right"></use>
+              </svg>
+            </a>
+          </div>
+        </section>
+      </div>
     </main>
     <!-- __________ End main __________ -->
-
-    <!-- *__________ Start popup signin __________ -->
-    <div class="signin__popup hidden">
-      <div class="signin__wrapper">
-        <div class="signin__list">
-          <form class="signin__item" onsubmit="return false">
-            <h2>Đăng nhập.</h2>
-    
-            <div class="signin__input-group email__group">
-              <input type="email" name="email__input" id="email__input" class="email__input email__signin" placeholder="Email">
-              <span class="signin__messeger"></span>
-              <label for="email__input" class="placeholder__input hidden">Email</label>
-            </div>
-    
-            <div class="signin__input-group password__group">
-              <input type="password" name="password__input" id="password__input" class="password__signin" placeholder="Mật khẩu">
-              <span class="signin__messeger"></span>
-              <label for="password__input" class="placeholder__input hidden">Mật khẩu</label>
-            </div>
-            
-    
-            <button type="button" class="signin__btn button--signin">Đăng nhập</button>
-  
-            <div class="signin__group signin__checkbox">
-              <div class="checkbox__group">
-                <input type="checkbox" name="signin__checkbox" id="signin__checkbox" class="checkbox--signin"/>
-                <label for="signin__checkbox">Nhớ cho lần đăng nhập tiếp theo</label>
-              </div>
-              <button class="signin__btn-para signin__btn--forgetpassword">Quên mật khẩu?</button>
-            </div>
-      
-            <div class="signin__group">
-              <p>Bạn là thành viên mới?</p>
-              <a href="#" class="signup__link">Đăng ký ngay.</a>
-            </div>
-          </form>
-  
-          <form class="signin__item hidden">
-            <h2>Bạn quên mật khẩu?</h2>
-  
-            <p>Nhập email của bạn.</p>
-  
-            <div class="signin__input-group">
-              <input type="email" name="email__forget" id="email__forget">
-              <label for="email__forget" class="placeholder__input">Email</label>
-              <span class="signin__messeger">lỗi</span>
-            </div>
-  
-            <button class="signin__btn signin__btn--continue">Tiếp tục</button>
-          </form>
-  
-          <form class="signin__item hidden">
-            <h2>Nhập mã xác minh.</h2>
-  
-            <div class="signin__input-group">
-              <input type="number" name="number__confirm" id="number__confirm">
-              <label for="number__confirm" class="placeholder__input">Mã xác minh</label>
-              <span class="signin__messeger">lỗi</span>
-            </div>
-  
-            <button class="signin__btn signin__btn--confirm">OK</button>
-          </form>
-  
-          <form class="signin__item hidden">
-            <h2>Tạo mật khẩu mới.</h2>
-  
-            <div class="signin__input-group">
-              <input type="password" name="new__password" id="new__password">
-              <label for="new__password" class="placeholder__input">Nhập mật khẩu</label>
-              <span class="signin__messeger">lỗi</span>
-            </div>
-  
-            <div class="signin__input-group">
-              <input type="password" name="enter__password" id="enter__password">
-              <label for="enter__password" class="placeholder__input">Nhập lại mật khẩu</label>
-              <span class="signin__messeger">lỗi</span>
-            </div>
-  
-            <button class="signin__btn signin__btn--createPassword">OK</button>
-          </form>
-  
-          <div class="signin__item hidden">
-            <h2>Tạo mật khẩu thành công.</h2>
-  
-            <svg class="signin__icon--done">
-              <use href='./imgs/icons.svg#icon-done'></use>
-            </svg>
-  
-            <button class="signin__btn signin__btn--done">Đăng nhập</button>
-          </div>
-  
-        </div>
-  
-        <button class="btn__close">
-          <svg class="btn__icon">
-            <use href='./imgs/icons.svg#icon-xmark'></use>
-          </svg>
-        </button>
-      </div>
-    </div>
-    <!-- __________ End popup signin __________ -->
 
     <!-- *__________ Start footer __________ -->
     <footer class="footer">
       <div class="container">
-        <div class="footer__icon">
-          <a href="#" class="social-icon__link">
-            <svg>
-              <use href="./imgs/icons.svg#icon-facebook"></use>
+        <div class="footer__wrapper">
+          <a href="#" class="footer__link">
+            <svg class="footer__icon">
+              <use href="./images/icons.svg#icon-facebook"></use>
             </svg>
           </a>
 
-          <a href="#" class="social-icon__link">
-            <svg>
-              <use href="./imgs/icons.svg#icon-instagram"></use>
+          <a href="#" class="footer__link">
+            <svg class="footer__icon">
+              <use href="./images/icons.svg#icon-instagram"></use>
             </svg>
           </a>
 
-          <a href="#" class="social-icon__link">
-            <svg>
-              <use href="./imgs/icons.svg#icon-twitch"></use>
+          <a href="#" class="footer__link">
+            <svg class="footer__icon">
+              <use href="./images/icons.svg#icon-twitch"></use>
             </svg>
           </a>
 
-          <a href="#" class="social-icon__link">
-            <svg>
-              <use href="./imgs/icons.svg#icon-twitter"></use>
+          <a href="#" class="footer__link">
+            <svg class="footer__icon">
+              <use href="./images/icons.svg#icon-twitter"></use>
             </svg>
           </a>
 
-          <a href="#" class="social-icon__link">
-            <svg>
-              <use href="./imgs/icons.svg#icon-youtube"></use>
+          <a href="#" class="footer__link">
+            <svg class="footer__icon">
+              <use href="./images/icons.svg#icon-youtube"></use>
             </svg>
           </a>
         </div>
 
         <div class="footer__nav">
-          <a href="#">Trang chủ</a>
+          <a href="./home.html">Trang chủ</a>
 
-          <a href="#">Phim mới</a>
+          <a href="./movie.html">Phim mới</a>
 
-          <a href="#">Phim sắp phát hành</a>
+          <a href="./movie.html#upcoming">Phim sắp phát hành</a>
 
-          <a href="#">Tin tức</a>
+          <a href="./news.html">Tin tức</a>
 
-          <a href="#">Người nổi tiếng</a>
+          <a href="./people.html">Người nổi tiếng</a>
 
-          <a href="#">Trailer mới</a>
+          <a href="./trailer.html">Trailer mới</a>
         </div>
 
         <div class="footer__nav">
-          <a href="#">Tài khoản</a>
+          <a href="./account.html">Tài khoản</a>
 
-          <a href="#">Phim của tôi</a>
+          <a href="./account.html#2">Phim của tôi</a>
 
-          <a href="#">Danh sách mong muốn</a>
+          <a href="./account.html#3">Danh sách yêu thích</a>
 
-          <a href="#">Lịch sử đã xem</a>
+          <a href="./account.html#4">Lịch sử đã xem</a>
         </div>
 
-        <div class="footer__moviestore">
-          <a href="#" class="ms-logo">
-            <svg class="logo__icon">
-              <use href="./imgs/icons.svg#icon-moviestore"></use>
-            </svg>
-          </a>
-        </div>
+        <a href="./home.html" class="footer__logo">
+          <svg class="logo__icon">
+            <use href="./images/icons.svg#icon-moviestore"></use>
+          </svg>
+        </a>
 
         <div class="footer__moviestore">
-          <a href="#">Thông tin</a>
+          <a href="./information.html">Thông tin</a>
 
-          <a href="#">Giới thiệu</a>
+          <a href="./index.html#1">Giới thiệu</a>
 
           <a href="#">Liên hệ: 1900 **00</a>
         </div>

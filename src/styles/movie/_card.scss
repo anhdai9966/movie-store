@@ -1,0 +1,76 @@
+.detail {
+  .card {
+    &__item {
+      display: flex;
+      flex-flow: column;
+      row-gap: 1.2rem;
+    }
+    &__wrap {
+      position: relative;
+      display: flex;
+      flex-flow: column;
+      row-gap: .8rem;
+      &:hover {
+        .card__btn-trailer {
+          opacity: 1;
+        }
+      }
+    }
+    &__img {
+      border-radius: 1.1rem;
+    }
+    &__btn {
+      &-wishlist {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+      }
+      &-trailer {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: opacity .3s;
+        opacity: 0;
+        display: none;
+        @media (min-width: $md) {
+          display: block;
+        }
+        &:hover {
+          + .card__overview {
+            display: -webkit-box;
+          }
+        }
+      }
+    }
+    &__icon {
+      &-play {
+        width: 5rem;
+        height: 5rem;
+      }
+      &-wishlist {
+        width: 2.2rem;
+        height: 2.2rem;
+      }
+    }
+    &__overview {
+      @include text-truncate(3);
+      color: $color-gray-6;
+      &-popup {
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: calc(50% + 2.5rem);
+        z-index: 10;
+        width: 20rem;
+        background-color: $color-gray-1;
+        border: 1rem solid $color-gray-1;
+        border-radius: 1.1rem;
+      }
+    }
+    &__title {
+      @include text-truncate();
+      font-weight: bold;
+    }
+  }
+}

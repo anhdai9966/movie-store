@@ -1,0 +1,23 @@
+.collection {
+  &__card {
+    display: flex;
+    column-gap: 2.4rem;
+    &:hover {
+      background: $color-gray-1;
+      border-radius: 1.1rem;
+    }
+  }
+  &__image {
+    overflow: hidden;
+    border-radius: 1.1rem;
+    flex-basis: 40%;
+  }
+  &__wrap {
+    display: flex;
+    flex-flow: column;
+    row-gap: 1.2rem;
+  }
+  &__genres {
+    color: $color-gray-6;
+  }
+}

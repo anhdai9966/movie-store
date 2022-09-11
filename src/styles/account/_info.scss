@@ -1,0 +1,33 @@
+.avatar {
+  margin-block: 10rem 5rem;
+  display: flex;
+  flex-flow: column;
+  row-gap: 2.4rem;
+  align-items: center;
+  &__icon {
+    width: 5rem;
+    height: 5rem;
+  }
+}
+.account {
+  &__info {
+    color: $color-gray-6;
+    &_list {
+      display: flex;
+      flex-flow: column;
+      row-gap: 1.2rem;
+    }
+    &_item {
+      display: flex;
+      column-gap: 2.4rem;
+      > span:first-child {
+        flex-shrink: 0;
+        flex-basis: 50%;
+        text-align: end;
+        @media (min-width: $sm) {
+          flex-basis: 50%;
+        }
+      }
+    }
+  }
+}

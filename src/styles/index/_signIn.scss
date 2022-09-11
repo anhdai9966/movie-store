@@ -1,0 +1,137 @@
+%underline__wavy {
+  text-decoration: underline;
+  text-decoration-style: wavy;
+}
+.signin {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  &__wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 120;
+    transform: translate(-50%, -50%);
+    background-color: $color-gray-1;
+    border-radius: 1.1rem;
+    padding: 2.8rem;
+    width: calc(100% - 2rem);
+    height: fit-content;
+    transition: all 0.3s ease-out;
+    @media (min-width: $sm) {
+      padding: 5rem;
+      width: fit-content;
+    }
+  }
+  &__list {
+    display: flex;
+    align-items: center;
+    .checkbox__group {
+      display: flex;
+      align-items: center;
+      column-gap: 1rem;
+    }
+    .signin__icon--done {
+      width: 8rem;
+      height: 8rem;
+      margin: 3rem auto;
+    }
+  }
+  &__item {
+    display: flex;
+    flex-flow: column;
+    row-gap: 2rem;
+    width: 43rem;
+    > h2 {
+      margin-bottom: 3rem;
+    }
+  }
+  &__group {
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+    color: $color-gray-6;
+    justify-content: center;
+    @media (min-width: $sm) {
+      justify-content: flex-start;
+    }
+    > a {
+      flex-shrink: 0;
+      color: $color-white;
+      &:hover {
+        color: $color-primary;
+        @extend %underline__wavy;
+      }
+    }
+  }
+  &__checkbox {
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+    row-gap: 1.6rem;
+    column-gap: 1rem;
+    color: $color-gray-6;
+    margin-block: 1.6rem;
+    @media (min-width: $sm) {
+      flex-flow: row;
+      justify-content: space-between;
+    }
+    > button {
+      justify-self: flex-end;
+    }
+  }
+  &__input-group {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    row-gap: .8rem;
+    position: relative;
+    > input {
+      width: 100%;
+      height: 4.9rem;
+      padding-inline: 1.8rem;
+      color: $color-gray-6;
+      background-color: #282828;
+      border-radius: .8rem;
+      &:hover {
+        background-color: #303030;
+      }
+      &:focus {
+        background-color: #313131;
+        + label {
+          display: none;
+        }
+      }
+    }
+    > label {
+      display: block;
+      position: absolute;
+      top: 1.25rem;
+      left: 1.8rem;
+    }
+    > span {
+      color: #d70015;
+      font-size: 1.4rem;
+    }
+  }
+  &__btn {
+    width: 100%;
+    height: 4.9rem;
+    color: $color-white;
+    background-color: $color-primary;
+    border-radius: .8rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__btn-para {
+    &:hover {
+      color: $color-white;
+      @extend %underline__wavy;
+    }
+  }
+}

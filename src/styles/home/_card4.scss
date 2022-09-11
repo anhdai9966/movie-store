@@ -1,0 +1,42 @@
+.card-4 {
+  .card {
+    &__list {
+      display: flex;
+      column-gap: 2.4rem;
+    }
+    &__item {
+      --cd-col: 3;
+      flex: 0 0 auto;
+      width: calc((100% - 2.4rem * (var(--cd-col) - 1)) / var(--cd-col));
+      scroll-snap-align: start;
+      &:hover {
+        background: $color-gray-2;
+        border-radius: .8rem;
+      }
+      @media (min-width: $md) {
+        --cd-col: 4;
+      }
+      @media (min-width: $lg) {
+        --cd-col: 5;
+      }
+      @media (min-width: $xl) {
+        --cd-col: 6;
+      }
+    }
+    &__link {
+      display: flex;
+      flex-flow: column;
+      row-gap: 1.2rem;
+      text-align: center;
+      > p {
+        color: $color-gray-6;
+      }
+    }
+    &__img {
+      border-radius: 50%;
+    }
+    &__info {
+      @include text-truncate(2);
+    }
+  }
+}

@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./styles/account.scss">
+  <script type="module" src="./controllers/accountController.js"></script>
+</head>
+<body>
+  <!-- *__________ Start go to top __________ -->
+  <button class="gototop hidden-maw-sm">
+    <svg class="gototop__icon">
+      <use href="./images/icons.svg#icon-up"></use>
+    </svg>
+  </button>
+  <!-- __________ End go to top __________ -->
+
+  <!-- *__________ Start notification __________ -->
+  <div class="notification hidden">
+    <!-- <div class="notification__wrapper--transition-x">
+  <p class="notification__content">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+</div> -->
+  </div>
+  <!-- __________ End notification __________ -->
+
+  <!-- *__________ Start loading spinner __________ -->
+  <!-- <div class="loading">
+  <svg class="loading__spinner">
+    <use href='./images/icons.svg#icon-loading'></use>
+  </svg>
+</div> -->
+  <!-- __________ End loading spinner __________ -->
+
+  <!-- *__________ Start visualcompletion __________ -->
+  <div class="visualcompletion hidden"></div>
+  <!-- __________ End visualcompletion  __________ -->
+
+  <!-- *__________ Start popup warning __________ -->
+  <div class="warning hidden">
+    <!-- <div class="warning__overlay"></div>
+  <div class="warning__wrapper">
+    <h6 class="warning__title">Bạn có muốn đăng xuất</h6>
+    <button class="btn-secondary warning__cancel">Đóng</button>
+    <button class="btn-primary warning__ok">OK</button>
+  </div> -->
+  </div>
+  <!-- __________ End popup warning __________ -->
+
+  <!-- *__________ Start popup trailer  __________ -->
+  <div class="trailer hidden">
+    <div class="overlay trailer__overlay"></div>
+
+    <div class="trailer__wrapper">
+      <div class="trailer__main"></div>
+
+      <button class="btn__close trailer__btn--close">
+        <svg class="btn__icon">
+          <use href="./images/icons.svg#icon-xmark"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <!-- __________ End popup trailer  __________ -->
+
+  <!-- *__________ Start popup genres __________ -->
+  <div class="genres__popup hidden">
+    <div class="overlay genres__overlay"></div>
+
+    <div class="genres__wrapper">
+      <div class="genres__list">
+        <!-- <a href="#" class="genres__item">Phim Gia Đình</a> -->
+      </div>
+
+      <button type="button" class="btn__close genres__btn--close">
+        <svg class="btn__icon">
+          <use href="./images/icons.svg#icon-xmark"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <!-- __________ End popup genres __________ -->
+
+  <!-- *__________ Start header not account __________ -->
+  <header class="header header-not-account hidden">
+    <div class="container">
+      <nav class="header__nav">
+        <ul class="header__nav-list">
+          <li class="header__nav-item">
+            <a href="./index.html" class="header__logo">
+              <img src="./images/logo.png" alt="logo moviestore" />
+            </a>
+          </li>
+        </ul>
+
+        <ul class="header__nav-list">
+          <li class="header__nav-item header__signin">
+            <a href="./index.html#signin" class="btn-primary header__btn">Đăng nhập</a>
+          </li>
+          <li class="header__nav-item header__signout hidden">
+            <button class="btn-primary header__btn">Đăng xuất</button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- __________ End header not account __________ -->
+
+  <!-- *__________ Start header account __________ -->
+  <div class="header__overlay hidden"></div>
+
+  <header class="header header-account">
+    <div class="container">
+      <nav class="header__nav">
+        <ul class="header__nav-list">
+          <li class="header__nav-item hidden-miw-lg">
+            <button class="header__btn header__btn-sidebar--open">
+              <svg class="header__icon">
+                <use href="./images/icons.svg#icon-menu"></use>
+              </svg>
+            </button>
+          </li>
+
+          <li class="header__nav-item">
+            <a href="./home.html" class="header__logo">
+              <img src="./images/logo.png" alt="logo moviestore" />
+            </a>
+          </li>
+
+          <li class="header__nav-item hidden-maw-lg">
+            <button class="header__btn header__btn-movie--toggle">
+              <span>Phim</span>
+
+              <svg class="header__icon-small">
+                <use href="./images/icons.svg#icon-caret"></use>
+              </svg>
+            </button>
+
+            <!-- *__________ Start header dropdown __________ -->
+            <ul class="header__popup header__dropdown header__dropdown-movie hidden">
+              <li class="header__dropdown-item">
+                <a class="header__link" href="./movie.html">Phim Thịnh Hành</a>
+              </li>
+
+              <li class="header__dropdown-item">
+                <a class="header__link" href="./movie.html#top_rate">Bảng Xếp Hạng</a>
+              </li>
+
+              <li class="header__dropdown-item">
+                <a class="header__link" href="./movie.html#upcoming">Phim Sắp Phát Hành</a>
+              </li>
+            </ul>
+            <!-- __________ End header__dropdown __________ -->
+          </li>
+
+          <div class="header__nav-item hidden-maw-lg">
+            <a href="./trailer.html" class="header__link">Trailer</a>
+          </div>
+
+          <div class="header__nav-item hidden-maw-lg">
+            <a href="./news.html" class="header__link">Tin tức</a>
+          </div>
+
+          <li class="header__nav-item hidden-maw-lg">
+            <button class="header__btn header__btn-more--toggle">
+              <span>Hơn Nữa</span>
+
+              <svg class="header__icon-small">
+                <use href="./images/icons.svg#icon-caret"></use>
+              </svg>
+            </button>
+
+            <!-- *__________ Start header__dropdown __________ -->
+            <ul class="header__popup header__dropdown header__dropdown-more hidden">
+              <li class="header__dropdown-item">
+                <button class="header__btn header__dropdown-genres">Thể loại</button>
+              </li>
+
+              <li class="header__dropdown-item">
+                <button class="header__btn header__dropdown-countries">Quốc gia</button>
+              </li>
+
+              <li class="header__dropdown-item">
+                <button class="header__btn header__dropdown-year">Năm Phát Hành</button>
+              </li>
+
+              <li class="header__dropdown-item">
+                <a class="header__link" href="./people.html">Người Nổi Tiếng</a>
+              </li>
+            </ul>
+            <!-- __________ End header__dropdown __________ -->
+          </li>
+        </ul>
+
+        <ul class="header__nav-list">
+          <li class="header__nav-item hidden-maw-sm hidden">
+            <button class="header__btn header__btn-wishlist--toggle">
+              <svg class="header__icon">
+                <use href="./images/icons.svg#icon-bookmark"></use>
+              </svg>
+            </button>
+
+            <!-- *__________ Start wishlist __________ -->
+            <div class="header__popup header__wishlist hidden">
+              <div class="header__wishlist-wrap">
+                <svg class="header__icon">
+                  <use href="./images/icons.svg#icon-bookmark-fill"></use>
+                </svg>
+
+                <h6>Danh sách yêu thích</h6>
+              </div>
+
+              <div class="header__wishlist-wrap">
+                <div class="header__wishlist-wrapper">
+                  <div class="card__list">
+                    <!-- <div class="card__item">
+                      <a href="#" class="card__link card__image">
+                        <img src="https://www.themoviedb.org/t/p/w500/xeg0UhMmzSalvyK7kvhTHcKXIf8.jpg" alt="movie" loading="lazy" />
+                      </a>
+
+                      <div class="card__wrapper">
+                        <a href="#" class="card__link">Thế giới khủng long</a>
+
+                        <p class="card__wrap">
+                          <span class="">
+                            <span class="">7.0</span>
+
+                            <svg class="star__icon">
+                              <use href="./images/icons.svg#icon-star-fill"></use>
+                            </svg>
+                          </span>
+
+                          <span class="">80.000 đ</span>
+                        </p>
+                      </div>
+
+                      <button class="card__btn card__btn--remove">
+                        <svg class="header__icon">
+                          <use href="./images/icons.svg#icon-dismiss"></use>
+                        </svg>
+                      </button>
+                    </div> -->
+
+                    <!-- <div class="header__wishlist-empty hidden">
+                      <svg class="empty__icon">
+                        <use href="./images/icons.svg#icon-list-empty"></use>
+                      </svg>
+
+                      <p class="">Oops!<br />Bạn hãy chọn phim yêu thích!</p>
+                    </div> -->
+                  </div>
+                </div>
+              </div>
+
+              <div class="header__wishlist-wrap header__btn-wishlist">
+                <a href="./account.html#3" class="btn-secondary header__link">Xem</a>
+
+                <button class="btn-primary header__btn header__btn-wishlist--buy">Mua</button>
+              </div>
+            </div>
+            <!-- __________ End wishlist __________ -->
+          </li>
+
+          <li class="header__nav-item">
+            <button class="header__btn header__btn-account--toggle">
+              <svg class="header__icon">
+                <use href="./images/icons.svg#icon-user"></use>
+              </svg>
+            </button>
+
+            <!-- *__________ Start account __________ -->
+            <div class="header__popup header__account hidden">
+              <ul class="header__account-wrap">
+                <li class="header__account-item">
+                  <!-- <div class="account__item">
+                    <div class="header__icon">
+                      <div class="account__status"></div>
+                    </div>
+
+                    <div class="">
+                      <p>Hi, anhdai9966</p>
+                      <p style="color: #ff9500; font-weight: normal">3200 xu</p>
+                    </div>
+                  </div> -->
+                </li>
+
+                <li class="header__account-item">
+                  <a href="./account.html#1" class="header__link account__item">
+                    <svg class="header__icon">
+                      <use href="./images/icons.svg#icon-person"></use>
+                    </svg>
+
+                    <span>Tài khoản của tôi</span>
+                  </a>
+                </li>
+
+                <li class="header__account-item">
+                  <a href="./account.html#2" class="header__link account__item">
+                    <svg class="header__icon">
+                      <use href="./images/icons.svg#icon-film"></use>
+                    </svg>
+                    <span>Phim của tôi</span>
+                  </a>
+                </li>
+
+                <li class="header__account-item">
+                  <a href="./account.html#3" class="header__link account__item">
+                    <svg class="header__icon">
+                      <use href="./images/icons.svg#icon-bookmark"></use>
+                    </svg>
+                    <span>Danh sách yêu thích</span>
+                  </a>
+                </li>
+
+                <li class="header__account-item">
+                  <a href="./account.html#4" class="header__link account__item">
+                    <svg class="header__icon">
+                      <use href="./images/icons.svg#icon-history"></use>
+                    </svg>
+                    <span>Lịch sử đã xem</span>
+                  </a>
+                </li>
+
+                <li class="header__account-item">
+                  <a href="#" class="header__link account__item">
+                    <svg class="header__icon">
+                      <use href="./images/icons.svg#icon-door-out"></use>
+                    </svg>
+                    <span>Đăng xuất</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <!-- __________ End account __________ -->
+          </li>
+
+          <li class="header__nav-item">
+            <button class="header__btn header__btn-search--toggle">
+              <svg class="header__icon">
+                <use href="./images/icons.svg#icon-search"></use>
+              </svg>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- __________ End header account __________ -->
+
+  <!-- *__________ Start sidebar __________ -->
+  <div class="sidebar hidden">
+    <div class="overlay sidebar__overlay"></div>
+
+    <div class="sidebar__main">
+      <ul class="sidebar__header">
+        <li class="sidebar__header-item">
+          <button class="header__btn header__btn-sidebar--close">
+            <svg class="header__icon">
+              <use href="./images/icons.svg#icon-menu"></use>
+            </svg>
+          </button>
+        </li>
+
+        <li class="sidebar__header-item">
+          <a href="./home.html" class="header__logo">
+            <img src="./images/logo.png" alt="logo moviestore" />
+          </a>
+        </li>
+      </ul>
+
+      <div class="sidebar__wrapper">
+        <ul class="sidebar__list">
+          <li class="">
+            <a href="./home.html" class="sidebar__item">
+              <svg class="header__icon">
+                <use href="./images/icons.svg#icon-home"></use>
+              </svg>
+              <span>Trang chủ</span>
+            </a>
+          </li>
+
+          <li class="">
+            <a href="./movie.html" class="sidebar__item">
+              <svg class="header__icon">
+                <use href="./images/icons.svg#icon-movie-new"></use>
+              </svg>
+              <span>Phim Mới</span>
+            </a>
+          </li>
+
+          <li class="">
+            <button class="sidebar__item sidebar__btn-genres--open">
+              <svg class="header__icon">
+                <use href="./images/icons.svg#icon-select-all"></use>
+              </svg>
+              <span>Thể loại</span>
+            </button>
+          </li>
+
+          <li class="">
+            <button class="sidebar__item sidebar__btn-countries--open">
+              <svg class="header__icon">
+                <use href="./images/icons.svg#icon-globe"></use>
+              </svg>
+              <span>Quốc gia</span>
+            </button>
+          </li>
+
+          <li class="">
+            <button class="sidebar__item sidebar__btn-year--open">
+              <svg class="header__icon">
+                <use href="./images/icons.svg#icon-calendar"></use>
+              </svg>
+              <span>Năm phát hành</span>
+            </button>
+          </li>
+
+          <li class="">
+            <a href="./movie.html#popular" class="sidebar__item">
+              <svg class="header__icon">
+                <use href="./images/icons.svg#icon-flame-fill"></use>
+              </svg>
+              <span>Phim thịnh hành</span>
+            </a>
+          </li>
+
+          <li class="">
+            <a href="./movie.html#top_rate" class="sidebar__item">
+              <svg class="header__icon">
+                <use href="./images/icons.svg#icon-list"></use>
+              </svg>
+              <span>Bảng xếp hạng</span>
+            </a>
+          </li>
+
+          <li class="">
+            <a href="./movie.html#upcoming" class="sidebar__item">
+              <svg class="header__icon">
+                <use href="./images/icons.svg#icon-calendar-time"></use>
+              </svg>
+              <span>Phim sắp phát hành</span>
+            </a>
+          </li>
+
+          <li class="">
+            <a href="./news.html" class="sidebar__item">
+              <svg class="header__icon">
+                <use href="./images/icons.svg#icon-news"></use>
+              </svg>
+              <span>Tin tức</span>
+            </a>
+          </li>
+
+          <li class="">
+            <a href="./people.html" class="sidebar__item">
+              <svg class="header__icon">
+                <use href="./images/icons.svg#icon-user"></use>
+              </svg>
+              <span>Người nổi tiếng</span>
+            </a>
+          </li>
+
+          <li class="">
+            <a href="./trailer.html" class="sidebar__item">
+              <svg class="header__icon">
+                <use href="./images/icons.svg#icon-youtube"></use>
+              </svg>
+              <span>Trailer mới</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- __________ End sidebar __________ -->
+
+  <!-- *__________ Start search __________ -->
+  <div class="search__overlay hidden"></div>
+
+  <div class="search hidden">
+    <div class="container">
+      <form class="search__form">
+        <input type="text" name="search" placeholder="Tìm kiếm....." class="search__input" />
+
+        <svg class="search__icon search__icon-form">
+          <use href="./images/icons.svg#icon-search"></use>
+        </svg>
+      </form>
+
+      <ul class="seacrch__wrap search__result hidden">
+        <!-- <li class="">
+        <a href="#" class="header__link search__item">
+          <svg class="search__icon">
+            <use href="./images/icons.svg#icon-search"></use>
+          </svg>
+
+          <span>Thế giới khủng long: Lãnh địa</span>
+        </a>
+      </li> -->
+      </ul>
+
+      <ul class="seacrch__wrap search__searched">
+        <!-- <li class="search__item">
+        <button data-title="" class="search__btn-item">
+          <svg class="search__icon">
+            <use href="./images/icons.svg#icon-history"></use>
+          </svg>
+
+          <span>Anh hùng</span>
+
+        </button>
+
+        <button data-title="" class="search__btn search__btn--remove" title="Xóa tìm kiếm này">Xóa</button>
+      </li> -->
+      </ul>
+
+      <div class="seacrch__wrap search__suggest">
+        <p class="search__suggest-title">
+          <svg class="search__icon">
+            <use href="./images/icons.svg#icon-trending"></use>
+          </svg>
+
+          <span>Phim thịnh hành</span>
+        </p>
+
+        <ul class="search__suggest-list">
+          <!-- <li class="">
+          <a href="#" class="header__link search__item">
+            <svg class="search__icon">
+              <use href="./images/icons.svg#icon-search"></use>
+            </svg>
+
+            <span>Thế giới khủng long: Lãnh địa</span>
+          </a>
+        </li> -->
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- __________ End search __________ -->
+
+  <main class="account">
+    <div class="container">
+      <div class="avatar">
+        <!-- <svg class="avatar__icon">
+          <use href="./images/icons.svg#icon-user"></use>
+        </svg>
+        <h2>Xin chào, dailai9966</h2> -->
+      </div>
+
+      <div class="tab">
+        <ul class="tab__list">
+          <li class="tab__item">
+            <a href="#1" class="tab__btn tab__btn--actived tab__btn-info">Thông tin cá nhân</a>
+          </li>
+
+          <li class="tab__item">
+            <a href="#2" class="tab__btn tab__btn-my-video">Phim của tôi</a>
+          </li>
+
+          <li class="tab__item">
+            <a href="#3" class="tab__btn tab__btn-my-wishlist">Danh sách yêu thích</a>
+          </li>
+
+          <li class="tab__item">
+            <a href="#4" class="tab__btn tab__btn-my-history">Lịch sử xem</a>
+          </li>
+        </ul>
+      </div>
+
+      <section class="account__info">
+        <!-- <ul class="account__info_list">
+          <li class="account__info_item">
+            <span>Tên</span>
+            <span>anhdai9966</span>
+          </li>
+          <li class="account__info_item">
+            <span>Năm sinh</span>
+            <span>1996</span>
+          </li>
+          <li class="account__info_item">
+            <span>Giới tính</span>
+            <span>Nam</span>
+          </li>
+          <li class="account__info_item">
+            <span>Email</span>
+            <span>anhdai9966@gmail.com</span>
+          </li>
+          <li class="account__info_item">
+            <span>Mật khẩu</span>
+            <button class="btn-secondary">Thay đổi mật khẩu</button>
+          </li>
+        </ul>
+
+        <div class="tab">
+          <ul class="tab__list">
+            <li class="tab__item">
+              <button class="tab__btn tab__btn-detail">Phương thức thanh toán</button>
+            </li>
+          </ul>
+        </div>
+
+        <ul class="account__info_list">
+          <li class="account__info_item">
+            <span>Credit / thẻ ghi nợ</span>
+            <span>anhdai9966</span>
+          </li>
+          <li class="account__info_item">
+            <span>MoMoPay</span>
+            <span>**** **** **** 1234</span>
+          </li>
+          <li class="account__info_item">
+            <span>098 3456789</span>
+            <span>3200 xu</span>
+          </li>
+        </ul> -->
+      </section>
+
+      <section class="account__my-movie hidden">
+        <ul class="card__grid">
+          <!-- <li class="card__item">
+            <div class="card__wrap">
+              <a href="#" class="card__link hidden-maw-md card__link-poster">
+                <img
+                  src="https://www.themoviedb.org/t/p/w220_and_h330_face/qVdpItrjj0dSNGXE9CAaRIGSti2.jpg"
+                  alt="movie"
+                  loading="lazy"
+                  class="card__img-poster"
+                />
+              </a>
+
+              <a href="#" class="card__link hidden-miw-md card__link-backdrop">
+                <img
+                  src="https://www.themoviedb.org/t/p/w533_and_h300_bestv2/nW5fUbldp1DYf2uQ3zJTUdachOu.jpg"
+                  alt="movie"
+                  loading="lazy"
+                  class="card__img-backdrop"
+                />
+              </a>
+
+              <button class="card__btn card__btn-wishlist">
+                <svg class="card__icon card__icon-wishlist">
+                  <use href="./images/icons.svg#icon-bookmark"></use>
+                </svg>
+              </button>
+
+              <button data-title="" class="card__btn card__btn-trailer card__btn-trailer--open">
+                <svg class="card__icon card__icon-play">
+                  <use href="./images/icons.svg#icon-play-circle"></use>
+                </svg>
+              </button>
+
+              <p class="card__overview card__overview-popup">
+                Bộ phim kể về chuyến hành trình hành động kết hợp khoa học viễn tưởng nhằm giới thiệu câu chuyện về nguồn gốc của nhân vật Buzz Lightyear —
+                người anh hùng đã truyền cảm hứng sáng tạo ra đồ chơi. “Lightyear” sẽ theo chân Cảnh Sát Vũ Trụ huyền thoại trong cuộc hành trình bước ra ngoài
+                không gian cùng với một nhóm chiến binh đầy tham vọng và người bạn đồng hành là chú mèo máy Sox.
+              </p>
+            </div>
+
+            <div class="card__wrap">
+              <a href="#" class="card__title">Lightyear: Cảnh Sát Vũ Trụ</a>
+
+              <p class="card__overview hidden-miw-md">
+                Bộ phim kể về chuyến hành trình hành động kết hợp khoa học viễn tưởng nhằm giới thiệu câu chuyện về nguồn gốc của nhân vật Buzz Lightyear —
+                người anh hùng đã truyền cảm hứng sáng tạo ra đồ chơi. “Lightyear” sẽ theo chân Cảnh Sát Vũ Trụ huyền thoại trong cuộc hành trình bước ra ngoài
+                không gian cùng với một nhóm chiến binh đầy tham vọng và người bạn đồng hành là chú mèo máy Sox.
+              </p>
+
+              <p class="">
+                <span>
+                  <span class="">7.0</span>
+
+                  <svg class="star__icon">
+                    <use href="./images/icons.svg#icon-star-fill"></use>
+                  </svg>
+                </span>
+
+                <span class="card__price">80.000 đ</span>
+              </p>
+            </div>
+          </li> -->
+        </ul>
+      </section>
+
+      <section class="account__history hidden">
+        <ul class="card__grid">
+          <!-- <li class="card__item">
+            <div class="card__wrap">
+              <a href="#" class="card__link hidden-maw-md card__link-poster">
+                <img
+                  src="https://www.themoviedb.org/t/p/w220_and_h330_face/qVdpItrjj0dSNGXE9CAaRIGSti2.jpg"
+                  alt="movie"
+                  loading="lazy"
+                  class="card__img-poster"
+                />
+              </a>
+
+              <a href="#" class="card__link hidden-miw-md card__link-backdrop">
+                <img
+                  src="https://www.themoviedb.org/t/p/w533_and_h300_bestv2/nW5fUbldp1DYf2uQ3zJTUdachOu.jpg"
+                  alt="movie"
+                  loading="lazy"
+                  class="card__img-backdrop"
+                />
+              </a>
+
+              <button class="card__btn card__btn-wishlist">
+                <svg class="card__icon card__icon-wishlist">
+                  <use href="./images/icons.svg#icon-bookmark"></use>
+                </svg>
+              </button>
+
+              <button data-title="" class="card__btn card__btn-trailer card__btn-trailer--open">
+                <svg class="card__icon card__icon-play">
+                  <use href="./images/icons.svg#icon-play-circle"></use>
+                </svg>
+              </button>
+
+              <p class="card__overview card__overview-popup">
+                Bộ phim kể về chuyến hành trình hành động kết hợp khoa học viễn tưởng nhằm giới thiệu câu chuyện về nguồn gốc của nhân vật Buzz Lightyear —
+                người anh hùng đã truyền cảm hứng sáng tạo ra đồ chơi. “Lightyear” sẽ theo chân Cảnh Sát Vũ Trụ huyền thoại trong cuộc hành trình bước ra ngoài
+                không gian cùng với một nhóm chiến binh đầy tham vọng và người bạn đồng hành là chú mèo máy Sox.
+              </p>
+            </div>
+
+            <div class="card__wrap">
+              <a href="#" class="card__title">Lightyear: Cảnh Sát Vũ Trụ</a>
+
+              <p class="card__overview hidden-miw-md">
+                Bộ phim kể về chuyến hành trình hành động kết hợp khoa học viễn tưởng nhằm giới thiệu câu chuyện về nguồn gốc của nhân vật Buzz Lightyear —
+                người anh hùng đã truyền cảm hứng sáng tạo ra đồ chơi. “Lightyear” sẽ theo chân Cảnh Sát Vũ Trụ huyền thoại trong cuộc hành trình bước ra ngoài
+                không gian cùng với một nhóm chiến binh đầy tham vọng và người bạn đồng hành là chú mèo máy Sox.
+              </p>
+
+              <p class="">
+                <span>
+                  <span class="">7.0</span>
+
+                  <svg class="star__icon">
+                    <use href="./images/icons.svg#icon-star-fill"></use>
+                  </svg>
+                </span>
+
+                <span class="card__price">80.000 đ</span>
+              </p>
+            </div>
+          </li> -->
+        </ul>
+      </section>
+
+      <section class="account__wishlist hidden">
+        <div class="account__list">
+          <!-- <div class="account__item">
+            <input type="checkbox" name="checkbox" id="checkbox" class="account__checkbox">
+        
+            <div class="account__main">
+              <div class="account__card">
+                <label for="checkbox" class="backdrop__img">
+                  <img src="https://www.themoviedb.org/t/p/w533_and_h300_bestv2/wcKFYIiVDvRURrzglV9kGu7fpfY.jpg" alt="movie" >
+                </label>
+            
+                <div class="">
+                  <a href="#" class="">
+                    <h6 class="h6">Minions: Sự Trỗi Dậy của Gru 2022</h6>
+                  </a>
+              
+                  <p>Phim Gia Đình, Phim Hoạt Hình</p>
+              
+                  <p class="">
+                    <span>7.0</span>
+                    <svg class="star__icon">
+                      <use href='./images/icons.svg#icon-star-fill'></use>
+                    </svg>
+                  </p>
+                </div>
+              </div>
+          
+              <div class="account__btn">
+                <button class="rent__btn">Thuê: 80.000 đ</button>
+                <button class="buy__btn">Mua: 210.000 đ</button>
+              </div>
+            </div>
+        
+            <div class="btn account__btn2">
+              <button class="icon__btn remove__btn">
+                <svg class="account__icon">
+                  <use href='./images/icons.svg#icon-xmark'></use>
+                </svg>
+              </button>
+            </div>
+          </div> -->
+        </div>
+      </section>
+
+    </div>
+
+    <div class="account__popup hidden">
+      <!-- <div class="container">
+        <div class="account__xu">
+          <h6 class="h6">Các nội dung đã mua sẽ phát trên các thiết bị tương thích</h6>
+          <div class="account__xu_wrapper">
+            <div class="account__xu_wrap">
+              <h6 class="h6">Xu MovieStore</h6>
+              <p>Dùng 3.200 xu / 3200 xu</p>
+            </div>
+            <div class="account__xu_wrap">
+              <label for="checkbox_xu">-3.200 đ</label>
+              <input type="checkbox" name="checkbox_xu" id="checkbox_xu" class="account__checkbox_xu">
+            </div>
+          </div>
+        </div>
+
+        <div class="account__pay">
+          <div class="account__pay_wrap">
+            <input type="checkbox" name="checkbox_pay" id="checkbox_pay" class="account__checkbox_pay">
+            <label for="checkbox_pay">Chọn tất cả</label>
+          </div>
+
+          <div class="account__pay_wrapper">
+            <h6 class="h6">Tổng thanh toán (2 sản phẩm):</h6>
+
+            <div class="account__pay_wrap_2">
+              <div class="account__pay_wrap">
+                <h6 class="h6">420.000 đ</h6>
+                <button class="buy__btn account__pay_btn">Mua</button>
+              </div>
+              <div class="account__pay_wrap">
+                <h6 class="h6">420.000 đ</h6>
+                <button class="rent__btn account__pay_btn">Thuê</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+    </div>
+  </main>
+
+  <!-- *__________ Start footer __________ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__wrapper">
+        <a href="#" class="footer__link">
+          <svg class="footer__icon">
+            <use href="./images/icons.svg#icon-facebook"></use>
+          </svg>
+        </a>
+
+        <a href="#" class="footer__link">
+          <svg class="footer__icon">
+            <use href="./images/icons.svg#icon-instagram"></use>
+          </svg>
+        </a>
+
+        <a href="#" class="footer__link">
+          <svg class="footer__icon">
+            <use href="./images/icons.svg#icon-twitch"></use>
+          </svg>
+        </a>
+
+        <a href="#" class="footer__link">
+          <svg class="footer__icon">
+            <use href="./images/icons.svg#icon-twitter"></use>
+          </svg>
+        </a>
+
+        <a href="#" class="footer__link">
+          <svg class="footer__icon">
+            <use href="./images/icons.svg#icon-youtube"></use>
+          </svg>
+        </a>
+      </div>
+
+      <div class="footer__nav">
+        <a href="./home.html">Trang chủ</a>
+
+        <a href="./movie.html">Phim mới</a>
+
+        <a href="./movie.html#upcoming">Phim sắp phát hành</a>
+
+        <a href="./news.html">Tin tức</a>
+
+        <a href="./people.html">Người nổi tiếng</a>
+
+        <a href="./trailer.html">Trailer mới</a>
+      </div>
+
+      <div class="footer__nav">
+        <a href="./account.html">Tài khoản</a>
+
+        <a href="./account.html#2">Phim của tôi</a>
+
+        <a href="./account.html#3">Danh sách yêu thích</a>
+
+        <a href="./account.html#4">Lịch sử đã xem</a>
+      </div>
+
+      <a href="./home.html" class="footer__logo">
+        <svg class="logo__icon">
+          <use href="./images/icons.svg#icon-moviestore"></use>
+        </svg>
+      </a>
+
+      <div class="footer__moviestore">
+        <a href="./information.html">Thông tin</a>
+
+        <a href="./index.html#1">Giới thiệu</a>
+
+        <a href="#">Liên hệ: 1900 **00</a>
+      </div>
+
+      <p class="footer__copyright">&copy;2022 by CD</p>
+    </div>
+  </footer>
+  <!-- __________ End footer __________ -->
+</body>
+</html>

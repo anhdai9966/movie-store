@@ -1,0 +1,112 @@
+%absolute-full {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.home {
+  position: relative;
+  background: $color-black;
+  &__title {
+    margin-block: 4rem;
+  }
+  &__line {
+    font-size: 1.8rem;
+    display: inline-block;
+    width: 2px;
+    height: 24px;
+    background: $color-primary;
+    border-radius: 2px;
+  }
+  &__icon {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+  &__link {
+    display: flex;
+    align-items: center;
+    column-gap: 1.2rem;
+    color: $color-gray-6;
+    &:hover {
+      color: $color-primary;
+    }
+  }
+  &__section {
+    margin-block: 2.4rem;
+    &-title {
+      display: flex;
+      align-items: center;
+      column-gap: 1.2rem;
+    }
+    &-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: bold;
+    }
+  }
+  &__wrapper {
+    margin-block: 2.4rem;
+    position: relative;
+  }
+  &__btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.5;
+    &:hover {
+      opacity: 1;
+    }
+    @media (max-width: $sm) {
+      display: none;
+    }
+    &--right {
+      right: -20px;
+    }
+    &--left {
+      left: -20px;
+    }
+  }
+}
+
+.card-5,
+.card-4,
+.card-3,
+.card-2,
+.card-1 {
+  --scroll-width-x: 1rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  &::-webkit-scrollbar-thumb {
+    background-image: $scroll-thumb-bg-x;
+  }
+  @media (min-width: $sm) {
+    overflow: hidden;
+  }
+}
+
+.home {
+  &-horror,
+  &-cartoon,
+  &-action,
+  &-top-rated,
+  &-upcoming,
+  &-popular {
+    .home__btn {
+      top: 42%;
+    }
+  }
+  &-news,
+  &-trailers {
+    .home__btn {
+      top: 40%;
+    }
+  }
+  &-people {
+    .home__btn {
+      top: 37%;
+    }
+  }
+}

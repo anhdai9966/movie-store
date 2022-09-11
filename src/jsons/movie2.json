@@ -1,0 +1,172 @@
+[
+  {
+    "adult": false,
+    "backdropPath": "/9JGS0O9wAr7c56VwSEPyeKT6Xac.jpg",
+    "belongsToCollection": {
+      "id": 328,
+      "name": "Loạt phim Công Viên Kỷ Jura",
+      "poster_path": "/jcUXVtJ6s0NG0EaxllQCAUtqdr0.jpg",
+      "backdrop_path": "/njFixYzIxX8jsn6KMSEtAzi4avi.jpg"
+    },
+    "budget": 165000000,
+    "genres": [
+      {
+        "id": 12,
+        "name": "Phim Phiêu Lưu"
+      },
+      {
+        "id": 28,
+        "name": "Phim Hành Động"
+      },
+      {
+        "id": 878,
+        "name": "Phim Khoa Học Viễn Tưởng"
+      }
+    ],
+    "homepage": "",
+    "id": 507086,
+    "imdbId": "tt8041270",
+    "originalLanguage": "en",
+    "originalTitle": "Jurassic World Dominion",
+    "overview": "Bốn năm sau kết thúc Jurassic World: Fallen Kingdom, những con khủng long đã thoát khỏi nơi giam cầm và tiến vào thế giới loài người. Giờ đây, chúng xuất hiện ở khắp mọi nơi. Sinh vật to lớn ấy không còn chỉ ở trên đảo như trước nữa mà gần ngay trước mắt, thậm chí còn có thể chạm tới. Owen Grady may mắn gặp lại cô khủng long mà anh và khán giả vô cùng yêu mến - Blue. Tuy nhiên, Blue không đi một mình mà còn đem theo một chú khủng long con khác. Điều này khiến Owen càng quyết tâm bảo vệ mẹ con cô được sinh sống an toàn. Thế nhưng, hai giống loài quá khác biệt. Liệu có thể tồn tại một kỷ nguyên mà khủng long và con người sống chung một cách hòa bình?",
+    "popularity": 1834.657,
+    "posterPath": "/cjb9NXJvisfh5fmgX9rerxZfFrJ.jpg",
+    "productionCompanies": [
+      {
+        "id": 33,
+        "logo_path": "/8lvHyhjr8oUKOOy2dKXoALWKdp0.png",
+        "name": "Universal Pictures",
+        "origin_country": "US"
+      },
+      {
+        "id": 56,
+        "logo_path": "/cEaxANEisCqeEoRvODv2dO1I0iI.png",
+        "name": "Amblin Entertainment",
+        "origin_country": "US"
+      }
+    ],
+    "productionCountries": [
+      {
+        "iso_3166_1": "US",
+        "name": "United States of America"
+      }
+    ],
+    "releaseDate": "2022-06-01",
+    "revenue": 994677000,
+    "runtime": 147,
+    "spokenLanguages": [
+      {
+        "english_name": "French",
+        "iso_639_1": "fr",
+        "name": "Français"
+      },
+      {
+        "english_name": "English",
+        "iso_639_1": "en",
+        "name": "English"
+      },
+      {
+        "english_name": "Maltese",
+        "iso_639_1": "mt",
+        "name": "Malti"
+      }
+    ],
+    "status": "Released",
+    "tagline": "Sự kết luận to lớn của kỷ nguyên Jura.",
+    "title": "Thế Giới Khủng Long: Lãnh Địa",
+    "video": false,
+    "voteAverage": 7.075,
+    "voteCount": 3259,
+    "bookmarked": false,
+    "purchased": true,
+    "price": {
+      "buy": "180000",
+      "rent": "60000"
+    }
+  },
+  {
+    "adult": false,
+    "backdropPath": "/wcKFYIiVDvRURrzglV9kGu7fpfY.jpg",
+    "belongsToCollection": {
+      "id": 618529,
+      "name": "Loạt phim Phù Thủy Tối Thượng",
+      "poster_path": "/vIxHQxusmCGOLf3dHnCbVppBV56.jpg",
+      "backdrop_path": "/5ZuctJh5uX5L2dz1CjA7WsTJwZk.jpg"
+    },
+    "budget": 200000001,
+    "genres": [
+      {
+        "id": 14,
+        "name": "Phim Giả Tượng"
+      },
+      {
+        "id": 28,
+        "name": "Phim Hành Động"
+      },
+      {
+        "id": 12,
+        "name": "Phim Phiêu Lưu"
+      }
+    ],
+    "homepage": "",
+    "id": 453395,
+    "imdbId": "tt9419884",
+    "originalLanguage": "en",
+    "originalTitle": "Doctor Strange in the Multiverse of Madness",
+    "overview": "Sự kiện xảy sau phần phim Người Nhện: Không còn nhà (2021) và mùa đầu tiên của Loki (2021), Bác sĩ Stephen Strange đã sử dụng một phét thuật bị cấm và mở ra cánh cổng dẫn tới đa vũ trụ, vô tình dẫn đưa một biến thể hắc ám của Stephen Strange khác đến vũ trụ mình - mối đe dọa lớn mà Dr. Strange có thể phải đối đầu hoặc hợp sức chống lại một cái ác khác, đồng hành cùng Strange còn có Wong và Wanda Maximoff cùng với nhân vật mới American Chavez.",
+    "popularity": 1248.115,
+    "posterPath": "/ovMxUPSSuvBD7GcgdQxzbJfsR8q.jpg",
+    "productionCompanies": [
+      {
+        "id": 420,
+        "logo_path": "/hUzeosd33nzE5MCNsZxCGEKTXaQ.png",
+        "name": "Marvel Studios",
+        "origin_country": "US"
+      },
+      {
+        "id": 176762,
+        "logo_path": null,
+        "name": "Kevin Feige Productions",
+        "origin_country": "US"
+      }
+    ],
+    "productionCountries": [
+      {
+        "iso_3166_1": "US",
+        "name": "United States of America"
+      }
+    ],
+    "releaseDate": "2022-05-04",
+    "revenue": 955200000,
+    "runtime": 126,
+    "spokenLanguages": [
+      {
+        "english_name": "Cantonese",
+        "iso_639_1": "cn",
+        "name": "广州话 / 廣州話"
+      },
+      {
+        "english_name": "English",
+        "iso_639_1": "en",
+        "name": "English"
+      },
+      {
+        "english_name": "Spanish",
+        "iso_639_1": "es",
+        "name": "Español"
+      }
+    ],
+    "status": "Released",
+    "tagline": "Đi vào vũ trụ khác của Strange.",
+    "title": "Phù Thủy Tối Thượng 2: Đa Vũ Trụ Hỗn Loạn",
+    "video": false,
+    "voteAverage": 7.483,
+    "voteCount": 5647,
+    "bookmarked": false,
+    "purchased": true,
+    "price": {
+      "buy": "180000",
+      "rent": "60000"
+    }
+  }
+]

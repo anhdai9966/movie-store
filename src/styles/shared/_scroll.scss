@@ -1,0 +1,36 @@
+$scroll-width: 1rem;
+$scroll-width-x: --scroll-width-x;
+$scroll-width-y: --scroll-width-y;
+$scroll-track-bg: #181818;
+$scroll-thumb-border-width: 0.2rem;
+$scroll-thumb-bg-x: linear-gradient(to left, #e30813, #b70045, #791b53, #3c2341, #181818);
+$scroll-thumb-bg-y: linear-gradient(to top, #e30813, #b70045, #791b53, #3c2341, #181818);
+
+.scroll-x {
+  #{$scroll-width-x}: $scroll-width;
+  overflow-x: auto;
+  overflow-y: hidden;
+  &::-webkit-scrollbar-thumb {
+    background-image: $scroll-thumb-bg-x;
+  }
+}
+.scroll-y {
+  #{$scroll-width-y}: $scroll-width;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+* {
+  &::-webkit-scrollbar {
+    width: var(#{$scroll-width-y}, $scroll-width);
+    height: var(#{$scroll-width-x}, auto);
+  }
+  &::-webkit-scrollbar-track {
+    background-color: $scroll-track-bg;
+    border-radius: $scroll-width;
+  }
+  &::-webkit-scrollbar-thumb {
+    border: $scroll-thumb-border-width solid $scroll-track-bg;
+    background-image: $scroll-thumb-bg-y;
+    border-radius: $scroll-width;
+  }
+}

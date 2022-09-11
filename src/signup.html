@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Trang đăng kí MovieStore" />
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="./images/favicon.ico" type="image/x-icon" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/signup.scss" />
+    <script type="module" src="./controllers/signupController.js"></script>
+  </head>
+  <body>
+    <!-- *__________ Start go to top __________ -->
+    <button class="gototop hidden-maw-sm">
+      <svg class="gototop__icon">
+        <use href="./images/icons.svg#icon-up"></use>
+      </svg>
+    </button>
+    <!-- __________ End go to top __________ -->
+
+    <!-- *__________ Start notification __________ -->
+    <div class="notification hidden">
+      <!-- <div class="notification__wrapper--transition-x">
+    <p class="notification__content">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+  </div> -->
+    </div>
+    <!-- __________ End notification __________ -->
+
+    <!-- *__________ Start loading spinner __________ -->
+    <!-- <div class="loading">
+    <svg class="loading__spinner">
+      <use href='./images/icons.svg#icon-loading'></use>
+    </svg>
+  </div> -->
+    <!-- __________ End loading spinner __________ -->
+
+    <!-- *__________ Start visualcompletion __________ -->
+    <div class="visualcompletion hidden"></div>
+    <!-- __________ End visualcompletion  __________ -->
+
+    <!-- *__________ Start popup warning __________ -->
+    <div class="warning hidden">
+      <!-- <div class="warning__overlay"></div>
+    <div class="warning__wrapper">
+      <h6 class="warning__title">Bạn có muốn đăng xuất</h6>
+      <button class="btn-secondary warning__cancel">Đóng</button>
+      <button class="btn-primary warning__ok">OK</button>
+    </div> -->
+    </div>
+    <!-- __________ End popup warning __________ -->
+
+    <!-- *__________ Start header __________ -->
+    <header class="header header-not-account">
+      <div class="container">
+        <nav class="header__nav">
+          <ul class="header__nav-list">
+            <li class="header__nav-item">
+              <a href="./index.html" class="header__logo">
+                <img src="./images/logo.png" alt="logo moviestore" />
+              </a>
+            </li>
+          </ul>
+
+          <ul class="header__nav-list">
+            <li class="header__nav-item header__signin">
+              <a href="./index.html#signin" class="btn-primary header__btn">Đăng nhập</a>
+            </li>
+            <li class="header__nav-item header__signout hidden">
+              <button class="btn-primary header__btn">Đăng xuất</button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- __________ End header __________ -->
+
+    <!-- *__________ Start signup main __________ -->
+    <main class="signup">
+      <div class="signup__wrapper">
+        <form class="signup__form signup__form--create">
+          <div class="signup__group">
+            <p>Bước 1 / 3</p>
+            <h3>Tạo tài khoản để trở thành thành viên của chúng tôi</h3>
+            <p>
+              Chỉ một vài bước nữa là bạn sẽ xong! <br />
+              Chúng tôi cũng ghét thủ tục.
+            </p>
+          </div>
+
+          <div class="signup__group">
+            <input type="email" name="email" id="signup__create-email" placeholder="Email" class="signup__input" />
+
+            <p class="signup__messega hidden"></p>
+
+            <input type="password" name="password" id="signup__create-password" placeholder="Mật khẩu" class="signup__input" />
+
+            <p class="signup__messega hidden"></p>
+
+            <button class="signup__btn btn-primary signup__btn--create">Tiếp tục</button>
+          </div>
+        </form>
+
+        <form class="signup__form signup__form--confirm hidden">
+          <div class="signup__group">
+            <p>Bước 1 / 3</p>
+            <h3>Xác nhận email</h3>
+            <p>Xác nhận email của bạn.</p>
+          </div>
+
+          <div class="signup__group">
+            <input type="text" name="confirm" id="signup__confirm-number" placeholder="Mã xác nhận" class="signup__input" />
+
+            <button class="signup__btn btn-primary signup__btn--confirm">Xác nhận</button>
+          </div>
+        </form>
+
+        <form class="signup__form signup__form--info hidden">
+          <div class="signup__group">
+            <p>Bước 2 / 3</p>
+            <h3>Tạo thông tin</h3>
+            <p>Thông tin của bạn chỉ bạn có thể biết</p>
+            <h6>Chọn một hình đại diện</h6>
+          </div>
+
+          <div class="signup__avatar hidden"></div>
+
+          <div class="signup__group">
+            <input type="file" name="avatar" id="signup__file" class="signup__input hidden" />
+
+            <input type="text" name="name" id="signup__info-name" placeholder="Tên" class="signup__input" />
+
+            <input type="text" name="birth" id="signup__info-birth" placeholder="Năm sinh" class="signup__input" />
+
+            <button class="signup__btn btn-primary signup__btn--info">Tiếp tục</button>
+          </div>
+        </form>
+
+        <form class="signup__form signup__form--credit hidden">
+          <div class="signup__group">
+            <p>Bước 3 / 3</p>
+            <h3>Thiết lập phương thức thanh toán</h3>
+            <p>Bạn sẽ trở thành thành viên sau khi thiết lập thanh toán.</p>
+          </div>
+
+          <div class="signup__group">
+            <button disabled class="signup__btn btn-secondary">Credit / Thẻ ghi nợ</button>
+            <button disabled class="signup__btn btn-secondary">Ví điện tử</button>
+
+            <button class="signup__btn btn-secondary signup__btn--credit">Để sau</button>
+          </div>
+        </form>
+      </div>
+    </main>
+    <!-- __________ End signup main __________ -->
+
+    <!-- *__________ Start footer __________ -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__wrapper">
+          <a href="#" class="footer__link">
+            <svg class="footer__icon">
+              <use href="./images/icons.svg#icon-facebook"></use>
+            </svg>
+          </a>
+
+          <a href="#" class="footer__link">
+            <svg class="footer__icon">
+              <use href="./images/icons.svg#icon-instagram"></use>
+            </svg>
+          </a>
+
+          <a href="#" class="footer__link">
+            <svg class="footer__icon">
+              <use href="./images/icons.svg#icon-twitch"></use>
+            </svg>
+          </a>
+
+          <a href="#" class="footer__link">
+            <svg class="footer__icon">
+              <use href="./images/icons.svg#icon-twitter"></use>
+            </svg>
+          </a>
+
+          <a href="#" class="footer__link">
+            <svg class="footer__icon">
+              <use href="./images/icons.svg#icon-youtube"></use>
+            </svg>
+          </a>
+        </div>
+
+        <div class="footer__nav">
+          <a href="./home.html">Trang chủ</a>
+
+          <a href="./movie.html">Phim mới</a>
+
+          <a href="./movie.html#upcoming">Phim sắp phát hành</a>
+
+          <a href="./news.html">Tin tức</a>
+
+          <a href="./people.html">Người nổi tiếng</a>
+
+          <a href="./trailer.html">Trailer mới</a>
+        </div>
+
+        <div class="footer__nav">
+          <a href="./account.html">Tài khoản</a>
+
+          <a href="./account.html#2">Phim của tôi</a>
+
+          <a href="./account.html#3">Danh sách yêu thích</a>
+
+          <a href="./account.html#4">Lịch sử đã xem</a>
+        </div>
+
+        <a href="./home.html" class="footer__logo">
+          <svg class="logo__icon">
+            <use href="./images/icons.svg#icon-moviestore"></use>
+          </svg>
+        </a>
+
+        <div class="footer__moviestore">
+          <a href="./information.html">Thông tin</a>
+
+          <a href="./index.html#1">Giới thiệu</a>
+
+          <a href="#">Liên hệ: 1900 **00</a>
+        </div>
+
+        <p class="footer__copyright">&copy;2022 by CD</p>
+      </div>
+    </footer>
+    <!-- __________ End footer __________ -->
+  </body>
+</html>

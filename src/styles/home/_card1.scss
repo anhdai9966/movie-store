@@ -1,0 +1,114 @@
+.card-1 {
+  .card {
+    &__list {
+      --bs-gutter-x: 2.4rem;
+      margin-right: calc(-0.5 * var(--bs-gutter-x));
+      margin-left: calc(-0.5 * var(--bs-gutter-x));
+      display: flex;
+    }
+    &__item {
+      --cd-col: 3;
+      padding-right: calc(var(--bs-gutter-x) * 0.5);
+      padding-left: calc(var(--bs-gutter-x) * 0.5);
+      flex: 0 0 auto;
+      width: calc(100% / var(--cd-col));
+      transition: width 0.2s ease-out 0.2s;
+      scroll-snap-align: start;
+      display: flex;
+      flex-flow: column;
+      row-gap: 1.2rem;
+      @media (min-width: $sm) {
+        &:hover {
+          width: calc(100% / var(--cd-col) + 100% / var(--cd-col));
+          .card__hover {
+            opacity: 1;
+          }
+        }
+      }
+      @media (min-width: $md) {
+        --cd-col: 4;
+      }
+      @media (min-width: $lg) {
+        --cd-col: 5;
+      }
+      @media (min-width: $xl) {
+        --cd-col: 6;
+      }
+    }
+    &__wrapper {
+      position: relative;
+      border-radius: 1.1rem;
+      overflow: hidden;
+    }
+    &__link {
+      width: 100%;
+      height: 100%;
+    }
+    &__image {
+      background: $color-gray-7;
+      border-radius: 1.1rem;
+      overflow: hidden;
+      width: 100%;
+      @media (min-width: $sm) {
+        height: 23.4rem;
+      }
+      @media (min-width: $lg) {
+        height: 25rem;
+      }
+      @media (min-width: $xxl) {
+        height: 29.4rem;
+      }
+    }
+    &__hover {
+      opacity: 0;
+      transition: opacity 0.2s ease-out 0.2s;
+      @extend %absolute-full;
+      &-wrap {
+        position: absolute;
+        left: 1.2rem;
+        bottom: 1.2rem;
+      }
+    }
+    &__overlay {
+      @extend %absolute-full;
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.6) 100%);
+    }
+    &__btn {
+      width: 12rem;
+      border-radius: 2.2rem;
+      background-color: rgba($color: #000000, $alpha: 0.6);
+      &:hover {
+        background-color: rgba($color: #000000, $alpha: 0.8);
+      }
+      &-wishlist {
+        position: absolute;
+        top: 1.2rem;
+        left: 1.2rem;
+      }
+    }
+    &__icon {
+      &-wishlist {
+        width: 2.2rem;
+        height: 2.2rem;
+      }
+    }
+    &__wrap {
+      display: flex;
+      flex-flow: column;
+      row-gap: .8rem;
+    }
+    &__title {
+      @include text-truncate();
+    }
+  }
+}
+
+.home-upcoming {
+  .card-1 {
+    .card {
+      &__price {
+        display: none;
+      }
+    }
+  }
+}

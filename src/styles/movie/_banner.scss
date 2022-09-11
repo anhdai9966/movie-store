@@ -1,0 +1,202 @@
+%absolute-full {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+@keyframes tranX {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-1760px);
+  }
+}
+.banner {
+  position: relative;
+  width: 100%;
+  max-width: 192rem;
+  margin: 0 auto;
+  background-color: $color-black;
+  .windows {
+    @extend %absolute-full;
+    overflow: hidden;
+    perspective: 2000px;
+    perspective-origin: -235px 840px;
+    .view-3d {
+      transform-style: preserve-3d;
+      position: absolute;
+      top: -70px;
+      left: -310px;
+      transform: scale(1.08);
+      .rotate {
+        position: absolute;
+        transform: rotateY(320deg) rotateZ(20deg);
+        .wrapper {
+          width: 1760px; // 10rem * 16 + 1rem * 16
+          height: 950px;
+          overflow: hidden;
+          .animation {
+            animation: tranX 60s linear infinite;
+            .grid__wrapper {
+              width: fit-content;
+              display: flex;
+              .card__grid {
+                display: grid;
+                grid-template-columns: repeat(16, 10rem);
+                grid-template-rows: repeat(5, 18rem);
+                gap: 1rem;
+                padding-inline: .5rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &__overlay {
+    @extend %absolute-full;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.7) 100%);
+  }
+}
+
+.banner-card__item {
+  .movie__link {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    &:hover {
+      > .card__overlay {
+        opacity: 1;
+      }
+      > .movie__title {
+        opacity: 1;
+        bottom: 1rem;
+      }
+    }
+    // .movie__poster {}
+    .card__overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0;
+      transition: opacity 0.3s;
+      background: linear-gradient(0deg, #000000c7 0%, #0000006e 50.52%, #000000c2 100%);
+      display: none;
+      @media (min-width: $sm) {
+        display: block;
+      }
+    }
+    .movie__title {
+      position: absolute;
+      left: 1rem;
+      bottom: 0;
+      width: calc(100% - 2rem);
+      opacity: 0;
+      transition: all .3s ease-out;
+      @include text-truncate(3);
+    }
+  }
+}
+
+.banner {
+  &__content {
+    position: relative;
+    text-align: center;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    row-gap: 1.2rem;
+    padding-block: 10rem;
+    @media (min-width: $md) {
+      padding-block: 13.6rem;
+    }
+  }
+  &__wrapper {
+    margin-bottom: 1.2rem;
+    @media (max-width: $md) {
+      width: 100%;
+    }
+  }
+  &__title {
+    margin-bottom: 1.2rem;
+    font-size: 2.8rem;
+    @media (min-width: $lg) {
+      font-size: 3.2rem;
+    }
+    @media (min-width: $xl) {
+      font-size: 4rem;
+    }
+  }
+  &__subtitle {
+    font-size: 1.8rem;
+    @media (min-width: $lg) {
+      font-size: 2rem;
+    }
+  }
+  &__subtitle-2 {
+    margin-bottom: 1.6rem;
+  }
+  &__form {
+    margin-bottom: 2.4rem;
+    display: flex;
+    flex-flow: column;
+    row-gap: 1.2rem;
+    width: 100%;
+    @media (min-width: $md) {
+      width: 65rem;
+      flex-flow: row;
+    }
+    .input{
+      &__wrapper {
+        flex-grow: 1;
+        position: relative;
+        color: $color-gray-3;
+      }
+      &__search,
+      &__email {
+        width: 100%;
+        height: 4.4rem;
+        border-radius: 1.1rem;
+        padding-left: 2rem;
+        padding-top: 1.2rem;
+        @media (min-width: $md) {
+          border-radius: 1.1rem 0 0 1.1rem;
+        }
+        &:focus {
+          + .input__placeholder {
+            font-size: 1.2rem;
+            font-weight: bold;
+            top: 0;
+          }
+        }
+      }
+      &__placeholder {
+        font-weight: normal;
+        position: absolute;
+        top: 1.1rem;
+        left: 2rem;
+        transition: top .3s;
+      }
+    }
+  }
+  &__btn {
+    height: 4.4rem;
+    border-radius: 1.1rem;
+    @media (min-width: $md) {
+      border-radius: 0 1.1rem 1.1rem 0;
+    }
+  }
+  &__btn_link {
+    margin: 0 auto;
+    width: 20rem;
+    height: 4.4rem;
+    border-radius: 1.1rem;
+  }
+  &__search {
+    border-radius: 1.1rem !important;
+  }
+}

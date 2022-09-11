@@ -1,0 +1,54 @@
+.card-3 {
+  .card {
+    &__list {
+      display: flex;
+      column-gap: 2.4rem;
+    }
+    &__item {
+      --cd-col: 2;
+      flex: 0 0 auto;
+      width: calc((100% - 2.4rem * (var(--cd-col) - 1)) / var(--cd-col));
+      scroll-snap-align: start;
+      display: flex;
+      flex-flow: column;
+      row-gap: 1.2rem;
+      @media (min-width: $md) {
+        --cd-col: 3;
+      }
+      @media (min-width: $xl) {
+        --cd-col: 4;
+      }
+    }
+    &__btn {
+      position: relative;
+      &:hover {
+        .card__icon {
+          color: $color-primary;
+        }
+      }
+    }
+    &__img {
+      border-radius: 1.1rem;
+      overflow: hidden;
+      height: 20rem;
+    }
+    &__icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 3rem;
+      height: 3rem;
+    }
+    &__link {
+      display: flex;
+      flex-flow: column;
+      row-gap: 1.2rem;
+      height: 100%;
+    }
+    &__title {
+      flex-shrink: 0;
+      @include text-truncate(2);
+    }
+  }
+}

@@ -1,0 +1,54 @@
+.genres {
+  &__popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+  }
+  &__wrapper {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $color-gray-1;
+    border-radius: 1.1rem;
+    padding: 1rem;
+    width: 100%;
+    height: fit-content;
+    transition: all 0.3s ease-out;
+    @media (max-width: $sm) {
+      top: 50% !important;
+    }
+    @media (min-width: $sm) {
+      padding: 3rem;
+      min-width: 37rem;
+      max-width: 100rem;
+    }
+  }
+  &__list {
+    padding: 1rem;
+    padding-top: 2rem;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1.2rem;
+    @media (min-width: $sm) {
+      gap: 2.4rem;
+    }
+  }
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3.9rem;
+    padding-inline: 1.8rem;
+    border-radius: 2.5rem;
+    &:hover {
+      background: $color-gray-3;
+    }
+    @media (min-width: $sm) {
+      height: 4.9rem;
+    }
+  }
+}
