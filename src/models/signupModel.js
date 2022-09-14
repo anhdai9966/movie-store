@@ -8,12 +8,8 @@ export let state = {
     password: '',
   },
   account: {
-    idUser: '',
-    email: '',
-    password: '',
     message: '',
     signup: false,
-    status: '',
   },
   dataInfo: {
     id: '', 
@@ -35,17 +31,27 @@ export const signup = async function (data) {
     const res = await AJAX(googleUsers.API_KEY, data);
     console.log('🚀 ~ signup ~ res', res)
 
-    state.account = {
-      email: res.account.email,
-      idUser: res.account.id_user,
-      password: res.account.password,
-      message: res.message,
-      signup: res.signup,
-      status: res.status,
+    if (res.signup) {
+      state.account = {
+        email: res.account.email,
+        idUser: res.account.id_user,
+        password: res.account.password,
+        message: res.message,
+        signup: res.signup,
+        status: res.status,
+      };
+      
+      state.dataInfo.id = res.account.id_user;
+      state.dataInfo.email = res.account.email;
+    } else {
+      state.account = {
+        message: res.message,
+        signup: res.signup,
+        status: res.status,
+      };
     };
 
-    state.dataInfo.id = res.account.id_user;
-    state.dataInfo.email = res.account.email;
+    
   } catch (error) {
     console.log(error);
   }
